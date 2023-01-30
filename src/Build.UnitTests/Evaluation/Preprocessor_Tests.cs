@@ -1224,7 +1224,6 @@ namespace Microsoft.Build.UnitTests.Preprocessor
 
             // These imports are duplicates but for each project will evaluate to separate projects.  We expect that to NOT break
             // the preprocessor's internal mapping.
-            //
             xml1.AddImport("$(Import)");
             xml2.AddImport("$(Import)");
 

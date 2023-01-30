@@ -57,12 +57,10 @@ namespace Microsoft.Build.Shared.Concurrent
         /// </summary>
         private static bool IsValueWriteAtomic()
         {
-            //
             // Section 12.6.6 of ECMA CLI explains which types can be read and written atomically without
             // the risk of tearing.
             //
             // See http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-335.pdf
-            //
             Type valueType = typeof(TValue);
             if (!valueType.IsValueType)
             {
@@ -230,11 +228,9 @@ namespace Microsoft.Build.Shared.Concurrent
                         tables._countPerLock[lockNo]++;
                     }
 
-                    //
                     // If the number of elements guarded by this lock has exceeded the budget, resize the bucket table.
                     // It is also possible that GrowTable will increase the budget but won't resize the bucket table.
                     // That happens if the bucket table is found to be poorly utilized due to a bad hash function.
-                    //
                     if (tables._countPerLock[lockNo] > _budget)
                     {
                         resizeDesired = true;
@@ -248,14 +244,12 @@ namespace Microsoft.Build.Shared.Concurrent
                     }
                 }
 
-                //
                 // The fact that we got here means that we just performed an insertion. If necessary, we will grow the table.
                 //
                 // Concurrency notes:
                 // - Notice that we are not holding any locks at when calling GrowTable. This is necessary to prevent deadlocks.
                 // - As a result, it is possible that GrowTable will be called unnecessarily. But, GrowTable will obtain lock 0
                 //   and then verify that the table we passed to it as the argument is still the current table.
-                //
                 if (resizeDesired)
                 {
                     GrowTable(tables);
@@ -339,9 +333,7 @@ namespace Microsoft.Build.Shared.Concurrent
                     approxCount += tables._countPerLock[i];
                 }
 
-                //
                 // If the bucket array is too empty, double the budget instead of resizing the table
-                //
                 if (approxCount < tables._buckets.Length / 4)
                 {
                     _budget = 2 * _budget;

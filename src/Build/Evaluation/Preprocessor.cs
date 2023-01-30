@@ -105,7 +105,6 @@ namespace Microsoft.Build.Evaluation
             CloneChildrenResolvingImports(outerDocument, destinationDocument);
 
             // Remove the nodes that were added as implicit imports
-            //
             foreach (XmlNode node in _addedNodes)
             {
                 node.ParentNode?.RemoveChild(node);
@@ -175,7 +174,6 @@ namespace Microsoft.Build.Evaluation
             XmlNode lastImplicitImportAdded = null;
 
             // Add the implicit top imports
-            //
             foreach (ResolvedImport import in implicitImports.Where(i => i.ImportingElement.ImplicitImportLocation == ImplicitImportLocation.Top))
             {
                 XmlElement xmlElement = (XmlElement)documentElement.OwnerDocument.ImportNode(import.ImportingElement.XmlElement, false);
@@ -201,7 +199,6 @@ namespace Microsoft.Build.Evaluation
             }
 
             // Add the implicit bottom imports
-            //
             foreach (var import in implicitImports.Where(i => i.ImportingElement.ImplicitImportLocation == ImplicitImportLocation.Bottom))
             {
                 XmlElement xmlElement = (XmlElement)documentElement.InsertAfter(documentElement.OwnerDocument.ImportNode(import.ImportingElement.XmlElement, false), documentElement.LastChild);

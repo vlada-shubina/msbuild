@@ -19,9 +19,7 @@ namespace System.Deployment.Internal.CodeSigning
 {
     internal static class Win32
     {
-        //
         // PInvoke dll's.
-        //
         internal const String CRYPT32 = "crypt32.dll";
         internal const String KERNEL32 = "kernel32.dll";
 #if (true)
@@ -39,7 +37,6 @@ namespace System.Deployment.Internal.CodeSigning
 #endif
         //
         // Constants.
-        //
         internal const int S_OK = unchecked((int)0x00000000);
         internal const int NTE_BAD_KEY = unchecked((int)0x80090003);
 
@@ -85,9 +82,7 @@ namespace System.Deployment.Internal.CodeSigning
         internal const string szOID_KP_LIFETIME_SIGNING = "1.3.6.1.4.1.311.10.3.13";
         internal const string szOID_RSA_signingTime = "1.2.840.113549.1.9.5";
 
-        //
         // Structures.
-        //
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         internal struct CRYPT_DATA_BLOB
         {
@@ -117,9 +112,7 @@ namespace System.Deployment.Internal.CodeSigning
             internal IntPtr pChainContext;      // Timestamper's chain context.
         }
 
-        //
         // DllImport declarations.
-        //
         [DllImport(KERNEL32, CharSet = CharSet.Auto, SetLastError = true)]
         internal static extern
         IntPtr GetProcessHeap();
@@ -378,9 +371,7 @@ namespace System.Deployment.Internal.CodeSigning
             }
         }
 
-        //
         // Privates.
-        //
         private XmlElement ExtractPrincipalFromManifest()
         {
             XmlNamespaceManager nsm = new XmlNamespaceManager(_manifestDom.NameTable);
@@ -394,9 +385,7 @@ namespace System.Deployment.Internal.CodeSigning
             return assemblyIdentityNode as XmlElement;
         }
 
-        //
         // Statics.
-        //
         private static void InsertPublisherIdentity(XmlDocument manifestDom, X509Certificate2 signerCert)
         {
             XmlNamespaceManager nsm = new XmlNamespaceManager(manifestDom.NameTable);
@@ -792,11 +781,9 @@ namespace System.Deployment.Internal.CodeSigning
                                                              licenseDom.OuterXml + "</msrel:RelData>";
         }
 
-        //
         // ObtainRFC3161Timestamp
         //
         // This function is from mage.exe in .NET FX and is used to implement RFC 3161 timestamping.
-        //
         private static string ObtainRFC3161Timestamp(string timeStampUrl, string signatureValue, bool useSha256)
         {
             byte[] sigValueBytes = Convert.FromBase64String(signatureValue);

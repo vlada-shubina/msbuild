@@ -272,7 +272,6 @@ namespace Microsoft.Build.UnitTests
                 references.Add(new TaskItem() { ItemSpec = (longReferenceNameBase + refIndex + ".dll") });
             }
 
-            //
             // Case 1: Command line length is equal to the maximum allowed value
             //
 
@@ -296,7 +295,6 @@ namespace Microsoft.Build.UnitTests
 
             VerifyLogDoesNotContainResource((MockEngine)t.BuildEngine, GetPrivateLog(t), "ToolTask.CommandTooLong", typeof(ResGen).Name);
 
-            //
             // Case 2: Command line length is one more than the maximum allowed value
             //
 

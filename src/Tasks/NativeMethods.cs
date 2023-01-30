@@ -298,9 +298,8 @@ namespace Microsoft.Build.Tasks
     // Subset of CorAssemblyFlags from corhdr.h
     internal enum CorAssemblyFlags : uint
     {
-        afPublicKey = 0x0001,            // The assembly ref holds the full (unhashed) public key.
-        afRetargetable = 0x0100 // The assembly can be retargeted (at runtime) to an
-                                           //  assembly from a different publisher.
+        afPublicKey = 0x0001,   // The assembly ref holds the full (unhashed) public key.
+        afRetargetable = 0x0100 // The assembly can be retargeted (at runtime) to an assembly from a different publisher.
     };
 
     /*
@@ -1180,7 +1179,6 @@ namespace Microsoft.Build.Tasks
                 // intermittent given that otherwise the user would be completely unable to use the reference
                 // manager), the pointer that we generate to look up the AssemblyTitle is apparently invalid, 
                 // or for some reason Marshal.ReadByte thinks it is.  
-                //
                 return false;
             }
 

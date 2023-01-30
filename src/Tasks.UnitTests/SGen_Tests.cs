@@ -67,7 +67,6 @@ namespace Microsoft.Build.UnitTests
             // the command line, which ultimately looks like this:
             //
             //   /compiler:"/keyfile:\"c:\Some Folder\MyKeyFile.snk\""
-            //
             sgen.KeyFile = "c:\\Some Folder\\MyKeyFile.snk";
 
             string commandLine = sgen.CommandLine();

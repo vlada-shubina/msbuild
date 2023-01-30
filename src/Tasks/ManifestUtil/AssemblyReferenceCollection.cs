@@ -126,7 +126,6 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
                 // note that we only read the file from disk if the incoming identity's name matches
                 //  the file-name of the item in the list to avoid unnecessarily loading every
                 //  reference in the list of references
-                //
                 if (listItemIdentity == null &&
                     identity.Name != null &&
                     a.SourcePath != null &&

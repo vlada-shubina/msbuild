@@ -1930,13 +1930,11 @@ namespace Microsoft.Build.Construction
             //   <? xml version="1.0" encoding="utf-8" standalone="yes" ?>
             //
             // And this should also be treated as if the file is empty.
-            //
             const int maxSizeToConsiderEmpty = 100;
 
             if (!FileSystems.Default.FileExists(path))
             {
                 // Non-existent files are not treated as empty
-                //
                 return false;
             }
 
@@ -1947,21 +1945,18 @@ namespace Microsoft.Build.Construction
                 if (fileInfo.Length == 0)
                 {
                     // Zero length files are empty
-                    //
                     return true;
                 }
 
                 if (fileInfo.Length > maxSizeToConsiderEmpty)
                 {
                     // Files greater than the maximum bytes to check are not empty
-                    //
                     return false;
                 }
 
                 string contents = File.ReadAllText(path);
 
                 // If the file is only whitespace or the XML declaration then it empty
-                //
                 return String.IsNullOrEmpty(contents) || XmlDeclarationRegEx.Value.IsMatch(contents);
             }
             catch (Exception)

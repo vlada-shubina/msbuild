@@ -3087,7 +3087,6 @@ namespace Microsoft.Build.UnitTests.Evaluation
         public void PropertyFunctionStaticMethodGetPathOfFileAbove()
         {
             // Set element location to a file deep in the directory structure.  This is where the function should start looking
-            //
             MockElementLocation mockElementLocation = new MockElementLocation(Path.Combine(ObjectModelHelpers.TempProjectDir, "one", "two", "three", "four", "five", Path.GetRandomFileName()));
 
             string fileToFind = FileUtilities.GetTemporaryFile(ObjectModelHelpers.TempProjectDir, null, ".tmp");

@@ -143,7 +143,6 @@ namespace Microsoft.Build.Tasks
             //  <ProjectConfiguration Project="{881C1674-4ECA-451D-85B6-D7C59B7F16FA}" AbsolutePath="c:foo\Project2\B.csproj" BuildProjectInSolution="True">Debug|AnyCPU<ProjectDependency Project="{4A727FF8-65F2-401E-95AD-7C8BBFBE3167}" /></ProjectConfiguration>
             //  <ProjectConfiguration Project="{4A727FF8-65F2-401E-95AD-7C8BBFBE3167}" AbsolutePath="c:foo\Project3\C.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
             // </SolutionConfiguration>
-            //
             if (doc?.DocumentElement != null)
             {
                 foreach (XmlElement xmlElement in doc.DocumentElement.ChildNodes)

@@ -4235,11 +4235,9 @@ namespace Microsoft.Build.UnitTests.Evaluation
             try
             {
                 // Ensure that VisualStudioVersion is not set as an environment variable
-                //
                 Environment.SetEnvironmentVariable("VisualStudioVersion", null);
 
                 // No global properties are passed to the ProjectCollection so VisualStudioVersion should not be set
-                //
                 Project project = new Project(null, ObjectModelHelpers.MSBuildDefaultToolsVersion, new ProjectCollection());
 
                 string actual = project.GetPropertyValue(Constants.VisualStudioVersionPropertyName);

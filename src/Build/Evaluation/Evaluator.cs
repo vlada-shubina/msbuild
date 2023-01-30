@@ -2302,14 +2302,12 @@ namespace Microsoft.Build.Evaluation
                             if (((_loadSettings & ProjectLoadSettings.IgnoreEmptyImports) != 0 || Traits.Instance.EscapeHatches.IgnoreEmptyImports) && ProjectRootElement.IsEmptyXmlFile(importFileUnescaped))
                             {
                                 // If IgnoreEmptyImports is enabled, check if the file is considered empty
-                                //
                                 ignoreImport = true;
                                 ignoreImportResource = ProjectImportSkippedEmptyFile;
                             }
                             else if ((_loadSettings & ProjectLoadSettings.IgnoreInvalidImports) != 0)
                             {
                                 // If IgnoreInvalidImports is enabled, log all other non-handled exceptions and continue
-                                //
                                 ignoreImport = true;
                                 ignoreImportResource = ProjectImportSkippedInvalidFile;
                             }

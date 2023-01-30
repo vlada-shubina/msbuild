@@ -284,10 +284,8 @@ namespace Microsoft.Build.Tasks
             if (String.IsNullOrEmpty(targetPath))
             {
                 targetPath = Path.GetFileName(item.ItemSpec);
-                //
                 // .NETCore Launcher.exe based deployment: If the file is apphost.exe, we need to set 'TargetPath' metadata
                 // to {assemblyname}.exe so that the file gets published as {assemblyname}.exe and not apphost.exe.
-                //
                 if (LauncherBasedDeployment &&
                     targetPath.Equals(Constants.AppHostExe, StringComparison.InvariantCultureIgnoreCase) &&
                     !String.IsNullOrEmpty(AssemblyName))
@@ -506,11 +504,9 @@ namespace Microsoft.Build.Tasks
             {
                 foreach (ITaskItem item in Files)
                 {
-                    //
                     // Files already included in References as copylocal should be skipped.
                     // Lookup full path of the File in outputAssembliesMap and skip the
                     // file if the target/destination path is the same.
-                    //
                     string key = Path.GetFullPath(item.ItemSpec);
                     outputAssembliesMap.TryGetValue(key, out var assembly);
                     if (assembly != null)

@@ -282,7 +282,6 @@ namespace Microsoft.Build.Shared
             //
             //  Here's an example from the Japanese version of LINK.EXE:
             //   AssemblyInfo.cpp : fatal error LNK1106: ???????????? ??????????????: 0x6580 ??????????
-            //
             Match match = s_originCategoryCodeTextExpression.Value.Match(message);
             string category;
             if (!match.Success)

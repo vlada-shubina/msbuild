@@ -53,9 +53,7 @@ namespace Microsoft.Build.Evaluation
             }
         }
 
-        //
         // Constructor takes the string to parse and the culture.
-        //
         internal Scanner(string expressionToParse, ParserOptions options)
         {
             // We currently have no support (and no scenarios) for disallowing property references

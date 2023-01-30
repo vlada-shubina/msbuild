@@ -90,11 +90,9 @@ namespace Microsoft.Build.Evaluation
             // nothing to see here, move along.
         }
 
-        //
         // Main entry point for parser.
         // You pass in the expression you want to parse, and you get an
         // ExpressionTree out the back end.
-        //
         internal GenericExpressionNode Parse(string expression, ParserOptions optionSettings, ElementLocation elementLocation)
         {
             // We currently have no support (and no scenarios) for disallowing property references
@@ -121,11 +119,9 @@ namespace Microsoft.Build.Evaluation
             return node;
         }
 
-        //
         // Top node of grammar
         //    See grammar for how the following methods relate to each
         //    other.
-        //
         private GenericExpressionNode Expr(string expression)
         {
             GenericExpressionNode node = BooleanTerm(expression);

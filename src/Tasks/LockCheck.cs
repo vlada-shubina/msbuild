@@ -278,7 +278,6 @@ namespace Microsoft.Build.Tasks
                     throw GetException(res, "RmRegisterResources", "Could not register resources.");
                 }
 
-                //
                 // Obtain the list of affected applications/services.
                 //
                 // NOTE: Restart Manager returns the results into the buffer allocated by the caller. The first call to 
@@ -291,7 +290,6 @@ namespace Microsoft.Build.Tasks
                 //
                 //    Use a loop to call RmGetList() in case the buffer allocated according to the size returned in previous 
                 //    call is not enough.
-                // 
                 uint pnProcInfo = 0;
                 RM_PROCESS_INFO[] rgAffectedApps = null;
                 int retry = 0;

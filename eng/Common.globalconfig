@@ -807,7 +807,7 @@ dotnet_diagnostic.SA1118.severity = none
 dotnet_diagnostic.SA1119.severity = none
 
 # Comments should contain text
-dotnet_diagnostic.SA1120.severity = suggestion
+dotnet_diagnostic.SA1120.severity = warning
 
 dotnet_diagnostic.SA1121.severity = none
 

@@ -3437,14 +3437,12 @@ namespace Microsoft.Build.Evaluation
                     if (_receiverType == typeof(IntrinsicFunctions))
                     {
                         // Special case a few methods that take extra parameters that can't be passed in by the user
-                        //
 
                         if (_methodMethodName.Equals("GetPathOfFileAbove") && args.Length == 1)
                         {
                             // Append the IElementLocation as a parameter to GetPathOfFileAbove if the user only
                             // specified the file name.  This is syntactic sugar so they don't have to always
                             // include $(MSBuildThisFileDirectory) as a parameter.
-                            //
                             string startingDirectory = String.IsNullOrWhiteSpace(elementLocation.File) ? String.Empty : Path.GetDirectoryName(elementLocation.File);
 
                             args = new[]

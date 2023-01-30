@@ -7,9 +7,7 @@ using System;
 
 namespace Microsoft.Build.Tasks
 {
-    //
     // Abstract base class to implement IDisposable interface.
-    //
     internal abstract class DisposableBase : IDisposable
     {
         private bool _disposed;

@@ -504,11 +504,9 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
             f.Hash = hash;
             f.Size = size;
 
-            //
             // .NETCore Launcher.exe based Deployment: If the filereference is for apphost.exe, we need to change
             // the ResolvedPath and TargetPath to {assemblyname}.exe before we write the manifest, so that the
             // manifest does not have a file reference to apphost.exe
-            //
             string fileName = Path.GetFileName(f.ResolvedPath);
             if (LauncherBasedDeployment &&
                 fileName.Equals(Constants.AppHostExe, StringComparison.InvariantCultureIgnoreCase) &&

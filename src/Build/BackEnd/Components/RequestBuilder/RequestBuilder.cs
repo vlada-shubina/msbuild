@@ -1144,7 +1144,6 @@ namespace Microsoft.Build.BackEnd
             _projectLoggingContext = _nodeLoggingContext.LogProjectStarted(_requestEntry);
 
             // Now that the project has started, parse a few known properties which indicate warning codes to treat as errors or messages
-            //
             ConfigureWarningsAsErrorsAndMessages();
 
             // Make sure to extract known immutable folders from properties and register them for fast up-to-date check

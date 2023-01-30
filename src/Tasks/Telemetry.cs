@@ -46,7 +46,6 @@ namespace Microsoft.Build.Tasks
                     }
 
                     // Last value added wins
-                    //
                     properties[item[0]] = item[1];
                 }
             }

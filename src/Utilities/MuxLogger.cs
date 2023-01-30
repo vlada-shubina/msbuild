@@ -49,7 +49,6 @@ namespace Microsoft.Build.Utilities
     /// </summary>
     // 
     // UNDONE: If we can use ErrorUtilities, replace all InvalidOperation and Argument exceptions with the appropriate calls.
-    // 
     public class MuxLogger : INodeLogger
     {
         /// <summary>

@@ -215,7 +215,6 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
             //  </requestedPrivileges>
 
             // we always create a requestedPrivilege node to put into the generated TrustInfo document
-            //
             XmlElement requestedPrivilegeElement = document.CreateElement(XmlUtil.TrimPrefix(XPaths.requestedPrivilegeElement), XmlNamespaces.asmv3);
             document.AppendChild(requestedPrivilegeElement);
 
@@ -225,38 +224,32 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
             //  (c) requestedPrivilege node and requestedExecutionLevel node - use the incoming requestedExecutionLevel node values
             //
             // using null for both values is case (b) above -- do not output values
-            //
             string executionLevelString = null;
             string executionUIAccessString = null;
             string commentString = null;
 
             // case (a) above -- load default values
-            //
             if (inputRequestedPrivilegeElement == null)
             {
                 // If UAC requestedPrivilege node is missing (possibly due to upgraded project) then automatically 
                 //  add a default UAC requestedPrivilege node with a default requestedExecutionLevel node set to 
                 //  the expected ClickOnce level (asInvoker) with uiAccess as false
-                //
                 executionLevelString = Constants.UACAsInvoker;
                 executionUIAccessString = Constants.UACUIAccess;
 
                 // load up a default comment string that we put in front of the requestedExecutionLevel node
                 //  here so we can allow the passed-in node to override it if there is a comment present
-                //
                 System.Resources.ResourceManager resources = new System.Resources.ResourceManager("Microsoft.Build.Tasks.Core.Strings.ManifestUtilities", typeof(SecurityUtilities).Module.Assembly);
                 commentString = resources.GetString("TrustInfo.RequestedExecutionLevelComment");
             }
             else
             {
                 // we need to see if the requestedExecutionLevel node is present to decide whether or not to create one.
-                //
                 XmlNamespaceManager nsmgr = XmlNamespaces.GetNamespaceManager(document.NameTable);
                 XmlElement inputRequestedExecutionLevel = (XmlElement)inputRequestedPrivilegeElement.SelectSingleNode(XPaths.requestedExecutionLevelElement, nsmgr);
 
                 // case (c) above -- use incoming values [note that we should do nothing for case (b) above
                 //  because the default values will make us not emit the requestedExecutionLevel and comment]
-                //
                 if (inputRequestedExecutionLevel != null)
                 {
                     XmlNode previousNode = inputRequestedExecutionLevel.PreviousSibling;
@@ -264,21 +257,18 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
                     // fetch the current comment node if there is one (if there is not one, simply
                     //  keep the default null value which means we will not create one in the
                     //  output document)
-                    //
                     if (previousNode?.NodeType == XmlNodeType.Comment)
                     {
                         commentString = ((XmlComment)previousNode).Data;
                     }
 
                     // fetch the current requestedExecutionLevel node's level attribute if there is one
-                    //
                     if (inputRequestedExecutionLevel.HasAttribute("level"))
                     {
                         executionLevelString = inputRequestedExecutionLevel.GetAttribute("level");
                     }
 
                     // fetch the current requestedExecutionLevel node's uiAccess attribute if there is one
-                    //
                     if (inputRequestedExecutionLevel.HasAttribute("uiAccess"))
                     {
                         executionUIAccessString = inputRequestedExecutionLevel.GetAttribute("uiAccess");

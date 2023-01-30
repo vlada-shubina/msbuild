@@ -142,7 +142,6 @@ namespace Microsoft.Build.Tasks
                         //      NAME                    VALUE
                         //      ===================     ================================
                         //      WarningsAsErrors        1234;5678;9999
-                        //
                         if (finalPropertiesList.Count > 0)
                         {
                             // There was a property definition previous to this one.  Append the current string
