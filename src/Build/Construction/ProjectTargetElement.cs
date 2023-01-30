@@ -85,7 +85,10 @@ namespace Microsoft.Build.Construction
             [DebuggerStepThrough]
             get
             {
-                if (Link != null) { return TargetLink.Name; }
+                if (Link != null)
+                {
+                    return TargetLink.Name;
+                }
 
                 // No thread-safety lock required here because many reader threads would set the same value to the field.
                 if (_name != null)

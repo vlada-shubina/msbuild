@@ -3737,11 +3737,21 @@ namespace Microsoft.Build.Tasks
                     // It doesn't hurt to call Close() twice. In the event of a full disk, we *need* to call Close() twice.
                     // In that case, the first time we catch an exception indicating that the XML written to disk is malformed,
                     // specifically an InvalidOperationException: "Token EndElement in state Error would result in an invalid XML document."
-                    try { writer.Dispose(); }
-                    catch (Exception) { } // We agressively catch all exception types since we already have one we will throw.
+                    try
+                    {
+                        writer.Dispose();
+                    }
+                    catch (Exception)
+                    {
+                    } // We agressively catch all exception types since we already have one we will throw.
                     // The second time we catch the out of disk space exception.
-                    try { writer.Dispose(); }
-                    catch (Exception) { } // We agressively catch all exception types since we already have one we will throw.
+                    try
+                    {
+                        writer.Dispose();
+                    }
+                    catch (Exception)
+                    {
+                    } // We agressively catch all exception types since we already have one we will throw.
                     throw capturedException; // In the event of a full disk, this is an out of disk space IOException.
                 }
             }

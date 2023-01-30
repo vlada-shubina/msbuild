@@ -406,7 +406,9 @@ namespace Microsoft.Build.UnitTests
 
             foreach (string file in FilesWithExistenceChecks)
             {
-                using (File.CreateText(file)) { }
+                using (File.CreateText(file))
+                {
+                }
             }
         }
 

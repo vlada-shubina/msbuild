@@ -63,7 +63,11 @@ namespace Microsoft.Build.Construction
             {
                 ErrorUtilities.VerifyThrowArgumentLength(value, nameof(Name));
 
-                if (Link != null) { TaskParameterLink.Name = value; return; }
+                if (Link != null)
+                {
+                    TaskParameterLink.Name = value;
+                    return;
+                }
                 // TODO: There seems to be a bug here
                 // the Name returns the element name (consistent with XML view aka:)
                 // <fooParam .../> => this.Name = fooParan

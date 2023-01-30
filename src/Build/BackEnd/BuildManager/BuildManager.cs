@@ -443,7 +443,9 @@ namespace Microsoft.Build.Execution
             {
                 p.PriorityClass = priority;
             }
-            catch (Win32Exception) { }
+            catch (Win32Exception)
+            {
+            }
         }
 
         /// <summary>

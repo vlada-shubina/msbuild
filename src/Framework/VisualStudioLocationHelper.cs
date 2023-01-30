@@ -75,7 +75,8 @@ namespace Microsoft.Build.Shared
                 while (fetched > 0);
             }
             catch (COMException)
-            { }
+            {
+            }
             catch (DllNotFoundException)
             {
                 // This is OK, VS "15" or greater likely not installed.

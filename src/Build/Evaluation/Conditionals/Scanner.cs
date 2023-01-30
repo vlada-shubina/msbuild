@@ -536,7 +536,10 @@ namespace Microsoft.Build.Evaluation
                     {
                         break;
                     }
-                    else { parenToClose--; }
+                    else
+                    {
+                        parenToClose--;
+                    }
                 }
                 _parsePoint++;
             }

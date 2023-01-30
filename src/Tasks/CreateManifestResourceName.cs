@@ -296,7 +296,10 @@ namespace Microsoft.Build.Tasks
         {
             ErrorUtilities.VerifyThrowArgumentNull(subName, nameof(subName));
 
-            if (string.IsNullOrEmpty(subName)) { return; }
+            if (string.IsNullOrEmpty(subName))
+            {
+                return;
+            }
 
             // the first character has stronger restrictions than the rest
             if (IsValidEverettIdFirstChar(subName[0]))
@@ -334,7 +337,10 @@ namespace Microsoft.Build.Tasks
         {
             ErrorUtilities.VerifyThrowArgumentNull(name, nameof(name));
 
-            if (string.IsNullOrEmpty(name)) { return; }
+            if (string.IsNullOrEmpty(name))
+            {
+                return;
+            }
 
             // store the original length for use later
             int length = builder.Length;
@@ -365,7 +371,10 @@ namespace Microsoft.Build.Tasks
         public static string MakeValidEverettIdentifier(string name)
         {
             ErrorUtilities.VerifyThrowArgumentNull(name, nameof(name));
-            if (string.IsNullOrEmpty(name)) { return name; }
+            if (string.IsNullOrEmpty(name))
+            {
+                return name;
+            }
 
             var everettId = new StringBuilder(name.Length);
 

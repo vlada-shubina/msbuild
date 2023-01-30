@@ -347,7 +347,9 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
                 var testLoadSettings = real.ImportsIncludingDuplicates;
                 isImportsIncludingDuplicatesAvailable = true;
             }
-            catch { }
+            catch
+            {
+            }
 
             if (isImportsIncludingDuplicatesAvailable)
             {

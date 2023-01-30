@@ -74,7 +74,9 @@ namespace Microsoft.Build.UnitTests.Evaluation
                     MockLogger logger = new();
                     result = project.Build(logger);
                 }
-                catch (InvalidProjectFileException) { }
+                catch (InvalidProjectFileException)
+                {
+                }
                 result.ShouldBe(shouldSucceed);
             }
         }

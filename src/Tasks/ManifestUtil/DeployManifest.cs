@@ -506,9 +506,18 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
         {
             get
             {
-                try { return Convert.ToInt32(_updateInterval, CultureInfo.InvariantCulture); }
-                catch (ArgumentException) { return 1; }
-                catch (FormatException) { return 1; }
+                try
+                {
+                    return Convert.ToInt32(_updateInterval, CultureInfo.InvariantCulture);
+                }
+                catch (ArgumentException)
+                {
+                    return 1;
+                }
+                catch (FormatException)
+                {
+                    return 1;
+                }
             }
             set => _updateInterval = Convert.ToString(value, CultureInfo.InvariantCulture);
         }
@@ -523,9 +532,18 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
         {
             get
             {
-                try { return (UpdateMode)Enum.Parse(typeof(UpdateMode), _updateMode, true); }
-                catch (FormatException) { return UpdateMode.Foreground; }
-                catch (ArgumentException) { return UpdateMode.Foreground; }
+                try
+                {
+                    return (UpdateMode)Enum.Parse(typeof(UpdateMode), _updateMode, true);
+                }
+                catch (FormatException)
+                {
+                    return UpdateMode.Foreground;
+                }
+                catch (ArgumentException)
+                {
+                    return UpdateMode.Foreground;
+                }
             }
             set => _updateMode = value.ToString();
         }
@@ -539,9 +557,18 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
         {
             get
             {
-                try { return (UpdateUnit)Enum.Parse(typeof(UpdateUnit), _updateUnit, true); }
-                catch (FormatException) { return UpdateUnit.Days; }
-                catch (ArgumentException) { return UpdateUnit.Days; }
+                try
+                {
+                    return (UpdateUnit)Enum.Parse(typeof(UpdateUnit), _updateUnit, true);
+                }
+                catch (FormatException)
+                {
+                    return UpdateUnit.Days;
+                }
+                catch (ArgumentException)
+                {
+                    return UpdateUnit.Days;
+                }
             }
             set => _updateUnit = value.ToString();
         }

@@ -151,7 +151,10 @@ namespace Microsoft.Build.Construction
             [DebuggerStepThrough]
             get
             {
-                if (this.Link != null) { return this.Link.Parent; }
+                if (this.Link != null)
+                {
+                    return this.Link.Parent;
+                }
 
                 if (_parent is WrapperForProjectRootElement)
                 {

@@ -51,8 +51,13 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
             }
 
             object obj = null;
-            try { NativeMethods.LoadTypeLibEx(path, NativeMethods.RegKind.RegKind_None, out obj); }
-            catch (COMException) { }
+            try
+            {
+                NativeMethods.LoadTypeLibEx(path, NativeMethods.RegKind.RegKind_None, out obj);
+            }
+            catch (COMException)
+            {
+            }
 
 #pragma warning disable 618
 #if RUNTIME_TYPE_NETCORE

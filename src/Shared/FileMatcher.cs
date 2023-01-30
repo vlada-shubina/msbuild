@@ -838,9 +838,15 @@ namespace Microsoft.Build.Shared
                 }
             }
             // This fails in tests with the MockFileSystem when they don't have real paths.
-            catch (IOException) { }
-            catch (ArgumentException) { }
-            catch (UnauthorizedAccessException) { }
+            catch (IOException)
+            {
+            }
+            catch (ArgumentException)
+            {
+            }
+            catch (UnauthorizedAccessException)
+            {
+            }
 #endif
 
             ErrorUtilities.VerifyThrow(
@@ -1745,7 +1751,9 @@ namespace Microsoft.Build.Shared
                     if (pattern[patternIndex] == '*')
                     {
                         // Skip all * wildcards if there are more than one
-                        while (++patternIndex < patternLength && pattern[patternIndex] == '*') { }
+                        while (++patternIndex < patternLength && pattern[patternIndex] == '*')
+                        {
+                        }
 
                         // Return if the last character is a * wildcard
                         if (patternIndex >= patternLength)

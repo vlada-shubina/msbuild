@@ -2264,7 +2264,9 @@ namespace Microsoft.Build.CommandLine
             // We avoid increasing priority because that causes failures on mac/linux, but there is no good way to
             // verify that a particular priority is lower than "BelowNormal." If the error appears, ignore it and
             // leave priority where it was.
-            catch (Win32Exception) { }
+            catch (Win32Exception)
+            {
+            }
 
             // if help switch is set (regardless of switch errors), show the help message and ignore the other switches
             if (commandLineSwitches[CommandLineSwitches.ParameterlessSwitch.Help])
