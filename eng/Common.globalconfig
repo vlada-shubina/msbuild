@@ -978,7 +978,7 @@ dotnet_diagnostic.SA1501.severity = warning
 dotnet_diagnostic.SA1502.severity = suggestion
 
 # Braces should not be omitted
-dotnet_diagnostic.SA1503.severity = suggestion
+dotnet_diagnostic.SA1503.severity = warning
 
 # All accessors should be single-line or multi-line
 dotnet_diagnostic.SA1504.severity = warning
