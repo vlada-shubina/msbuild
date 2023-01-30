@@ -224,7 +224,7 @@ namespace Microsoft.Build.Tasks
         /// <returns>Return true to indicate success, return false to indicate failure and NO retry, return NULL to indicate retry.</returns>
         private bool? CopyFileWithLogging(
             FileState sourceFileState,      // The source file
-            FileState destinationFileState)  // The destination file
+            FileState destinationFileState) // The destination file
         {
             bool destinationFileExists = false;
 

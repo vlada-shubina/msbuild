@@ -39,7 +39,7 @@ namespace Microsoft.Build.BackEnd
         /// </summary>
         internal static bool IsAssignableToITask(Type parameterType)
         {
-            bool result = typeof(ITaskItem[]).GetTypeInfo().IsAssignableFrom(parameterType.GetTypeInfo()) ||    /* ITaskItem array or derived type, or */
+            bool result = typeof(ITaskItem[]).GetTypeInfo().IsAssignableFrom(parameterType.GetTypeInfo()) || /* ITaskItem array or derived type, or */
                           typeof(ITaskItem).IsAssignableFrom(parameterType);                                    /* ITaskItem or derived type */
             return result;
         }
@@ -49,9 +49,9 @@ namespace Microsoft.Build.BackEnd
         /// </summary>
         internal static bool IsValueTypeOutputParameter(Type parameterType)
         {
-            bool result = (parameterType.IsArray && parameterType.GetElementType().GetTypeInfo().IsValueType) ||    /* array of value types, or */
-                          parameterType == typeof(string[]) ||                                                      /* string array, or */
-                          parameterType.GetTypeInfo().IsValueType ||                                                /* value type, or */
+            bool result = (parameterType.IsArray && parameterType.GetElementType().GetTypeInfo().IsValueType) || /* array of value types, or */
+                          parameterType == typeof(string[]) || /* string array, or */
+                          parameterType.GetTypeInfo().IsValueType || /* value type, or */
                           parameterType == typeof(string);                                                          /* string */
             return result;
         }

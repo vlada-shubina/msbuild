@@ -48,7 +48,7 @@ namespace Microsoft.Build.Shared.LanguageParser
                 }
 
                 // Now, we need to check for the line continuation character.
-                if (_reader.SinkLineContinuationCharacter())    // Line continuation is '_'
+                if (_reader.SinkLineContinuationCharacter()) // Line continuation is '_'
                 {
                     // Save the current position because we may need to come back here.
                     int savePosition = _reader.Position - 1;

@@ -745,7 +745,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                 // v2.0     v3.0     v3.5      v4.0
                 { "true",  "true",  "true",  "false" },    // MyMissingAssembly
                 { "true",  "true",  "true",  "false" },    // MyCopyLocalAssembly
-                { "false", "false", "false", "false" }     // MyDontCopyLocalAssembly
+                { "false", "false", "false", "false" } // MyDontCopyLocalAssembly
             };
 
             int assembliesCount = (int)EmbedInteropTypes_Indices.EndMarker;
@@ -4969,7 +4969,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
 
             t.Assemblies = new ITaskItem[]
             {
-                new TaskItem("A")                    // Resolved by HintPath
+                new TaskItem("A") // Resolved by HintPath
             };
             t.Assemblies[0].SetMetadata(
                 "HintPath",
@@ -4982,7 +4982,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
 
             t.AssemblyFiles = new ITaskItem[]
             {
-                new TaskItem(veryLongFile)            // Resolved as File Reference
+                new TaskItem(veryLongFile) // Resolved as File Reference
             };
 
             Execute(t);
@@ -5043,7 +5043,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
 
             t.Assemblies = new ITaskItem[]
             {
-                new TaskItem("__'ASP'dw0024ry")    // Would normally require quoting for the tick marks.
+                new TaskItem("__'ASP'dw0024ry") // Would normally require quoting for the tick marks.
             };
 
             t.Assemblies[0].SetMetadata("HintPath", @"c:\MyEscapedName\__'ASP'dw0024ry.dll");
@@ -5079,7 +5079,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
 
             t.Assemblies = new ITaskItem[]
             {
-                new TaskItem("A.dll")       // User really meant a fusion name here.
+                new TaskItem("A.dll") // User really meant a fusion name here.
             };
 
             t.SearchPaths = new string[]
@@ -5142,7 +5142,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
 
             // Construct the app.config.
             string appConfigFile = WriteAppConfig(
-                "        <dependentAssembly\n" +        // Intentionally didn't close this XML tag.
+                "        <dependentAssembly\n" + // Intentionally didn't close this XML tag.
                 "        </dependentAssembly>\n");
 
             try
@@ -5297,7 +5297,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             t.SearchPaths = new string[]
             {
                 @"{TargetFrameworkDirectory}",        // Assembly is not here.
-                @"c:\Regress407623"                    // Assembly is here.
+                @"c:\Regress407623" // Assembly is here.
             };
 
             string redistFile = FileUtilities.GetTemporaryFileName();

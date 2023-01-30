@@ -886,7 +886,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         /// Build a solution file that can't be accessed
         /// </summary>
         [Fact]
-        [PlatformSpecific(TestPlatforms.Windows)]  // Security classes are not supported on Unix
+        [PlatformSpecific(TestPlatforms.Windows)] // Security classes are not supported on Unix
 
         public void SolutionCanNotBeOpened()
         {
@@ -1006,7 +1006,7 @@ Project(""{";
         /// Open lots of projects concurrently to try to trigger problems
         /// </summary>
         [Fact]
-        [PlatformSpecific(TestPlatforms.Windows)]  // This test is platform specific for Windows
+        [PlatformSpecific(TestPlatforms.Windows)] // This test is platform specific for Windows
         public void ConcurrentProjectOpenAndCloseThroughProject()
         {
             int iterations = 500;

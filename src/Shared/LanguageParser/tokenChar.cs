@@ -20,10 +20,10 @@ namespace Microsoft.Build.Shared.LanguageParser
         internal static bool IsNewLine(char c)
         {
             // From the C# spec and vb specs, newline characters are:
-            return c == 0x000d        // Carriage return
-                    || c == 0x000a        // Linefeed
-                    || c == 0x2028        // Line separator
-                    || c == 0x2029        // Paragraph separator                       
+            return c == 0x000d // Carriage return
+                    || c == 0x000a // Linefeed
+                    || c == 0x2028 // Line separator
+                    || c == 0x2029 // Paragraph separator                       
                         ;
         }
 
@@ -103,7 +103,7 @@ namespace Microsoft.Build.Shared.LanguageParser
             // combining-character:
             if (
                     cat == UnicodeCategory.NonSpacingMark // Mn
-                    || cat == UnicodeCategory.SpacingCombiningMark)  // Mc 
+                    || cat == UnicodeCategory.SpacingCombiningMark) // Mc 
             {
                 return true;
             }
@@ -122,7 +122,7 @@ namespace Microsoft.Build.Shared.LanguageParser
             // From 2.4.2 of the C# Language Specification
             // formatting-character:
             if (
-                    cat == UnicodeCategory.Format)  // Cf
+                    cat == UnicodeCategory.Format) // Cf
             {
                 return true;
             }

@@ -350,7 +350,7 @@ namespace Microsoft.Build.Tasks
 
             upToDateLocalFileStateCache.TryGetValue(path, out FileState state);
             if (state == null)
-            {   // We haven't seen this file this ResolveAssemblyReference session
+            { // We haven't seen this file this ResolveAssemblyReference session
                 state = ComputeFileStateFromCachesAndDisk(path);
                 upToDateLocalFileStateCache[path] = state;
             }

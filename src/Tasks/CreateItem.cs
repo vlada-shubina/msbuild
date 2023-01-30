@@ -104,7 +104,7 @@ namespace Microsoft.Build.Tasks
             foreach (ITaskItem i in Include)
             {
                 if (
-                    (excludeItems.Count == 0) ||        // minor perf optimization
+                    (excludeItems.Count == 0) || // minor perf optimization
                     (!excludeItems.ContainsKey(i.ItemSpec)))
                 {
                     ITaskItem newItem = i;

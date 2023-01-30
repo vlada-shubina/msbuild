@@ -247,7 +247,7 @@ namespace Microsoft.Build.UnitTests
         }
 
         [Fact]
-        [PlatformSpecific(TestPlatforms.Windows)]   // UNC is Windows-Only
+        [PlatformSpecific(TestPlatforms.Windows)] // UNC is Windows-Only
         public void UNCWorkingDirectoryUsed()
         {
             Exec exec = PrepareExec("echo [%cd%]");

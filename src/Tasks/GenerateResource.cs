@@ -3090,7 +3090,7 @@ namespace Microsoft.Build.Tasks
                 {
                     mainAssembly = ci.Equals(CultureInfo.InvariantCulture);
                     neutralResourcesLanguageAttribute = CheckAssemblyCultureInfo(name, assemblyName, ci, a, mainAssembly);
-                }  // if (!failedLoadingCultureInfo)
+                } // if (!failedLoadingCultureInfo)
             }
             catch (BadImageFormatException)
             {
@@ -3233,7 +3233,7 @@ namespace Microsoft.Build.Tasks
                 }
             }
             else
-            {  // Satellite assembly, or a mal-formed main assembly
+            { // Satellite assembly, or a mal-formed main assembly
                 // Additional error checking from ResView.
                 if (!assemblyName.Name.EndsWith(".resources", StringComparison.OrdinalIgnoreCase))
                 {

@@ -233,8 +233,8 @@ namespace Microsoft.Build.Tasks
                     {
                         // Only reject the assembly if the target processor architecture does not match the assemby processor architecture and the assembly processor architecture is not NONE or MSIL.
                         if (
-                              targetAssemblyName.AssemblyName.ProcessorArchitecture != targetProcessorArchitecture &&  /* The target and assembly architectures do not match*/
-                              (targetProcessorArchitecture != ProcessorArchitecture.None && targetAssemblyName.AssemblyName.ProcessorArchitecture != ProcessorArchitecture.None)  /*The assembly is not none*/
+                              targetAssemblyName.AssemblyName.ProcessorArchitecture != targetProcessorArchitecture && /* The target and assembly architectures do not match*/
+                              (targetProcessorArchitecture != ProcessorArchitecture.None && targetAssemblyName.AssemblyName.ProcessorArchitecture != ProcessorArchitecture.None) /*The assembly is not none*/
                               && (targetProcessorArchitecture != ProcessorArchitecture.MSIL && targetAssemblyName.AssemblyName.ProcessorArchitecture != ProcessorArchitecture.MSIL)) /*The assembly is not MSIL*/
                         {
                             if (searchLocation != null)

@@ -232,8 +232,8 @@ namespace Microsoft.Build.Evaluation
                 // If this is not the first <Project> tag
                 if (
                     child.NodeType == XmlNodeType.Element &&
-                    sourceDocument.DocumentElement == child &&                                      // This is the root element, not some random element named 'Project'
-                    destinationDocument.DocumentElement != null &&                                  // Skip <Project> tag from the outer project
+                    sourceDocument.DocumentElement == child && // This is the root element, not some random element named 'Project'
+                    destinationDocument.DocumentElement != null && // Skip <Project> tag from the outer project
                     String.Equals(XMakeElements.project, child.Name, StringComparison.Ordinal))
                 {
                     // But suffix any InitialTargets attribute

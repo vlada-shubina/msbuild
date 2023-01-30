@@ -172,7 +172,7 @@ namespace Microsoft.Build.UnitTests
 
                             if
                                 (
-                                    a1.CompareBaseNameTo(a2) == 0   // Only check version if basenames match
+                                    a1.CompareBaseNameTo(a2) == 0 // Only check version if basenames match
                                     && a1.Version != a2.Version)
                             {
                                 if (a1.Version == null)

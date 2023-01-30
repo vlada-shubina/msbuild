@@ -236,21 +236,21 @@ namespace Microsoft.Build.Shared
             // want to treat differently.
             if
             (
-                e is TypeLoadException                  // thrown when the common language runtime cannot find the assembly, the type within the assembly, or cannot load the type
-                || e is MethodAccessException           // thrown when a class member is not found or access to the member is not permitted
-                || e is MissingMethodException          // thrown when code in a dependent assembly attempts to access a missing method in an assembly that was modified
-                || e is MemberAccessException           // thrown when a class member is not found or access to the member is not permitted
-                || e is BadImageFormatException         // thrown when the file image of a DLL or an executable program is invalid
-                || e is ReflectionTypeLoadException     // thrown by the Module.GetTypes method if any of the classes in a module cannot be loaded
-                || e is TargetParameterCountException   // thrown when the number of parameters for an invocation does not match the number expected
+                e is TypeLoadException // thrown when the common language runtime cannot find the assembly, the type within the assembly, or cannot load the type
+                || e is MethodAccessException // thrown when a class member is not found or access to the member is not permitted
+                || e is MissingMethodException // thrown when code in a dependent assembly attempts to access a missing method in an assembly that was modified
+                || e is MemberAccessException // thrown when a class member is not found or access to the member is not permitted
+                || e is BadImageFormatException // thrown when the file image of a DLL or an executable program is invalid
+                || e is ReflectionTypeLoadException // thrown by the Module.GetTypes method if any of the classes in a module cannot be loaded
+                || e is TargetParameterCountException // thrown when the number of parameters for an invocation does not match the number expected
                 || e is InvalidCastException
-                || e is AmbiguousMatchException         // thrown when binding to a member results in more than one member matching the binding criteria
-                || e is CustomAttributeFormatException  // thrown if a custom attribute on a data type is formatted incorrectly
-                || e is InvalidFilterCriteriaException  // thrown in FindMembers when the filter criteria is not valid for the type of filter you are using
-                || e is TargetException                 // thrown when an attempt is made to invoke a non-static method on a null object.  This may occur because the caller does not
+                || e is AmbiguousMatchException // thrown when binding to a member results in more than one member matching the binding criteria
+                || e is CustomAttributeFormatException // thrown if a custom attribute on a data type is formatted incorrectly
+                || e is InvalidFilterCriteriaException // thrown in FindMembers when the filter criteria is not valid for the type of filter you are using
+                || e is TargetException // thrown when an attempt is made to invoke a non-static method on a null object.  This may occur because the caller does not
                                                         //     have access to the member, or because the target does not define the member, and so on.
-                || e is MissingFieldException           // thrown when code in a dependent assembly attempts to access a missing field in an assembly that was modified.
-                || !NotExpectedException(e))             // Reflection can throw IO exceptions if the assembly cannot be opened
+                || e is MissingFieldException // thrown when code in a dependent assembly attempts to access a missing field in an assembly that was modified.
+                || !NotExpectedException(e)) // Reflection can throw IO exceptions if the assembly cannot be opened
             {
                 return false;
             }

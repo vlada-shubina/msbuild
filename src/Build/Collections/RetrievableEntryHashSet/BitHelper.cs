@@ -45,7 +45,7 @@ namespace Microsoft.Build.Collections
     /// every bit, it would allow good perf improvements when the bit array is sparse.
     /// </summary>
     internal unsafe class BitHelper
-    {   // should not be serialized
+    { // should not be serialized
         private const byte MarkedBitFlag = 1;
         private const byte IntSize = 32;
 

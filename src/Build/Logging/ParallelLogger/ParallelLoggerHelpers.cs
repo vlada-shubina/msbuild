@@ -40,7 +40,7 @@ namespace Microsoft.Build.BackEnd.Logging
         ///  Adds a new project to the list of project started events which have been fired
         /// </summary>
         internal void AddProjectStartedEvent(ProjectStartedEventArgs e, bool requireTimestamp)
-        {   // Parent event can be null if this is the root project
+        { // Parent event can be null if this is the root project
             ProjectStartedEventMinimumFields parentEvent = GetProjectStartedEvent(e.ParentProjectBuildEventContext);
             lock (_projectStartedEvents)
             {

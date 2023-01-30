@@ -43,7 +43,7 @@ namespace Microsoft.Build.UnitTests
                 { " @(foo)",                "2",    "AllowProperties" },       // Position of @
                 { " '@(foo)'",              "3",    "AllowProperties" },       // Position of @
                 /* test escaped chars: message shows them escaped so count should include them */
-                { "'%24%28x' == '%24(x''",   "21",  "AllowAll" }               // Position of extra quote
+                { "'%24%28x' == '%24(x''",   "21",  "AllowAll" } // Position of extra quote
             };
 
             // Some errors are caught by the Parser, not merely by the Lexer/Scanner. So we have to do a full Parse,

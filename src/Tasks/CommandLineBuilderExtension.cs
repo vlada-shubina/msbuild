@@ -230,7 +230,7 @@ namespace Microsoft.Build.Tasks
             string switchName,
             ITaskItem[] parameters,
             string[] metadataNames,
-            bool[] treatAsFlags)       // May be null. In this case no metadata are treated as flags.
+            bool[] treatAsFlags) // May be null. In this case no metadata are treated as flags.
         {
             ErrorUtilities.VerifyThrow(
                 treatAsFlags == null ||

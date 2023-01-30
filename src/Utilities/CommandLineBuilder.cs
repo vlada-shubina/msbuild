@@ -113,7 +113,7 @@ namespace Microsoft.Build.Utilities
 
         // Use if escaping of hyphens is supposed to take place
         private const string s_allowedUnquotedRegexNoHyphen =
-                         "^"                             // Beginning of line
+                         "^" // Beginning of line
                        + @"[a-z\\/:0-9\._+=]*"
                        + "$";
 
@@ -121,8 +121,8 @@ namespace Microsoft.Build.Utilities
 
         // Use if escaping of hyphens is not to take place
         private const string s_allowedUnquotedRegexWithHyphen =
-                        "^"                             // Beginning of line
-                       + @"[a-z\\/:0-9\._\-+=]*"       //  Allow hyphen to be unquoted
+                        "^" // Beginning of line
+                       + @"[a-z\\/:0-9\._\-+=]*" //  Allow hyphen to be unquoted
                        + "$";
         private const string s_definitelyNeedQuotesRegexNoHyphen = @"[|><\s,;""]+";
 

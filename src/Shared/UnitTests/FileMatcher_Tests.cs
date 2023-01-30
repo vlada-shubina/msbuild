@@ -784,12 +784,12 @@ namespace Microsoft.Build.UnitTests
         {
             MatchDriver(
                 "Source" + Path.DirectorySeparatorChar + "**",
-                new string[]  // Files that exist and should match.
+                new string[] // Files that exist and should match.
                 {
                     "Source" + Path.DirectorySeparatorChar + "Bart.txt",
                     "Source" + Path.DirectorySeparatorChar + "Sub" + Path.DirectorySeparatorChar + "Homer.txt",
                 },
-                new string[]  // Files that exist and should not match.
+                new string[] // Files that exist and should not match.
                 {
                     "Destination" + Path.DirectorySeparatorChar + "Bart.txt",
                     "Destination" + Path.DirectorySeparatorChar + "Sub" + Path.DirectorySeparatorChar + "Homer.txt",
@@ -810,7 +810,7 @@ namespace Microsoft.Build.UnitTests
                 @"c:\?emp\foo.txt",
                 new string[] { @"c:\temp\foo.txt" },    // Should match
                 new string[] { @"c:\timp\foo.txt" },    // Shouldn't match
-                new string[]                            // Should not even consider.
+                new string[] // Should not even consider.
                 {
                     @"c:\temp\sub\foo.txt"
                 });
@@ -1602,18 +1602,18 @@ namespace Microsoft.Build.UnitTests
         {
             MatchDriverWithDifferentSlashes(
                 @"**\*.cs",     // Include Pattern
-                new[]    //  Exclude patterns
+                new[] //  Exclude patterns
                 {
                     @"Program_old.cs",
                     @"Properties\AssemblyInfo_old.cs"
                 },
-                new[]    // Matching files
+                new[] // Matching files
                 {
                     @"foo.cs",
                     @"Properties\AssemblyInfo.cs",
                     @"Foo\Bar\Baz\Buzz.cs"
                 },
-                new[]    // Non matching files
+                new[] // Non matching files
                 {
                     @"Program_old.cs",
                     @"Properties\AssemblyInfo_old.cs"
@@ -1626,26 +1626,26 @@ namespace Microsoft.Build.UnitTests
         {
             MatchDriverWithDifferentSlashes(
                 @"**\*.cs",     // Include Pattern
-                new[]    //  Exclude patterns
+                new[] //  Exclude patterns
                 {
                     @"bin\**",
                     @"Program_old.cs",
                     @"Properties\AssemblyInfo_old.cs"
                 },
-                new[]    // Matching files
+                new[] // Matching files
                 {
                     @"foo.cs",
                     @"Properties\AssemblyInfo.cs",
                     @"Foo\Bar\Baz\Buzz.cs"
                 },
-                new[]    // Non matching files
+                new[] // Non matching files
                 {
                     @"foo.txt",
                     @"Foo\foo.txt",
                     @"Program_old.cs",
                     @"Properties\AssemblyInfo_old.cs"
                 },
-                new[]    // Non matching files that shouldn't be touched
+                new[] // Non matching files that shouldn't be touched
                 {
                     @"bin\foo.cs",
                     @"bin\bar\foo.cs",
@@ -2199,7 +2199,7 @@ namespace Microsoft.Build.UnitTests
                                 {
                                     directories.Add(FileMatcher.Normalize(match));
                                 }
-                                else if    // Match patterns like ?emp
+                                else if // Match patterns like ?emp
                                 (
                                     pattern.Substring(0, 1) == "?"
                                     && pattern.Length == baseMatch.Length)

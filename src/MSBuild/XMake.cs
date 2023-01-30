@@ -1157,8 +1157,8 @@ namespace Microsoft.Build.CommandLine
                     loggers[0].Parameters != null &&
                     loggers[0].Parameters.IndexOf("ENABLEMPLOGGING", StringComparison.OrdinalIgnoreCase) != -1 &&
                     loggers[0].Parameters.IndexOf("DISABLEMPLOGGING", StringComparison.OrdinalIgnoreCase) == -1 &&
-                    loggers[0].Parameters.IndexOf("V=", StringComparison.OrdinalIgnoreCase) == -1 &&                // Console logger could have had a verbosity
-                    loggers[0].Parameters.IndexOf("VERBOSITY=", StringComparison.OrdinalIgnoreCase) == -1)          // override with the /clp switch
+                    loggers[0].Parameters.IndexOf("V=", StringComparison.OrdinalIgnoreCase) == -1 && // Console logger could have had a verbosity
+                    loggers[0].Parameters.IndexOf("VERBOSITY=", StringComparison.OrdinalIgnoreCase) == -1) // override with the /clp switch
                 {
                     // Must be exactly the console logger, not a derived type like the file logger.
                     Type t1 = loggers[0].GetType();
@@ -3543,7 +3543,7 @@ namespace Microsoft.Build.CommandLine
             {
                 foreach (string name in parameterNames)
                 {
-                    bool found = nameValue.StartsWith($"{name}=", StringComparison.OrdinalIgnoreCase) ||   // Parameters with value, such as "logfile=foo.txt"
+                    bool found = nameValue.StartsWith($"{name}=", StringComparison.OrdinalIgnoreCase) || // Parameters with value, such as "logfile=foo.txt"
                                  string.Equals(name, nameValue, StringComparison.OrdinalIgnoreCase);       // Parameters without value, such as "append"
 
                     if (found)

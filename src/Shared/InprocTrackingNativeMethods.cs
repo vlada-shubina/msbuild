@@ -299,7 +299,7 @@ namespace Microsoft.Build.Shared
                     // bad things can happen when the CLR attempts to call the (still detoured?) ExitProcess.  
                     return true;
                 }
-            }  // private class SafeLibraryHandle
+            } // private class SafeLibraryHandle
         }
     }
 }

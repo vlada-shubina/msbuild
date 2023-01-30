@@ -1312,15 +1312,15 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.OutOfProc
             string[][] tests = new string[][]
             {
                 // invalid token in file, "unsupported square bracket keyword"
-                new string[] {   "[goober]", "MSB3563" },
+                new string[] { "[goober]", "MSB3563" },
                 // no '=', "resource line without an equals sign"
-                new string[] {   "abcdefaghha", "MSB3564" },
+                new string[] { "abcdefaghha", "MSB3564" },
                 // no name, "resource line without a name"
-                new string[] {   "=abced", "MSB3565" },
+                new string[] { "=abced", "MSB3565" },
                 // invalid escape, "unsupported or invalid escape character"
-                new string[] {   "abc=de\\efght", "MSB3566" },
+                new string[] { "abc=de\\efght", "MSB3566" },
                 // another invalid escape, this one more serious, "unsupported or invalid escape character"
-                new string[] {   @"foo=\ujjjjbar", "MSB3569" },
+                new string[] { @"foo=\ujjjjbar", "MSB3569" },
             };
             GenerateResource t;
             string textFile;

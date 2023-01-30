@@ -968,7 +968,7 @@ namespace Microsoft.Build.UnitTests
 
             try
             {
-                using (StreamWriter sw = FileUtilities.OpenWrite(sourceFile, true))   // HIGHCHAR: Test writes in UTF8 without preamble.
+                using (StreamWriter sw = FileUtilities.OpenWrite(sourceFile, true)) // HIGHCHAR: Test writes in UTF8 without preamble.
                 {
                     sw.Write("This is a destination temp file.");
                 }
@@ -1377,7 +1377,7 @@ namespace Microsoft.Build.UnitTests
 
             try
             {
-                using (StreamWriter sw = FileUtilities.OpenWrite(sourceFile, true))    // HIGHCHAR: Test writes in UTF8 without preamble.
+                using (StreamWriter sw = FileUtilities.OpenWrite(sourceFile, true)) // HIGHCHAR: Test writes in UTF8 without preamble.
                 {
                     sw.Write("This is a source temp file.");
                 }
@@ -1442,7 +1442,7 @@ namespace Microsoft.Build.UnitTests
 
             foreach (ITaskItem item in sourceFiles)
             {
-                using (StreamWriter sw = FileUtilities.OpenWrite(item.ItemSpec, false))    // HIGHCHAR: Test writes in UTF8 without preamble.
+                using (StreamWriter sw = FileUtilities.OpenWrite(item.ItemSpec, false)) // HIGHCHAR: Test writes in UTF8 without preamble.
                 {
                     sw.Write("This is a source temp file.");
                 }
@@ -1500,7 +1500,7 @@ namespace Microsoft.Build.UnitTests
 
             foreach (ITaskItem item in sourceFiles)
             {
-                using (StreamWriter sw = FileUtilities.OpenWrite(item.ItemSpec, false))    // HIGHCHAR: Test writes in UTF8 without preamble.
+                using (StreamWriter sw = FileUtilities.OpenWrite(item.ItemSpec, false)) // HIGHCHAR: Test writes in UTF8 without preamble.
                 {
                     sw.Write("This is a source temp file.");
                 }

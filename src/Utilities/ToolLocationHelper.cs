@@ -789,7 +789,7 @@ namespace Microsoft.Build.Utilities
             {
                 if (
                     (targetPlatformSdk.MinOSVersion == null || osVersion == null || targetPlatformSdk.MinOSVersion <= osVersion) && // filter based on OS version - let pass if not in manifest or parameter
-                    (targetPlatformSdk.MinVSVersion == null || vsVersion == null || targetPlatformSdk.MinVSVersion <= vsVersion))    // filter based on VS version - let pass if not in manifest or parameter
+                    (targetPlatformSdk.MinVSVersion == null || vsVersion == null || targetPlatformSdk.MinVSVersion <= vsVersion)) // filter based on VS version - let pass if not in manifest or parameter
                 {
                     filteredTargetPlatformSdkList.Add(targetPlatformSdk);
                 }

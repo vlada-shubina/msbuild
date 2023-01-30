@@ -299,7 +299,7 @@ namespace Microsoft.Build.Tasks
     internal enum CorAssemblyFlags : uint
     {
         afPublicKey = 0x0001,            // The assembly ref holds the full (unhashed) public key.
-        afRetargetable = 0x0100            // The assembly can be retargeted (at runtime) to an
+        afRetargetable = 0x0100 // The assembly can be retargeted (at runtime) to an
                                            //  assembly from a different publisher.
     };
 
@@ -1210,18 +1210,18 @@ namespace Microsoft.Build.Tasks
             uncompressedDataLength = 0;
 
             // Smallest.    
-            if ((*bytes & 0x80) == 0x00)       // 0??? ????    
+            if ((*bytes & 0x80) == 0x00) // 0??? ????    
             {
                 uncompressedDataLength = *bytes;
                 count = 1;
             }
             // Medium.  
-            else if ((*bytes & 0xC0) == 0x80)  // 10?? ????    
+            else if ((*bytes & 0xC0) == 0x80) // 10?? ????    
             {
                 uncompressedDataLength = (int)((*bytes & 0x3f) << 8 | *(bytes + 1));
                 count = 2;
             }
-            else if ((*bytes & 0xE0) == 0xC0)      // 110? ????    
+            else if ((*bytes & 0xE0) == 0xC0) // 110? ????    
             {
                 uncompressedDataLength = (int)((*bytes & 0x1f) << 24 | *(bytes + 1) << 16 | *(bytes + 2) << 8 | *(bytes + 3));
                 count = 4;

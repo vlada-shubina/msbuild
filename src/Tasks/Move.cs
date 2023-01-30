@@ -28,7 +28,7 @@ namespace Microsoft.Build.Tasks
         /// Flags for MoveFileEx.
         /// 
         /// </summary>
-        private const NativeMethods.MoveFileFlags Flags = NativeMethods.MoveFileFlags.MOVEFILE_WRITE_THROUGH |    // Do not return until the Move is complete
+        private const NativeMethods.MoveFileFlags Flags = NativeMethods.MoveFileFlags.MOVEFILE_WRITE_THROUGH | // Do not return until the Move is complete
                                                           NativeMethods.MoveFileFlags.MOVEFILE_REPLACE_EXISTING | // Replace any existing target
                                                           NativeMethods.MoveFileFlags.MOVEFILE_COPY_ALLOWED;      // Moving across volumes is allowed
 
