@@ -290,7 +290,8 @@ namespace Microsoft.Build.Shared.LanguageParser
         }
 
         private static readonly string[] s_keywordList =
-                                              { "abstract",  "as",  "base",  "bool",  "break",
+                                              {
+                                                    "abstract",  "as",  "base",  "bool",  "break",
                                                 "byte",  "case",  "catch",  "char",  "checked",
                                                 "class",  "const",  "continue",  "decimal",  "default",
                                                 "delegate",  "do",  "double",  "else",  "enum",
@@ -305,7 +306,8 @@ namespace Microsoft.Build.Shared.LanguageParser
                                                 "struct",  "switch",  "this",  "throw",  "try",
                                                 "typeof",  "uint",  "ulong",  "unchecked",  "unsafe",
                                                 "ushort",  "using",  "virtual",  "void",  "volatile",
-                                                "while" };
+                                                "while"
+                                                };
 
 
         /*

@@ -82,8 +82,7 @@ namespace Microsoft.Build.Execution
         public override string Condition
         {
             [DebuggerStepThrough]
-            get
-            { return _condition; }
+            get { return _condition; }
         }
 
         /// <summary>

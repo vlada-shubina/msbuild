@@ -1537,10 +1537,13 @@ namespace Microsoft.Build.UnitTests.BackEnd
                 // Intrinsic tasks, because they affect the project directly, don't do this. So the final order we see is
                 // two inputs (old, new) from the ItemGroup; followed by the inferred CreateItem output, then the executed CreateItem output.
                 // I suggest this ordering isn't important: it's a new feature, so nobody will get broken.
-                logger.AssertLogContains(new string[] { "start:[" + newInput + "]",
+                logger.AssertLogContains(new string[]
+                {
+                    "start:[" + newInput + "]",
                                                         "middle:[" + newInput + "][" + newInput + "]",
                                                         "end:["   + newInput + ";" + newInput + "]",
-                                                        "final:[" + oldInput + ";" + newInput + ";" + oldInput + ";" + newInput + "]" });
+                                                        "final:[" + oldInput + ";" + newInput + ";" + oldInput + ";" + newInput + "]"
+                });
             }
             finally
             {

@@ -85,7 +85,8 @@ namespace Microsoft.Build.UnitTests
             Assert.True(p.Execute()); // "Test should've passed"
             Assert.Equal(3, p.Result.Length); // "result Length should be 3"
 
-            string[] results = new string[] {
+            string[] results = new string[]
+            {
                 "<s:variable Type=\"String\" Name=\"a\" xmlns:s=\"http://nsurl\"></s:variable>",
                 "<s:variable Type=\"String\" Name=\"b\" xmlns:s=\"http://nsurl\"></s:variable>",
                 "<s:variable Type=\"String\" Name=\"c\" xmlns:s=\"http://nsurl\"></s:variable>"
@@ -114,7 +115,8 @@ namespace Microsoft.Build.UnitTests
             Assert.True(p.Execute()); // "Test should've passed"
             Assert.Equal(3, p.Result.Length); // "result Length should be 3"
 
-            string[] results = new string[] {
+            string[] results = new string[]
+            {
                 "This",
                 "is",
                 "Sparta!"

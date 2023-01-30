@@ -209,12 +209,10 @@ namespace Microsoft.Build.BackEnd
         internal TaskLoggingContext LoggingContext
         {
             [DebuggerStepThrough]
-            get
-            { return _taskLoggingContext; }
+            get { return _taskLoggingContext; }
 
             [DebuggerStepThrough]
-            set
-            { _taskLoggingContext = value; }
+            set { _taskLoggingContext = value; }
         }
 
 #if FEATURE_APPDOMAIN

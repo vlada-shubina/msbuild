@@ -692,7 +692,8 @@ namespace Microsoft.Build.Tasks
                             FreeAsmMeta(asmMetaPtr);
                         }
                     }
-                } while (fetched > 0);
+                }
+                while (fetched > 0);
             }
             finally
             {
@@ -742,7 +743,8 @@ namespace Microsoft.Build.Tasks
                         string file = new string(fileNameBuf, 0, (int)(fileNameLength - 1));
                         files.Add(file);
                     }
-                } while (fetched > 0);
+                }
+                while (fetched > 0);
             }
             finally
             {

@@ -47,8 +47,7 @@ namespace Microsoft.Build.BackEnd.Logging
         public bool IsInProcNode
         {
             [DebuggerStepThrough]
-            get
-            { return _isInProcNode; }
+            get { return _isInProcNode; }
         }
 
         /// <summary>

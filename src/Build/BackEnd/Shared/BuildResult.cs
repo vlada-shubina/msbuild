@@ -261,8 +261,7 @@ namespace Microsoft.Build.Execution
         public int SubmissionId
         {
             [DebuggerStepThrough]
-            get
-            { return _submissionId; }
+            get { return _submissionId; }
         }
 
         /// <summary>
@@ -271,8 +270,7 @@ namespace Microsoft.Build.Execution
         public int ConfigurationId
         {
             [DebuggerStepThrough]
-            get
-            { return _configurationId; }
+            get { return _configurationId; }
         }
 
         /// <summary>
@@ -281,8 +279,7 @@ namespace Microsoft.Build.Execution
         public int GlobalRequestId
         {
             [DebuggerStepThrough]
-            get
-            { return _globalRequestId; }
+            get { return _globalRequestId; }
         }
 
         /// <summary>
@@ -291,8 +288,7 @@ namespace Microsoft.Build.Execution
         public int ParentGlobalRequestId
         {
             [DebuggerStepThrough]
-            get
-            { return _parentGlobalRequestId; }
+            get { return _parentGlobalRequestId; }
         }
 
         /// <summary>
@@ -301,8 +297,7 @@ namespace Microsoft.Build.Execution
         public int NodeRequestId
         {
             [DebuggerStepThrough]
-            get
-            { return _nodeRequestId; }
+            get { return _nodeRequestId; }
         }
 
         /// <summary>
@@ -311,12 +306,10 @@ namespace Microsoft.Build.Execution
         public Exception Exception
         {
             [DebuggerStepThrough]
-            get
-            { return _requestException; }
+            get { return _requestException; }
 
             [DebuggerStepThrough]
-            internal set
-            { _requestException = value; }
+            internal set { _requestException = value; }
         }
 
         /// <summary>
@@ -325,8 +318,7 @@ namespace Microsoft.Build.Execution
         public bool CircularDependency
         {
             [DebuggerStepThrough]
-            get
-            { return _circularDependency; }
+            get { return _circularDependency; }
         }
 
         /// <summary>
@@ -360,8 +352,7 @@ namespace Microsoft.Build.Execution
         public IDictionary<string, TargetResult> ResultsByTarget
         {
             [DebuggerStepThrough]
-            get
-            { return _resultsByTarget; }
+            get { return _resultsByTarget; }
         }
 
         /// <summary>
@@ -381,8 +372,7 @@ namespace Microsoft.Build.Execution
         NodePacketType INodePacket.Type
         {
             [DebuggerStepThrough]
-            get
-            { return NodePacketType.BuildResult; }
+            get { return NodePacketType.BuildResult; }
         }
 
         /// <summary>
@@ -411,12 +401,10 @@ namespace Microsoft.Build.Execution
         internal List<string> InitialTargets
         {
             [DebuggerStepThrough]
-            get
-            { return _initialTargets; }
+            get { return _initialTargets; }
 
             [DebuggerStepThrough]
-            set
-            { _initialTargets = value; }
+            set { _initialTargets = value; }
         }
 
         /// <summary>
@@ -425,12 +413,10 @@ namespace Microsoft.Build.Execution
         internal List<string> DefaultTargets
         {
             [DebuggerStepThrough]
-            get
-            { return _defaultTargets; }
+            get { return _defaultTargets; }
 
             [DebuggerStepThrough]
-            set
-            { _defaultTargets = value; }
+            set { _defaultTargets = value; }
         }
 
         /// <summary>
@@ -453,8 +439,7 @@ namespace Microsoft.Build.Execution
         public ITargetResult this[string target]
         {
             [DebuggerStepThrough]
-            get
-            { return _resultsByTarget[target]; }
+            get { return _resultsByTarget[target]; }
         }
 
         /// <summary>

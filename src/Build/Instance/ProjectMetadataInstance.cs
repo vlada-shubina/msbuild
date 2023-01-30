@@ -106,8 +106,7 @@ namespace Microsoft.Build.Execution
         public string Name
         {
             [DebuggerStepThrough]
-            get
-            { return _name; }
+            get { return _name; }
         }
 
         /// <summary>
@@ -130,8 +129,7 @@ namespace Microsoft.Build.Execution
         string IKeyed.Key
         {
             [DebuggerStepThrough]
-            get
-            { return Name; }
+            get { return Name; }
         }
 
         /// <summary>
@@ -141,8 +139,7 @@ namespace Microsoft.Build.Execution
         string IValued.EscapedValue
         {
             [DebuggerStepThrough]
-            get
-            { return EvaluatedValueEscaped; }
+            get { return EvaluatedValueEscaped; }
         }
 
         /// <summary>

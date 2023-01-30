@@ -675,7 +675,8 @@ class X
 
             File.Delete("sort.read.1.tlog");
             File.Delete("sort.write.1.tlog");
-            File.WriteAllLines("test.in", new[] {
+            File.WriteAllLines("test.in", new[]
+            {
                                                             "bfoo",
                                                             "afoo"
                                                        });
@@ -702,7 +703,8 @@ class X
             Directory.CreateDirectory("outdir");
             File.Delete("outdir\\sort.read.1.tlog");
             File.Delete("outdir\\sort.write.1.tlog");
-            File.WriteAllLines("test.in", new[] {
+            File.WriteAllLines("test.in", new[]
+            {
                                                             "bfoo",
                                                             "afoo"
                                                        });
@@ -733,7 +735,8 @@ class X
                 Directory.Delete("outdir", true);
             }
 
-            File.WriteAllLines("test.in", new[] {
+            File.WriteAllLines("test.in", new[]
+            {
                                                             "bfoo",
                                                             "afoo"
                                                        });

@@ -278,7 +278,8 @@ namespace Microsoft.Build.Shared.LanguageParser
         }
 
         private static readonly string[] s_keywordList =
-                                              { "ADDHANDLER", "ADDRESSOF", "ANDALSO", "ALIAS",
+                                              {
+                                                    "ADDHANDLER", "ADDRESSOF", "ANDALSO", "ALIAS",
                                                 "AND",  "ANSI",  "AS",  "ASSEMBLY",
                                                 "AUTO",  "BOOLEAN",  "BYREF",  "BYTE",
                                                 "BYVAL",  "CALL",  "CASE",  "CATCH",
@@ -312,7 +313,8 @@ namespace Microsoft.Build.Shared.LanguageParser
                                                 "TO",  "TRUE", "TRY",  "TRYCAST", "TYPEOF",
                                                 "UNICODE",  "UINTEGER", "ULONG", "UNTIL",  "USHORT", "USING", "VARIANT",  "WEND", "WHEN",
                                                 "WHILE",  "WIDENING", "WITH",  "WITHEVENTS",  "WRITEONLY",
-                                                "XOR" };
+                                                "XOR"
+                                                };
 
 
         /*

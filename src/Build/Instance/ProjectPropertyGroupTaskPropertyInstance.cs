@@ -83,8 +83,7 @@ namespace Microsoft.Build.Execution
         public string Name
         {
             [DebuggerStepThrough]
-            get
-            { return _name; }
+            get { return _name; }
         }
 
         /// <summary>
@@ -93,8 +92,7 @@ namespace Microsoft.Build.Execution
         public string Value
         {
             [DebuggerStepThrough]
-            get
-            { return _value; }
+            get { return _value; }
         }
 
         /// <summary>
@@ -103,8 +101,7 @@ namespace Microsoft.Build.Execution
         public string Condition
         {
             [DebuggerStepThrough]
-            get
-            { return _condition; }
+            get { return _condition; }
         }
 
         /// <summary>

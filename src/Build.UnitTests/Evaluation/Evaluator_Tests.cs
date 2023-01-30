@@ -1125,7 +1125,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [Fact]
         public void ImportListOfItems()
         {
-            string[] importPaths = {
+            string[] importPaths =
+            {
                 ObjectModelHelpers.CreateTempFileOnDisk(@"
                     <Project ToolsVersion=""msbuilddefaulttoolsversion"" xmlns='msbuildnamespace' >
                         <PropertyGroup>
@@ -1232,7 +1233,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [Fact]
         public void ImportListOfItemsOneFileDoesNotExist()
         {
-            string[] importPaths = {
+            string[] importPaths =
+            {
                 ObjectModelHelpers.CreateTempFileOnDisk(@"
                     <Project ToolsVersion=""msbuilddefaulttoolsversion"" xmlns='msbuildnamespace' >
                         <PropertyGroup>

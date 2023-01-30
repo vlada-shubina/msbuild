@@ -932,7 +932,8 @@ namespace Microsoft.Build.Utilities
                         builder.AppendLine(exception.StackTrace);
                     }
                     exception = exception.InnerException;
-                } while (exception != null);
+                }
+                while (exception != null);
 
                 message = builder.ToString();
             }

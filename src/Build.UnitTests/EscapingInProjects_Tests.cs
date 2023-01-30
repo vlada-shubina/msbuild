@@ -846,7 +846,8 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
         public void SpecialCharactersInMetadataValueEvaluation()
         {
             Project project = new Project();
-            ProjectItem item = project.AddItem("None", "MetadataTests", new Dictionary<string, string> {
+            ProjectItem item = project.AddItem("None", "MetadataTests", new Dictionary<string, string>
+            {
                 {"EscapedSemicolon", "%3B"}, // Microsoft.Build.Evaluation.ProjectCollection.Escape(";")
                 {"EscapedDollarSign", "%24"}, // Microsoft.Build.Evaluation.ProjectCollection.Escape("$")
             }).Single();

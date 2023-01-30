@@ -215,8 +215,7 @@ namespace Microsoft.Build.BackEnd
         public TaskParameterType ParameterType
         {
             [DebuggerStepThrough]
-            get
-            { return _parameterType; }
+            get { return _parameterType; }
         }
 
         /// <summary>
@@ -225,8 +224,7 @@ namespace Microsoft.Build.BackEnd
         public object WrappedParameter
         {
             [DebuggerStepThrough]
-            get
-            { return _wrappedParameter; }
+            get { return _wrappedParameter; }
         }
 
         /// <summary>

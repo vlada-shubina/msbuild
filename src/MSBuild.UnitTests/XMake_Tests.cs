@@ -64,7 +64,8 @@ namespace Microsoft.Build.UnitTests
         {
             var switches = new CommandLineSwitches();
 
-            var arguments = new List<string> {
+            var arguments = new List<string>
+            {
                 "-p:a=b",
                 "--p:maxcpucount=8"
             };
@@ -2052,7 +2053,8 @@ namespace Microsoft.Build.UnitTests
 
             IDictionary<string, string> preExistingProps = new Dictionary<string, string>
             {
-                { restoreFirstProps, $@"<Project ToolsVersion=""Current"">
+                {
+                    restoreFirstProps, $@"<Project ToolsVersion=""Current"">
   <PropertyGroup>
     <PropertyA>{guid1}</PropertyA>
   </PropertyGroup>
@@ -2099,7 +2101,8 @@ namespace Microsoft.Build.UnitTests
 
             IDictionary<string, string> preExistingProps = new Dictionary<string, string>
             {
-                { restoreFirstProps, $@"<Project ToolsVersion=""Current"">
+                {
+                    restoreFirstProps, $@"<Project ToolsVersion=""Current"">
   <PropertyGroup>
     <PropertyA>{guid1}</PropertyA>
   </PropertyGroup>

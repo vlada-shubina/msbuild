@@ -3617,7 +3617,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         {
             PropertyDictionary<ProjectPropertyInstance> pg = new PropertyDictionary<ProjectPropertyInstance>();
             Expander<ProjectPropertyInstance, ProjectItemInstance> expander = new Expander<ProjectPropertyInstance, ProjectItemInstance>(pg, FileSystems.Default);
-            string[] stringsToHash = {
+            string[] stringsToHash =
+            {
                 "cat1s",
                 "cat1z",
                 "bat1s",
@@ -3718,7 +3719,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             Expander<ProjectPropertyInstance, ProjectItemInstance> expander = new Expander<ProjectPropertyInstance, ProjectItemInstance>(pg, FileSystems.Default);
 
-            var validTests = new List<string[]> {
+            var validTests = new List<string[]>
+            {
                 new string[] {"$(input.ToString()[1])", "X"},
                 new string[] {"$(input[1])", "X"},
                 new string[] {"$(listofthings.Split(';')[$(position)])","e"},
@@ -3764,7 +3766,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
                 new string[] {"$(Reg:AAA)", ""}
                                    };
 
-            var errorTests = new List<string> {
+            var errorTests = new List<string>
+            {
             "$(input[)",
             "$(input.ToString()])",
             "$(input.ToString()[)",

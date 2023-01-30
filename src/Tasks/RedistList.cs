@@ -831,7 +831,8 @@ namespace Microsoft.Build.Tasks
             do
             {
                 attributes.Add(reader.Name, reader.Value);
-            } while (reader.MoveToNextAttribute());
+            }
+            while (reader.MoveToNextAttribute());
 
             reader.MoveToElement();
 

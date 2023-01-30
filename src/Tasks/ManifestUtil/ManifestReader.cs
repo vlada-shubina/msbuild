@@ -227,7 +227,8 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
             do
             {
                 r.Read();
-            } while (r.NodeType != XmlNodeType.Element);
+            }
+            while (r.NodeType != XmlNodeType.Element);
             string ns = typeof(Util).Namespace;
             string tn = String.Format(CultureInfo.InvariantCulture, "{0}.{1}", ns, r.Name);
             Type t = Type.GetType(tn);

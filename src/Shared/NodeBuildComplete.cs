@@ -39,8 +39,7 @@ namespace Microsoft.Build.BackEnd
         public bool PrepareForReuse
         {
             [DebuggerStepThrough]
-            get
-            { return _prepareForReuse; }
+            get { return _prepareForReuse; }
         }
 
         #region INodePacket Members
@@ -51,8 +50,7 @@ namespace Microsoft.Build.BackEnd
         public NodePacketType Type
         {
             [DebuggerStepThrough]
-            get
-            { return NodePacketType.NodeBuildComplete; }
+            get { return NodePacketType.NodeBuildComplete; }
         }
 
         #endregion

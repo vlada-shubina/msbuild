@@ -26,7 +26,8 @@ namespace Microsoft.Build.UnitTests
         [Fact]
         public void ErrorPosition()
         {
-            string[,] tests = {
+            string[,] tests =
+            {
                 { "1==1.1.",                "7",    "AllowAll"},              // Position of second '.'
                 { "1==0xFG",                "7",    "AllowAll"},              // Position of G
                 { "1==-0xF",                "6",    "AllowAll"},              // Position of x

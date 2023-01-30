@@ -21,7 +21,9 @@ namespace Microsoft.Build.UnitTests
             AssignTargetPath t = new AssignTargetPath();
             t.BuildEngine = new MockEngine();
             t.Files = new ITaskItem[]
-                          { new TaskItem(NativeMethodsShared.IsWindows ? @"c:\bin2\abc.efg" : "/bin2/abc.efg") };
+                          {
+                                new TaskItem(NativeMethodsShared.IsWindows ? @"c:\bin2\abc.efg" : "/bin2/abc.efg")
+                            };
             t.RootFolder = NativeMethodsShared.IsWindows ? @"c:\bin" : "/bin";
 
             t.Execute().ShouldBeTrue();
@@ -36,7 +38,9 @@ namespace Microsoft.Build.UnitTests
             AssignTargetPath t = new AssignTargetPath();
             t.BuildEngine = new MockEngine();
             t.Files = new ITaskItem[]
-                          { new TaskItem(NativeMethodsShared.IsWindows ? @"c:\f1\f2\file.txt" : "/f1/f2/file.txt") };
+                          {
+                                new TaskItem(NativeMethodsShared.IsWindows ? @"c:\f1\f2\file.txt" : "/f1/f2/file.txt")
+                            };
             t.RootFolder = NativeMethodsShared.IsWindows ? @"c:\f1\f2" : "/f1/f2";
 
             t.Execute().ShouldBeTrue();

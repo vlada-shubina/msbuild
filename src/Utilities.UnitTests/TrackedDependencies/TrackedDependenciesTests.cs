@@ -300,7 +300,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "oNe.h")),
@@ -631,7 +632,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
 
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
             // Primary Source; not appearing in this Tlog..
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 Path.GetFullPath(Path.Combine("TestFiles", "foo.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "foo.h")),
@@ -668,7 +670,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -706,7 +709,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -714,7 +718,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "one3.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
@@ -766,7 +771,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -777,7 +783,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "two2.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
@@ -835,7 +842,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.tlh"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.tli"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -846,7 +854,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "one3.tli")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -906,7 +915,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
 
             string rootingMarker = Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")) + "|" + Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")) + "|" + Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"));
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + rootingMarker,
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -917,7 +927,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "one3.tli")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + rootingMarker,
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -979,7 +990,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             string rootingMarker2 = Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")) + "|" + Path.GetFullPath(Path.Combine("TestFiles", "three.cpp"));
             string rootingMarker3 = Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"));
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + rootingMarker1.ToUpperInvariant(),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1025,7 +1037,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             string rootingMarker2 = Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")) + "|" + Path.GetFullPath(Path.Combine("TestFiles", "three.cpp"));
             string rootingMarker3 = Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"));
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + rootingMarker1.ToUpperInvariant(),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1064,7 +1077,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1130,7 +1144,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two.obj"), "");
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1141,7 +1156,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "one2.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
@@ -1190,7 +1206,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1259,7 +1276,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two.obj"), "");
 
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1280,12 +1298,14 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             CanonicalTrackedInputFiles d = new CanonicalTrackedInputFiles(
                     DependencyTestHelper.MockTask,
                     DependencyTestHelper.ItemArray(new TaskItem(Path.Combine("TestFiles", "one.tlog"))),
-                    new ITaskItem[] {
+                    new ITaskItem[]
+                    {
                         new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                         new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                         },
                     null,
-                    new ITaskItem[] {
+                    new ITaskItem[]
+                    {
                         new TaskItem(Path.Combine("TestFiles", "one.obj")),
                         new TaskItem(Path.Combine("TestFiles", "two.obj")),
                         },
@@ -1324,7 +1344,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two.obj"), "");
 
                 Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-                File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+                File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+                {
                     "#Command some-command",
                     "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                     Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1345,12 +1366,14 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 CanonicalTrackedInputFiles d = new CanonicalTrackedInputFiles(
                         DependencyTestHelper.MockTask,
                         DependencyTestHelper.ItemArray(new TaskItem(Path.Combine("TestFiles", "one.tlog"))),
-                        new ITaskItem[] {
+                        new ITaskItem[]
+                        {
                             new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                             new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                             },
                         null,
-                        new ITaskItem[] {
+                        new ITaskItem[]
+                        {
                             new TaskItem(Path.Combine("TestFiles", "one.obj")),
                             new TaskItem(Path.Combine("TestFiles", "two.obj")),
                             },
@@ -1386,7 +1409,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two.obj"), "");
 
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1405,12 +1429,14 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             CanonicalTrackedInputFiles d = new CanonicalTrackedInputFiles(
                     DependencyTestHelper.MockTask,
                     DependencyTestHelper.ItemArray(new TaskItem(Path.Combine("TestFiles", "one.tlog"))),
-                    new ITaskItem[] {
+                    new ITaskItem[]
+                    {
                         new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                         new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                         },
                     null,
-                    new ITaskItem[] {
+                    new ITaskItem[]
+                    {
                         new TaskItem(Path.Combine("TestFiles", "one.obj")),
                         new TaskItem(Path.Combine("TestFiles", "two.obj")),
                         },
@@ -1435,7 +1461,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1475,7 +1502,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1518,7 +1546,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two.cpp"), "");
 
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1558,13 +1587,15 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one2.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one2.tlog"), new[]
+            {
                 "#Command some-command1",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one2.h")),
@@ -1575,7 +1606,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one1.h"), "");
 
-            ITaskItem[] tlogs = {
+            ITaskItem[] tlogs =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog"))
                                 };
@@ -1606,13 +1638,15 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[]
+            {
                 "#Command some-command",
                 Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one2.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one2.tlog"), new[]
+            {
                 "#Command some-command1",
                 Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one2.h")),
@@ -1623,7 +1657,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one2.h"), "");
 
-            ITaskItem[] tlogs = {
+            ITaskItem[] tlogs =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog"))
                                 };
@@ -1652,7 +1687,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.h")),
@@ -1688,13 +1724,15 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one2.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one2.tlog"), new[]
+            {
                 "#Command some-command1",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one2.h")),
@@ -1705,7 +1743,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one1.h"), "");
 
-            ITaskItem[] tlogs = {
+            ITaskItem[] tlogs =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog"))
                                 };
@@ -1741,7 +1780,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two.cpp"), "");
 
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1755,7 +1795,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two2.h"), "");
 
-            ITaskItem[] tlogs = {
+            ITaskItem[] tlogs =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog"))
                                 };
@@ -1791,7 +1832,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two.cpp"), "");
 
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -1805,7 +1847,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two2.h"), "");
 
-            ITaskItem[] tlogs = {
+            ITaskItem[] tlogs =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog"))
                                 };
 
@@ -1834,13 +1877,15 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one2.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one2.tlog"), new[]
+            {
                 "#Command some-command1",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one2.h")),
@@ -1851,7 +1896,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one2.h"), "");
 
-            ITaskItem[] tlogs = {
+            ITaskItem[] tlogs =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog"))
                                 };
@@ -1877,7 +1923,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Console.WriteLine("Test: OutputSingleCanonicalCL");
             // Prepare files
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "oNe.obj")),
@@ -1898,19 +1945,22 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Console.WriteLine("Test: OutputSingleCanonicalCLAcrossTlogs");
             // Prepare files
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "oNe.obj")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "two.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "two.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.pch")),
             });
 
-            ITaskItem[] tlogs = {
+            ITaskItem[] tlogs =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "two.tlog"))
                                 };
@@ -1946,14 +1996,17 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
         {
             Console.WriteLine("Test: OutputMultipleCanonicalCL");
 
-            ITaskItem[] sources = {
+            ITaskItem[] sources =
+            {
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"))),
-                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp"))) };
+                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")))
+            };
 
             // Prepare files
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + FileTracker.FormatRootingMarker(sources),
                 Path.GetFullPath(Path.Combine("TestFiles", "oNe.obj")),
@@ -1978,20 +2031,25 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Console.WriteLine("Test: OutputMultipleCanonicalCLSubrootMatch");
 
             // sources is a subset of source2
-            ITaskItem[] sources = {
+            ITaskItem[] sources =
+            {
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"))),
-                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp"))) };
-            ITaskItem[] sources2 = {
+                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")))
+            };
+            ITaskItem[] sources2 =
+            {
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "four.cpp"))),
-                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "five.cpp"))) };
+                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "five.cpp")))
+            };
 
             // Prepare files
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + FileTracker.FormatRootingMarker(sources),
                 Path.GetFullPath(Path.Combine("TestFiles", "oNe.obj")),
@@ -2056,31 +2114,40 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Console.WriteLine("Test: OutputMultipleCanonicalCLSubrootMisMatch");
 
             // sources is NOT a subset of source
-            ITaskItem[] sources = {
+            ITaskItem[] sources =
+            {
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"))),
-                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp"))) };
-            ITaskItem[] sources2 = {
+                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")))
+            };
+            ITaskItem[] sources2 =
+            {
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "four.cpp"))),
-                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "five.cpp"))) };
-            ITaskItem[] sources2Match = {
+                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "five.cpp")))
+            };
+            ITaskItem[] sources2Match =
+            {
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "four.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"))),
-                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "five.cpp"))) };
-            ITaskItem[] sourcesPlusOne = {
+                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "five.cpp")))
+            };
+            ITaskItem[] sourcesPlusOne =
+            {
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "eight.cpp"))),
-                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp"))) };
+                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")))
+            };
 
             // Do note sources2Match and source2 is missing three.cpp.  It is to test if the RootContainsAllSubRootComponents can handle the case. 
 
             // Prepare files
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + FileTracker.FormatRootingMarker(sources),
                 Path.GetFullPath(Path.Combine("TestFiles", "oNe.obj")),
@@ -2132,10 +2199,12 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
         {
             Console.WriteLine("Test: OutputMultipleCanonicalCLLongTempPath");
 
-            ITaskItem[] sources = {
+            ITaskItem[] sources =
+            {
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"))),
-                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp"))) };
+                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")))
+            };
 
             string oldTempPath = Environment.GetEnvironmentVariable("TEMP");
             string oldTmpPath = Environment.GetEnvironmentVariable("TMP");
@@ -2149,7 +2218,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
 
             // Prepare files
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + FileTracker.FormatRootingMarker(sources),
                 Path.GetFullPath(Path.Combine("TestFiles", "oNe.obj")),
@@ -2176,27 +2246,32 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
         {
             Console.WriteLine("Test: OutputMultipleCanonicalCLAcrossTLogs");
 
-            ITaskItem[] sources = {
+            ITaskItem[] sources =
+            {
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"))),
-                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp"))) };
+                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")))
+            };
 
             // Prepare files
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + FileTracker.FormatRootingMarker(sources),
                 Path.GetFullPath(Path.Combine("TestFiles", "oNe.obj")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "two.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "two.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + FileTracker.FormatRootingMarker(sources),
                 Path.GetFullPath(Path.Combine("TestFiles", "two.obj")),
                 Path.GetFullPath(Path.Combine("TestFiles", "three.obj")),
             });
 
-            ITaskItem[] tlogs = {
+            ITaskItem[] tlogs =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "two.tlog"))
                                 };
@@ -2217,14 +2292,17 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
         {
             Console.WriteLine("Test: OutputMultipleSingleSubRootCanonicalCL");
 
-            ITaskItem[] sources = {
+            ITaskItem[] sources =
+            {
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"))),
-                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp"))) };
+                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")))
+            };
 
             // Prepare files
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + FileTracker.FormatRootingMarker(sources),
                 Path.GetFullPath(Path.Combine("TestFiles", "oNe.obj")),
@@ -2250,7 +2328,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
 
             // Prepare files
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")) + "|" + Path.GetFullPath(Path.Combine("TestFiles", "two.cpp")) + "|" + Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "oNe.obj")),
@@ -2283,7 +2362,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two.obj"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "three.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -2300,7 +2380,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             });
 
             // Our source files
-            ITaskItem[] sources = {
+            ITaskItem[] sources =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "three.cpp")),
@@ -2309,7 +2390,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             // Prepare write tlog
             // This includes individual output information for each root
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "two.cpp")),
@@ -2381,7 +2463,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two.obj"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "three.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -2398,14 +2481,16 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             });
 
             // Our source files
-            ITaskItem[] sources = {
+            ITaskItem[] sources =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "three.cpp")),
                                 };
 
             // Prepare write tlog
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + FileTracker.FormatRootingMarker(sources),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
@@ -2481,7 +2566,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two.obj"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "three.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")).ToUpperInvariant(),
@@ -2498,14 +2584,16 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             });
 
             // Our source files
-            ITaskItem[] sources = {
+            ITaskItem[] sources =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "three.cpp")),
                                 };
 
             // Prepare write tlog
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
@@ -2579,7 +2667,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
 
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")).ToUpperInvariant(),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")).ToUpperInvariant(),
@@ -2596,14 +2685,16 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             });
 
             // Our source files
-            ITaskItem[] sources = {
+            ITaskItem[] sources =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "three.cpp")),
                                 };
 
             // Prepare write tlog
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")).ToUpperInvariant(),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")).ToUpperInvariant(),
@@ -2648,20 +2739,23 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "two.obj"), "");
 
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one1.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one2.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one2.tlog"), new[]
+            {
                 "#Command some-command1",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one2.h")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one3.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "two1.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "two1.tlog"), new[]
+            {
                 "#Command some-command2",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "two.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "two2.h")),
@@ -2672,7 +2766,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one2.h"), "");
 
-            ITaskItem[] tlogs = {
+            ITaskItem[] tlogs =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "two1.tlog"))
@@ -2715,7 +2810,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Assert.True(outofdate.Length == 1);
             Assert.True(outofdate[0].ItemSpec == Path.Combine("TestFiles", "one.cpp"));
 
-            ITaskItem[] tlogs2 = {
+            ITaskItem[] tlogs2 =
+            {
                                     tlogs[0]
                                  };
 
@@ -2758,16 +2854,19 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Console.WriteLine("Test: SaveCompactedWriteTlog");
             TaskItem fooItem = new TaskItem("foo");
 
-            ITaskItem[] sources = {
+            ITaskItem[] sources =
+            {
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "one.cpp"))),
                                     new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "two.cpp"))),
-                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp"))) };
+                                    new TaskItem(Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")))
+            };
 
             string rootMarker = FileTracker.FormatRootingMarker(sources);
 
             // Prepare files
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + rootMarker,
                 Path.GetFullPath(Path.Combine("TestFiles", "oNe.obj")),
@@ -2776,7 +2875,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "bar1.baz")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "two.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "two.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + rootMarker,
                 Path.GetFullPath(Path.Combine("TestFiles", "two.obj")),
@@ -2786,7 +2886,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "bar2.baz")),
             });
 
-            ITaskItem[] tlogs = {
+            ITaskItem[] tlogs =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "two.tlog"))
                                 };
@@ -2819,7 +2920,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Assert.True(Microsoft.Build.Utilities.TrackedDependencies.ItemsExist(tlogs));
 
             // All log information should now be in the tlog[0]
-            ITaskItem[] tlogs2 = {
+            ITaskItem[] tlogs2 =
+            {
                                     tlogs[0]
                                  };
 
@@ -2878,33 +2980,38 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "twothree.obj"), "");
 
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one1.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one1.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one2.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one2.read.tlog"), new[]
+            {
                 "#Command some-command1",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one2.h")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one3.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "two1.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "two1.read.tlog"), new[]
+            {
                 "#Command some-command2",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "two.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "two2.h")),
                 Path.GetFullPath(Path.Combine("TestFiles", "two3.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "three1.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "three1.read.tlog"), new[]
+            {
                 "#Command some-command2",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "three1.h"))
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "twothree.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "twothree.read.tlog"), new[]
+            {
                 "#Command some-command2",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "three.cpp")) + "|" + Path.GetFullPath(Path.Combine("TestFiles", "two.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "two2.h")),
@@ -2913,7 +3020,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "three2.h"))
             });
 
-            ITaskItem[] tlogs = {
+            ITaskItem[] tlogs =
+            {
                                     new TaskItem(Path.Combine("TestFiles", "one1.read.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.read.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "two1.read.tlog")),
@@ -2921,13 +3029,15 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                                     new TaskItem(Path.Combine("TestFiles", "twothree.read.tlog"))
                                 };
 
-            ITaskItem[] inputs = {
+            ITaskItem[] inputs =
+            {
                                      new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                                      new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                                      new TaskItem(Path.Combine("TestFiles", "three.cpp"))
                                  };
 
-            ITaskItem[] outputs = {
+            ITaskItem[] outputs =
+            {
                                       new TaskItem(Path.Combine("TestFiles", "one.obj")),
                                       new TaskItem(Path.Combine("TestFiles", "twothree.obj"))
                                   };
@@ -3071,7 +3181,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Thread.Sleep(_sleepTimeMilliseconds);
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -3082,7 +3193,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "two2.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
@@ -3112,7 +3224,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Thread.Sleep(_sleepTimeMilliseconds);
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -3123,7 +3236,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "two2.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
@@ -3152,7 +3266,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             Thread.Sleep(_sleepTimeMilliseconds);
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.obj"), "");
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -3161,7 +3276,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "two.cpp")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
@@ -3207,7 +3323,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
             Thread.Sleep(_sleepTimeMilliseconds);
             // Prepare files
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -3232,7 +3349,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
         public void FlatTrackingDataInputNewerThanTracking()
         {
             Console.WriteLine("Test: FlatTrackingDataInputNewerThanTracking");
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -3241,7 +3359,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "two.cpp")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
@@ -3291,7 +3410,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
 
             Thread.Sleep(_sleepTimeMilliseconds);
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -3317,7 +3437,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
         public void FlatTrackingDataInputNewerThanOutput()
         {
             Console.WriteLine("Test: FlatTrackingDataInputOrOutputNewerThanTracking");
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -3325,7 +3446,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "one3.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
@@ -3373,7 +3495,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
         public void FlatTrackingDataInputOrOutputNewerThanTracking()
         {
             Console.WriteLine("Test: FlatTrackingDataInputOrOutputNewerThanTracking");
-            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.read.tlog"), new[]
+            {
                 "#Command some-command",
                 Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -3381,7 +3504,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                 Path.GetFullPath(Path.Combine("TestFiles", "one3.h")),
             });
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),
@@ -3443,7 +3567,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.h"), "");
             DependencyTestHelper.WriteAll(Path.Combine("TestFiles", "one.cpp"), "");
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.tlog"), new[]
+            {
                 "#Command some-command",
                 Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one1.h")),
@@ -3490,7 +3615,8 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
         {
             Console.WriteLine("Test: FlatTrackingDataCacheResetOnTlogChange");
 
-            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[] {
+            File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
+            {
                 "#Command some-command",
                 "^" + Path.GetFullPath(Path.Combine("TestFiles", "one.cpp")),
                 Path.GetFullPath(Path.Combine("TestFiles", "one.obj")),

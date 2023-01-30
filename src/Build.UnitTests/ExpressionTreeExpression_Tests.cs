@@ -165,7 +165,8 @@ namespace Microsoft.Build.UnitTests
             "'1" + new String('0', 500) + "'=='" + "1" + new String('0', 500) + "'" /* too big for double, eval as string */
         }.Select(s => new[] { s });
 
-        public static readonly IEnumerable<object[]> FalseTests = new[] {
+        public static readonly IEnumerable<object[]> FalseTests = new[]
+        {
             "false and SHOULDNOTEVALTHIS", // short circuit
             "$(a)!=no",
             "$(b)==1.1",
@@ -222,7 +223,8 @@ namespace Microsoft.Build.UnitTests
             "'1" + new String('0', 500) + "'=='01" + new String('0', 500) + "'" /* too big for double, eval as string */
         }.Select(s => new[] { s });
 
-        public static readonly IEnumerable<object[]> ErrorTests = new[] {
+        public static readonly IEnumerable<object[]> ErrorTests = new[]
+        {
             "$",
             "$(",
             "$()",

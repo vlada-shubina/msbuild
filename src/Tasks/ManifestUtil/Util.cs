@@ -103,7 +103,8 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
                 bytesRead = input.Read(buffer, 0, bufferSize);
                 output.Write(buffer, 0, bytesRead);
                 bytesCopied += bytesRead;
-            } while (bytesRead > 0);
+            }
+            while (bytesRead > 0);
             output.Flush();
             input.Position = 0;
             output.Position = 0;

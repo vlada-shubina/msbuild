@@ -63,7 +63,8 @@ namespace Microsoft.Build.Engine.UnitTests.BackEnd
             _logger.BuildMessageEvents.Select(i => i.Message).ShouldContain("MockSdkResolverWithResolvableSdkPattern2 running");
 
             // First error is a generic "we failed" message.
-            _logger.Errors[0].Message.ShouldBe(ResourceUtilities.FormatResourceStringIgnoreCodeAndKeyword("FailedToResolveSDK", "notfound", string.Join($"{Environment.NewLine}  ", new[] {
+            _logger.Errors[0].Message.ShouldBe(ResourceUtilities.FormatResourceStringIgnoreCodeAndKeyword("FailedToResolveSDK", "notfound", string.Join($"{Environment.NewLine}  ", new[]
+            {
                 "ERROR4",
                 ResourceUtilities.FormatResourceStringStripCodeAndKeyword("SDKResolverReturnedNull", "MockResolverReturnsNull"),
                 "ERROR1",
@@ -301,7 +302,8 @@ namespace Microsoft.Build.Engine.UnitTests.BackEnd
 
             itemsToAdd = new Dictionary<string, SdkResultItem>(StringComparer.OrdinalIgnoreCase)
                 {
-                    { "ItemNameFromSdkResolver", new SdkResultItem( "ItemValueFromSdkResolver",
+                    {
+                        "ItemNameFromSdkResolver", new SdkResultItem( "ItemValueFromSdkResolver",
                         new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                         {
                             { "MetadataName", "MetadataValue" }

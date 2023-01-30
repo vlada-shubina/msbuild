@@ -506,7 +506,8 @@ namespace Microsoft.Build.Experimental
 
             try
             {
-                string[] msBuildServerOptions = new string[] {
+                string[] msBuildServerOptions = new string[]
+                {
                     "/nologo",
                     "/nodemode:8"
                 };

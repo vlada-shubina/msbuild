@@ -142,8 +142,7 @@ namespace Microsoft.Build.BackEnd
         public NodePacketType Type
         {
             [DebuggerStepThrough]
-            get
-            { return NodePacketType.BuildRequestBlocker; }
+            get { return NodePacketType.BuildRequestBlocker; }
         }
 
         /// <summary>

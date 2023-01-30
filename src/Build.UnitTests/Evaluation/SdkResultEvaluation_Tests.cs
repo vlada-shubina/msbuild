@@ -63,7 +63,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             itemsToAdd = new Dictionary<string, SdkResultItem>(StringComparer.OrdinalIgnoreCase)
                 {
-                    { "ItemNameFromSdkResolver", new SdkResultItem( "ItemValueFromSdkResolver",
+                    {
+                        "ItemNameFromSdkResolver", new SdkResultItem( "ItemValueFromSdkResolver",
                         new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                         {
                             { "MetadataName", "MetadataValue" }
@@ -249,7 +250,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
             var projectOptions = SdkUtilities.CreateProjectOptionsWithResolver(new SdkUtilities.ConfigurableMockSdkResolver(
                 new Build.BackEnd.SdkResolution.SdkResult(
                         new SdkReference("TestPropsAndItemsFromResolverSdk", null, null),
-                        new[] {
+                        new[]
+                        {
                             Path.Combine(_testFolder, "Sdk1"),
                             Path.Combine(_testFolder, "Sdk2")
                         },

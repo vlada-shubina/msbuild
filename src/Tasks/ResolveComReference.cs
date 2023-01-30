@@ -1432,7 +1432,8 @@ namespace Microsoft.Build.Tasks
         #region VerifyReferenceMetadataForNameItem required metadata
 
         // Metadata required on a valid Com reference item
-        private static readonly string[] s_requiredMetadataForNameItem = {
+        private static readonly string[] s_requiredMetadataForNameItem =
+        {
             ComReferenceItemMetadataNames.guid,
             ComReferenceItemMetadataNames.versionMajor,
             ComReferenceItemMetadataNames.versionMinor

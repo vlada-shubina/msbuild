@@ -70,8 +70,7 @@ namespace Microsoft.Build.BackEnd.Logging
         public ILoggingService LoggingService
         {
             [DebuggerStepThrough]
-            get
-            { return _loggingService; }
+            get { return _loggingService; }
         }
 
         /// <summary>

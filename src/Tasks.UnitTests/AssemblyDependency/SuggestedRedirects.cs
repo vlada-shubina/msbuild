@@ -93,11 +93,13 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             MockEngine engine = new MockEngine(_output);
             t.BuildEngine = engine;
 
-            t.Assemblies = new ITaskItem[] {
+            t.Assemblies = new ITaskItem[]
+            {
                 new TaskItem("A"), new TaskItem("B")
             };
 
-            t.SearchPaths = new string[] {
+            t.SearchPaths = new string[]
+            {
                 s_myLibrariesRootPath, s_myLibraries_V1Path, s_myLibraries_V2Path
             };
 
@@ -143,11 +145,13 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             t.BuildEngine = engine;
             t.AutoUnify = true;
 
-            t.Assemblies = new ITaskItem[] {
+            t.Assemblies = new ITaskItem[]
+            {
                 new TaskItem("A"), new TaskItem("B")
             };
 
-            t.SearchPaths = new string[] {
+            t.SearchPaths = new string[]
+            {
                 s_myLibrariesRootPath, s_myLibraries_V1Path, s_myLibraries_V2Path
             };
 

@@ -133,7 +133,8 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
                 do
                 {
                     nextCollectionId++;
-                } while (nextCollectionId == 0 || collections.ContainsKey(nextCollectionId));
+                }
+                while (nextCollectionId == 0 || collections.ContainsKey(nextCollectionId));
                 var result = new LinkedObjectsMap<KeyType>(nextCollectionId);
                 collections[nextCollectionId] = result;
                 return result;

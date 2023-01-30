@@ -221,8 +221,7 @@ namespace Microsoft.Build.BackEnd
         public int NodeId
         {
             [DebuggerStepThrough]
-            get
-            { return _nodeId; }
+            get { return _nodeId; }
         }
 
         /// <summary>
@@ -231,8 +230,7 @@ namespace Microsoft.Build.BackEnd
         public string StartupDirectory
         {
             [DebuggerStepThrough]
-            get
-            { return _startupDirectory; }
+            get { return _startupDirectory; }
         }
 
         /// <summary>
@@ -241,8 +239,7 @@ namespace Microsoft.Build.BackEnd
         public Dictionary<string, string> BuildProcessEnvironment
         {
             [DebuggerStepThrough]
-            get
-            { return _buildProcessEnvironment; }
+            get { return _buildProcessEnvironment; }
         }
 
         /// <summary>
@@ -251,8 +248,7 @@ namespace Microsoft.Build.BackEnd
         public CultureInfo Culture
         {
             [DebuggerStepThrough]
-            get
-            { return _culture; }
+            get { return _culture; }
         }
 
         /// <summary>
@@ -261,8 +257,7 @@ namespace Microsoft.Build.BackEnd
         public CultureInfo UICulture
         {
             [DebuggerStepThrough]
-            get
-            { return _uiCulture; }
+            get { return _uiCulture; }
         }
 
 #if FEATURE_APPDOMAIN
@@ -273,8 +268,7 @@ namespace Microsoft.Build.BackEnd
         public AppDomainSetup AppDomainSetup
         {
             [DebuggerStepThrough]
-            get
-            { return _appDomainSetup; }
+            get { return _appDomainSetup; }
         }
 #endif
 
@@ -284,8 +278,7 @@ namespace Microsoft.Build.BackEnd
         public int LineNumberOfTask
         {
             [DebuggerStepThrough]
-            get
-            { return _lineNumberOfTask; }
+            get { return _lineNumberOfTask; }
         }
 
         /// <summary>
@@ -294,8 +287,7 @@ namespace Microsoft.Build.BackEnd
         public int ColumnNumberOfTask
         {
             [DebuggerStepThrough]
-            get
-            { return _columnNumberOfTask; }
+            get { return _columnNumberOfTask; }
         }
 
         /// <summary>
@@ -304,8 +296,7 @@ namespace Microsoft.Build.BackEnd
         public bool ContinueOnError
         {
             [DebuggerStepThrough]
-            get
-            { return _continueOnError; }
+            get { return _continueOnError; }
         }
 
         /// <summary>
@@ -314,8 +305,7 @@ namespace Microsoft.Build.BackEnd
         public string ProjectFileOfTask
         {
             [DebuggerStepThrough]
-            get
-            { return _projectFileOfTask; }
+            get { return _projectFileOfTask; }
         }
 
         /// <summary>
@@ -324,8 +314,7 @@ namespace Microsoft.Build.BackEnd
         public string TaskName
         {
             [DebuggerStepThrough]
-            get
-            { return _taskName; }
+            get { return _taskName; }
         }
 
         /// <summary>
@@ -334,8 +323,7 @@ namespace Microsoft.Build.BackEnd
         public string TaskLocation
         {
             [DebuggerStepThrough]
-            get
-            { return _taskLocation; }
+            get { return _taskLocation; }
         }
 
         /// <summary>
@@ -344,8 +332,7 @@ namespace Microsoft.Build.BackEnd
         public bool IsTaskInputLoggingEnabled
         {
             [DebuggerStepThrough]
-            get
-            { return _isTaskInputLoggingEnabled; }
+            get { return _isTaskInputLoggingEnabled; }
         }
 
         /// <summary>
@@ -354,8 +341,7 @@ namespace Microsoft.Build.BackEnd
         public Dictionary<string, TaskParameter> TaskParameters
         {
             [DebuggerStepThrough]
-            get
-            { return _taskParameters; }
+            get { return _taskParameters; }
         }
 
         /// <summary>
@@ -364,8 +350,7 @@ namespace Microsoft.Build.BackEnd
         public Dictionary<string, string> GlobalProperties
         {
             [DebuggerStepThrough]
-            get
-            { return _globalParameters; }
+            get { return _globalParameters; }
         }
 
         /// <summary>
@@ -374,8 +359,7 @@ namespace Microsoft.Build.BackEnd
         public NodePacketType Type
         {
             [DebuggerStepThrough]
-            get
-            { return NodePacketType.TaskHostConfiguration; }
+            get { return NodePacketType.TaskHostConfiguration; }
         }
 
         public ICollection<string> WarningsAsErrors

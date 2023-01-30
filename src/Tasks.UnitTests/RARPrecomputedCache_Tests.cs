@@ -26,9 +26,11 @@ namespace Microsoft.Build.Tasks.UnitTests
                 {
                     _cache = new SystemState()
                 };
-                t._cache.instanceLocalFileStateCache = new Dictionary<string, SystemState.FileState>() {
+                t._cache.instanceLocalFileStateCache = new Dictionary<string, SystemState.FileState>()
+                {
                     { Path.Combine(standardCache.Path, "assembly1"), new SystemState.FileState(DateTime.Now) },
-                    { Path.Combine(standardCache.Path, "assembly2"), new SystemState.FileState(DateTime.Now) { Assembly = new Shared.AssemblyNameExtension("hi") } } };
+                    { Path.Combine(standardCache.Path, "assembly2"), new SystemState.FileState(DateTime.Now) { Assembly = new Shared.AssemblyNameExtension("hi") } }
+                };
                 t._cache.IsDirty = true;
                 t.StateFile = standardCache.Path;
                 t.WriteStateFile();
@@ -105,14 +107,20 @@ namespace Microsoft.Build.Tasks.UnitTests
                     _cache = new SystemState()
                 };
                 string dllName = Path.Combine(Path.GetDirectoryName(precomputedCache.Path), "randomFolder", "dll.dll");
-                rarWriterTask._cache.instanceLocalFileStateCache = new Dictionary<string, SystemState.FileState>() {
+                rarWriterTask._cache.instanceLocalFileStateCache = new Dictionary<string, SystemState.FileState>()
+                {
                     { Path.Combine(precomputedCache.Path, "..", "assembly1", "assembly1"), new SystemState.FileState(DateTime.Now) },
                     { Path.Combine(precomputedCache.Path, "assembly2"), new SystemState.FileState(DateTime.Now) { Assembly = new Shared.AssemblyNameExtension("hi") } },
-                    { dllName, new SystemState.FileState(DateTime.Now) {
+                    {
+                        dllName, new SystemState.FileState(DateTime.Now)
+                    {
                         Assembly = null,
                         RuntimeVersion = "v4.0.30319",
                         FrameworkNameAttribute = new System.Runtime.Versioning.FrameworkName(".NETFramework", Version.Parse("4.7.2"), "Profile"),
-                        scatterFiles = new string[] { "first", "second" } } } };
+                        scatterFiles = new string[] { "first", "second" }
+                    }
+                    }
+                };
 
                 rarWriterTask.AssemblyInformationCacheOutputPath = precomputedCache.Path;
                 rarWriterTask._cache.IsDirty = true;

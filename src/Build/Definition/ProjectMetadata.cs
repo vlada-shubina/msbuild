@@ -88,8 +88,7 @@ namespace Microsoft.Build.Evaluation
         public string Name
         {
             [DebuggerStepThrough]
-            get
-            { return _xml.Name; }
+            get { return _xml.Name; }
         }
 
         /// <summary>
@@ -100,8 +99,7 @@ namespace Microsoft.Build.Evaluation
         public string EvaluatedValue
         {
             [DebuggerStepThrough]
-            get
-            { return EscapingUtilities.UnescapeAll(EvaluatedValueEscaped); }
+            get { return EscapingUtilities.UnescapeAll(EvaluatedValueEscaped); }
         }
 
         /// <summary>
@@ -164,8 +162,7 @@ namespace Microsoft.Build.Evaluation
         public ProjectMetadataElement Xml
         {
             [DebuggerStepThrough]
-            get
-            { return _xml; }
+            get { return _xml; }
         }
 
         /// <summary>
@@ -175,8 +172,7 @@ namespace Microsoft.Build.Evaluation
         public Project Project
         {
             [DebuggerStepThrough]
-            get
-            { return _parent.Project; }
+            get { return _parent.Project; }
         }
 
         /// <summary>
@@ -199,8 +195,7 @@ namespace Microsoft.Build.Evaluation
         public ProjectMetadata Predecessor
         {
             [DebuggerStepThrough]
-            get
-            { return Link != null ? Link.Predecessor : _predecessor; }
+            get { return Link != null ? Link.Predecessor : _predecessor; }
         }
 
         /// <summary>
@@ -241,8 +236,7 @@ namespace Microsoft.Build.Evaluation
         string IKeyed.Key
         {
             [DebuggerStepThrough]
-            get
-            { return Name; }
+            get { return Name; }
         }
 
         /// <summary>
@@ -252,8 +246,7 @@ namespace Microsoft.Build.Evaluation
         string IValued.EscapedValue
         {
             [DebuggerStepThrough]
-            get
-            { return EvaluatedValueEscaped; }
+            get { return EvaluatedValueEscaped; }
         }
 
         /// <summary>

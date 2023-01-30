@@ -320,7 +320,8 @@ namespace Microsoft.Build.Tasks
 
                     pnProcInfo = pnProcInfoNeeded;
                     rgAffectedApps = new RM_PROCESS_INFO[pnProcInfo];
-                } while ((res == ERROR_MORE_DATA) && (retry++ < maxRetries));
+                }
+                while ((res == ERROR_MORE_DATA) && (retry++ < maxRetries));
             }
             finally
             {

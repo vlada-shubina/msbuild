@@ -1604,7 +1604,8 @@ namespace Microsoft.Build.Tasks
 
                     ++dependencyIterations;
                     ErrorUtilities.VerifyThrow(dependencyIterations < maxIterations, "Maximum iterations exceeded while looking for dependencies.");
-                } while (moreDependencies);
+                }
+                while (moreDependencies);
 
                 // If everything is either resolved or unresolvable, then we can quit.
                 // Otherwise, loop again.
@@ -1623,7 +1624,8 @@ namespace Microsoft.Build.Tasks
 
                 ++moreResolvableIterations;
                 ErrorUtilities.VerifyThrow(moreResolvableIterations < maxIterations, "Maximum iterations exceeded while looking for resolvable references.");
-            } while (moreResolvable);
+            }
+            while (moreResolvable);
         }
 
         /// <summary>

@@ -485,7 +485,8 @@ namespace Microsoft.Build.BackEnd.Logging
         {
             get;
             set;
-        } = null;
+        }
+        = null;
 
         /// <summary>
         /// Get of warnings to not treat as errors. Only has any effect if WarningsAsErrors is empty but not null.
@@ -494,7 +495,8 @@ namespace Microsoft.Build.BackEnd.Logging
         {
             get;
             set;
-        } = null;
+        }
+        = null;
 
         /// <summary>
         /// A list of warnings to treat as low importance messages.
@@ -503,7 +505,8 @@ namespace Microsoft.Build.BackEnd.Logging
         {
             get;
             set;
-        } = null;
+        }
+        = null;
 
         /// <summary>
         /// Should evaluation events include generated metaprojects?
@@ -1296,7 +1299,8 @@ namespace Microsoft.Build.BackEnd.Logging
                         _enqueueEvent.Reset();
                         _emptyQueueEvent.Reset();
                     }
-                } while (!_eventQueue.IsEmpty || !completeAdding.IsCancellationRequested);
+                }
+                while (!_eventQueue.IsEmpty || !completeAdding.IsCancellationRequested);
 
                 _emptyQueueEvent.Set();
             }

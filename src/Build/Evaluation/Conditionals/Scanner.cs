@@ -748,7 +748,8 @@ namespace Microsoft.Build.Evaluation
                     {
                         SkipDigits();
                     }
-                } while (_parsePoint < _expression.Length && _expression[_parsePoint] == '.');
+                }
+                while (_parsePoint < _expression.Length && _expression[_parsePoint] == '.');
                 // Do we need to error on malformed input like 0.00.00)? or will the conversion handle it?
                 // For now, let the conversion generate the error.
                 _lookahead = new Token(Token.TokenType.Numeric, _expression.Substring(start, _parsePoint - start));

@@ -138,11 +138,14 @@ namespace Microsoft.Build.UnitTests
         public void ValidVerbosities()
         {
             string[] verbositySettings = new string[] { "Q", "quiet", "m", "minimal", "N", "normal", "d", "detailed", "diag", "DIAGNOSTIC" };
-            LoggerVerbosity[] verbosityEnumerations = new LoggerVerbosity[] {LoggerVerbosity.Quiet, LoggerVerbosity.Quiet,
+            LoggerVerbosity[] verbosityEnumerations = new LoggerVerbosity[]
+            {
+                LoggerVerbosity.Quiet, LoggerVerbosity.Quiet,
                                                                              LoggerVerbosity.Minimal, LoggerVerbosity.Minimal,
                                                                              LoggerVerbosity.Normal, LoggerVerbosity.Normal,
                                                                              LoggerVerbosity.Detailed, LoggerVerbosity.Detailed,
-                                                                             LoggerVerbosity.Diagnostic, LoggerVerbosity.Diagnostic};
+                                                                             LoggerVerbosity.Diagnostic, LoggerVerbosity.Diagnostic
+            };
             for (int i = 0; i < verbositySettings.Length; i++)
             {
                 FileLogger fl = new FileLogger();

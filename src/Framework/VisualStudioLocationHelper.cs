@@ -71,7 +71,8 @@ namespace Microsoft.Build.Shared
                             instance.GetInstallationPath(),
                             version));
                     }
-                } while (fetched > 0);
+                }
+                while (fetched > 0);
             }
             catch (COMException)
             { }

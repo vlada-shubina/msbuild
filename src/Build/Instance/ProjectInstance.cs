@@ -888,8 +888,7 @@ namespace Microsoft.Build.Execution
         public string Directory
         {
             [DebuggerStepThrough]
-            get
-            { return _directory; }
+            get { return _directory; }
         }
 
         /// <summary>
@@ -909,8 +908,7 @@ namespace Microsoft.Build.Execution
         public IDictionary<string, ProjectItemDefinitionInstance> ItemDefinitions
         {
             [DebuggerStepThrough]
-            get
-            { return _itemDefinitions; }
+            get { return _itemDefinitions; }
         }
 
         /// <summary>
@@ -957,8 +955,7 @@ namespace Microsoft.Build.Execution
         public IDictionary<string, ProjectTargetInstance> Targets
         {
             [DebuggerStepThrough]
-            get
-            { return _targets; }
+            get { return _targets; }
         }
 
         /// <summary>
@@ -996,8 +993,7 @@ namespace Microsoft.Build.Execution
         Toolset IEvaluatorData<ProjectPropertyInstance, ProjectItemInstance, ProjectMetadataInstance, ProjectItemDefinitionInstance>.Toolset
         {
             [DebuggerStepThrough]
-            get
-            { return Toolset; }
+            get { return Toolset; }
         }
 
         /// <summary>
@@ -1007,8 +1003,7 @@ namespace Microsoft.Build.Execution
         string IEvaluatorData<ProjectPropertyInstance, ProjectItemInstance, ProjectMetadataInstance, ProjectItemDefinitionInstance>.SubToolsetVersion
         {
             [DebuggerStepThrough]
-            get
-            { return SubToolsetVersion; }
+            get { return SubToolsetVersion; }
         }
 
         /// <summary>
@@ -1021,8 +1016,7 @@ namespace Microsoft.Build.Execution
         string IEvaluatorData<ProjectPropertyInstance, ProjectItemInstance, ProjectMetadataInstance, ProjectItemDefinitionInstance>.ExplicitToolsVersion
         {
             [DebuggerStepThrough]
-            get
-            { return ExplicitToolsVersion; }
+            get { return ExplicitToolsVersion; }
         }
 
         /// <summary>
@@ -1031,8 +1025,7 @@ namespace Microsoft.Build.Execution
         PropertyDictionary<ProjectPropertyInstance> IEvaluatorData<ProjectPropertyInstance, ProjectItemInstance, ProjectMetadataInstance, ProjectItemDefinitionInstance>.GlobalPropertiesDictionary
         {
             [DebuggerStepThrough]
-            get
-            { return _globalProperties; }
+            get { return _globalProperties; }
         }
 
         PropertyDictionary<ProjectPropertyInstance> IEvaluatorData<ProjectPropertyInstance, ProjectItemInstance, ProjectMetadataInstance, ProjectItemDefinitionInstance>.EnvironmentVariablePropertiesDictionary
@@ -1062,8 +1055,7 @@ namespace Microsoft.Build.Execution
         PropertyDictionary<ProjectPropertyInstance> IEvaluatorData<ProjectPropertyInstance, ProjectItemInstance, ProjectMetadataInstance, ProjectItemDefinitionInstance>.Properties
         {
             [DebuggerStepThrough]
-            get
-            { return _properties; }
+            get { return _properties; }
         }
 
         /// <summary>
@@ -1072,8 +1064,7 @@ namespace Microsoft.Build.Execution
         IEnumerable<ProjectItemDefinitionInstance> IEvaluatorData<ProjectPropertyInstance, ProjectItemInstance, ProjectMetadataInstance, ProjectItemDefinitionInstance>.ItemDefinitionsEnumerable
         {
             [DebuggerStepThrough]
-            get
-            { return _itemDefinitions.Values; }
+            get { return _itemDefinitions.Values; }
         }
 
         /// <summary>
@@ -1082,8 +1073,7 @@ namespace Microsoft.Build.Execution
         ItemDictionary<ProjectItemInstance> IEvaluatorData<ProjectPropertyInstance, ProjectItemInstance, ProjectMetadataInstance, ProjectItemDefinitionInstance>.Items
         {
             [DebuggerStepThrough]
-            get
-            { return _items; }
+            get { return _items; }
         }
 
         /// <summary>
@@ -1184,8 +1174,7 @@ namespace Microsoft.Build.Execution
         internal PropertyDictionary<ProjectPropertyInstance> GlobalPropertiesDictionary
         {
             [DebuggerStepThrough]
-            get
-            { return _globalProperties; }
+            get { return _globalProperties; }
         }
 
         /// <summary>
@@ -1251,8 +1240,7 @@ namespace Microsoft.Build.Execution
         internal PropertyDictionary<ProjectPropertyInstance> PropertiesToBuildWith
         {
             [DebuggerStepThrough]
-            get
-            { return _properties; }
+            get { return _properties; }
         }
 
         internal ICollection<ProjectPropertyInstance> TestEnvironmentalProperties => new ReadOnlyCollection<ProjectPropertyInstance>(_environmentVariableProperties);
@@ -1264,8 +1252,7 @@ namespace Microsoft.Build.Execution
         internal ItemDictionary<ProjectItemInstance> ItemsToBuildWith
         {
             [DebuggerStepThrough]
-            get
-            { return _items; }
+            get { return _items; }
         }
 
         /// <summary>

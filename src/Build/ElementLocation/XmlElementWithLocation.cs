@@ -62,8 +62,7 @@ namespace Microsoft.Build.Construction
         public int LineNumber
         {
             [DebuggerStepThrough]
-            get
-            { return Location.Line; }
+            get { return Location.Line; }
         }
 
         /// <summary>
@@ -73,8 +72,7 @@ namespace Microsoft.Build.Construction
         public int LinePosition
         {
             [DebuggerStepThrough]
-            get
-            { return Location.Column; }
+            get { return Location.Column; }
         }
 
         /// <summary>

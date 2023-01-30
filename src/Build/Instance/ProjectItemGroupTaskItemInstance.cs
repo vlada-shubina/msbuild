@@ -222,8 +222,7 @@ namespace Microsoft.Build.Execution
         public string ItemType
         {
             [DebuggerStepThrough]
-            get
-            { return _itemType; }
+            get { return _itemType; }
         }
 
         /// <summary>
@@ -232,8 +231,7 @@ namespace Microsoft.Build.Execution
         public string Include
         {
             [DebuggerStepThrough]
-            get
-            { return _include; }
+            get { return _include; }
         }
 
         /// <summary>
@@ -242,8 +240,7 @@ namespace Microsoft.Build.Execution
         public string Exclude
         {
             [DebuggerStepThrough]
-            get
-            { return _exclude; }
+            get { return _exclude; }
         }
 
         /// <summary>
@@ -252,8 +249,7 @@ namespace Microsoft.Build.Execution
         public string Remove
         {
             [DebuggerStepThrough]
-            get
-            { return _remove; }
+            get { return _remove; }
         }
 
         /// <summary>
@@ -262,8 +258,7 @@ namespace Microsoft.Build.Execution
         public string MatchOnMetadata
         {
             [DebuggerStepThrough]
-            get
-            { return _matchOnMetadata; }
+            get { return _matchOnMetadata; }
         }
 
         /// <summary>
@@ -272,8 +267,7 @@ namespace Microsoft.Build.Execution
         public string MatchOnMetadataOptions
         {
             [DebuggerStepThrough]
-            get
-            { return _matchOnMetadataOptions; }
+            get { return _matchOnMetadataOptions; }
         }
 
         /// <summary>
@@ -282,8 +276,7 @@ namespace Microsoft.Build.Execution
         public string KeepMetadata
         {
             [DebuggerStepThrough]
-            get
-            { return _keepMetadata; }
+            get { return _keepMetadata; }
         }
 
         /// <summary>
@@ -292,8 +285,7 @@ namespace Microsoft.Build.Execution
         public string RemoveMetadata
         {
             [DebuggerStepThrough]
-            get
-            { return _removeMetadata; }
+            get { return _removeMetadata; }
         }
 
         /// <summary>
@@ -302,8 +294,7 @@ namespace Microsoft.Build.Execution
         public string KeepDuplicates
         {
             [DebuggerStepThrough]
-            get
-            { return _keepDuplicates; }
+            get { return _keepDuplicates; }
         }
 
         /// <summary>
@@ -312,8 +303,7 @@ namespace Microsoft.Build.Execution
         public string Condition
         {
             [DebuggerStepThrough]
-            get
-            { return _condition; }
+            get { return _condition; }
         }
 
         /// <summary>
@@ -337,8 +327,7 @@ namespace Microsoft.Build.Execution
         public ElementLocation Location
         {
             [DebuggerStepThrough]
-            get
-            { return _location; }
+            get { return _location; }
         }
 
         /// <summary>
@@ -347,8 +336,7 @@ namespace Microsoft.Build.Execution
         public ElementLocation IncludeLocation
         {
             [DebuggerStepThrough]
-            get
-            { return _includeLocation; }
+            get { return _includeLocation; }
         }
 
         /// <summary>
@@ -357,8 +345,7 @@ namespace Microsoft.Build.Execution
         public ElementLocation ExcludeLocation
         {
             [DebuggerStepThrough]
-            get
-            { return _excludeLocation; }
+            get { return _excludeLocation; }
         }
 
         /// <summary>
@@ -367,8 +354,7 @@ namespace Microsoft.Build.Execution
         public ElementLocation RemoveLocation
         {
             [DebuggerStepThrough]
-            get
-            { return _removeLocation; }
+            get { return _removeLocation; }
         }
 
         /// <summary>
@@ -377,8 +363,7 @@ namespace Microsoft.Build.Execution
         public ElementLocation MatchOnMetadataLocation
         {
             [DebuggerStepThrough]
-            get
-            { return _matchOnMetadataLocation; }
+            get { return _matchOnMetadataLocation; }
         }
 
         /// <summary>
@@ -387,8 +372,7 @@ namespace Microsoft.Build.Execution
         public ElementLocation MatchOnMetadataOptionsLocation
         {
             [DebuggerStepThrough]
-            get
-            { return _matchOnMetadataOptionsLocation; }
+            get { return _matchOnMetadataOptionsLocation; }
         }
 
         /// <summary>
@@ -397,8 +381,7 @@ namespace Microsoft.Build.Execution
         public ElementLocation KeepMetadataLocation
         {
             [DebuggerStepThrough]
-            get
-            { return _keepMetadataLocation; }
+            get { return _keepMetadataLocation; }
         }
 
         /// <summary>
@@ -407,8 +390,7 @@ namespace Microsoft.Build.Execution
         public ElementLocation RemoveMetadataLocation
         {
             [DebuggerStepThrough]
-            get
-            { return _removeMetadataLocation; }
+            get { return _removeMetadataLocation; }
         }
 
         /// <summary>
@@ -417,8 +399,7 @@ namespace Microsoft.Build.Execution
         public ElementLocation KeepDuplicatesLocation
         {
             [DebuggerStepThrough]
-            get
-            { return _keepDuplicatesLocation; }
+            get { return _keepDuplicatesLocation; }
         }
 
         /// <summary>
@@ -427,8 +408,7 @@ namespace Microsoft.Build.Execution
         public ElementLocation ConditionLocation
         {
             [DebuggerStepThrough]
-            get
-            { return _conditionLocation; }
+            get { return _conditionLocation; }
         }
 
         /// <summary>

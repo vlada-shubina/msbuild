@@ -287,8 +287,7 @@ namespace Microsoft.Build.Shared
                 public override bool IsInvalid
                 {
                     [SecurityCritical]
-                    get
-                    { return IntPtr.Zero == handle; }
+                    get { return IntPtr.Zero == handle; }
                 }
 #if FEATURE_CONSTRAINED_EXECUTION
                 [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]

@@ -907,7 +907,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
         {
             if (path.EndsWith(s_myVersion20Path))
             {
-                string[] paths = new string[] {
+                string[] paths = new string[]
+                {
                     Path.Combine(path, "en"), Path.Combine(path, "en-GB"), Path.Combine(path, "xx")
                 };
 
@@ -916,7 +917,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             else if (String.Equals(path, @".", StringComparison.OrdinalIgnoreCase))
             {
                 // Pretend the current directory has a few subfolders.
-                return new string[] {
+                return new string[]
+                {
                     Path.Combine(path, "en"), Path.Combine(path, "en-GB"), Path.Combine(path, "xx")
                 };
             }

@@ -209,8 +209,7 @@ namespace Microsoft.Build.BackEnd
         public bool IsConfigurationResolved
         {
             [DebuggerStepThrough]
-            get
-            { return _configurationId > 0; }
+            get { return _configurationId > 0; }
         }
 
         /// <summary>
@@ -219,8 +218,7 @@ namespace Microsoft.Build.BackEnd
         public int SubmissionId
         {
             [DebuggerStepThrough]
-            get
-            { return _submissionId; }
+            get { return _submissionId; }
         }
 
         /// <summary>
@@ -229,8 +227,7 @@ namespace Microsoft.Build.BackEnd
         public int ConfigurationId
         {
             [DebuggerStepThrough]
-            get
-            { return _configurationId; }
+            get { return _configurationId; }
         }
 
         /// <summary>
@@ -239,8 +236,7 @@ namespace Microsoft.Build.BackEnd
         public int ProjectContextId
         {
             [DebuggerStepThrough]
-            get
-            { return _projectContextId; }
+            get { return _projectContextId; }
         }
 
         /// <summary>
@@ -267,8 +263,7 @@ namespace Microsoft.Build.BackEnd
         public int ParentGlobalRequestId
         {
             [DebuggerStepThrough]
-            get
-            { return _parentGlobalRequestId; }
+            get { return _parentGlobalRequestId; }
         }
 
         /// <summary>
@@ -277,12 +272,10 @@ namespace Microsoft.Build.BackEnd
         public int NodeRequestId
         {
             [DebuggerStepThrough]
-            get
-            { return _nodeRequestId; }
+            get { return _nodeRequestId; }
 
             [DebuggerStepThrough]
-            set
-            { _nodeRequestId = value; }
+            set { _nodeRequestId = value; }
         }
 
         /// <summary>
@@ -292,8 +285,7 @@ namespace Microsoft.Build.BackEnd
         public List<string> Targets
         {
             [DebuggerStepThrough]
-            get
-            { return _targets; }
+            get { return _targets; }
         }
 
         /// <summary>
@@ -302,8 +294,7 @@ namespace Microsoft.Build.BackEnd
         public ProxyTargets ProxyTargets
         {
             [DebuggerStepThrough]
-            get
-            { return _proxyTargets; }
+            get { return _proxyTargets; }
         }
 
         /// <summary>
@@ -312,8 +303,7 @@ namespace Microsoft.Build.BackEnd
         public NodePacketType Type
         {
             [DebuggerStepThrough]
-            get
-            { return NodePacketType.BuildRequest; }
+            get { return NodePacketType.BuildRequest; }
         }
 
         /// <summary>
@@ -322,8 +312,7 @@ namespace Microsoft.Build.BackEnd
         public BuildEventContext ParentBuildEventContext
         {
             [DebuggerStepThrough]
-            get
-            { return _parentBuildEventContext; }
+            get { return _parentBuildEventContext; }
         }
 
         /// <summary>
@@ -387,8 +376,7 @@ namespace Microsoft.Build.BackEnd
         internal bool IsRootRequest
         {
             [DebuggerStepThrough]
-            get
-            { return _parentGlobalRequestId == InvalidGlobalRequestId; }
+            get { return _parentGlobalRequestId == InvalidGlobalRequestId; }
         }
 
         /// <summary>

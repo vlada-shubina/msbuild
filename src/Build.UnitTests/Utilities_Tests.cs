@@ -100,8 +100,11 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal(
                 MSBuildApp.ExitType.Success,
                 MSBuildApp.Execute(
-                    new[] { @"c:\bin\msbuild.exe", '"' + inputFile.Path + '"',
-                '"' + (NativeMethodsShared.IsUnixLike ? "-pp:" : "/pp:") + outputFile.Path + '"'}));
+                    new[]
+                    {
+                        @"c:\bin\msbuild.exe", '"' + inputFile.Path + '"',
+                '"' + (NativeMethodsShared.IsUnixLike ? "-pp:" : "/pp:") + outputFile.Path + '"'
+                    }));
 #endif
 
             bool foundDoNotModify = false;

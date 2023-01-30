@@ -995,7 +995,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             ResolveAssemblyReference t = new ResolveAssemblyReference();
 
             t.BuildEngine = engine;
-            t.Assemblies = new ITaskItem[] {
+            t.Assemblies = new ITaskItem[]
+            {
                 new TaskItem("System"),
                 new TaskItem("System.Deployment"),
                 new TaskItem("System.Drawing"),
@@ -1175,7 +1176,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             ResolveAssemblyReference t = new ResolveAssemblyReference();
 
             t.BuildEngine = new MockEngine(_output);
-            t.Assemblies = new ITaskItem[] {
+            t.Assemblies = new ITaskItem[]
+            {
                 new TaskItem("System.Xml"), new TaskItem("System.Nonexistent")
             };
             t.SearchPaths = new string[] { Path.GetDirectoryName(typeof(object).Module.FullyQualifiedName), "{AssemblyFolders}", "{HintPathFromItem}", "{RawFileName}" };
@@ -3602,11 +3604,13 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             MockEngine engine = new MockEngine(_output);
             t.BuildEngine = engine;
 
-            t.Assemblies = new ITaskItem[] {
+            t.Assemblies = new ITaskItem[]
+            {
                 new TaskItem("A, Version=2.0.0.0, Culture=Neutral, PublicKeyToken=null"), new TaskItem("C, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=null")
             };
 
-            t.SearchPaths = new string[] {
+            t.SearchPaths = new string[]
+            {
                 s_regress444809RootPath, s_regress444809_V2RootPath
             };
 
@@ -3647,13 +3651,15 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             MockEngine engine = new MockEngine(_output);
             t.BuildEngine = engine;
 
-            t.Assemblies = new ITaskItem[] {
+            t.Assemblies = new ITaskItem[]
+            {
                 new TaskItem("A, Version=20.0.0.0, Culture=Neutral, PublicKeyToken=null"),
                 new TaskItem("B, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=null"),
                 new TaskItem("D, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=null")
             };
 
-            t.SearchPaths = new string[] {
+            t.SearchPaths = new string[]
+            {
                 s_regress444809RootPath, s_regress444809_V2RootPath
             };
 
@@ -3821,7 +3827,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                 new TaskItem("D, Version=2.0.0.0, Culture=neutral, PublicKeyToken=aaaaaaaaaaaaaaaa")
             };
 
-            t.SearchPaths = new string[] {
+            t.SearchPaths = new string[]
+            {
                 s_myLibrariesRootPath, s_myLibraries_V2Path, s_myLibraries_V1Path
             };
 
@@ -3900,7 +3907,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                 new TaskItem("D, Version=1.0.0.0, Culture=neutral, PublicKeyToken=aaaaaaaaaaaaaaaa")
             };
 
-            t.SearchPaths = new string[] {
+            t.SearchPaths = new string[]
+            {
                 s_myLibrariesRootPath, s_myLibraries_V2Path, s_myLibraries_V1Path
             };
 
@@ -4019,7 +4027,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
 
             t.BuildEngine = new MockEngine(_output);
 
-            t.Assemblies = new ITaskItem[] {
+            t.Assemblies = new ITaskItem[]
+            {
                 new TaskItem(@"System.XML, Version=9.9.9999.9, Culture=neutral, PublicKeyToken=abababababababab")
             };
 
@@ -4042,7 +4051,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
 
             t.BuildEngine = new MockEngine(_output);
 
-            t.Assemblies = new ITaskItem[] {
+            t.Assemblies = new ITaskItem[]
+            {
                 new TaskItem(@"System.XML, Version=9.9.9999.9, Culture=neutral, PublicKeyToken=abababababababab")
             };
 

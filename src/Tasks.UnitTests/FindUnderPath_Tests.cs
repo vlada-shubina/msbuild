@@ -78,8 +78,11 @@ namespace Microsoft.Build.UnitTests
             testFile = new FileInfo(fileName);
 
             t.Path = new TaskItem(ObjectModelHelpers.TempProjectDir);
-            t.Files = new ITaskItem[] { new TaskItem(EscapingUtilities.Escape(testFile.Name)),
-                new TaskItem(NativeMethodsShared.IsWindows ? @"C:\SomeoneElsesProject\File2.txt" : "/SomeoneElsesProject/File2.txt") };
+            t.Files = new ITaskItem[]
+            {
+                new TaskItem(EscapingUtilities.Escape(testFile.Name)),
+                new TaskItem(NativeMethodsShared.IsWindows ? @"C:\SomeoneElsesProject\File2.txt" : "/SomeoneElsesProject/File2.txt")
+            };
 
             success = false;
             string currentDirectory = Directory.GetCurrentDirectory();

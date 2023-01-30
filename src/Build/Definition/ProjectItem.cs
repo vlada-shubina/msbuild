@@ -151,8 +151,7 @@ namespace Microsoft.Build.Evaluation
         public ProjectItemElement Xml
         {
             [DebuggerStepThrough]
-            get
-            { return _xml; }
+            get { return _xml; }
         }
 
         /// <summary>
@@ -161,8 +160,7 @@ namespace Microsoft.Build.Evaluation
         public string ItemType
         {
             [DebuggerStepThrough]
-            get
-            { return _xml.ItemType; }
+            get { return _xml.ItemType; }
             set
             {
                 if (Link != null)
@@ -199,8 +197,7 @@ namespace Microsoft.Build.Evaluation
         public string EvaluatedInclude
         {
             [DebuggerStepThrough]
-            get
-            { return Link != null ? Link.EvaluatedInclude : EscapingUtilities.UnescapeAll(_evaluatedIncludeEscaped); }
+            get { return Link != null ? Link.EvaluatedInclude : EscapingUtilities.UnescapeAll(_evaluatedIncludeEscaped); }
         }
 
         /// <summary>
@@ -210,8 +207,7 @@ namespace Microsoft.Build.Evaluation
         string IItem.EvaluatedIncludeEscaped
         {
             [DebuggerStepThrough]
-            get
-            { return _evaluatedIncludeEscaped; }
+            get { return _evaluatedIncludeEscaped; }
         }
 
         /// <summary>
@@ -231,8 +227,7 @@ namespace Microsoft.Build.Evaluation
         public Project Project
         {
             [DebuggerStepThrough]
-            get
-            { return _project; }
+            get { return _project; }
         }
 
         /// <summary>
@@ -268,8 +263,7 @@ namespace Microsoft.Build.Evaluation
         public int DirectMetadataCount
         {
             [DebuggerStepThrough]
-            get
-            { return Link != null ? Link.DirectMetadata.Count : _directMetadata != null ? _directMetadata.Count : 0; }
+            get { return Link != null ? Link.DirectMetadata.Count : _directMetadata != null ? _directMetadata.Count : 0; }
         }
 
         /// <summary>
@@ -283,8 +277,7 @@ namespace Microsoft.Build.Evaluation
         public ICollection<ProjectMetadata> Metadata
         {
             [DebuggerStepThrough]
-            get
-            { return Link != null ? Link.MetadataCollection : MetadataCollection; }
+            get { return Link != null ? Link.MetadataCollection : MetadataCollection; }
         }
 
         IEnumerable<ProjectMetadata> IItem<ProjectMetadata>.Metadata => Metadata;
@@ -297,8 +290,7 @@ namespace Microsoft.Build.Evaluation
         public int MetadataCount
         {
             [DebuggerStepThrough]
-            get
-            { return Metadata.Count + FileUtilities.ItemSpecModifiers.All.Length; }
+            get { return Metadata.Count + FileUtilities.ItemSpecModifiers.All.Length; }
         }
 
         /// <summary>
@@ -308,8 +300,7 @@ namespace Microsoft.Build.Evaluation
         string IKeyed.Key
         {
             [DebuggerStepThrough]
-            get
-            { return ItemType; }
+            get { return ItemType; }
         }
 
         /// <summary>
@@ -369,8 +360,7 @@ namespace Microsoft.Build.Evaluation
         internal string EvaluatedIncludeBeforeWildcardExpansion
         {
             [DebuggerStepThrough]
-            get
-            { return EscapingUtilities.UnescapeAll(_evaluatedIncludeBeforeWildcardExpansionEscaped); }
+            get { return EscapingUtilities.UnescapeAll(_evaluatedIncludeBeforeWildcardExpansionEscaped); }
         }
 
         /// <summary>
@@ -379,8 +369,7 @@ namespace Microsoft.Build.Evaluation
         internal string EvaluatedIncludeBeforeWildcardExpansionEscaped
         {
             [DebuggerStepThrough]
-            get
-            { return _evaluatedIncludeBeforeWildcardExpansionEscaped; }
+            get { return _evaluatedIncludeBeforeWildcardExpansionEscaped; }
         }
 
         /// <summary>
@@ -390,8 +379,7 @@ namespace Microsoft.Build.Evaluation
         internal List<ProjectItemDefinition> InheritedItemDefinitions
         {
             [DebuggerStepThrough]
-            get
-            { return _inheritedItemDefinitions; }
+            get { return _inheritedItemDefinitions; }
         }
 
         /// <summary>

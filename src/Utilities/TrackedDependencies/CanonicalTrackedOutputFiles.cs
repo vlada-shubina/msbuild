@@ -213,7 +213,8 @@ namespace Microsoft.Build.Utilities
                                             }
                                         }
                                     }
-                                } while (tlogEntry != null && tlogEntry[0] != '^');
+                                }
+                                while (tlogEntry != null && tlogEntry[0] != '^');
 
                                 if (encounteredInvalidTLogContents)
                                 {

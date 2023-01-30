@@ -85,12 +85,10 @@ namespace Microsoft.Build.BackEnd
         public int NodeId
         {
             [DebuggerStepThrough]
-            get
-            { return _nodeId; }
+            get { return _nodeId; }
 
             [DebuggerStepThrough]
-            set
-            { _nodeId = value; }
+            set { _nodeId = value; }
         }
 
         /// <summary>
@@ -99,8 +97,7 @@ namespace Microsoft.Build.BackEnd
         public BuildParameters BuildParameters
         {
             [DebuggerStepThrough]
-            get
-            { return _buildParameters; }
+            get { return _buildParameters; }
         }
 
         /// <summary>
@@ -109,8 +106,7 @@ namespace Microsoft.Build.BackEnd
         public LoggerDescription[] LoggerDescriptions
         {
             [DebuggerStepThrough]
-            get
-            { return _forwardingLoggers; }
+            get { return _forwardingLoggers; }
         }
 
 #if FEATURE_APPDOMAIN
@@ -120,8 +116,7 @@ namespace Microsoft.Build.BackEnd
         public AppDomainSetup AppDomainSetup
         {
             [DebuggerStepThrough]
-            get
-            { return _appDomainSetup; }
+            get { return _appDomainSetup; }
         }
 #endif
 
@@ -131,8 +126,7 @@ namespace Microsoft.Build.BackEnd
         public LoggingNodeConfiguration LoggingNodeConfiguration
         {
             [DebuggerStepThrough]
-            get
-            { return _loggingNodeConfiguration; }
+            get { return _loggingNodeConfiguration; }
         }
 
         #region INodePacket Members
@@ -143,8 +137,7 @@ namespace Microsoft.Build.BackEnd
         public NodePacketType Type
         {
             [DebuggerStepThrough]
-            get
-            { return NodePacketType.NodeConfiguration; }
+            get { return NodePacketType.NodeConfiguration; }
         }
 
         #endregion

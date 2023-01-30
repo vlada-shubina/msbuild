@@ -171,8 +171,7 @@ namespace Microsoft.Build.Execution
         public string ItemType
         {
             [DebuggerStepThrough]
-            get
-            { return _itemType; }
+            get { return _itemType; }
         }
 
         /// <summary>
@@ -204,8 +203,7 @@ namespace Microsoft.Build.Execution
         string IItem.EvaluatedIncludeEscaped
         {
             [DebuggerStepThrough]
-            get
-            { return _taskItem.IncludeEscaped; }
+            get { return _taskItem.IncludeEscaped; }
         }
 
         /// <summary>

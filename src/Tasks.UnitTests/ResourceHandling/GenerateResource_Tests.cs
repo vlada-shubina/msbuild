@@ -118,11 +118,15 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
             string expectedOutFile3 = Path.Combine(Path.GetTempPath(), Utilities.GetTempFileName(".resources"));
 
             GenerateResource t = Utilities.CreateTask(_output);
-            t.Sources = new ITaskItem[] {
-                new TaskItem(resxFile0), new TaskItem(resxFile1), new TaskItem(resxFile2), new TaskItem(resxFile3) };
+            t.Sources = new ITaskItem[]
+            {
+                new TaskItem(resxFile0), new TaskItem(resxFile1), new TaskItem(resxFile2), new TaskItem(resxFile3)
+            };
 
-            t.OutputResources = new ITaskItem[] {
-                new TaskItem(expectedOutFile0), new TaskItem(expectedOutFile1), new TaskItem(expectedOutFile2), new TaskItem(expectedOutFile3) };
+            t.OutputResources = new ITaskItem[]
+            {
+                new TaskItem(expectedOutFile0), new TaskItem(expectedOutFile1), new TaskItem(expectedOutFile2), new TaskItem(expectedOutFile3)
+            };
 
             Utilities.ExecuteTask(t);
 
@@ -1640,7 +1644,8 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
 
             // The first string in each row is passed into the text block that's created in the file
             // The second string is a fragment of the expected error message
-            string[][] tests = new string[][] {
+            string[][] tests = new string[][]
+            {
                 // invalid token in file, "unsupported square bracket keyword"
                 new string[] {   "[goober]", "MSB3563" },
                 // no '=', "resource line without an equals sign"
@@ -2163,7 +2168,8 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
         {
             GenerateResource t = Utilities.CreateTask(_output);
 
-            t.Sources = new ITaskItem[] {
+            t.Sources = new ITaskItem[]
+            {
                 new TaskItem( Utilities.WriteTestResX(false, null, null)),
                 new TaskItem( Utilities.WriteTestResX(false, null, null)),
                 new TaskItem( Utilities.WriteTestResX(false, null, null)),
@@ -2199,7 +2205,8 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
         {
             GenerateResource t = Utilities.CreateTask(_output);
 
-            t.Sources = new ITaskItem[] {
+            t.Sources = new ITaskItem[]
+            {
                 new TaskItem( Utilities.WriteTestResX(false, null, null)),
                 new TaskItem( Utilities.WriteTestResX(false, null, null)),
                 new TaskItem( Utilities.WriteTestResX(false, null, null)),
@@ -2243,7 +2250,8 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
 
             try
             {
-                t.Sources = new ITaskItem[] {
+                t.Sources = new ITaskItem[]
+                {
                     new TaskItem( Utilities.WriteTestText(null, null)),
                     new TaskItem( Utilities.WriteTestText(null, null)),
                     new TaskItem( Utilities.WriteTestText("goober", null)),
@@ -3832,7 +3840,8 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests
                 var referenceItem = new TaskItem(dll.Path);
                 referenceItem.SetMetadata(ItemMetadataNames.fusionName, "System.Resources.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51");
 
-                t.References = new ITaskItem[] {
+                t.References = new ITaskItem[]
+                {
                     referenceItem
                 };
             }

@@ -1354,7 +1354,8 @@ namespace Microsoft.Build.Construction
                 }
 
                 proj.ParentProjectGuid = parentProjectGuid;
-            } while (true);
+            }
+            while (true);
         }
 
         /// <summary>
@@ -1408,7 +1409,8 @@ namespace Microsoft.Build.Construction
                 var (configuration, platform) = ParseConfigurationName(fullConfigurationName, FullPath, _currentLineNumber, str);
 
                 _solutionConfigurations.Add(new SolutionConfigurationInSolution(configuration, platform));
-            } while (true);
+            }
+            while (true);
         }
 
         internal static (string Configuration, string Platform) ParseConfigurationName(string fullConfigurationName, string projectPath, int lineNumber, string containingString)
@@ -1471,7 +1473,8 @@ namespace Microsoft.Build.Construction
                     new BuildEventFileInfo(FullPath, _currentLineNumber, 0), "SolutionParseInvalidProjectSolutionConfigurationEntry", str);
 
                 rawProjectConfigurationsEntries[nameValue[0].Trim()] = nameValue[1].Trim();
-            } while (true);
+            }
+            while (true);
 
             return rawProjectConfigurationsEntries;
         }

@@ -89,14 +89,20 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
         [Fact]
         public void ValidateSerializationAndDeserialization()
         {
-            Dictionary<string, SystemState.FileState> cache = new() {
+            Dictionary<string, SystemState.FileState> cache = new()
+            {
                     { "path1", new SystemState.FileState(DateTime.Now) },
                     { "path2", new SystemState.FileState(DateTime.Now) { Assembly = new AssemblyNameExtension("hi") } },
-                    { "dllName", new SystemState.FileState(DateTime.Now.AddSeconds(-10)) {
+                    {
+                        "dllName", new SystemState.FileState(DateTime.Now.AddSeconds(-10))
+                    {
                         Assembly = null,
                         RuntimeVersion = "v4.0.30319",
                         FrameworkNameAttribute = new FrameworkName(".NETFramework", Version.Parse("4.7.2"), "Profile"),
-                        scatterFiles = new string[] { "first", "second" } } } };
+                        scatterFiles = new string[] { "first", "second" }
+                    }
+                    }
+            };
             SystemState sysState = new();
             sysState.instanceLocalFileStateCache = cache;
             SystemState sysState2 = null;

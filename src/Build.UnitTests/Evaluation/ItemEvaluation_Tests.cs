@@ -148,7 +148,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
             IList<ProjectItem> items = ObjectModelHelpers.GetItemsFromFragment(content, allItems: true);
 
             ObjectModelHelpers.AssertItems(new[] { "a", "b", "c" }, items,
-                new[] {
+                new[]
+                {
                     new Dictionary<string, string>(),
                     new Dictionary<string, string> { ["m1"] = "m1_updated" },
                     new Dictionary<string, string>(),

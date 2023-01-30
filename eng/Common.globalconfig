@@ -969,7 +969,7 @@ dotnet_diagnostic.SA1413.severity = suggestion
 dotnet_diagnostic.SA1414.severity = suggestion
 
 # Braces for multi-line statements should not share line
-dotnet_diagnostic.SA1500.severity = suggestion
+dotnet_diagnostic.SA1500.severity = warning
 
 # Statement should not be on a single line
 dotnet_diagnostic.SA1501.severity = suggestion
