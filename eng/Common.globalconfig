@@ -758,7 +758,7 @@ dotnet_diagnostic.SA1023.severity = warning
 dotnet_diagnostic.SA1024.severity = warning
 
 # Code should not contain multiple whitespace characters in a row
-dotnet_diagnostic.SA1025.severity = warning
+dotnet_diagnostic.SA1025.severity = suggestion
 
 dotnet_diagnostic.SA1026.severity = none
 
@@ -807,7 +807,7 @@ dotnet_diagnostic.SA1118.severity = none
 dotnet_diagnostic.SA1119.severity = none
 
 # Comments should contain text
-dotnet_diagnostic.SA1120.severity = warning
+dotnet_diagnostic.SA1120.severity = suggestion
 
 dotnet_diagnostic.SA1121.severity = none
 
