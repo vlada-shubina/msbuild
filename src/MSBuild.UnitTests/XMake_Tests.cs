@@ -1309,8 +1309,8 @@ namespace Microsoft.Build.UnitTests
             //  - Enable property functions so we can easily read our priority class.
             IDictionary<string, string> environmentVars = new Dictionary<string, string>
             {
-                { "MSBUILDNOINPROCNODE", "1"},
-                { "DISABLECONSOLECOLOR", "1"},
+                { "MSBUILDNOINPROCNODE", "1" },
+                { "DISABLECONSOLECOLOR", "1" },
                 { "MSBUILDENABLEALLPROPERTYFUNCTIONS", "1" },
             };
 

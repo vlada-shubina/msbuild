@@ -1048,12 +1048,12 @@ namespace Microsoft.Build.UnitTests.OM.Instance
 
             var expectedInitial = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"}
+                { "m1", "m1_contents" }
             };
 
             var expectedUpdateFromTrue = new Dictionary<string, string>
             {
-                {"m1", "from_true"}
+                { "m1", "from_true" }
             };
 
             AssertItemHasMetadata(expectedUpdateFromTrue, items[0]);

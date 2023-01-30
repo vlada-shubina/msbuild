@@ -341,7 +341,7 @@ BuildEngine5.BuildProjectFilesInParallel(
 
                 Func<string, string> ToDuplicateSlashes = path => path.Replace("/", "//").Replace(@"\", @"\\");
 
-                var targetNames = new[] { "BuildDeclaredReference", /*"BuildDeclaredReferenceViaTask"*/};
+                var targetNames = new[] { "BuildDeclaredReference", /*"BuildDeclaredReferenceViaTask"*/ };
 
                 var functions = new[] { Preserve, FullToRelative, ToForwardSlash, ToBackSlash, ToDuplicateSlashes };
 

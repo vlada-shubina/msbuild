@@ -112,7 +112,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                         @"C:\NugetCache\N\lib\N.dll", // version 2.0.0.0
                         new Dictionary<string, string>
                         {
-                            {"ExternallyResolved", "true"}
+                            { "ExternallyResolved", "true" }
                         })
                 };
 

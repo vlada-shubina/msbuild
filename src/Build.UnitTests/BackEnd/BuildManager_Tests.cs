@@ -172,7 +172,7 @@ namespace Microsoft.Build.UnitTests.BackEnd
                 _env,
                 new Dictionary<int, int[]>
                 {
-                    {1, new[] {2, 3}}
+                    { 1, new[] { 2, 3 } }
                 },
                 createProjectFile:
                     (env, projectNumber, references, targets, defaultTargets, content) =>
@@ -505,8 +505,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
             {
                 ItemFilters = new Dictionary<string, List<string>>
                 {
-                    {"AnItem", null},
-                    {"ItemWithMetadata", new List<string> {"Metadatum1"}},
+                    { "AnItem", null },
+                    { "ItemWithMetadata", new List<string> { "Metadatum1" } },
                 },
                 PropertyFilters = new List<string> { "NewProperty", "RequestedProperty" },
             };

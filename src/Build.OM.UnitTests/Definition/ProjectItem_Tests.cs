@@ -2745,19 +2745,19 @@ namespace Microsoft.Build.UnitTests.OM.Definition
             ObjectModelHelpers.AssertItemHasMetadata(
                 new Dictionary<string, string>
                 {
-                    {"m1", "updated"},
-                    {"m2", ""},
-                    {"m3", "m3_contents"},
-                    {"m4", "added"}
+                    { "m1", "updated" },
+                    { "m2", "" },
+                    { "m3", "m3_contents" },
+                    { "m4", "added" }
                 }
                 , items[0]);
 
             ObjectModelHelpers.AssertItemHasMetadata(
                 new Dictionary<string, string>
                 {
-                    {"m1", "m1_contents"},
-                    {"m2", "m2_contents"},
-                    {"m3", "m3_contents"}
+                    { "m1", "m1_contents" },
+                    { "m2", "m2_contents" },
+                    { "m3", "m3_contents" }
                 }
                 , items[1]);
         }
@@ -2782,12 +2782,12 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedInitial = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"}
+                { "m1", "m1_contents" }
             };
 
             var expectedUpdateFromTrue = new Dictionary<string, string>
             {
-                {"m1", "from_true"}
+                { "m1", "from_true" }
             };
 
             var items = project.Items.ToList();
@@ -2824,12 +2824,12 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedInitial = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"}
+                { "m1", "m1_contents" }
             };
 
             var expectedUpdateFromUnconditionedElement = new Dictionary<string, string>
             {
-                {"m1", "from_uncoditioned_update"}
+                { "m1", "from_uncoditioned_update" }
             };
 
             var itemsIgnoringCondition = project.ItemsIgnoringCondition.ToList();
@@ -2857,7 +2857,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedUpdate = new Dictionary<string, string>
             {
-                {"m1", "second"}
+                { "m1", "second" }
             };
 
             ObjectModelHelpers.AssertItemHasMetadata(expectedUpdate, items[0]);
@@ -2893,11 +2893,11 @@ namespace Microsoft.Build.UnitTests.OM.Definition
             IList<ProjectItem> items = ObjectModelHelpers.GetItemsFromFragment(contents, allItems: true);
             Dictionary<string, string> expectedUpdatei = new Dictionary<string, string>
             {
-                {"m1", "third" }
+                { "m1", "third" }
             };
             Dictionary<string, string> expectedUpdatej = new Dictionary<string, string>
             {
-                {"m1", "second" }
+                { "m1", "second" }
             };
 
             ObjectModelHelpers.AssertItemHasMetadata(expectedUpdatei, items[0]);
@@ -2964,9 +2964,9 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedMetadata = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "m2_contents"},
-                {"m3", "m3_contents"}
+                { "m1", "m1_contents" },
+                { "m2", "m2_contents" },
+                { "m3", "m3_contents" }
             };
 
             Assert.Equal(2, items.Count);
@@ -2994,8 +2994,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedMetadata = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "m2_contents"},
+                { "m1", "m1_contents" },
+                { "m2", "m2_contents" },
             };
 
             ObjectModelHelpers.AssertItemHasMetadata(expectedMetadata, items[0]);
@@ -3048,21 +3048,21 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedMetadataX = new Dictionary<string, string>
             {
-                {"m1", "x"},
+                { "m1", "x" },
             };
 
             var expectedMetadataA = new Dictionary<string, string>
             {
-                {"m1", "a"},
-                {"m2", "ax"},
-                {"m3", "value"},
+                { "m1", "a" },
+                { "m2", "ax" },
+                { "m3", "value" },
             };
 
             var expectedMetadataB = new Dictionary<string, string>
             {
-                {"m1", "b"},
-                {"m2", "bx"},
-                {"m4", "b"},
+                { "m1", "b" },
+                { "m2", "bx" },
+                { "m4", "b" },
             };
 
             ObjectModelHelpers.AssertItemHasMetadata(expectedMetadataX, items[0]);
@@ -3094,22 +3094,22 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedMetadataA = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "m2_contents;m2_contents;a-m2"},
-                {"m3", "a-m1"},
+                { "m1", "m1_contents" },
+                { "m2", "m2_contents;m2_contents;a-m2" },
+                { "m3", "a-m1" },
             };
 
             var expectedMetadataB = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "m2_contents;m2_contents;b-m2"},
-                {"m4", "m1_contents"},
+                { "m1", "m1_contents" },
+                { "m2", "m2_contents;m2_contents;b-m2" },
+                { "m4", "m1_contents" },
             };
 
             var expectedMetadataC = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "m2_contents"}
+                { "m1", "m1_contents" },
+                { "m2", "m2_contents" }
             };
 
             items[2].ItemType.ShouldBe("to");
@@ -3160,11 +3160,11 @@ namespace Microsoft.Build.UnitTests.OM.Definition
             var expectedMetadataA = doNotExpandQualifiedMetadataInUpdateOperation
                 ? new Dictionary<string, string>
                 {
-                    {"m1", string.Empty}
+                    { "m1", string.Empty }
                 }
                 : new Dictionary<string, string>
                 {
-                    {"m1", "updated contents"}
+                    { "m1", "updated contents" }
                 };
 
             items[1].ItemType.ShouldBe("to");
@@ -3188,7 +3188,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedMetadataA = new Dictionary<string, string>
             {
-                {"m", "m1_contents"},
+                { "m", "m1_contents" },
             };
 
             items[1].ItemType.ShouldBe("to");
@@ -3207,7 +3207,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedMetadataA = new Dictionary<string, string>
             {
-                {"m", "m1_contents"},
+                { "m", "m1_contents" },
             };
 
             items[0].ItemType.ShouldBe("to");
@@ -3274,51 +3274,51 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedMetadataX = new Dictionary<string, string>
             {
-                {"m2", ";"},
-                {"m3", "x.cs-m1;"},
-                {"m4", ";"},
-                {"m5", "x.cs"},
+                { "m2", ";" },
+                { "m3", "x.cs-m1;" },
+                { "m4", ";" },
+                { "m5", "x.cs" },
             };
 
             var expectedMetadata2 = new Dictionary<string, string>
             {
-                {"m2", "2-m2;2-m3"},
-                {"m3", ";2-m2"},
-                {"m4", ";"},
-                {"m5", "2"},
+                { "m2", "2-m2;2-m3" },
+                { "m3", ";2-m2" },
+                { "m4", ";" },
+                { "m5", "2" },
             };
 
             var expectedMetadataCCC = new Dictionary<string, string>
             {
-                {"m2", ";"},
-                {"m3", ";"},
-                {"m4", ";"},
-                {"m5", "ccc"},
+                { "m2", ";" },
+                { "m3", ";" },
+                { "m4", ";" },
+                { "m5", "ccc" },
             };
 
             var expectedMetadata1 = new Dictionary<string, string>
             {
-                {"m2", "1-m2;1-m3"},
-                {"m3", ";1-m2"},
-                {"m4", ";"},
-                {"m5", "1"},
-                {"m6", "1-m2"},
+                { "m2", "1-m2;1-m3" },
+                { "m3", ";1-m2" },
+                { "m4", ";" },
+                { "m5", "1" },
+                { "m6", "1-m2" },
             };
 
             var expectedMetadataD = new Dictionary<string, string>
             {
-                {"m2", ";"},
-                {"m3", ";"},
-                {"m4", ";"},
-                {"m5", "d"},
+                { "m2", ";" },
+                { "m3", ";" },
+                { "m4", ";" },
+                { "m5", "d" },
             };
 
             var expectedMetadataY = new Dictionary<string, string>
             {
-                {"m2", ";"},
-                {"m3", "y.cs-m1;"},
-                {"m4", ";"},
-                {"m5", "y.cs"},
+                { "m2", ";" },
+                { "m3", "y.cs-m1;" },
+                { "m4", ";" },
+                { "m5", "y.cs" },
             };
 
             items[5].ItemType.ShouldBe("from3");
@@ -3365,12 +3365,12 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedMetadataB = new Dictionary<string, string>
             {
-                {"m1", $"{lastItemMetadataForBFrom1};"},
+                { "m1", $"{lastItemMetadataForBFrom1};" },
             };
 
             var expectedMetadataA = new Dictionary<string, string>()
             {
-                {"m2", $"{lastItemMetadataForAFrom1};{lastItemMetadataForAFrom2}"},
+                { "m2", $"{lastItemMetadataForAFrom1};{lastItemMetadataForAFrom2}" },
             };
 
             var expectedMetadataC = new Dictionary<string, string>();
@@ -3430,15 +3430,15 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedInitialMetadata = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "m2_contents"},
+                { "m1", "m1_contents" },
+                { "m2", "m2_contents" },
             };
 
             var expectedUpdatedMetadata = new Dictionary<string, string>
             {
-                {"m1", "updated"},
-                {"m2", ""},
-                {"m3", "added"},
+                { "m1", "updated" },
+                { "m2", "" },
+                { "m3", "added" },
             };
 
             ObjectModelHelpers.AssertItemHasMetadata(expectedInitialMetadata, items[0]);
@@ -3472,20 +3472,20 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expected_i1 = new Dictionary<string, string>
             {
-                {"m1", "m1_updated"},
-                {"m2", "m2_updated"},
+                { "m1", "m1_updated" },
+                { "m2", "m2_updated" },
             };
 
             var expected_i2_a = new Dictionary<string, string>
             {
-                {"m1", "m1_i2_contents"},
-                {"m2", "m2_i2_contents"}
+                { "m1", "m1_i2_contents" },
+                { "m2", "m2_i2_contents" }
             };
 
             var expected_i2_y = new Dictionary<string, string>
             {
-                {"m1", "m1_i2_updated"},
-                {"m2", "m2_i2_contents"}
+                { "m1", "m1_i2_updated" },
+                { "m2", "m2_i2_contents" }
             };
 
             ObjectModelHelpers.AssertItemHasMetadata(expected_i1, items[0]);
@@ -3521,14 +3521,14 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedInitial = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "m2_contents"}
+                { "m1", "m1_contents" },
+                { "m2", "m2_contents" }
             };
 
             var expectedUpdated = new Dictionary<string, string>
             {
-                {"m1", "m1_updated"},
-                {"m2", "m2_updated"}
+                { "m1", "m1_updated" },
+                { "m2", "m2_updated" }
             };
 
             ObjectModelHelpers.AssertItemHasMetadata(expectedUpdated, items[0]);
@@ -3556,8 +3556,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedUpdated = new Dictionary<string, string>
             {
-                {"m1", "m1_updated"},
-                {"m2", "m2_updated"},
+                { "m1", "m1_updated" },
+                { "m2", "m2_updated" },
             };
 
             ObjectModelHelpers.AssertItemHasMetadata(expectedUpdated, items[0]);
@@ -3569,8 +3569,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
             {
                 var expectedMetadata = new[]
                 {
-                    new Dictionary<string, string> {{"m", "contents"}},
-                    new Dictionary<string, string> {{"m", "updated"}}
+                    new Dictionary<string, string> { { "m", "contents" } },
+                    new Dictionary<string, string> { { "m", "updated" } }
                 };
 
                 // escaped value matches and nonescaped value include
@@ -3580,7 +3580,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                     "i;u;r",
                     "%75",
                     "%72",
-                    new[] {"i", "u"},
+                    new[] { "i", "u" },
                     expectedMetadata
                 };
 
@@ -3591,7 +3591,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                     "i;%75;%72",
                     "%75",
                     "%72",
-                    new[] {"i", "u"},
+                    new[] { "i", "u" },
                     expectedMetadata
                 };
 
@@ -3602,7 +3602,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                     "i;%75;%72",
                     "u",
                     "r",
-                    new[] {"i", "u"},
+                    new[] { "i", "u" },
                     expectedMetadata
                 };
 
@@ -3613,7 +3613,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                     "i;u;r",
                     "*%75*",
                     "*%72*",
-                    new[] {"i", "u"},
+                    new[] { "i", "u" },
                     expectedMetadata
                 };
 
@@ -3624,7 +3624,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                     "i;%75;%72",
                     "*%75*",
                     "*%72*",
-                    new[] {"i", "u"},
+                    new[] { "i", "u" },
                     expectedMetadata
                 };
 
@@ -3635,13 +3635,13 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                     "i;u;r;%2A%75%2A;%2A%72%2A",
                     "%2A%75%2A",
                     "%2A%72%2A",
-                    new[] {"i", "u", "r", "*u*"},
+                    new[] { "i", "u", "r", "*u*" },
                     new[]
                     {
-                        new Dictionary<string, string> {{"m", "contents"}},
-                        new Dictionary<string, string> {{"m", "contents"}},
-                        new Dictionary<string, string> {{"m", "contents"}},
-                        new Dictionary<string, string> {{"m", "updated"}}
+                        new Dictionary<string, string> { { "m", "contents" } },
+                        new Dictionary<string, string> { { "m", "contents" } },
+                        new Dictionary<string, string> { { "m", "contents" } },
+                        new Dictionary<string, string> { { "m", "updated" } }
                     }
                 };
             }
@@ -3709,8 +3709,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expectedUpdated = new Dictionary<string, string>
             {
-                {"m1", "m1_updated"},
-                {"m2", "m2_updated"},
+                { "m1", "m1_updated" },
+                { "m2", "m2_updated" },
             };
 
             foreach (var item in items)

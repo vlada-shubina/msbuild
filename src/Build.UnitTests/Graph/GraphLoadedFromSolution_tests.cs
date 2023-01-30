@@ -98,7 +98,7 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, null}
+                        { 1, null }
                     }
                 };
 
@@ -106,8 +106,8 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, null},
-                        {2, null}
+                        { 1, null },
+                        { 2, null }
                     }
                 };
 
@@ -115,7 +115,7 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2}}
+                        { 1, new [] { 2 } }
                     }
                 };
 
@@ -123,8 +123,8 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2}},
-                        {2, new []{3}}
+                        { 1, new [] { 2 } },
+                        { 2, new [] { 3 } }
                     }
                 };
 
@@ -132,7 +132,7 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2, 3}}
+                        { 1, new [] { 2, 3 } }
                     }
                 };
 
@@ -140,8 +140,8 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{3, 2}},
-                        {2, new []{3}}
+                        { 1, new [] { 3, 2 } },
+                        { 2, new [] { 3 } }
                     }
                 };
 
@@ -149,9 +149,9 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2, 3}},
-                        {2, new []{4}},
-                        {3, new []{4}}
+                        { 1, new [] { 2, 3 } },
+                        { 2, new [] { 4 } },
+                        { 3, new [] { 4 } }
                     }
                 };
 
@@ -159,10 +159,10 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2, 3}},
-                        {2, new []{4}},
-                        {3, new []{4}},
-                        {5, new []{3, 2}}
+                        { 1, new [] { 2, 3 } },
+                        { 2, new [] { 4 } },
+                        { 3, new [] { 4 } },
+                        { 5, new [] { 3, 2 } }
                     }
                 };
             }
@@ -226,7 +226,7 @@ namespace Microsoft.Build.Graph.UnitTests
             {
                 Projects = new Dictionary<string, string>
                 {
-                    {"1", _env.CreateFile("1.csproj", string.Empty).Path}
+                    { "1", _env.CreateFile("1.csproj", string.Empty).Path }
                 },
                 SolutionConfigurationPlatforms = new[] { new SolutionConfigurationInSolution("Foo", "Bar") },
                 ProjectConfigurations = new Dictionary<string, Dictionary<SolutionConfigurationInSolution, ProjectConfigurationInSolution>>
@@ -262,10 +262,10 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]> // graph nodes and ProjectReference edges
                     {
-                        {1, null},
-                        {2, null}
+                        { 1, null },
+                        { 2, null }
                     },
-                    new[] {(1, 2) }, // solution only edges
+                    new[] { (1, 2) }, // solution only edges
                     false, // is there a cycle
                     false // solution edges overlap with graph edges
                 };
@@ -274,10 +274,10 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, null},
-                        {2, null}
+                        { 1, null },
+                        { 2, null }
                     },
-                    new[] {(1, 2), (2, 1) },
+                    new[] { (1, 2), (2, 1) },
                     true,
                     false
                 };
@@ -286,13 +286,13 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, null},
-                        {2, null},
-                        {3, null},
-                        {4, null},
-                        {5, null}
+                        { 1, null },
+                        { 2, null },
+                        { 3, null },
+                        { 4, null },
+                        { 5, null }
                     },
-                    new[] {(1, 2), (1, 3), (2, 4), (3,4), (4, 5) },
+                    new[] { (1, 2), (1, 3), (2, 4), (3,4), (4, 5) },
                     false,
                     false
                 };
@@ -301,13 +301,13 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, null},
-                        {2, null},
-                        {3, null},
-                        {4, null},
-                        {5, null}
+                        { 1, null },
+                        { 2, null },
+                        { 3, null },
+                        { 4, null },
+                        { 5, null }
                     },
-                    new[] {(1, 2), (1, 3), (2, 4), (3, 4), (4, 5), (2, 3) },
+                    new[] { (1, 2), (1, 3), (2, 4), (3, 4), (4, 5), (2, 3) },
                     false,
                     false
                 };
@@ -316,13 +316,13 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, null},
-                        {2, null},
-                        {3, null},
-                        {4, null},
-                        {5, null}
+                        { 1, null },
+                        { 2, null },
+                        { 3, null },
+                        { 4, null },
+                        { 5, null }
                     },
-                    new[] {(1, 3), (2, 3), (3, 4), (3, 5), (5, 4), (2, 1) },
+                    new[] { (1, 3), (2, 3), (3, 4), (3, 5), (5, 4), (2, 1) },
                     false,
                     false
                 };
@@ -331,9 +331,9 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2}},
+                        { 1, new [] { 2 } },
                     },
-                    new[] {(1, 2) },
+                    new[] { (1, 2) },
                     false,
                     true
                 };
@@ -342,9 +342,9 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2}},
+                        { 1, new [] { 2 } },
                     },
-                    new[] {(1, 2), (1, 2) },
+                    new[] { (1, 2), (1, 2) },
                     false,
                     true
                 };
@@ -353,9 +353,9 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2}},
+                        { 1, new [] { 2 } },
                     },
-                    new[] {(2, 1) },
+                    new[] { (2, 1) },
                     true,
                     false
                 };
@@ -364,13 +364,13 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2, 3}},
-                        {2, new []{4}},
-                        {3, new []{4}},
-                        {4, new []{5}},
-                        {5, null}
+                        { 1, new [] { 2, 3 } },
+                        { 2, new [] { 4 } },
+                        { 3, new [] { 4 } },
+                        { 4, new [] { 5 } },
+                        { 5, null }
                     },
-                    new[] {(3, 2) },
+                    new[] { (3, 2) },
                     false,
                     false
                 };
@@ -379,69 +379,13 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2, 3}},
-                        {2, new []{4}},
-                        {3, new []{4}},
-                        {4, new []{5}},
-                        {5, null}
+                        { 1, new [] { 2, 3 } },
+                        { 2, new [] { 4 } },
+                        { 3, new [] { 4 } },
+                        { 4, new [] { 5 } },
+                        { 5, null }
                     },
-                    new[] {(1, 2), (1, 3), (3, 2), (1, 5) },
-                    false,
-                    true
-                };
-
-                yield return new object[]
-                {
-                    new Dictionary<int, int[]>
-                    {
-                        {1, new []{2, 3}},
-                        {2, new []{4}},
-                        {3, new []{4}},
-                        {4, new []{5}},
-                        {5, null}
-                    },
-                    new[] {(3, 2), (5, 3) },
-                    true,
-                    false
-                };
-
-                yield return new object[]
-                {
-                    new Dictionary<int, int[]>
-                    {
-                        {1, new []{2, 3}},
-                        {2, new []{4}},
-                        {3, new []{4}},
-                        {4, new []{5}},
-                        {5, null}
-                    },
-                    new[] {(5, 3) },
-                    true,
-                    false
-                };
-
-                yield return new object[]
-                {
-                    new Dictionary<int, int[]>
-                    {
-                        {1, new[] {2}},
-                        {2, new[] {3}},
-                        {3, new[] {4}},
-                    },
-                    new[] {(1,3), (2, 4) },
-                    false,
-                    false
-                };
-
-                yield return new object[]
-                {
-                    new Dictionary<int, int[]>
-                    {
-                        {1, new[] {2}},
-                        {2, new[] {3}},
-                        {3, new[] {4}},
-                    },
-                    new[] {(1,3), (2, 4), (1, 2), (2, 3), (3, 4) },
+                    new[] { (1, 2), (1, 3), (3, 2), (1, 5) },
                     false,
                     true
                 };
@@ -450,11 +394,41 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2}},
-                        {3, null},
-                        {4, null}
+                        { 1, new [] { 2, 3 } },
+                        { 2, new [] { 4 } },
+                        { 3, new [] { 4 } },
+                        { 4, new [] { 5 } },
+                        { 5, null }
                     },
-                    new[] {(3, 2), (2, 4) },
+                    new[] { (3, 2), (5, 3) },
+                    true,
+                    false
+                };
+
+                yield return new object[]
+                {
+                    new Dictionary<int, int[]>
+                    {
+                        { 1, new [] { 2, 3 } },
+                        { 2, new [] { 4 } },
+                        { 3, new [] { 4 } },
+                        { 4, new [] { 5 } },
+                        { 5, null }
+                    },
+                    new[] { (5, 3) },
+                    true,
+                    false
+                };
+
+                yield return new object[]
+                {
+                    new Dictionary<int, int[]>
+                    {
+                        { 1, new[] { 2 } },
+                        { 2, new[] { 3 } },
+                        { 3, new[] { 4 } },
+                    },
+                    new[] { (1,3), (2, 4) },
                     false,
                     false
                 };
@@ -463,11 +437,37 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2}},
-                        {3, null},
-                        {4, null}
+                        { 1, new[] { 2 } },
+                        { 2, new[] { 3 } },
+                        { 3, new[] { 4 } },
                     },
-                    new[] {(3, 2), (2, 4), (4, 1) },
+                    new[] { (1,3), (2, 4), (1, 2), (2, 3), (3, 4) },
+                    false,
+                    true
+                };
+
+                yield return new object[]
+                {
+                    new Dictionary<int, int[]>
+                    {
+                        { 1, new[] { 2 } },
+                        { 3, null },
+                        { 4, null }
+                    },
+                    new[] { (3, 2), (2, 4) },
+                    false,
+                    false
+                };
+
+                yield return new object[]
+                {
+                    new Dictionary<int, int[]>
+                    {
+                        { 1, new[] { 2 } },
+                        { 3, null },
+                        { 4, null }
+                    },
+                    new[] { (3, 2), (2, 4), (4, 1) },
                     true,
                     false
                 };
@@ -484,8 +484,8 @@ namespace Microsoft.Build.Graph.UnitTests
                 edges,
                 new Dictionary<string, string>()
                 {
-                    {"Configuration", "Debug"},
-                    {"Platform", "AnyCPU"}
+                    { "Configuration", "Debug" },
+                    { "Platform", "AnyCPU" }
                 });
 
             // Use ConfigurationMetadata because it is IEquatable, whereas ProjectGraphNode is not.
@@ -555,7 +555,7 @@ namespace Microsoft.Build.Graph.UnitTests
                 _env,
                 new Dictionary<int, int[]>()
                 {
-                    {1, new[] {2}}
+                    { 1, new[] { 2 } }
                 }).BuildSolution();
 
             var graph = new ProjectGraph(_env.CreateFile("solution.sln", solutionContents).Path);
@@ -574,10 +574,10 @@ namespace Microsoft.Build.Graph.UnitTests
             {
                 Projects = new Dictionary<string, string>
                 {
-                    {"1", GraphTestingUtilities.CreateProjectFile(_env, 1, new[] {2}).Path},
-                    {"2", GraphTestingUtilities.CreateProjectFile(_env, 2, extraContent: MultitargetingSpecificationPropertyGroup).Path},
-                    {"3", GraphTestingUtilities.CreateProjectFile(_env, 3, new[] {4}, extraContent: MultitargetingSpecificationPropertyGroup).Path},
-                    {"4", GraphTestingUtilities.CreateProjectFile(_env, 4).Path}
+                    { "1", GraphTestingUtilities.CreateProjectFile(_env, 1, new[] { 2 }).Path },
+                    { "2", GraphTestingUtilities.CreateProjectFile(_env, 2, extraContent: MultitargetingSpecificationPropertyGroup).Path },
+                    { "3", GraphTestingUtilities.CreateProjectFile(_env, 3, new[] { 4 }, extraContent: MultitargetingSpecificationPropertyGroup).Path },
+                    { "4", GraphTestingUtilities.CreateProjectFile(_env, 4).Path }
                 },
                 SolutionDependencies = new[] { ("1", "2"), ("3", "4") }
             }.BuildSolution();

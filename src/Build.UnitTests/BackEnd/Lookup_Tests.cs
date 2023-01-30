@@ -213,9 +213,9 @@ namespace Microsoft.Build.UnitTests.BackEnd
             ProjectItemInstance[] newItems = new ProjectItemInstance[]
             {
                 new ProjectItemInstance(project, "i1", "a1", project.FullPath), // Should get added
-                new ProjectItemInstance(project, "i1", "a2", new KeyValuePair<string, string>[] { new KeyValuePair<string, string>( "m1", "m1") }, project.FullPath), // Should get added               
-                new ProjectItemInstance(project, "i1", "a1", new KeyValuePair<string, string>[] { new KeyValuePair<string, string>( "m1", "m1") }, project.FullPath), // Should not get added               
-                new ProjectItemInstance(project, "i1", "a1", new KeyValuePair<string, string>[] { new KeyValuePair<string, string>( "m1", "m3") }, project.FullPath), // Should get added               
+                new ProjectItemInstance(project, "i1", "a2", new KeyValuePair<string, string>[] { new KeyValuePair<string, string>("m1", "m1") }, project.FullPath), // Should get added               
+                new ProjectItemInstance(project, "i1", "a1", new KeyValuePair<string, string>[] { new KeyValuePair<string, string>("m1", "m1") }, project.FullPath), // Should not get added               
+                new ProjectItemInstance(project, "i1", "a1", new KeyValuePair<string, string>[] { new KeyValuePair<string, string>("m1", "m3") }, project.FullPath), // Should get added               
             };
 
             // Perform the addition

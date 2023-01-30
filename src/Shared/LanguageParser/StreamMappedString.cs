@@ -107,7 +107,7 @@ namespace Microsoft.Build.Shared.LanguageParser
 
             if (_forceANSI)
             {
-                _reader = new StreamReader( // HIGHCHAR: Falling back to ANSI for VB source files.
+                _reader = new StreamReader(// HIGHCHAR: Falling back to ANSI for VB source files.
                     _binaryStream,
 #if FEATURE_ENCODING_DEFAULT
                     Encoding.Default,    // Default means ANSI. 
@@ -120,7 +120,7 @@ namespace Microsoft.Build.Shared.LanguageParser
             {
                 Encoding utf8Encoding = new UTF8Encoding(false, true /* throw on illegal bytes */);
 
-                _reader = new StreamReader( // HIGHCHAR: VB and C# source files are assumed to be UTF if there are no byte-order marks.
+                _reader = new StreamReader(// HIGHCHAR: VB and C# source files are assumed to be UTF if there are no byte-order marks.
                         _binaryStream,
                         utf8Encoding,
                         true);            // Ask the reader to try to guess the file's encoding.

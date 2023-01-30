@@ -26,24 +26,24 @@ namespace Microsoft.Build.UnitTests
         {
             string[,] tests =
             {
-                { "1==1.1.",                "7",    "AllowAll"},              // Position of second '.'
-                { "1==0xFG",                "7",    "AllowAll"},              // Position of G
-                { "1==-0xF",                "6",    "AllowAll"},              // Position of x
-                { "1234=5678",              "6",    "AllowAll"},              // Position of '5'
-                { " ",                      "2",    "AllowAll"},              // Position of End of Input
-                { " (",                     "3",    "AllowAll"},              // Position of End of Input
-                { " false or  ",            "12",   "AllowAll"},              // Position of End of Input
-                { " \"foo",                 "2",    "AllowAll"},              // Position of open quote
-                { " @(foo",                 "2",    "AllowAll"},              // Position of @
-                { " @(",                    "2",    "AllowAll"},              // Position of @
-                { " $",                     "2",    "AllowAll"},              // Position of $
-                { " $(foo",                 "2",    "AllowAll"},              // Position of $
-                { " $(",                    "2",    "AllowAll"},              // Position of $
-                { " $",                     "2",    "AllowAll"},              // Position of $
-                { " @(foo)",                "2",    "AllowProperties"},       // Position of @
-                { " '@(foo)'",              "3",    "AllowProperties"},       // Position of @
+                { "1==1.1.",                "7",    "AllowAll" },              // Position of second '.'
+                { "1==0xFG",                "7",    "AllowAll" },              // Position of G
+                { "1==-0xF",                "6",    "AllowAll" },              // Position of x
+                { "1234=5678",              "6",    "AllowAll" },              // Position of '5'
+                { " ",                      "2",    "AllowAll" },              // Position of End of Input
+                { " (",                     "3",    "AllowAll" },              // Position of End of Input
+                { " false or  ",            "12",   "AllowAll" },              // Position of End of Input
+                { " \"foo",                 "2",    "AllowAll" },              // Position of open quote
+                { " @(foo",                 "2",    "AllowAll" },              // Position of @
+                { " @(",                    "2",    "AllowAll" },              // Position of @
+                { " $",                     "2",    "AllowAll" },              // Position of $
+                { " $(foo",                 "2",    "AllowAll" },              // Position of $
+                { " $(",                    "2",    "AllowAll" },              // Position of $
+                { " $",                     "2",    "AllowAll" },              // Position of $
+                { " @(foo)",                "2",    "AllowProperties" },       // Position of @
+                { " '@(foo)'",              "3",    "AllowProperties" },       // Position of @
                 /* test escaped chars: message shows them escaped so count should include them */
-                { "'%24%28x' == '%24(x''",   "21",  "AllowAll"}               // Position of extra quote
+                { "'%24%28x' == '%24(x''",   "21",  "AllowAll" }               // Position of extra quote
             };
 
             // Some errors are caught by the Parser, not merely by the Lexer/Scanner. So we have to do a full Parse,

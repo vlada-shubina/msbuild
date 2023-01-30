@@ -170,7 +170,7 @@ namespace Microsoft.Build.UnitTests
         public LoggerVerbosity Verbosity
         {
             get => LoggerVerbosity.Normal;
-            set {/* do nothing */}
+            set { /* do nothing */ }
         }
 
         /*
@@ -182,7 +182,7 @@ namespace Microsoft.Build.UnitTests
         public string Parameters
         {
             get => null;
-            set {/* do nothing */}
+            set { /* do nothing */ }
         }
 
         /*

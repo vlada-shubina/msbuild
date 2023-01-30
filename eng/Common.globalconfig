@@ -729,13 +729,13 @@ dotnet_diagnostic.SA1009.severity = suggestion
 dotnet_diagnostic.SA1010.severity = warning
 
 # Closing square bracket should be followed by a space
-dotnet_diagnostic.SA1011.severity = suggestion
+dotnet_diagnostic.SA1011.severity = warning
 
 # Opening brace should be followed by a space
-dotnet_diagnostic.SA1012.severity = suggestion
+dotnet_diagnostic.SA1012.severity = warning
 
 # Closing brace should be preceded by a space
-dotnet_diagnostic.SA1013.severity = suggestion
+dotnet_diagnostic.SA1013.severity = warning
 
 # Opening generic brackets should not be preceded by a space
 dotnet_diagnostic.SA1014.severity = warning

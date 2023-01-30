@@ -58,8 +58,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             var mI2_1 = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "m2_contents"},
+                { "m1", "m1_contents" },
+                { "m2", "m2_contents" },
             };
 
             var itemsForI = items.Where(i => i.ItemType == "i").ToList();
@@ -67,8 +67,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             var mI2_2 = new Dictionary<string, string>
             {
-                {"m1", "m1_updated"},
-                {"m2", "m2_updated"},
+                { "m1", "m1_updated" },
+                { "m2", "m2_updated" },
             };
 
             var itemsForI2 = items.Where(i => i.ItemType == "i2").ToList();
@@ -107,8 +107,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             var expectedMetadata = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "m2_contents"}
+                { "m1", "m1_contents" },
+                { "m2", "m2_contents" }
             };
 
             var itemsForI = items.Where(i => i.ItemType == "i").ToList();
@@ -181,26 +181,26 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             var a = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "a"},
-                {"m3", "a;b;c"},
-                {"m4", "m4_contents"},
+                { "m1", "m1_contents" },
+                { "m2", "a" },
+                { "m3", "a;b;c" },
+                { "m4", "m4_contents" },
             };
 
             var b = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "b"},
-                {"m3", "a;b;c"},
-                {"m4", "m4_contents"}
+                { "m1", "m1_contents" },
+                { "m2", "b" },
+                { "m3", "a;b;c" },
+                { "m4", "m4_contents" }
             };
 
             var c = new Dictionary<string, string>
             {
-                {"m1", "m1_contents"},
-                {"m2", "c"},
-                {"m3", "a;b;c"},
-                {"m4", "m4_contents"},
+                { "m1", "m1_contents" },
+                { "m2", "c" },
+                { "m3", "a;b;c" },
+                { "m4", "m4_contents" },
             };
 
             var itemsForI = items.Where(i => i.ItemType == "i").ToList();
@@ -208,10 +208,10 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             var metadataForI2 = new Dictionary<string, string>
             {
-                {"m1", "m1_updated"},
-                {"m2", "m2_updated"},
-                {"m3", "m3_updated"},
-                {"m4", "m4_updated"}
+                { "m1", "m1_updated" },
+                { "m2", "m2_updated" },
+                { "m3", "m3_updated" },
+                { "m4", "m4_updated" }
             };
 
             var itemsForI2 = items.Where(i => i.ItemType == "i2").ToList();
@@ -243,11 +243,11 @@ namespace Microsoft.Build.UnitTests.Evaluation
                       </ItemGroup>
 
                     </Project>",
-                    new []{"val"},
+                    new [] { "val" },
                     new Dictionary<string, string>
                     {
-                        {"m1", "1;2"},
-                        {"m2", "1;2"}
+                        { "m1", "1;2" },
+                        { "m2", "1;2" }
                     }
                 };
 
@@ -272,11 +272,11 @@ namespace Microsoft.Build.UnitTests.Evaluation
                       </ItemGroup>
 
                     </Project>",
-                    new []{"val"},
+                    new [] { "val" },
                     new Dictionary<string, string>
                     {
-                        {"m1", "val1"},
-                        {"m2", "val2"}
+                        { "m1", "val1" },
+                        { "m2", "val2" }
                     }
                 };
 
@@ -299,7 +299,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
                       </ItemGroup>
 
                     </Project>",
-                    new []{"1", "2", "1", "2"},
+                    new [] { "1", "2", "1", "2" },
                     new Dictionary<string, string>()
                 };
 
@@ -322,7 +322,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
                       </ItemGroup>
 
                     </Project>",
-                    new []{"val1", "val2"},
+                    new [] { "val1", "val2" },
                     new Dictionary<string, string>()
                 };
 
@@ -347,11 +347,11 @@ namespace Microsoft.Build.UnitTests.Evaluation
                       </ItemGroup>
 
                     </Project>",
-                    new []{"val"},
+                    new [] { "val" },
                     new Dictionary<string, string>
                     {
-                        {"m1", "1;2"},
-                        {"m2", "1;2"}
+                        { "m1", "1;2" },
+                        { "m2", "1;2" }
                     }
                 };
             }
@@ -420,18 +420,18 @@ namespace Microsoft.Build.UnitTests.Evaluation
                 new Dictionary<string, string>(),
                 new Dictionary<string, string>
                 {
-                    {"M", "B"},
-                    {"M2", "B"}
+                    { "M", "B" },
+                    { "M2", "B" }
                 },
                 new Dictionary<string, string>
                 {
-                    {"M", "@(A)"},
-                    {"M2", "@(A)"}
+                    { "M", "@(A)" },
+                    { "M2", "@(A)" }
                 },
                 new Dictionary<string, string>
                 {
-                    {"M", "@(A)"},
-                    {"M2", "@(A)"}
+                    { "M", "@(A)" },
+                    { "M2", "@(A)" }
                 }
             };
 
@@ -487,7 +487,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             var i1BaseMetadata = new Dictionary<string, string>
             {
-                {"m", "i1"}
+                { "m", "i1" }
             };
 
             // i1 items: i1_1; i1_3; i1_4; i1_6
@@ -507,7 +507,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
             {
                 new Dictionary<string, string>
                 {
-                    {"m", "i2"}
+                    { "m", "i2" }
                 },
                 i1BaseMetadata,
                 i1BaseMetadata
@@ -679,7 +679,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
             {
                 new Dictionary<string, string>
                 {
-                    {"Baz", "foo"},
+                    { "Baz", "foo" },
                 },
             };
 

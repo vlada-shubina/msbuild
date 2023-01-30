@@ -42,7 +42,7 @@ namespace Microsoft.Build.Engine.UnitTests.Instance
                             CreateTargetOnError(),
                             CreateTargetTask()
                         }),
-                    new ReadOnlyCollection<ProjectOnErrorInstance>(new[] {CreateTargetOnError() })
+                    new ReadOnlyCollection<ProjectOnErrorInstance>(new[] { CreateTargetOnError() })
                 };
 
                 yield return new object[]

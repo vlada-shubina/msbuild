@@ -34,8 +34,8 @@ namespace Microsoft.Build.UnitTests.Definition
             _resolver = new SdkUtilities.ConfigurableMockSdkResolver(
                 new Dictionary<string, SdkResult>
                 {
-                    {"foo", new SdkResult(new SdkReference("foo", "1.0.0", null), "path", "1.0.0", null) },
-                    {"bar", new SdkResult(new SdkReference("bar", "1.0.0", null), "path", "1.0.0", null) }
+                    { "foo", new SdkResult(new SdkReference("foo", "1.0.0", null), "path", "1.0.0", null) },
+                    { "bar", new SdkResult(new SdkReference("bar", "1.0.0", null), "path", "1.0.0", null) }
                 });
         }
 
@@ -116,8 +116,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 .ShouldBe(
                     new Dictionary<string, int>
                     {
-                        {Path.Combine(_env.DefaultTestDirectory.Path, "1.file"), 1},
-                        {Path.Combine(_env.DefaultTestDirectory.Path, "2.file"), 1}
+                        { Path.Combine(_env.DefaultTestDirectory.Path, "1.file"), 1 },
+                        { Path.Combine(_env.DefaultTestDirectory.Path, "2.file"), 1 }
                     }.OrderBy(kvp => kvp.Key));
 
             fileSystem.FileOrDirectoryExistsCalls.ShouldBe(2);
@@ -154,7 +154,7 @@ namespace Microsoft.Build.UnitTests.Definition
             directoryCache.ExistenceChecks.OrderBy(kvp => kvp.Key).ShouldBe(
                 new Dictionary<string, int>
                 {
-                    { _env.DefaultTestDirectory.Path, 1},
+                    { _env.DefaultTestDirectory.Path, 1 },
                     { Path.Combine(_env.DefaultTestDirectory.Path, "1.file"), 2 }
                 }.OrderBy(kvp => kvp.Key));
             directoryCache.Enumerations.ShouldBe(
@@ -298,10 +298,10 @@ namespace Microsoft.Build.UnitTests.Definition
                     EvaluationContext.SharingPolicy.Shared,
                     new[]
                     {
-                        new[] {"0.cs"},
-                        new[] {"0.cs"},
-                        new[] {"0.cs"},
-                        new[] {"0.cs"}
+                        new[] { "0.cs" },
+                        new[] { "0.cs" },
+                        new[] { "0.cs" },
+                        new[] { "0.cs" }
                     }
                 };
 
@@ -310,10 +310,10 @@ namespace Microsoft.Build.UnitTests.Definition
                     EvaluationContext.SharingPolicy.Isolated,
                     new[]
                     {
-                        new[] {"0.cs"},
-                        new[] {"0.cs", "1.cs"},
-                        new[] {"0.cs", "1.cs", "2.cs"},
-                        new[] {"0.cs", "1.cs", "2.cs", "3.cs"},
+                        new[] { "0.cs" },
+                        new[] { "0.cs", "1.cs" },
+                        new[] { "0.cs", "1.cs", "2.cs" },
+                        new[] { "0.cs", "1.cs", "2.cs", "3.cs" },
                     }
                 };
             }
@@ -369,10 +369,10 @@ namespace Microsoft.Build.UnitTests.Definition
                     EvaluationContext.SharingPolicy.Shared,
                     new[]
                     {
-                        new[] {"0.cs"}, // first project
-                        new[] {"0.cs", "1.cs"}, // second project
-                        new[] {"0.cs"}, // first project reevaluation
-                        new[] {"0.cs", "1.cs"}, // second project reevaluation
+                        new[] { "0.cs" }, // first project
+                        new[] { "0.cs", "1.cs" }, // second project
+                        new[] { "0.cs" }, // first project reevaluation
+                        new[] { "0.cs", "1.cs" }, // second project reevaluation
                     }
                 };
 
@@ -381,10 +381,10 @@ namespace Microsoft.Build.UnitTests.Definition
                     EvaluationContext.SharingPolicy.Isolated,
                     new[]
                     {
-                        new[] {"0.cs"},
-                        new[] {"0.cs", "1.cs"},
-                        new[] {"0.cs", "1.cs", "2.cs"},
-                        new[] {"0.cs", "1.cs", "2.cs", "3.cs"},
+                        new[] { "0.cs" },
+                        new[] { "0.cs", "1.cs" },
+                        new[] { "0.cs", "1.cs", "2.cs" },
+                        new[] { "0.cs", "1.cs", "2.cs", "3.cs" },
                     }
                 };
             }

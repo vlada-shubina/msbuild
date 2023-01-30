@@ -3648,8 +3648,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expected = new GlobResultList
             {
-                ("A", new []{"**"}, new [] {"e**"}.ToImmutableHashSet(), new [] {"c"}.ToImmutableHashSet()),
-                ("A", new []{"*"}, new [] {"e*"}.ToImmutableHashSet(), new [] {"c", "b", "a"}.ToImmutableHashSet()),
+                ("A", new [] { "**" }, new [] { "e**" }.ToImmutableHashSet(), new [] { "c" }.ToImmutableHashSet()),
+                ("A", new [] { "*" }, new [] { "e*" }.ToImmutableHashSet(), new [] { "c", "b", "a" }.ToImmutableHashSet()),
             };
 
             AssertGlobResult(expected, project);
@@ -3788,7 +3788,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var expected = new GlobResultList
             {
-                ("A", new []{"*"}, new[] {"*"}.ToImmutableHashSet(), ImmutableHashSet<string>.Empty),
+                ("A", new [] { "*" }, new[] { "*" }.ToImmutableHashSet(), ImmutableHashSet<string>.Empty),
             };
 
             AssertGlobResult(expected, project);
@@ -3816,8 +3816,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
                 var expected = new GlobResultList
                 {
-                    ("C", new []{"**"}, new [] {"build.proj", "a", "b"}.ToImmutableHashSet(), new [] {"build.proj", "a", "b"}.ToImmutableHashSet()),
-                    ("A", new []{"*"}, ImmutableHashSet<string>.Empty, ImmutableHashSet<string>.Empty)
+                    ("C", new [] { "**" }, new [] { "build.proj", "a", "b" }.ToImmutableHashSet(), new [] { "build.proj", "a", "b" }.ToImmutableHashSet()),
+                    ("A", new [] { "*" }, ImmutableHashSet<string>.Empty, ImmutableHashSet<string>.Empty)
                 };
 
                 AssertGlobResultsEqual(expected, globResult);

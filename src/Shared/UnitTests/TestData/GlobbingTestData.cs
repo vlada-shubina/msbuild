@@ -17,8 +17,8 @@ namespace Microsoft.Build.Engine.UnitTests.Globbing
                 {
                     "a.*", // include string
                     "*.1", // exclude string
-                    new[] {"a.1", "a.2", "a.1"}, // files
-                    new[] {"a.2"}, // expected include
+                    new[] { "a.1", "a.2", "a.1" }, // files
+                    new[] { "a.2" }, // expected include
                     false // whether to append the project directory to the expected include items
                 };
 
@@ -26,8 +26,8 @@ namespace Microsoft.Build.Engine.UnitTests.Globbing
                 {
                     @"**\*.cs",
                     @"a\**",
-                    new[] {"1.cs", @"a\2.cs", @"a\b\3.cs", @"a\b\c\4.cs"},
-                    new[] {"1.cs"},
+                    new[] { "1.cs", @"a\2.cs", @"a\b\3.cs", @"a\b\c\4.cs" },
+                    new[] { "1.cs" },
                     false
                 };
 
@@ -35,8 +35,8 @@ namespace Microsoft.Build.Engine.UnitTests.Globbing
                 {
                     @"**\*",
                     @"**\b\**",
-                    new[] {"1.cs", @"a\2.cs", @"a\b\3.cs", @"a\b\c\4.cs"},
-                    new[] {"1.cs", @"a\2.cs", "build.proj"},
+                    new[] { "1.cs", @"a\2.cs", @"a\b\3.cs", @"a\b\c\4.cs" },
+                    new[] { "1.cs", @"a\2.cs", "build.proj" },
                     false
                 };
 
@@ -44,8 +44,8 @@ namespace Microsoft.Build.Engine.UnitTests.Globbing
                 {
                     @"**\*",
                     @"**\b\**\*.cs",
-                    new[] {"1.cs", @"a\2.cs", @"a\b\3.cs", @"a\b\c\4.cs", @"a\b\c\5.txt"},
-                    new[] {"1.cs", @"a\2.cs", @"a\b\c\5.txt", "build.proj"},
+                    new[] { "1.cs", @"a\2.cs", @"a\b\3.cs", @"a\b\c\4.cs", @"a\b\c\5.txt" },
+                    new[] { "1.cs", @"a\2.cs", @"a\b\c\5.txt", "build.proj" },
                     false
                 };
 

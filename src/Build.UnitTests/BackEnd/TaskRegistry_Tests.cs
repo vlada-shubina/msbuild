@@ -1892,15 +1892,15 @@ namespace Microsoft.Build.UnitTests.BackEnd
                     new PropertyDictionary<ProjectPropertyInstance>(toolsetGlobalProperties),
                     new Dictionary<string, SubToolset>
                     {
-                        {"1.0", new SubToolset("1.0", new PropertyDictionary<ProjectPropertyInstance>(subToolsetProperties)) },
-                        {"2.0", new SubToolset("2.0", new PropertyDictionary<ProjectPropertyInstance>(subToolsetProperties)) }
+                        { "1.0", new SubToolset("1.0", new PropertyDictionary<ProjectPropertyInstance>(subToolsetProperties)) },
+                        { "2.0", new SubToolset("2.0", new PropertyDictionary<ProjectPropertyInstance>(subToolsetProperties)) }
                     },
                     "motp",
                     "dotv",
                     new Dictionary<string, ProjectImportPathMatch>
                     {
-                        {"a", new ProjectImportPathMatch("a", new List<string> {"b", "c"}) },
-                        {"d", new ProjectImportPathMatch("d", new List<string> {"e", "f"}) }
+                        { "a", new ProjectImportPathMatch("a", new List<string> { "b", "c" }) },
+                        { "d", new ProjectImportPathMatch("d", new List<string> { "e", "f" }) }
                     });
 
                 ProjectRootElement project = ProjectRootElement.Create();
@@ -2053,8 +2053,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
             {
                 parameters = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                 {
-                    {XMakeAttributes.runtime, runtime ?? XMakeAttributes.MSBuildRuntimeValues.any},
-                    {XMakeAttributes.architecture, architecture ?? XMakeAttributes.MSBuildArchitectureValues.any}
+                    { XMakeAttributes.runtime, runtime ?? XMakeAttributes.MSBuildRuntimeValues.any },
+                    { XMakeAttributes.architecture, architecture ?? XMakeAttributes.MSBuildArchitectureValues.any }
                 };
             }
 

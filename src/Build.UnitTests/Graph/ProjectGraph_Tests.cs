@@ -73,7 +73,7 @@ namespace Microsoft.Build.Graph.UnitTests
                 _env,
                 new Dictionary<int, int[]>()
                 {
-                    {1, new[] {2, 3}}
+                    { 1, new[] { 2, 3 } }
                 });
 
             graph.ConstructionMetrics.ConstructionTime.Ticks.ShouldBeGreaterThan(0);
@@ -1301,7 +1301,7 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, null}
+                        { 1, null }
                     }
                 };
 
@@ -1309,8 +1309,8 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, null},
-                        {2, null}
+                        { 1, null },
+                        { 2, null }
                     }
                 };
 
@@ -1318,7 +1318,7 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2}}
+                        { 1, new [] { 2 } }
                     }
                 };
 
@@ -1326,8 +1326,8 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2}},
-                        {2, null}
+                        { 1, new [] { 2 } },
+                        { 2, null }
                     }
                 };
 
@@ -1335,8 +1335,8 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2}},
-                        {2, new []{3}}
+                        { 1, new [] { 2 } },
+                        { 2, new [] { 3 } }
                     }
                 };
 
@@ -1344,7 +1344,7 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2, 3}}
+                        { 1, new [] { 2, 3 } }
                     }
                 };
 
@@ -1352,8 +1352,8 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{3, 2}},
-                        {2, new []{3}}
+                        { 1, new [] { 3, 2 } },
+                        { 2, new [] { 3 } }
                     }
                 };
 
@@ -1361,9 +1361,9 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2, 3}},
-                        {2, new []{4}},
-                        {3, new []{4}}
+                        { 1, new [] { 2, 3 } },
+                        { 2, new [] { 4 } },
+                        { 3, new [] { 4 } }
                     }
                 };
 
@@ -1371,9 +1371,9 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{4, 3, 2}},
-                        {2, new []{4}},
-                        {3, new []{4}}
+                        { 1, new [] { 4, 3, 2 } },
+                        { 2, new [] { 4 } },
+                        { 3, new [] { 4 } }
                     }
                 };
 
@@ -1381,8 +1381,8 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2}},
-                        {3, new []{4}}
+                        { 1, new [] { 2 } },
+                        { 3, new [] { 4 } }
                     }
                 };
 
@@ -1390,8 +1390,8 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2, 4}},
-                        {3, new []{4}}
+                        { 1, new [] { 2, 4 } },
+                        { 3, new [] { 4 } }
                     }
                 };
 
@@ -1399,10 +1399,10 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{4, 2}},
-                        {2, new []{3}},
-                        {3, new []{4}},
-                        {4, new []{5}}
+                        { 1, new [] { 4, 2 } },
+                        { 2, new [] { 3 } },
+                        { 3, new [] { 4 } },
+                        { 4, new [] { 5 } }
                     }
                 };
 
@@ -1410,9 +1410,9 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2, 4}},
-                        {2, new []{3}},
-                        {3, new []{4}},
+                        { 1, new [] { 2, 4 } },
+                        { 2, new [] { 3 } },
+                        { 3, new [] { 4 } },
                     }
                 };
 
@@ -1420,10 +1420,10 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{3, 2}},
-                        {2, new []{3}},
-                        {3, new []{5, 4}},
-                        {4, new []{5}},
+                        { 1, new [] { 3, 2 } },
+                        { 2, new [] { 3 } },
+                        { 3, new [] { 5, 4 } },
+                        { 4, new [] { 5 } },
                     }
                 };
 
@@ -1431,12 +1431,12 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{2, 4, 3, 5} },
-                        {2, new []{5} },
-                        {3, new []{5} },
-                        {4, new []{6} },
-                        {5, new []{7} },
-                        {6, new []{5} }
+                        { 1, new [] { 2, 4, 3, 5 } },
+                        { 2, new [] { 5 } },
+                        { 3, new [] { 5 } },
+                        { 4, new [] { 6 } },
+                        { 5, new [] { 7 } },
+                        { 6, new [] { 5 } }
                     },
                 };
 
@@ -1444,12 +1444,12 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new []{5, 4, 7}},
-                        {2, new []{5}},
-                        {3, new []{6, 5}},
-                        {4, new []{7}},
-                        {5, new []{7, 8}},
-                        {6, new []{7, 9}}
+                        { 1, new [] { 5, 4, 7 } },
+                        { 2, new [] { 5 } },
+                        { 3, new [] { 6, 5 } },
+                        { 4, new [] { 7 } },
+                        { 5, new [] { 7, 8 } },
+                        { 6, new [] { 7, 9 } }
                     }
                 };
             }
@@ -1492,7 +1492,7 @@ $@"
                     references,
                     projectReferenceTargets: new Dictionary<string, string[]>
                     {
-                        {"Build", new[] {$"TargetFrom{projectId}", "Build"}}
+                        { "Build", new[] { $"TargetFrom{projectId}", "Build" } }
                     }));
 
             var targetsPerNode = graph.GetTargetLists(new[] { "Build" });
@@ -1897,27 +1897,27 @@ $@"
                     new Dictionary<string, string>(),
                     new Dictionary<string, string>
                     {
-                        {"a", "b"},
-                        {"c", "d"}
+                        { "a", "b" },
+                        { "c", "d" }
                     }
                 };
 
                 var graph1 = new Dictionary<int, int[]>
                 {
-                    {1, new[] {3, 2}},
-                    {2, new[] {3}},
-                    {3, new[] {5, 4}},
-                    {4, new[] {5}}
+                    { 1, new[] { 3, 2 } },
+                    { 2, new[] { 3 } },
+                    { 3, new[] { 5, 4 } },
+                    { 4, new[] { 5 } }
                 };
 
                 var graph2 = new Dictionary<int, int[]>
                 {
-                    {1, new[] {5, 4, 7}},
-                    {2, new[] {5}},
-                    {3, new[] {6, 5}},
-                    {4, new[] {7}},
-                    {5, new[] {7, 8}},
-                    {6, new[] {7, 9}}
+                    { 1, new[] { 5, 4, 7 } },
+                    { 2, new[] { 5 } },
+                    { 3, new[] { 6, 5 } },
+                    { 4, new[] { 7 } },
+                    { 5, new[] { 7, 8 } },
+                    { 6, new[] { 7, 9 } }
                 };
 
                 foreach (var globalVariables in globalVariablesArray)
@@ -1933,37 +1933,37 @@ $@"
                     {
                         new Dictionary<int, int[]>
                         {
-                            {1, null}
+                            { 1, null }
                         },
-                        new[] {1},
+                        new[] { 1 },
                         globalVariables
                     };
 
                     yield return new object[]
                     {
                         graph1,
-                        new[] {1},
+                        new[] { 1 },
                         globalVariables
                     };
 
                     yield return new object[]
                     {
                         graph1,
-                        new[] {1, 4, 3},
+                        new[] { 1, 4, 3 },
                         globalVariables
                     };
 
                     yield return new object[]
                     {
                         graph2,
-                        new[] {1, 2, 3},
+                        new[] { 1, 2, 3 },
                         globalVariables
                     };
 
                     yield return new object[]
                     {
                         graph2,
-                        new[] {1, 2, 6, 4, 3, 7},
+                        new[] { 1, 2, 6, 4, 3, 7 },
                         globalVariables
                     };
                 }
@@ -2029,15 +2029,15 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {3}},
-                        {2, new[] {3}},
-                        {3, new[] {4}}
+                        { 1, new[] { 3 } },
+                        { 2, new[] { 3 } },
+                        { 3, new[] { 4 } }
                     },
                     new Dictionary<int, string>(),
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {3}},
-                        {2, new[] {3}}
+                        { 1, new[] { 3 } },
+                        { 2, new[] { 3 } }
                     }
                 };
 
@@ -2045,20 +2045,20 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2}},
-                        {2, new[] {3}},
-                        {3, new[] {4}}
+                        { 1, new[] { 2 } },
+                        { 2, new[] { 3 } },
+                        { 3, new[] { 4 } }
                     },
                     new Dictionary<int, string>
                     {
-                        {1, EnableTransitiveProjectReferencesPropertyGroup}
+                        { 1, EnableTransitiveProjectReferencesPropertyGroup }
                     },
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2, 3, 4}},
-                        {2, new[] {3}},
-                        {3, new[] {4}},
-                        {4, Array.Empty<int>() }
+                        { 1, new[] { 2, 3, 4 } },
+                        { 2, new[] { 3 } },
+                        { 3, new[] { 4 } },
+                        { 4, Array.Empty<int>() }
                     }
                 };
 
@@ -2066,18 +2066,18 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {3}},
-                        {2, new[] {3}},
-                        {3, new[] {4}}
+                        { 1, new[] { 3 } },
+                        { 2, new[] { 3 } },
+                        { 3, new[] { 4 } }
                     },
                     new Dictionary<int, string>
                     {
-                        {1, EnableTransitiveProjectReferencesPropertyGroup}
+                        { 1, EnableTransitiveProjectReferencesPropertyGroup }
                     },
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {3, 4}},
-                        {2, new[] {3}}
+                        { 1, new[] { 3, 4 } },
+                        { 2, new[] { 3 } }
                     }
                 };
 
@@ -2085,45 +2085,45 @@ $@"
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {3}},
-                        {2, new[] {3}},
-                        {3, new[] {4}}
+                        { 1, new[] { 3 } },
+                        { 2, new[] { 3 } },
+                        { 3, new[] { 4 } }
                     },
                     new Dictionary<int, string>
                     {
-                        {1, EnableTransitiveProjectReferencesPropertyGroup},
-                        {2, EnableTransitiveProjectReferencesPropertyGroup}
+                        { 1, EnableTransitiveProjectReferencesPropertyGroup },
+                        { 2, EnableTransitiveProjectReferencesPropertyGroup }
                     },
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {3, 4}},
-                        {2, new[] {3, 4}}
+                        { 1, new[] { 3, 4 } },
+                        { 2, new[] { 3, 4 } }
                     }
                 };
                 yield return new object[]
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2}},
-                        {2, new[] {3}},
-                        {3, new[] {4}},
-                        {4, new[] {5}},
-                        {5, new[] {6}}
+                        { 1, new[] { 2 } },
+                        { 2, new[] { 3 } },
+                        { 3, new[] { 4 } },
+                        { 4, new[] { 5 } },
+                        { 5, new[] { 6 } }
                     },
                     new Dictionary<int, string>
                     {
-                        {1, EnableTransitiveProjectReferencesPropertyGroup},
-                        {3, EnableTransitiveProjectReferencesPropertyGroup},
-                        {5, EnableTransitiveProjectReferencesPropertyGroup}
+                        { 1, EnableTransitiveProjectReferencesPropertyGroup },
+                        { 3, EnableTransitiveProjectReferencesPropertyGroup },
+                        { 5, EnableTransitiveProjectReferencesPropertyGroup }
                     },
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2, 3, 4, 5, 6}},
-                        {2, new[] {3}},
-                        {3, new[] {4, 5, 6}},
-                        {4, new[] {5}},
-                        {5, new[] {6}},
-                        {6, Array.Empty<int>() },
+                        { 1, new[] { 2, 3, 4, 5, 6 } },
+                        { 2, new[] { 3 } },
+                        { 3, new[] { 4, 5, 6 } },
+                        { 4, new[] { 5 } },
+                        { 5, new[] { 6 } },
+                        { 6, Array.Empty<int>() },
                     }
                 };
             }
@@ -2151,11 +2151,11 @@ $@"
                 env: _env,
                 dependencyEdges: new Dictionary<int, int[]>
                 {
-                    {1, new []{3, 4} },
-                    {2, new []{3, 4} },
-                    {3, new []{4} },
-                    {4, new []{5} },
-                    {5, new []{6} }
+                    { 1, new [] { 3, 4 } },
+                    { 2, new [] { 3, 4 } },
+                    { 3, new [] { 4 } },
+                    { 4, new [] { 5 } },
+                    { 5, new [] { 6 } }
                 },
                 extraContentPerProjectNumber: new Dictionary<int, string>
                 {
@@ -2214,8 +2214,8 @@ $@"
                 env: _env,
                 dependencyEdges: new Dictionary<int, int[]>()
                 {
-                    {1, new[] {2}},
-                    {2, new[] {3}}
+                    { 1, new[] { 2 } },
+                    { 2, new[] { 3 } }
                 },
                 extraContentPerProjectNumber: new Dictionary<int, string>()
                 {
@@ -2362,7 +2362,7 @@ $@"
                 env: _env,
                 dependencyEdges: new Dictionary<int, int[]>()
                 {
-                    {1, new[] {2}},
+                    { 1, new[] { 2 } },
                 },
                 extraContentPerProjectNumber: new Dictionary<int, string>()
                 {

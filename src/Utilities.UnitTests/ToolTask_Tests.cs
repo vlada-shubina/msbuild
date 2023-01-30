@@ -515,7 +515,7 @@ namespace Microsoft.Build.UnitTests
             MyTool task = new MyTool();
             task.BuildEngine = new MockEngine();
             string userVarName = NativeMethodsShared.IsWindows ? "username" : "user";
-            task.EnvironmentVariables = new[] { "a=b", "c=d", userVarName + "=x" /* built-in */, "path=" /* blank value */};
+            task.EnvironmentVariables = new[] { "a=b", "c=d", userVarName + "=x" /* built-in */, "path=" /* blank value */ };
             bool result = task.Execute();
 
             result.ShouldBe(true);

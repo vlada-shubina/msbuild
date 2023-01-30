@@ -776,7 +776,7 @@ namespace Microsoft.Build.Utilities
                                                     {
                                                         dependencies = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                                                         {
-                                                            {tlogEntry, null}
+                                                            { tlogEntry, null }
                                                         };
 
                                                         DependencyTable.Add(tlogEntry, dependencies);

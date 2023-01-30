@@ -91,7 +91,7 @@ namespace Microsoft.Build.Shared
 
         // Matches location that is a simple number.
         private static readonly Lazy<Regex> s_lineFromLocation = new Lazy<Regex>(
-            () => new Regex( // Example: line
+            () => new Regex(// Example: line
                 "^" // Beginning of line
                 + "(?<LINE>[0-9]*)" // Match any number.
                 + "$", // End-of-line
@@ -99,7 +99,7 @@ namespace Microsoft.Build.Shared
 
         // Matches location that is a range of lines.
         private static readonly Lazy<Regex> s_lineLineFromLocation = new Lazy<Regex>(
-            () => new Regex( // Example: line-line
+            () => new Regex(// Example: line-line
                 "^" // Beginning of line
                 + "(?<LINE>[0-9]*)" // Match any number.
                 + "-" // Dash
@@ -109,7 +109,7 @@ namespace Microsoft.Build.Shared
 
         // Matches location that is a line and column
         private static readonly Lazy<Regex> s_lineColFromLocation = new Lazy<Regex>(
-            () => new Regex( // Example: line,col
+            () => new Regex(// Example: line,col
                 "^" // Beginning of line
                 + "(?<LINE>[0-9]*)" // Match any number.
                 + "," // Comma
@@ -119,7 +119,7 @@ namespace Microsoft.Build.Shared
 
         // Matches location that is a line and column-range
         private static readonly Lazy<Regex> s_lineColColFromLocation = new Lazy<Regex>(
-            () => new Regex( // Example: line,col-col
+            () => new Regex(// Example: line,col-col
                 "^" // Beginning of line
                 + "(?<LINE>[0-9]*)" // Match any number.
                 + "," // Comma
@@ -131,7 +131,7 @@ namespace Microsoft.Build.Shared
 
         // Matches location that is line,col,line,col
         private static readonly Lazy<Regex> s_lineColLineColFromLocation = new Lazy<Regex>(
-            () => new Regex( // Example: line,col,line,col
+            () => new Regex(// Example: line,col,line,col
                 "^" // Beginning of line
                 + "(?<LINE>[0-9]*)" // Match any number.
                 + "," // Comma

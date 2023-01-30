@@ -84,8 +84,8 @@ namespace Microsoft.Build.Engine.UnitTests
                 GetTestProject(
                     customProperties: new Dictionary<string, string>
                     {
-                        {"Foo", "true"},
-                        {"MSBuildTreatWarningsAsErrors", "$(Foo)"}
+                        { "Foo", "true" },
+                        { "MSBuildTreatWarningsAsErrors", "$(Foo)" }
                     }));
 
             VerifyBuildErrorEvent(logger);
@@ -170,7 +170,7 @@ namespace Microsoft.Build.Engine.UnitTests
                 GetTestProject(
                     customProperties: new Dictionary<string, string>
                     {
-                        {"Foo", ExpectedEventCode},
+                        { "Foo", ExpectedEventCode },
                     },
                     warningsAsMessages: "$(Foo)"));
 

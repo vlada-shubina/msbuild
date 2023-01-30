@@ -849,7 +849,7 @@ namespace Microsoft.Build.UnitTests.Preprocessor
 
                 var projectOptions = SdkUtilities.CreateProjectOptionsWithResolver(new SdkUtilities.FileBasedMockSdkResolver(new Dictionary<string, string>
                 {
-                    {"MSBuildUnitTestSdk", testSdkDirectory}
+                    { "MSBuildUnitTestSdk", testSdkDirectory }
                 }));
 
                 string sdkPropsPath = Path.Combine(testSdkDirectory, "Sdk.props");
@@ -936,13 +936,13 @@ namespace Microsoft.Build.UnitTests.Preprocessor
 
                 var propertiesToAdd = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                 {
-                    {"PropertyFromSdkResolver", "ValueFromSdkResolver" }
+                    { "PropertyFromSdkResolver", "ValueFromSdkResolver" }
                 };
 
                 var itemsToAdd = new Dictionary<string, SdkResultItem>(StringComparer.OrdinalIgnoreCase)
                 {
                     {
-                        "ItemNameFromSdkResolver", new SdkResultItem( 
+                        "ItemNameFromSdkResolver", new SdkResultItem(
                             "ItemValueFromSdkResolver",
                             new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                         {
@@ -1054,8 +1054,8 @@ namespace Microsoft.Build.UnitTests.Preprocessor
 
                 var projectOptions = SdkUtilities.CreateProjectOptionsWithResolver(new SdkUtilities.FileBasedMockSdkResolver(new Dictionary<string, string>
                 {
-                    {"MSBuildUnitTestSdk1", sdk1},
-                    {"MSBuildUnitTestSdk2", sdk2},
+                    { "MSBuildUnitTestSdk1", sdk1 },
+                    { "MSBuildUnitTestSdk2", sdk2 },
                 }));
 
                 string sdkPropsPath1 = Path.Combine(sdk1, "Sdk.props");

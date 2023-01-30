@@ -58,13 +58,13 @@ namespace Microsoft.Build.UnitTests.Evaluation
         {
             propertiesToAdd = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                 {
-                    {"PropertyFromSdkResolver", "ValueFromSdkResolver" }
+                    { "PropertyFromSdkResolver", "ValueFromSdkResolver" }
                 };
 
             itemsToAdd = new Dictionary<string, SdkResultItem>(StringComparer.OrdinalIgnoreCase)
                 {
                     {
-                        "ItemNameFromSdkResolver", new SdkResultItem( 
+                        "ItemNameFromSdkResolver", new SdkResultItem(
                             "ItemValueFromSdkResolver",
                             new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                         {

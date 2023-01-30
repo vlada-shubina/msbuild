@@ -62,15 +62,15 @@ namespace Microsoft.Build.Framework.Profiler
         private static readonly Dictionary<EvaluationPass, string> PassDefaultDescription =
             new Dictionary<EvaluationPass, string>
             {
-                {EvaluationPass.TotalEvaluation, "Total evaluation"},
-                {EvaluationPass.TotalGlobbing, "Total evaluation for globbing"},
-                {EvaluationPass.InitialProperties, "Initial properties (pass 0)"},
-                {EvaluationPass.Properties, "Properties (pass 1)"},
-                {EvaluationPass.ItemDefinitionGroups, "Item definition groups (pass 2)"},
-                {EvaluationPass.Items, "Items (pass 3)"},
-                {EvaluationPass.LazyItems, "Lazy items (pass 3.1)"},
-                {EvaluationPass.UsingTasks, "Using tasks (pass 4)"},
-                {EvaluationPass.Targets, "Targets (pass 5)"},
+                { EvaluationPass.TotalEvaluation, "Total evaluation" },
+                { EvaluationPass.TotalGlobbing, "Total evaluation for globbing" },
+                { EvaluationPass.InitialProperties, "Initial properties (pass 0)" },
+                { EvaluationPass.Properties, "Properties (pass 1)" },
+                { EvaluationPass.ItemDefinitionGroups, "Item definition groups (pass 2)" },
+                { EvaluationPass.Items, "Items (pass 3)" },
+                { EvaluationPass.LazyItems, "Lazy items (pass 3.1)" },
+                { EvaluationPass.UsingTasks, "Using tasks (pass 4)" },
+                { EvaluationPass.Targets, "Targets (pass 5)" },
             };
 
         /// <nodoc/>

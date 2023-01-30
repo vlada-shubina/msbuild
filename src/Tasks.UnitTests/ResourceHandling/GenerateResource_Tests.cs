@@ -1656,7 +1656,7 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
                 // invalid escape, "unsupported or invalid escape character"
                 new string[] {   "abc=de\\efght", "MSB3566" },
                 // another invalid escape, this one more serious, "unsupported or invalid escape character"
-                new string[] {   @"foo=\ujjjjbar", "MSB3569"},
+                new string[] {   @"foo=\ujjjjbar", "MSB3569" },
             };
             GenerateResource t;
             string textFile;
@@ -2172,10 +2172,10 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
 
             t.Sources = new ITaskItem[]
             {
-                new TaskItem( Utilities.WriteTestResX(false, null, null)),
-                new TaskItem( Utilities.WriteTestResX(false, null, null)),
-                new TaskItem( Utilities.WriteTestResX(false, null, null)),
-                new TaskItem( Utilities.WriteTestResX(false, null, null)),
+                new TaskItem(Utilities.WriteTestResX(false, null, null)),
+                new TaskItem(Utilities.WriteTestResX(false, null, null)),
+                new TaskItem(Utilities.WriteTestResX(false, null, null)),
+                new TaskItem(Utilities.WriteTestResX(false, null, null)),
             };
 
             Utilities.ExecuteTask(t);
@@ -2209,10 +2209,10 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
 
             t.Sources = new ITaskItem[]
             {
-                new TaskItem( Utilities.WriteTestResX(false, null, null)),
-                new TaskItem( Utilities.WriteTestResX(false, null, null)),
-                new TaskItem( Utilities.WriteTestResX(false, null, null)),
-                new TaskItem( Utilities.WriteTestResX(false, null, null)),
+                new TaskItem(Utilities.WriteTestResX(false, null, null)),
+                new TaskItem(Utilities.WriteTestResX(false, null, null)),
+                new TaskItem(Utilities.WriteTestResX(false, null, null)),
+                new TaskItem(Utilities.WriteTestResX(false, null, null)),
             };
 
             t.StateFile = new TaskItem(Utilities.GetTempFileName(".cache"));
@@ -2254,10 +2254,10 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
             {
                 t.Sources = new ITaskItem[]
                 {
-                    new TaskItem( Utilities.WriteTestText(null, null)),
-                    new TaskItem( Utilities.WriteTestText(null, null)),
-                    new TaskItem( Utilities.WriteTestText("goober", null)),
-                    new TaskItem( Utilities.WriteTestText(null, null)),
+                    new TaskItem(Utilities.WriteTestText(null, null)),
+                    new TaskItem(Utilities.WriteTestText(null, null)),
+                    new TaskItem(Utilities.WriteTestText("goober", null)),
+                    new TaskItem(Utilities.WriteTestText(null, null)),
                 };
 
                 foreach (ITaskItem taskItem in t.Sources)

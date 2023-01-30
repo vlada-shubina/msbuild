@@ -1267,9 +1267,9 @@ namespace Microsoft.Build.UnitTests.Logging
         {
             IDictionary<string, string> eventProperties = new Dictionary<string, string>
             {
-                {"Property1", "Value1"},
-                {"Property2", "347EA055D5BD405F9726D7429BB30244"},
-                {"Property3", @"C:\asdf\asdf\asdf"},
+                { "Property1", "Value1" },
+                { "Property2", "347EA055D5BD405F9726D7429BB30244" },
+                { "Property3", @"C:\asdf\asdf\asdf" },
             };
 
             TestLogTelemetry(buildEventContext: null, eventName: "no context and no properties", properties: null);

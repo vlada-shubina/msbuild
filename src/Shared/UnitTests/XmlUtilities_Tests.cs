@@ -15,17 +15,17 @@ namespace Microsoft.Build.UnitTests
         // Various invalid names, with the first invalid character listed for each
         private string[,] _invalidNames = new string[,]
         {
-            {"foo.bar", "."},
-            {"1baz", "1"},
-            {"+", "+"},
-            {"a+", "+"},
-            {"_-.", "."},
-            {"AZaz09%", "%"},
-            {" x", " "},
-            {"A Zaz09%", " "},
-            {"foo.", "."},
-            {"\u03A3", "\u03A3"},       // sigma
-            {"a1\u03A3", "\u03A3"}
+            { "foo.bar", "." },
+            { "1baz", "1" },
+            { "+", "+" },
+            { "a+", "+" },
+            { "_-.", "." },
+            { "AZaz09%", "%" },
+            { " x", " " },
+            { "A Zaz09%", " " },
+            { "foo.", "." },
+            { "\u03A3", "\u03A3" },       // sigma
+            { "a1\u03A3", "\u03A3" }
         };
 
         /// <summary>

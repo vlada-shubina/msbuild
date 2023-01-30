@@ -248,7 +248,7 @@ namespace Microsoft.Build.UnitTests.BackEnd
                         },
                         version: null,
                         propertiesToAdd: new Dictionary<string, string>()
-                            { {"PropertyNameFromResolver","PropertyValueFromResolver" } },
+                            { { "PropertyNameFromResolver","PropertyValueFromResolver" } },
                         itemsToAdd: new Dictionary<string, SdkResultItem>()
                             {
                                 { "ItemFromResolver", new SdkResultItem("ItemValueFromResolver", null) }

@@ -181,7 +181,7 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, null}
+                        { 1, null }
                     }
                 };
 
@@ -189,8 +189,8 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, null},
-                        {2, null}
+                        { 1, null },
+                        { 2, null }
                     }
                 };
 
@@ -198,7 +198,7 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2}}
+                        { 1, new[] { 2 } }
                     }
                 };
 
@@ -206,8 +206,8 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2}},
-                        {2, null}
+                        { 1, new[] { 2 } },
+                        { 2, null }
                     }
                 };
 
@@ -215,8 +215,8 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2}},
-                        {2, new[] {3}}
+                        { 1, new[] { 2 } },
+                        { 2, new[] { 3 } }
                     }
                 };
 
@@ -224,7 +224,7 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2, 3}}
+                        { 1, new[] { 2, 3 } }
                     }
                 };
 
@@ -232,9 +232,9 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2, 3}},
-                        {2, new[] {4}},
-                        {3, new[] {4}}
+                        { 1, new[] { 2, 3 } },
+                        { 2, new[] { 4 } },
+                        { 3, new[] { 4 } }
                     }
                 };
 
@@ -242,9 +242,9 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2, 3, 4}},
-                        {2, new[] {4}},
-                        {3, new[] {4}}
+                        { 1, new[] { 2, 3, 4 } },
+                        { 2, new[] { 4 } },
+                        { 3, new[] { 4 } }
                     }
                 };
 
@@ -252,8 +252,8 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2}},
-                        {3, new[] {4}}
+                        { 1, new[] { 2 } },
+                        { 3, new[] { 4 } }
                     }
                 };
 
@@ -261,8 +261,8 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {2, 4}},
-                        {3, new[] {4}}
+                        { 1, new[] { 2, 4 } },
+                        { 3, new[] { 4 } }
                     }
                 };
 
@@ -270,12 +270,12 @@ namespace Microsoft.Build.Graph.UnitTests
                 {
                     new Dictionary<int, int[]>
                     {
-                        {1, new[] {4, 5}},
-                        {2, new[] {5}},
-                        {3, new[] {5, 6}},
-                        {4, new[] {7}},
-                        {5, new[] {7, 8}},
-                        {6, new[] {7, 9}}
+                        { 1, new[] { 4, 5 } },
+                        { 2, new[] { 5 } },
+                        { 3, new[] { 5, 6 } },
+                        { 4, new[] { 7 } },
+                        { 5, new[] { 7, 8 } },
+                        { 6, new[] { 7, 9 } }
                     }
                 };
             }
