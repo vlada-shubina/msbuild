@@ -91,7 +91,7 @@ namespace Microsoft.Build.Shared
             // "error" should not be localized
             return FormatEventMessage("error", e.Subcategory, e.Message,
                 e.Code, e.File, showProjectFile ? e.ProjectFile : null, e.LineNumber, e.EndLineNumber,
-                            e.ColumnNumber, e.EndColumnNumber, e.ThreadId, null);
+                e.ColumnNumber, e.EndColumnNumber, e.ThreadId, null);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Build.Shared
             // "warning" should not be localized
             return FormatEventMessage("warning", e.Subcategory, e.Message,
                 e.Code, e.File, null, e.LineNumber, e.EndLineNumber,
-                           e.ColumnNumber, e.EndColumnNumber, e.ThreadId, null);
+                e.ColumnNumber, e.EndColumnNumber, e.ThreadId, null);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Microsoft.Build.Shared
             // "warning" should not be localized
             return FormatEventMessage("warning", e.Subcategory, e.Message,
                 e.Code, e.File, showProjectFile ? e.ProjectFile : null, e.LineNumber, e.EndLineNumber,
-                           e.ColumnNumber, e.EndColumnNumber, e.ThreadId, null);
+                e.ColumnNumber, e.EndColumnNumber, e.ThreadId, null);
         }
 
         /// <summary>

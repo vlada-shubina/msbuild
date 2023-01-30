@@ -141,10 +141,10 @@ namespace Microsoft.Build.UnitTests
             LoggerVerbosity[] verbosityEnumerations = new LoggerVerbosity[]
             {
                 LoggerVerbosity.Quiet, LoggerVerbosity.Quiet,
-                                                                             LoggerVerbosity.Minimal, LoggerVerbosity.Minimal,
-                                                                             LoggerVerbosity.Normal, LoggerVerbosity.Normal,
-                                                                             LoggerVerbosity.Detailed, LoggerVerbosity.Detailed,
-                                                                             LoggerVerbosity.Diagnostic, LoggerVerbosity.Diagnostic
+                LoggerVerbosity.Minimal, LoggerVerbosity.Minimal,
+                LoggerVerbosity.Normal, LoggerVerbosity.Normal,
+                LoggerVerbosity.Detailed, LoggerVerbosity.Detailed,
+                LoggerVerbosity.Diagnostic, LoggerVerbosity.Diagnostic
             };
             for (int i = 0; i < verbositySettings.Length; i++)
             {

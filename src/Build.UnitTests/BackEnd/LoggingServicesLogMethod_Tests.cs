@@ -1637,11 +1637,11 @@ namespace Microsoft.Build.UnitTests.Logging
         {
             TaskStartedEventArgs taskEvent = new TaskStartedEventArgs(
                  message,
-                  null, // no help keyword
-                  projectFile,
-                  projectFileOfTask,
-                  taskName,
-                  service.ProcessedBuildEvent.Timestamp);
+                 null, // no help keyword
+                 projectFile,
+                 projectFileOfTask,
+                 taskName,
+                 service.ProcessedBuildEvent.Timestamp);
             taskEvent.BuildEventContext = s_buildEventContext;
             Assert.True(((TaskStartedEventArgs)service.ProcessedBuildEvent).IsEquivalent(taskEvent));
         }
@@ -1685,7 +1685,7 @@ namespace Microsoft.Build.UnitTests.Logging
                         targetNames,
                         null,
                         null,
-                      parentBuildEventContext,
+                        parentBuildEventContext,
                         service.ProcessedBuildEvent.Timestamp);
             buildEvent.BuildEventContext = generatedContext;
             Assert.True(((ProjectStartedEventArgs)service.ProcessedBuildEvent).IsEquivalent(buildEvent));

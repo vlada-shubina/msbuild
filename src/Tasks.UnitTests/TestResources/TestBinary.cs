@@ -39,7 +39,7 @@ namespace Microsoft.Build.Tasks.UnitTests.TestResources
                     HashEncoding = "hex",
                     FileHash = "7774962C97EAC52B45291E1410F06AC6EFF6AF9ED38A57E2CEB720650282E46CFE512FAAD68AD9C45B74ED1B7E460198E0B00D5C9EF0404FF76B12F8AD2D329F",
                 },
-                 new TestBinary
+                new TestBinary
                 {
                     FilePath = LoremFilePath,
                     HashAlgorithm = "SHA256",

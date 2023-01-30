@@ -4524,7 +4524,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                 // called by .Sort. We need enough items to guarantee that A with null version
                 // will be on the left side of a compare.
                 new TaskItem("A")
-};
+            };
 
             t.Assemblies[1].SetMetadata("HintPath", @"C:\Regress312873\b.dll");
             t.Assemblies[2].SetMetadata("HintPath", @"C:\Regress312873-2\a.dll");
@@ -4615,7 +4615,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             {
                 new TaskItem("A"),
                 new TaskItem("B")
-};
+            };
 
             t.Assemblies[0].SetMetadata("HintPath", @"C:\Regress317975\a.dll");
             t.Assemblies[1].SetMetadata("HintPath", @"C:\Regress317975\v2\b.dll");
@@ -4666,7 +4666,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             t.Assemblies = new ITaskItem[]
             {
                 new TaskItem(typeof(object).Module.FullyQualifiedName.ToLower())
-};
+            };
 
             t.SearchPaths = new string[]
             {
@@ -4708,7 +4708,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             t.Assemblies = new ITaskItem[]
             {
                 new TaskItem(@"c:\Regress313086\mscorlib.dll")
-};
+            };
 
             t.SearchPaths = new string[]
             {
@@ -5705,9 +5705,9 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                                                                                          {
                                                                                            new AssemblyTableInfo("c:\\RandomDirectory.xml", "TargetFrameworkDirectory"),
                                                                                            new AssemblyTableInfo("c:\\AnotherRandomDirectory.xml", "TargetFrameworkDirectory")
-                                                                                          },
-                                                                                          whiteListErrors,
-                                                                                          whiteListErrorFileNames);
+                                                                                         },
+                                                                   whiteListErrors,
+                                                                   whiteListErrorFileNames);
 
                 // Since there were no white list expect the black list to return null
                 Assert.Empty(blackList); // "Expected to have no assemblies in the black list"
@@ -5969,7 +5969,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             {
                 File.WriteAllText(
                     redistListPath,
-                   "RANDOMBOOOOOGOOGOOG");
+                    "RANDOMBOOOOOGOOGOOG");
 
                 t.InstalledAssemblyTables = new ITaskItem[] { new TaskItem(redistListPath) };
                 t.IgnoreDefaultInstalledAssemblyTables = true;
@@ -6110,7 +6110,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             {
                 File.WriteAllText(
                     goodSubsetFile,
-                  "<FileList Redist='Microsoft-Windows-CLRCoreComp' >" +
+                    "<FileList Redist='Microsoft-Windows-CLRCoreComp' >" +
                        "<File AssemblyName='Microsoft.Build.Engine' Version='2.0.0.0' PublicKeyToken='b03f5f7f11d50a3a' Culture='Neutral' FileVersion='2.0.50727.208' InGAC='false' />" +
                        "<File AssemblyName='System.Xml' Version='2.0.0.0' PublicKeyToken='b03f5f7f11d50a3a' Culture='Neutral' FileVersion='2.0.50727.208' InGAC='true' />" +
                        "<File AssemblyName='System.Data' Version='2.0.0.0' PublicKeyToken='b03f5f7f11d50a3a' Culture='Neutral' FileVersion='2.0.50727.208' InGAC='true' />" +

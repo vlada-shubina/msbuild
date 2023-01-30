@@ -793,24 +793,24 @@ namespace Microsoft.Build.CommandLine
 #if FEATURE_XML_SCHEMA_VALIDATION
                                 needToValidateProject, schemaFile,
 #endif
-                                    cpuCount,
-                                    enableNodeReuse,
-                                    preprocessWriter,
-                                    targetsWriter,
-                                    detailedSummary,
-                                    warningsAsErrors,
-                                    warningsNotAsErrors,
-                                    warningsAsMessages,
-                                    enableRestore,
-                                    profilerLogger,
-                                    enableProfiler,
-                                    interactive,
-                                    isolateProjects,
-                                    graphBuildOptions,
-                                    lowPriority,
-                                    inputResultsCaches,
-                                    outputResultsCache,
-                                    commandLine))
+                                cpuCount,
+                                enableNodeReuse,
+                                preprocessWriter,
+                                targetsWriter,
+                                detailedSummary,
+                                warningsAsErrors,
+                                warningsNotAsErrors,
+                                warningsAsMessages,
+                                enableRestore,
+                                profilerLogger,
+                                enableProfiler,
+                                interactive,
+                                isolateProjects,
+                                graphBuildOptions,
+                                lowPriority,
+                                inputResultsCaches,
+                                outputResultsCache,
+                                commandLine))
                         {
                             exitType = ExitType.BuildError;
                         }

@@ -746,7 +746,7 @@ namespace Microsoft.Build.Tasks.Xaml
             var setToolName = new CodeAssignStatement(
                 new CodePropertyReferenceExpression(
                     new CodeVariableReferenceExpression(SwitchToAdd), NameProperty),
-                    new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
+                new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
             propertyName.SetStatements.Add(setToolName);
 
             GenerateAssignToolSwitch(propertyName, SwitchValueProperty, property.Prefix, property.SwitchName);
@@ -792,7 +792,7 @@ namespace Microsoft.Build.Tasks.Xaml
             var setToolName = new CodeAssignStatement(
                   new CodePropertyReferenceExpression(
                       new CodeVariableReferenceExpression(SwitchToAdd), NameProperty),
-                      new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
+                  new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
             propertyName.SetStatements.Add(setToolName);
 
             GenerateAssignToolSwitch(propertyName, SwitchValueProperty, property.Prefix, property.SwitchName);
@@ -812,7 +812,7 @@ namespace Microsoft.Build.Tasks.Xaml
             var setToolName = new CodeAssignStatement(
                 new CodePropertyReferenceExpression(
                     new CodeVariableReferenceExpression(SwitchToAdd), NameProperty),
-                    new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
+                new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
             propertyName.SetStatements.Add(setToolName);
 
             GenerateCommonSetStatements(propertyName, BooleanValueProperty);
@@ -872,25 +872,25 @@ namespace Microsoft.Build.Tasks.Xaml
                 var setToolSwitchNameGoodIndex = new CodeAssignStatement(
                     new CodePropertyReferenceExpression(
                         new CodeVariableReferenceExpression(SwitchToAdd), SwitchValueProperty),
-                        new CodePropertyReferenceExpression(new CodeArrayIndexerExpression(new CodeVariableReferenceExpression("switchMap"), new CodeVariableReferenceExpression("i")), "Item2"));
+                    new CodePropertyReferenceExpression(new CodeArrayIndexerExpression(new CodeVariableReferenceExpression("switchMap"), new CodeVariableReferenceExpression("i")), "Item2"));
 
                 // Set the arguments
                 var setArgumentsGoodIndex = new CodeAssignStatement(
                     new CodePropertyReferenceExpression(
                         new CodeVariableReferenceExpression(SwitchToAdd), "Arguments"),
-                        new CodePropertyReferenceExpression(new CodeArrayIndexerExpression(new CodeVariableReferenceExpression("switchMap"), new CodeVariableReferenceExpression("i")), "Item3"));
+                    new CodePropertyReferenceExpression(new CodeArrayIndexerExpression(new CodeVariableReferenceExpression("switchMap"), new CodeVariableReferenceExpression("i")), "Item3"));
 
                 // Set the switch value from the index into the array
                 var setToolSwitchNameBadIndex = new CodeAssignStatement(
                     new CodePropertyReferenceExpression(
                         new CodeVariableReferenceExpression(SwitchToAdd), SwitchValueProperty),
-                        new CodePrimitiveExpression(String.Empty));
+                    new CodePrimitiveExpression(String.Empty));
 
                 // Set the arguments
                 var setArgumentsBadIndex = new CodeAssignStatement(
                     new CodePropertyReferenceExpression(
                         new CodeVariableReferenceExpression(SwitchToAdd), "Arguments"),
-                       new CodePrimitiveExpression(null));
+                    new CodePrimitiveExpression(null));
 
                 // Create a CodeConditionStatement that tests a boolean value named boolean.
                 var conditionalStatement = new CodeConditionStatement(
@@ -906,14 +906,14 @@ namespace Microsoft.Build.Tasks.Xaml
                 var setSeparator = new CodeAssignStatement(
                     new CodePropertyReferenceExpression(
                         new CodeVariableReferenceExpression(SwitchToAdd), "Separator"),
-                        new CodeSnippetExpression(SurroundWithQuotes(property.Separator)));
+                    new CodeSnippetExpression(SurroundWithQuotes(property.Separator)));
                 propertyName.SetStatements.Add(setSeparator);
 
                 // Set the tool name
                 var setToolName = new CodeAssignStatement(
                     new CodePropertyReferenceExpression(
                         new CodeVariableReferenceExpression(SwitchToAdd), NameProperty),
-                        new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
+                    new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
                 propertyName.SetStatements.Add(setToolName);
 
                 propertyToReceiveValue = ValueProperty;
@@ -924,7 +924,7 @@ namespace Microsoft.Build.Tasks.Xaml
                 var setToolName = new CodeAssignStatement(
                     new CodePropertyReferenceExpression(
                         new CodeVariableReferenceExpression(SwitchToAdd), NameProperty),
-                        new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
+                    new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
                 propertyName.SetStatements.Add(setToolName);
 
                 propertyToReceiveValue = FileNameProperty;
@@ -1014,7 +1014,7 @@ namespace Microsoft.Build.Tasks.Xaml
                         propertyName.SetStatements.Add(new CodeMethodInvokeExpression(
                             new CodeFieldReferenceExpression(
                                 new CodeVariableReferenceExpression(SwitchToAdd), Overrides), AddLastMethod,
-                                    new CodeObjectCreateExpression(
+                            new CodeObjectCreateExpression(
                                         new CodeTypeReference(TypeKeyValuePairStrings),
                                         new CodeSnippetExpression(SurroundWithQuotes(rel.SwitchValue)),
                                         new CodeSnippetExpression(SurroundWithQuotes(overrided)))));
@@ -1058,7 +1058,7 @@ namespace Microsoft.Build.Tasks.Xaml
             CodeAssignStatement setToolName = new CodeAssignStatement(
                    new CodePropertyReferenceExpression(
                        new CodeVariableReferenceExpression(SwitchToAdd), NameProperty),
-                       new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
+                   new CodeSnippetExpression(SurroundWithQuotes(property.Name)));
             propertyName.SetStatements.Add(setToolName);
             GenerateCommonSetStatements(propertyName, StringListProperty);
         }

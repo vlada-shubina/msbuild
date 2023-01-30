@@ -39,7 +39,7 @@ namespace Microsoft.Build.Tasks
         /// </summary>
         private static readonly Regex s_sdkReferenceFormat = new Regex(
              @"(?<SDKSIMPLENAME>^[^,]*),\s*Version=(?<SDKVERSION>.*)",
-            RegexOptions.IgnoreCase);
+             RegexOptions.IgnoreCase);
 
         /// <summary>
         /// SimpleName group

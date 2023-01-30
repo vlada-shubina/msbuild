@@ -216,7 +216,7 @@ namespace Microsoft.Build.Shared
 
             public TempWorkingDirectory(string sourcePath,
 #if !CLR2COMPATIBILITY
-                [CallerMemberName]
+            [CallerMemberName]
 #endif
             string name = null)
             {

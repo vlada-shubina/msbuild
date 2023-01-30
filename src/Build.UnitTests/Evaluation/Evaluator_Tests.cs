@@ -2789,7 +2789,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
                                    null,
                                    ProjectCollection.GlobalProjectCollection.ToolsetLocations,
                                    4,
-                    false);
+                                   false);
 
             Project project = new Project(XmlReader.Create(new StringReader(content)), new Dictionary<string, string>(), ObjectModelHelpers.MSBuildDefaultToolsVersion, collection);
 

@@ -1881,7 +1881,7 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.OutOfProc
                 new TaskItem( Utilities.WriteTestText(null, null)),
                 new TaskItem( Utilities.WriteTestText("goober", null)),
                 new TaskItem( Utilities.WriteTestText(null, null)),
-            };
+                };
                 foreach (ITaskItem taskItem in t.Sources)
                 {
                     File.Delete(Path.ChangeExtension(taskItem.ItemSpec, ".resources"));

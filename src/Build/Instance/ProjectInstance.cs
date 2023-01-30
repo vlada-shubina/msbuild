@@ -2554,15 +2554,15 @@ namespace Microsoft.Build.Execution
         [MethodImpl(MethodImplOptions.NoInlining)]
         private static ProjectInstance[] GenerateSolutionWrapperUsingOldOM(
         string projectFile,
-            IDictionary<string, string> globalProperties,
-            string toolsVersion,
-            ProjectRootElementCacheBase projectRootElementCache,
-            BuildParameters buildParameters,
-            ILoggingService loggingService,
-            BuildEventContext projectBuildEventContext,
-            bool isExplicitlyLoaded,
-            ISdkResolverService sdkResolverService,
-            int submissionId)
+        IDictionary<string, string> globalProperties,
+        string toolsVersion,
+        ProjectRootElementCacheBase projectRootElementCache,
+        BuildParameters buildParameters,
+        ILoggingService loggingService,
+        BuildEventContext projectBuildEventContext,
+        bool isExplicitlyLoaded,
+        ISdkResolverService sdkResolverService,
+        int submissionId)
         {
             // Pass the toolsVersion of this project through, which will never be null -- either we passed the /tv:nn
             // switch straight through, or we fabricated a ToolsVersion based on the solution version.  

@@ -107,7 +107,7 @@ namespace Microsoft.Build.UnitTests
         {
             AssertTokenize(
             "namespace MyNamespace { class MyClass {} }\x0d",
-             ".Keyword.Whitespace.Identifier.Whitespace.OpenScope.Whitespace.Keyword.Whitespace.Identifier.Whitespace.OpenScope.CloseScope.Whitespace.CloseScope.Whitespace");
+            ".Keyword.Whitespace.Identifier.Whitespace.OpenScope.Whitespace.Keyword.Whitespace.Identifier.Whitespace.OpenScope.CloseScope.Whitespace.CloseScope.Whitespace");
         }
 
         // If a keyword has '@' in front, then its treated as an identifier. 

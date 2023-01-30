@@ -1041,7 +1041,7 @@ namespace Microsoft.Build.UnitTests.Definition
                       @"<Project>
                             <UsingTask TaskName='ooo' AssemblyName='o' />
                         </Project>")
-};
+            };
 
         public struct DefaultTasksFile
         {

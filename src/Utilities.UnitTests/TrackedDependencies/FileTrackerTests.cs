@@ -679,7 +679,7 @@ class X
             {
                                                             "bfoo",
                                                             "afoo"
-                                                       });
+            });
 
             int exit = FileTrackerTestHelper.RunCommand(s_defaultTrackerPath, "/d " + s_defaultFileTrackerPath + " /c sort test.in /O test.out");
 
@@ -707,7 +707,7 @@ class X
             {
                                                             "bfoo",
                                                             "afoo"
-                                                       });
+            });
 
             int exit = FileTrackerTestHelper.RunCommand(s_defaultTrackerPath, "/d " + s_defaultFileTrackerPath + " /i outdir /c sort test.in /O test.out");
 
@@ -739,7 +739,7 @@ class X
             {
                                                             "bfoo",
                                                             "afoo"
-                                                       });
+            });
 
             int exit = FileTrackerTestHelper.RunCommand(s_defaultTrackerPath, "/d " + s_defaultFileTrackerPath + " /i outdir /c sort test.in /O test.out");
 

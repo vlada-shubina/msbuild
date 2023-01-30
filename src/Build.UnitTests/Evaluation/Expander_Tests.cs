@@ -1350,7 +1350,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
             IList<TaskItem> taskItems = expander.ExpandIntoTaskItemsLeaveEscaped(
                 "@(Resource->'%(Filename)') ; @(Content) ; @(NonExistent) ; $(NonExistent) ; %(NonExistent) ; " +
                 "$(OutputPath) ; $(TargetPath) ; %(Language)_%(Culture)",
-                 ExpanderOptions.ExpandAll, MockElementLocation.Instance);
+                ExpanderOptions.ExpandAll, MockElementLocation.Instance);
 
             // the following items are passed to the TaskItem constructor, and thus their ItemSpecs should be
             // in escaped form.
@@ -3764,7 +3764,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
                 new string[] {"$(Reg:AA)", ""},
                 new string[] {"$(Reg:AAAA)", ""},
                 new string[] {"$(Reg:AAA)", ""}
-                                   };
+            };
 
             var errorTests = new List<string>
             {
@@ -3779,7 +3779,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
             "$(listofthings.Split(';')[])",
             "$(listofthings.Split(';')[-1])",
             "$([]::())",
-                                                      @"
+            @"
 
 $(
 
@@ -3800,101 +3800,101 @@ $(
 )
 
 ",
-                "$([Microsoft.VisualBasic.FileIO.FileSystem]::CurrentDirectory)", // not allowed
-                "$(e.Length..ToString())",
-                "$(SomeStuff.get_Length(null))",
-                "$(SomeStuff.Substring((1)))",
-                "$(b.Substring(-10, $(c)))",
-                "$(b.Substring(-10, $(emptystring)))",
-                "$(b.Substring(-10, $(space)))",
-                "$([MSBuild]::Add.Sub(null,40))",
-                "$([MSBuild]::Add( ,40))", // empty parameter is empty string
-                "$([MSBuild]::Add('',40))", // empty quoted parameter is empty string
-                "$([MSBuild]::Add(40,,,))",
-                "$([MSBuild]::Add(40, ,,))",
-                "$([MSBuild]::Add(40,)",
-                "$([MSBuild]::Add(40,X)",
-                "$([MSBuild]::Add(40,",
-                "$([MSBuild]::Add(40",
-                "$([MSBuild]::Add(,))", // gives "Late bound operations cannot be performed on types or methods for which ContainsGenericParameters is true."
-                "$([System.TimeSpan]::Equals(,))", // empty parameter is interpreted as empty string
-                "$([System.TimeSpan]::Equals($(space),$(emptystring)))", // empty parameter is interpreted as empty string
-                "$([System.TimeSpan]::Equals($(emptystring),$(emptystring)))", // empty parameter is interpreted as empty string
-                "$([MSBuild]::Add($(PropertyContainingNullAsAString),40))", // a property containing the word null is a string "null"
-                "$([MSBuild]::Add('null',40))", // the word null is a string "null"
-                "$(SomeStuff.Substring(-10))",
-                "$(.Length)",
-                "$(.Substring(1))",
-                "$(.get_Length())",
-                "$(e.)",
-                "$(e..)",
-                "$(e..Length)",
-                "$(e$(d).Length)",
-                "$($(d).Length)",
-                "$(e`.Length)",
-                "$([System.IO.Path]Combine::Combine(`a`,`b`))",
-                "$([System.IO.Path]::Combine((`a`,`b`))",
-                "$([System.IO.Path]Combine(::Combine(`a`,`b`))",
-                "$([System.IO.Path]Combine(`::Combine(`a`,`b`)`, `b`)`)",
-                "$([System.IO.Path]::`Combine(`a`, `b`)`)",
-                "$([System.IO.Path]::(`Combine(`a`, `b`)`))",
-                "$([System.DateTime]foofoo::Now)",
-                "$([System.DateTime].Now)",
-                "$([].Now)",
-                "$([ ].Now)",
-                "$([ .Now)",
-                "$([])",
-                "$([ )",
-                "$([ ])",
-                "$([System.Diagnostics.Process]::Start(`NOTEPAD.EXE`))",
-                "$([[]]::Start(`NOTEPAD.EXE`))",
-                "$([(::Start(`NOTEPAD.EXE`))",
-                "$([Goop]::Start(`NOTEPAD.EXE`))",
-                "$([System.Threading.Thread]::CurrentThread)",
-                "$",
-                "$(",
-                "$((",
-                "@",
-                "@(",
-                "@()",
-                "%",
-                "%(",
-                "%()",
-                "exists",
-                "exists(",
-                "exists()",
-                "exists( )",
-                "exists(,)",
-                "@(x->'",
-                "@(x->''",
-                "@(x-",
-                "@(x->'x','",
-                "@(x->'x',''",
-                "@(x->'x','')",
-                "-1>x",
-                "\n",
-                "\t",
-                "+-1",
-                "$(SomeStuff.)",
-                "$(SomeStuff.!)",
-                "$(SomeStuff.`)",
-                "$(SomeStuff.GetType)",
-                "$(goop.baz`)",
-                "$(SomeStuff.Substring(HELLO!))",
-                "$(SomeStuff.ToLowerInvariant()_goop)",
-                "$(SomeStuff($(System.DateTime.Now)))",
-                "$(System.Foo.Bar.Lgg)",
-                "$(SomeStuff.Lgg)",
-                "$(SomeStuff($(Value)))",
-                "$(e.$(e.Length))",
-                "$(e.Substring($(e.Substring(,)))",
-                "$(e.Substring($(e.Substring(a)))",
-                "$(e.Substring($([System.IO.Path]::Combine(`a`, `b`))))",
-                "$([]::())",
-                "$((((",
-                "$($())",
-                "$",
-                "()"
+            "$([Microsoft.VisualBasic.FileIO.FileSystem]::CurrentDirectory)", // not allowed
+            "$(e.Length..ToString())",
+            "$(SomeStuff.get_Length(null))",
+            "$(SomeStuff.Substring((1)))",
+            "$(b.Substring(-10, $(c)))",
+            "$(b.Substring(-10, $(emptystring)))",
+            "$(b.Substring(-10, $(space)))",
+            "$([MSBuild]::Add.Sub(null,40))",
+            "$([MSBuild]::Add( ,40))", // empty parameter is empty string
+            "$([MSBuild]::Add('',40))", // empty quoted parameter is empty string
+            "$([MSBuild]::Add(40,,,))",
+            "$([MSBuild]::Add(40, ,,))",
+            "$([MSBuild]::Add(40,)",
+            "$([MSBuild]::Add(40,X)",
+            "$([MSBuild]::Add(40,",
+            "$([MSBuild]::Add(40",
+            "$([MSBuild]::Add(,))", // gives "Late bound operations cannot be performed on types or methods for which ContainsGenericParameters is true."
+            "$([System.TimeSpan]::Equals(,))", // empty parameter is interpreted as empty string
+            "$([System.TimeSpan]::Equals($(space),$(emptystring)))", // empty parameter is interpreted as empty string
+            "$([System.TimeSpan]::Equals($(emptystring),$(emptystring)))", // empty parameter is interpreted as empty string
+            "$([MSBuild]::Add($(PropertyContainingNullAsAString),40))", // a property containing the word null is a string "null"
+            "$([MSBuild]::Add('null',40))", // the word null is a string "null"
+            "$(SomeStuff.Substring(-10))",
+            "$(.Length)",
+            "$(.Substring(1))",
+            "$(.get_Length())",
+            "$(e.)",
+            "$(e..)",
+            "$(e..Length)",
+            "$(e$(d).Length)",
+            "$($(d).Length)",
+            "$(e`.Length)",
+            "$([System.IO.Path]Combine::Combine(`a`,`b`))",
+            "$([System.IO.Path]::Combine((`a`,`b`))",
+            "$([System.IO.Path]Combine(::Combine(`a`,`b`))",
+            "$([System.IO.Path]Combine(`::Combine(`a`,`b`)`, `b`)`)",
+            "$([System.IO.Path]::`Combine(`a`, `b`)`)",
+            "$([System.IO.Path]::(`Combine(`a`, `b`)`))",
+            "$([System.DateTime]foofoo::Now)",
+            "$([System.DateTime].Now)",
+            "$([].Now)",
+            "$([ ].Now)",
+            "$([ .Now)",
+            "$([])",
+            "$([ )",
+            "$([ ])",
+            "$([System.Diagnostics.Process]::Start(`NOTEPAD.EXE`))",
+            "$([[]]::Start(`NOTEPAD.EXE`))",
+            "$([(::Start(`NOTEPAD.EXE`))",
+            "$([Goop]::Start(`NOTEPAD.EXE`))",
+            "$([System.Threading.Thread]::CurrentThread)",
+            "$",
+            "$(",
+            "$((",
+            "@",
+            "@(",
+            "@()",
+            "%",
+            "%(",
+            "%()",
+            "exists",
+            "exists(",
+            "exists()",
+            "exists( )",
+            "exists(,)",
+            "@(x->'",
+            "@(x->''",
+            "@(x-",
+            "@(x->'x','",
+            "@(x->'x',''",
+            "@(x->'x','')",
+            "-1>x",
+            "\n",
+            "\t",
+            "+-1",
+            "$(SomeStuff.)",
+            "$(SomeStuff.!)",
+            "$(SomeStuff.`)",
+            "$(SomeStuff.GetType)",
+            "$(goop.baz`)",
+            "$(SomeStuff.Substring(HELLO!))",
+            "$(SomeStuff.ToLowerInvariant()_goop)",
+            "$(SomeStuff($(System.DateTime.Now)))",
+            "$(System.Foo.Bar.Lgg)",
+            "$(SomeStuff.Lgg)",
+            "$(SomeStuff($(Value)))",
+            "$(e.$(e.Length))",
+            "$(e.Substring($(e.Substring(,)))",
+            "$(e.Substring($(e.Substring(a)))",
+            "$(e.Substring($([System.IO.Path]::Combine(`a`, `b`))))",
+            "$([]::())",
+            "$((((",
+            "$($())",
+            "$",
+            "()"
             };
 
 #if !RUNTIME_TYPE_NETCORE

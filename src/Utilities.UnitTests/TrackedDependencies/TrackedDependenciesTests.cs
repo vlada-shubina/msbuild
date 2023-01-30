@@ -1302,13 +1302,13 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                     {
                         new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                         new TaskItem(Path.Combine("TestFiles", "two.cpp")),
-                        },
+                    },
                     null,
                     new ITaskItem[]
                     {
                         new TaskItem(Path.Combine("TestFiles", "one.obj")),
                         new TaskItem(Path.Combine("TestFiles", "two.obj")),
-                        },
+                    },
                     false, /* no minimal rebuild optimization */
                     false); /* shred composite rooting markers */
 
@@ -1370,13 +1370,13 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                         {
                             new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                             new TaskItem(Path.Combine("TestFiles", "two.cpp")),
-                            },
+                        },
                         null,
                         new ITaskItem[]
                         {
                             new TaskItem(Path.Combine("TestFiles", "one.obj")),
                             new TaskItem(Path.Combine("TestFiles", "two.obj")),
-                            },
+                        },
                         false, /* no minimal rebuild optimization */
                         false); /* shred composite rooting markers */
 
@@ -1433,13 +1433,13 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                     {
                         new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                         new TaskItem(Path.Combine("TestFiles", "two.cpp")),
-                        },
+                    },
                     null,
                     new ITaskItem[]
                     {
                         new TaskItem(Path.Combine("TestFiles", "one.obj")),
                         new TaskItem(Path.Combine("TestFiles", "two.obj")),
-                        },
+                    },
                     false, /* no minimal rebuild optimization */
                     false); /* shred composite rooting markers */
 
@@ -1610,7 +1610,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog"))
-                                };
+            };
 
             CanonicalTrackedInputFiles d = new CanonicalTrackedInputFiles(
                     DependencyTestHelper.MockTask,
@@ -1661,7 +1661,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog"))
-                                };
+            };
 
             CanonicalTrackedInputFiles d = new CanonicalTrackedInputFiles(
                     DependencyTestHelper.MockTask,
@@ -1747,7 +1747,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog"))
-                                };
+            };
 
             CanonicalTrackedInputFiles d = new CanonicalTrackedInputFiles(
                     DependencyTestHelper.MockTask,
@@ -1799,7 +1799,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog"))
-                                };
+            };
 
             CanonicalTrackedInputFiles d = new CanonicalTrackedInputFiles(
                     DependencyTestHelper.MockTask,
@@ -1850,7 +1850,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             ITaskItem[] tlogs =
             {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog"))
-                                };
+            };
 
             CanonicalTrackedInputFiles d = new CanonicalTrackedInputFiles(
                     DependencyTestHelper.MockTask,
@@ -1900,7 +1900,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             {
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog"))
-                                };
+            };
 
             CanonicalTrackedInputFiles d = new CanonicalTrackedInputFiles(
                     DependencyTestHelper.MockTask,
@@ -1963,7 +1963,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             {
                                     new TaskItem(Path.Combine("TestFiles", "one.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "two.tlog"))
-                                };
+            };
 
             CanonicalTrackedOutputFiles d = new CanonicalTrackedOutputFiles(DependencyTestHelper.MockTask,
                     tlogs);
@@ -2274,7 +2274,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             {
                                     new TaskItem(Path.Combine("TestFiles", "one.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "two.tlog"))
-                                };
+            };
 
             CanonicalTrackedOutputFiles d = new CanonicalTrackedOutputFiles(DependencyTestHelper.MockTask,
                     tlogs);
@@ -2385,7 +2385,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                                     new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "three.cpp")),
-                                };
+            };
 
             // Prepare write tlog
             // This includes individual output information for each root
@@ -2486,7 +2486,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                                     new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "three.cpp")),
-                                };
+            };
 
             // Prepare write tlog
             File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
@@ -2589,7 +2589,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                                     new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "three.cpp")),
-                                };
+            };
 
             // Prepare write tlog
             File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
@@ -2690,7 +2690,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                                     new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                                     new TaskItem(Path.Combine("TestFiles", "three.cpp")),
-                                };
+            };
 
             // Prepare write tlog
             File.WriteAllLines(Path.Combine("TestFiles", "one.write.tlog"), new[]
@@ -2771,7 +2771,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                                     new TaskItem(Path.Combine("TestFiles", "one1.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "one2.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "two1.tlog"))
-                                };
+            };
 
             CanonicalTrackedInputFiles d = new CanonicalTrackedInputFiles(
                     DependencyTestHelper.MockTask,
@@ -2813,7 +2813,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             ITaskItem[] tlogs2 =
             {
                                     tlogs[0]
-                                 };
+            };
 
             // All log information should now be in the tlog[0]
             CanonicalTrackedInputFiles d2 = new CanonicalTrackedInputFiles(
@@ -2890,7 +2890,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             {
                                     new TaskItem(Path.Combine("TestFiles", "one.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "two.tlog"))
-                                };
+            };
 
             Thread.Sleep(_sleepTimeMilliseconds); // need to wait since the timestamp check needs some time to register
             CanonicalTrackedOutputFiles d = new CanonicalTrackedOutputFiles(DependencyTestHelper.MockTask,
@@ -2923,7 +2923,7 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
             ITaskItem[] tlogs2 =
             {
                                     tlogs[0]
-                                 };
+            };
 
             CanonicalTrackedOutputFiles d2 = new CanonicalTrackedOutputFiles(DependencyTestHelper.MockTask,
                     tlogs2);
@@ -3027,20 +3027,20 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
                                     new TaskItem(Path.Combine("TestFiles", "two1.read.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "three1.read.tlog")),
                                     new TaskItem(Path.Combine("TestFiles", "twothree.read.tlog"))
-                                };
+            };
 
             ITaskItem[] inputs =
             {
                                      new TaskItem(Path.Combine("TestFiles", "one.cpp")),
                                      new TaskItem(Path.Combine("TestFiles", "two.cpp")),
                                      new TaskItem(Path.Combine("TestFiles", "three.cpp"))
-                                 };
+            };
 
             ITaskItem[] outputs =
             {
                                       new TaskItem(Path.Combine("TestFiles", "one.obj")),
                                       new TaskItem(Path.Combine("TestFiles", "twothree.obj"))
-                                  };
+            };
 
             CanonicalTrackedInputFiles d = new CanonicalTrackedInputFiles(
                     DependencyTestHelper.MockTask,

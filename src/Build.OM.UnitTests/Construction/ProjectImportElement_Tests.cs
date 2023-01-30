@@ -173,7 +173,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
     @"<Project>
     <Import Project='{0}'/>
 </Project>",
-                    file1);
+    file1);
 
                 Project project = new Project(XmlReader.Create(new StringReader(content)));
                 ProjectImportElement import = Helpers.GetFirst(project.Xml.Imports);
@@ -211,7 +211,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
     @"<Project>
     <Import Project='{0}'/>
 </Project>",
-                    file);
+    file);
 
                 Project project = new Project(XmlReader.Create(new StringReader(content)));
                 ProjectImportElement import = Helpers.GetFirst(project.Xml.Imports);
@@ -245,7 +245,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                         <Import Project='{0}'/>
                     </Project>
                 ",
-                 testTempPath + "\\..\\x.targets");
+                testTempPath + "\\..\\x.targets");
             string targetsfileContent = @"
                     <Project>
                     </Project>

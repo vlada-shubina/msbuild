@@ -518,7 +518,7 @@ namespace Microsoft.Build.Tasks
                     {
                         if (!PropertyParser.GetTableWithEscaping(
                              log, ResourceUtilities.FormatResourceStringIgnoreCodeAndKeyword("General.OverridingProperties", projectNames[i]), "Properties", projects[i].GetMetadata("Properties").Split(MSBuildConstants.SemicolonChar),
-                              out Dictionary<string, string> preProjectPropertiesTable))
+                             out Dictionary<string, string> preProjectPropertiesTable))
                         {
                             return false;
                         }
@@ -558,7 +558,7 @@ namespace Microsoft.Build.Tasks
                     {
                         if (!PropertyParser.GetTableWithEscaping(
                              log, ResourceUtilities.FormatResourceStringIgnoreCodeAndKeyword("General.AdditionalProperties", projectNames[i]), "AdditionalProperties", projects[i].GetMetadata("AdditionalProperties").Split(MSBuildConstants.SemicolonChar),
-                              out Dictionary<string, string> additionalProjectPropertiesTable))
+                             out Dictionary<string, string> additionalProjectPropertiesTable))
                         {
                             return false;
                         }

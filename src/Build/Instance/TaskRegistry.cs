@@ -1426,11 +1426,11 @@ namespace Microsoft.Build.Execution
                                         {
                                             targetLoggingContext.LogWarning(
                                                 null,
-                                                    new BuildEventFileInfo(elementLocation),
-                                                    "TaskFactoryWillIgnoreTaskFactoryParameters",
-                                                    factory.FactoryName,
-                                                    XMakeAttributes.runtime,
-                                                    XMakeAttributes.architecture,
+                                                new BuildEventFileInfo(elementLocation),
+                                                "TaskFactoryWillIgnoreTaskFactoryParameters",
+                                                factory.FactoryName,
+                                                XMakeAttributes.runtime,
+                                                XMakeAttributes.architecture,
                                                 RegisteredName);
                                         }
                                     }

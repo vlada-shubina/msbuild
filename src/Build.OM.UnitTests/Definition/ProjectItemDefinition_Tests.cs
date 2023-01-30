@@ -175,7 +175,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
   </ItemDefinitionGroup>
   <Import Project=""{0}"" />
 </Project>"),
-                   file);
+    file);
 
                 Helpers.VerifyAssertProjectContent(expected, project.Xml);
             }

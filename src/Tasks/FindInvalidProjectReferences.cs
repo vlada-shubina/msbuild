@@ -23,7 +23,7 @@ namespace Microsoft.Build.Tasks
         /// </summary>
         private static readonly Regex s_platformMonikerFormat = new Regex(
              @"(?<PLATFORMIDENTITY>^[^,]*),\s*Version=(?<PLATFORMVERSION>.*)",
-            RegexOptions.IgnoreCase);
+             RegexOptions.IgnoreCase);
 
         /// <summary>
         /// Reference moniker metadata

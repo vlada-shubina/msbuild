@@ -41,9 +41,9 @@ namespace Microsoft.Build.Evaluation
         {
             ProjectErrorUtilities.VerifyThrowInvalidProject(
                 LeftChild != null && RightChild != null,
-                 state.ElementLocation,
-                 "IllFormedCondition",
-                 state.Condition);
+                state.ElementLocation,
+                "IllFormedCondition",
+                state.Condition);
 
             // It's sometimes possible to bail out of expansion early if we just need to know whether 
             // the result is empty string.
@@ -79,9 +79,9 @@ namespace Microsoft.Build.Evaluation
 
             ProjectErrorUtilities.VerifyThrowInvalidProject(
                 leftExpandedValue != null && rightExpandedValue != null,
-                    state.ElementLocation,
-                    "IllFormedCondition",
-                    state.Condition);
+                state.ElementLocation,
+                "IllFormedCondition",
+                state.Condition);
 
             UpdateConditionedProperties(state);
 
@@ -111,16 +111,16 @@ namespace Microsoft.Build.Evaluation
                 {
                     ConditionEvaluator.UpdateConditionedPropertiesTable(
                         state.ConditionedPropertiesInProject,
-                         leftUnexpandedValue,
-                         RightChild.GetExpandedValue(state));
+                        leftUnexpandedValue,
+                        RightChild.GetExpandedValue(state));
                 }
 
                 if (rightUnexpandedValue != null)
                 {
                     ConditionEvaluator.UpdateConditionedPropertiesTable(
                         state.ConditionedPropertiesInProject,
-                         rightUnexpandedValue,
-                         LeftChild.GetExpandedValue(state));
+                        rightUnexpandedValue,
+                        LeftChild.GetExpandedValue(state));
                 }
 
                 _conditionedPropertiesUpdated = true;

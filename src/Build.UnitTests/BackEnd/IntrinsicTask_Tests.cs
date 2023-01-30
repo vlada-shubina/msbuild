@@ -1540,9 +1540,9 @@ namespace Microsoft.Build.UnitTests.BackEnd
                 logger.AssertLogContains(new string[]
                 {
                     "start:[" + newInput + "]",
-                                                        "middle:[" + newInput + "][" + newInput + "]",
-                                                        "end:["   + newInput + ";" + newInput + "]",
-                                                        "final:[" + oldInput + ";" + newInput + ";" + oldInput + ";" + newInput + "]"
+                    "middle:[" + newInput + "][" + newInput + "]",
+                    "end:["   + newInput + ";" + newInput + "]",
+                    "final:[" + oldInput + ";" + newInput + ";" + oldInput + ";" + newInput + "]"
                 });
             }
             finally

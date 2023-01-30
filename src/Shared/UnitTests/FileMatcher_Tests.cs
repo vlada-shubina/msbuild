@@ -277,7 +277,7 @@ namespace Microsoft.Build.UnitTests
                             @"src\bar\inner\baz.cs",
                             @"src\bar\inner\baz\baz.cs",
                             @"src\bar\inner\foo\foo.cs"
-                        },
+                            },
                         ExpectNoMatches = NativeMethodsShared.IsLinux,
                     }
                 };

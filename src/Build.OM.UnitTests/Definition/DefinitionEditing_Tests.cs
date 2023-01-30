@@ -689,7 +689,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
     </i>
   </ItemGroup>
 </Project>"),
-                   ProjectCollection.Escape(paths[0]),
+                    ProjectCollection.Escape(paths[0]),
                     ProjectCollection.Escape(paths[1]));
 
                 Helpers.VerifyAssertProjectContent(expected, project.Xml);

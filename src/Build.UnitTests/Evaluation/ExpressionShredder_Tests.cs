@@ -257,7 +257,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
             " %(A . x)%%%%%%%%(b . x) ",
             "  ;  a   ;b   ;   ;c",
             "                $(AssemblyOriginatorKeyFile);\n\t                @(Compile);",
-                            "@(_OutputPathItem->'%(FullPath)', ';');$(MSBuildAllProjects);"
+            "@(_OutputPathItem->'%(FullPath)', ';');$(MSBuildAllProjects);"
         };
 
         [Fact]

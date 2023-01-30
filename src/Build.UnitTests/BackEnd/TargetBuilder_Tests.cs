@@ -284,7 +284,7 @@ Done building target ""Build"" in project ""build.proj"".".Replace("\r\n", "\n")
   </Target>
 </Project>
             ",
-             path);
+path);
 
             Project p = new Project(XmlReader.Create(new StringReader(content)));
             p.Build(new string[] { "Build" }, new ILogger[] { logger });

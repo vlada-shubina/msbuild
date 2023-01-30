@@ -50,7 +50,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` />
                     </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -101,7 +101,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` />
                     </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -151,7 +151,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` />
                     </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -206,7 +206,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` Condition=`!Exists('$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v1.0\Microsoft.Windows.UI.Xaml.CSharp.targets')` />
                    </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -262,7 +262,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` Condition=`!Exists('$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v1.0\Microsoft.Windows.UI.Xaml.CSharp.targets')` />
                    </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -311,7 +311,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` />
                     </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -361,7 +361,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` />
                     </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -410,7 +410,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` />
                     </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -460,7 +460,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` />
                     </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -515,7 +515,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` Condition=`!Exists('$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v1.0\Microsoft.Windows.UI.Xaml.CSharp.targets')` />
                    </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -571,7 +571,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` Condition=`!Exists('$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v1.0\Microsoft.Windows.UI.Xaml.CSharp.targets')` />
                    </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -622,7 +622,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` />
                    </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -671,7 +671,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` />
                    </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -722,7 +722,7 @@ namespace Microsoft.Build.UnitTests
                       <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` Condition=`!Exists('$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v1.0\Microsoft.Windows.UI.Xaml.CSharp.targets')` />
                    </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -759,7 +759,7 @@ namespace Microsoft.Build.UnitTests
   </Target>
   <Import Project=`$(MSBuildToolsPath)\Microsoft.CSharp.targets` />
 </Project>",
-             logger);
+                logger);
 
             project.Build();
 
@@ -876,7 +876,7 @@ namespace Microsoft.Build.UnitTests
                       </Target>
                     </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -956,7 +956,7 @@ namespace Microsoft.Build.UnitTests
                       </Target>
                     </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 
@@ -1033,7 +1033,7 @@ namespace Microsoft.Build.UnitTests
                       </Target>
                     </Project>
                 ",
-                 logger);
+                    logger);
 
                 project.Build();
 

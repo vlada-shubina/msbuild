@@ -54,7 +54,7 @@ namespace Microsoft.Build.UnitTests.Definition
                         </ItemGroup>
                     </Project>
                 "),
-                 fragment);
+                fragment);
 
             IList<ProjectItem> items = GetItems(content);
             return items;

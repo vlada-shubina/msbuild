@@ -3687,8 +3687,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 <A Include=`a*;b*;c*` Exclude=`@(E)`/>
 <A Remove=`@(R)`/>
 ",
-        new[] { "aa", "bb", "cc" },
-        new[] { "b", "c" })]
+            new[] { "aa", "bb", "cc" },
+            new[] { "b", "c" })]
         [InlineData(
             @"<A Include=`ab*;b|c*;de*`/>",
             new[] { "ab", "de" },

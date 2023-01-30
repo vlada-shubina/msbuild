@@ -74,9 +74,9 @@ namespace Microsoft.Build.Tasks
         private static readonly char[] s_charsToReplace = new char[]
         {
             ' ',
-        '\u00A0' /* non-breaking space */, '.', ',', ';', '|', '~', '@',
-        '#', '%', '^', '&', '*', '+', '-', '/', '\\', '<', '>', '?', '[',
-        ']', '(', ')', '{', '}', '\"', '\'', ':', '!'
+            '\u00A0' /* non-breaking space */, '.', ',', ';', '|', '~', '@',
+            '#', '%', '^', '&', '*', '+', '-', '/', '\\', '<', '>', '?', '[',
+            ']', '(', ')', '{', '}', '\"', '\'', ':', '!'
         };
         private const char ReplacementChar = '_';
 

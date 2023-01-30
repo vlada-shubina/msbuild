@@ -103,7 +103,7 @@ namespace Microsoft.Build.UnitTests
                     new[]
                     {
                         @"c:\bin\msbuild.exe", '"' + inputFile.Path + '"',
-                '"' + (NativeMethodsShared.IsUnixLike ? "-pp:" : "/pp:") + outputFile.Path + '"'
+                        '"' + (NativeMethodsShared.IsUnixLike ? "-pp:" : "/pp:") + outputFile.Path + '"'
                     }));
 #endif
 

@@ -37,7 +37,7 @@ namespace Microsoft.Build.UnitTests.Construction
 
             p.ParseFirstProjectLine(
                 "Project(\"{Project GUID}\") = \"Project name\", \"Relative path to project file\", \"Unique name-GUID\"",
-                 proj);
+                proj);
             proj.ProjectType.ShouldBe(SolutionProjectType.Unknown);
             proj.ProjectName.ShouldBe("Project name");
             proj.RelativePath.ShouldBe("Relative path to project file");
@@ -62,7 +62,7 @@ namespace Microsoft.Build.UnitTests.Construction
 
                 p.ParseFirstProjectLine(
                     "Project(\"{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}\") = \"Project name.vcproj\", \"Relative path\\to\\Project name.vcproj\", \"Unique name-GUID\"",
-                     proj);
+                    proj);
             });
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Microsoft.Build.UnitTests.Construction
 
             p.ParseFirstProjectLine(
                 "Project(\"{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}\") = \"Project name.myvctype\", \"Relative path\\to\\Project name.myvctype\", \"Unique name-GUID\"",
-                 proj);
+                proj);
             proj.ProjectType.ShouldBe(SolutionProjectType.KnownToBeMSBuildFormat);
             proj.ProjectName.ShouldBe("Project name.myvctype");
             proj.RelativePath.ShouldBe("Relative path\\to\\Project name.myvctype");
@@ -98,7 +98,7 @@ namespace Microsoft.Build.UnitTests.Construction
 
             p.ParseFirstProjectLine(
                 "Project(\" {Project GUID} \")  = \" Project name \",  \" Relative path to project file \"    , \" Unique name-GUID \"",
-                 proj);
+                proj);
             proj.ProjectType.ShouldBe(SolutionProjectType.Unknown);
             proj.ProjectName.ShouldBe("Project name");
             proj.RelativePath.ShouldBe("Relative path to project file");
@@ -118,7 +118,7 @@ namespace Microsoft.Build.UnitTests.Construction
 
             p.ParseFirstProjectLine(
                 "Project(\"{Project GUID}\") = \"\", \"src\\.proj\", \"Unique name-GUID\"",
-                 proj);
+                proj);
             proj.ProjectType.ShouldBe(SolutionProjectType.Unknown);
             proj.ProjectName.ShouldStartWith("EmptyProjectName");
             proj.RelativePath.ShouldBe("src\\.proj");
@@ -682,7 +682,7 @@ namespace Microsoft.Build.UnitTests.Construction
 
             p.ParseFirstProjectLine(
                 "Project(\"{Project GUID}\")  = \"MyProject,(=IsGreat)\",  \"Relative path to project file\"    , \"Unique name-GUID\"",
-                 proj);
+                proj);
             proj.ProjectType.ShouldBe(SolutionProjectType.Unknown);
             proj.ProjectName.ShouldBe("MyProject,(=IsGreat)");
             proj.RelativePath.ShouldBe("Relative path to project file");

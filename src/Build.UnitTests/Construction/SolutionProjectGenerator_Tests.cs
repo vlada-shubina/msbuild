@@ -2247,7 +2247,7 @@ EndGlobal
                 Assert.Throws<InvalidProjectFileException>(() =>
                 {
 #endif
-                    ProjectInstance[] instances = SolutionProjectGenerator.Generate(solution, globalProperties, null, BuildEventContext.Invalid, collection.LoggingService);
+                ProjectInstance[] instances = SolutionProjectGenerator.Generate(solution, globalProperties, null, BuildEventContext.Invalid, collection.LoggingService);
 #if !FEATURE_ASPNET_COMPILER
                 });
 #endif

@@ -189,11 +189,11 @@ namespace Microsoft.Build.Evaluation
         {
             ProjectErrorUtilities.VerifyThrowInvalidProject(
                 _arguments.Count == expected,
-                 state.ElementLocation,
-                 "IncorrectNumberOfFunctionArguments",
-                 state.Condition,
-                 _arguments.Count,
-                 expected);
+                state.ElementLocation,
+                "IncorrectNumberOfFunctionArguments",
+                state.Condition,
+                _arguments.Count,
+                expected);
         }
     }
 }

@@ -51,7 +51,7 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
         /// <param name="url">The deployment provider URL for the ClickOnce deployment manifest.</param>
 		/// <param name="deployManifestIdentity">Assembly identity of the ClickOnce deployment manifest.</param>
 		/// <param name="applicationManifestIdentity">Assembly identity of the ClickOnce application manifest.</param>
-		public ApplicationIdentity(string url, AssemblyIdentity deployManifestIdentity, AssemblyIdentity applicationManifestIdentity)
+        public ApplicationIdentity(string url, AssemblyIdentity deployManifestIdentity, AssemblyIdentity applicationManifestIdentity)
         {
             if (String.IsNullOrEmpty(url))
             {

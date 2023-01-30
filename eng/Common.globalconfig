@@ -852,7 +852,7 @@ dotnet_diagnostic.SA1135.severity = warning
 dotnet_diagnostic.SA1136.severity = suggestion
 
 # Elements should have the same indentation
-dotnet_diagnostic.SA1137.severity = suggestion
+dotnet_diagnostic.SA1137.severity = warning
 
 dotnet_diagnostic.SA1139.severity = none
 

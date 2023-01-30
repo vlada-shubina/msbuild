@@ -292,22 +292,22 @@ namespace Microsoft.Build.Shared.LanguageParser
         private static readonly string[] s_keywordList =
                                               {
                                                     "abstract",  "as",  "base",  "bool",  "break",
-                                                "byte",  "case",  "catch",  "char",  "checked",
-                                                "class",  "const",  "continue",  "decimal",  "default",
-                                                "delegate",  "do",  "double",  "else",  "enum",
-                                                "event",  "explicit",  "extern",  "finally",  "fixed",
-                                                "float",  "for",  "foreach",  "goto",  "if",
-                                                "implicit",  "in",  "int",  "interface",  "internal",
-                                                "is",  "lock",  "long",  "namespace",  "new",
-                                                "object",  "operator",  "out",  "override",  "params",
-                                                "private",  "protected",  "public",  "readonly",
-                                                "ref",  "return",  "sbyte",  "sealed",  "short",
-                                                "sizeof",  "stackalloc",  "static",  "string",
-                                                "struct",  "switch",  "this",  "throw",  "try",
-                                                "typeof",  "uint",  "ulong",  "unchecked",  "unsafe",
-                                                "ushort",  "using",  "virtual",  "void",  "volatile",
-                                                "while"
-                                                };
+                                                    "byte",  "case",  "catch",  "char",  "checked",
+                                                    "class",  "const",  "continue",  "decimal",  "default",
+                                                    "delegate",  "do",  "double",  "else",  "enum",
+                                                    "event",  "explicit",  "extern",  "finally",  "fixed",
+                                                    "float",  "for",  "foreach",  "goto",  "if",
+                                                    "implicit",  "in",  "int",  "interface",  "internal",
+                                                    "is",  "lock",  "long",  "namespace",  "new",
+                                                    "object",  "operator",  "out",  "override",  "params",
+                                                    "private",  "protected",  "public",  "readonly",
+                                                    "ref",  "return",  "sbyte",  "sealed",  "short",
+                                                    "sizeof",  "stackalloc",  "static",  "string",
+                                                    "struct",  "switch",  "this",  "throw",  "try",
+                                                    "typeof",  "uint",  "ulong",  "unchecked",  "unsafe",
+                                                    "ushort",  "using",  "virtual",  "void",  "volatile",
+                                                    "while"
+                                              };
 
 
         /*
