@@ -15,7 +15,6 @@ using ProjectInstanceItemSpec =
 using ProjectInstanceExpander =
     Microsoft.Build.Evaluation.Expander<Microsoft.Build.Execution.ProjectPropertyInstance, Microsoft.Build.Execution.ProjectItemInstance>;
 
-
 #nullable disable
 
 namespace Microsoft.Build.UnitTests.OM.Evaluation

@@ -447,7 +447,6 @@ namespace Microsoft.Build.UnitTests
             c.AppendSwitch("/D:");
             c.AppendTextUnquoted("C7E1720B16E5477D8D15733006E68278");
 
-
             string[] actual = c.ToString().Split(MSBuildConstants.EnvironmentNewLine, StringSplitOptions.None);
             string[] expected =
             {

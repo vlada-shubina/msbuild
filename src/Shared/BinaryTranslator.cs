@@ -479,7 +479,6 @@ namespace Microsoft.Build.BackEnd
                 TranslateDotNet<Exception>(ref value);
             }
 
-
             /// <summary>
             /// Translates an object implementing INodePacketTranslatable.
             /// </summary>

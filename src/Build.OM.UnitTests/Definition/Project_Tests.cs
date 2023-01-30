@@ -3324,7 +3324,6 @@ namespace Microsoft.Build.UnitTests.OM.Definition
             AssertProvenanceResult(expected, project, FileUtilities.GetIsFileSystemCaseSensitive() ? "a" : "A");
         }
 
-
         public static IEnumerable<object[]> GetItemProvenanceShouldWorkWithEscapedCharactersTestData
         {
             get

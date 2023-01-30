@@ -425,7 +425,6 @@ namespace Microsoft.Build.Shared
             return asAssemblyName.GetPublicKeyToken();
         }
 
-
         /// <summary>
         /// A special "unnamed" instance of AssemblyNameExtension.
         /// </summary>

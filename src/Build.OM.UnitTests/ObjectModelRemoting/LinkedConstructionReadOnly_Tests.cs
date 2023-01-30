@@ -62,7 +62,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             // group.Clear();
         }
 
-
         [Fact]
         public void ProjectRootElemetReadOnly()
         {

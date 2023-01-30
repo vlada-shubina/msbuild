@@ -239,7 +239,6 @@ namespace Microsoft.Build.UnitTests.Definition
 
             ToolsetReader reader = GetStandardConfigurationReader();
 
-
             Dictionary<string, Toolset> values = new Dictionary<string, Toolset>(StringComparer.OrdinalIgnoreCase);
             string msbuildOverrideTasksPath;
             string defaultOverrideToolsVersion;
@@ -416,7 +415,6 @@ namespace Microsoft.Build.UnitTests.Definition
 
             Dictionary<string, Toolset> values = new Dictionary<string, Toolset>(StringComparer.OrdinalIgnoreCase);
 
-
             // Should not throw
             string msbuildOverrideTasksPath;
             string defaultOverrideToolsVersion;
@@ -490,7 +488,6 @@ namespace Microsoft.Build.UnitTests.Definition
             ToolsetReader reader = GetStandardConfigurationReader();
 
             Dictionary<string, Toolset> values = new Dictionary<string, Toolset>(StringComparer.OrdinalIgnoreCase);
-
 
             // Should not throw
             string msbuildOverrideTasksPath;
@@ -713,7 +710,6 @@ namespace Microsoft.Build.UnitTests.Definition
             ToolsetReader reader = GetStandardConfigurationReader();
 
             Dictionary<string, Toolset> values = new Dictionary<string, Toolset>(StringComparer.OrdinalIgnoreCase);
-
 
             // this should not throw ...
             string msbuildOverrideTasksPath;
@@ -1442,7 +1438,6 @@ namespace Microsoft.Build.UnitTests.Definition
             });
         }
 
-
         [Fact]
         public void SameToolsVersionDefinedMultipleTimesInConfigurationFile()
         {
@@ -1559,7 +1554,6 @@ namespace Microsoft.Build.UnitTests.Definition
                 RegistryKey key1 = _toolsVersionsRegistryKey.CreateSubKey("2.0");
                 key1.SetValue("MSBuildBinPath", @"D:\somepath");
                 key1.SetValue("MSBuildProjectFile", @"SomeRegistryValue");
-
 
                 Dictionary<string, Toolset> values = new Dictionary<string, Toolset>(StringComparer.OrdinalIgnoreCase);
                 ToolsetReader.ReadAllToolsets(
@@ -2462,7 +2456,6 @@ namespace Microsoft.Build.UnitTests.Definition
                                                            new PropertyDictionary<ProjectPropertyInstance>(),
                                                            ToolsetDefinitionLocations.Default);
 
-
             Assert.Equal("5.0", defaultToolsVersion);
         }
 
@@ -2501,7 +2494,6 @@ namespace Microsoft.Build.UnitTests.Definition
                                                            new ProjectCollection().EnvironmentProperties,
                                                            new PropertyDictionary<ProjectPropertyInstance>(),
                                                            ToolsetDefinitionLocations.Default);
-
 
             Assert.Equal("5.0", defaultToolsVersion);
             Assert.Equal("C:\\TaskOverride", values["4.0"].OverrideTasksPath);

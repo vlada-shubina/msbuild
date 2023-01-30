@@ -1306,7 +1306,6 @@ namespace Microsoft.Build.BackEnd.Logging
             }
         }
 
-
         /// <summary>
         /// Clean resources used for logging event processing queue.
         /// </summary>

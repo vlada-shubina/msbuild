@@ -31,7 +31,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             /// </summary>
             private LegacyThreadingData _legacyThreadingData;
 
-
             public MockHost()
             {
                 _buildParameters = new BuildParameters();
@@ -278,7 +277,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
         {
             DisconnectionTestHelper(NodeEndpointInProc.EndpointMode.Asynchronous);
         }
-
 
         [Fact]
         public void SynchronousData()

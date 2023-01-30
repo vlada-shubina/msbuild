@@ -63,8 +63,6 @@ namespace Microsoft.Build.BackEnd.Logging
 #endif
         }
 
-
-
         /// <summary>
         /// Removes the event handler.
         /// </summary>
@@ -84,7 +82,6 @@ namespace Microsoft.Build.BackEnd.Logging
                 Debug.Assert(false, "There is no handler to remove.");
             }
         }
-
 
 #if FEATURE_APPDOMAIN
         /// <summary>
@@ -156,7 +153,6 @@ namespace Microsoft.Build.BackEnd.Logging
             // null means infinite lease time
             return null;
         }
-
 
         // we have to store the event handler instance in case we have to remove it
         private ResolveEventHandler _eventHandler = null;

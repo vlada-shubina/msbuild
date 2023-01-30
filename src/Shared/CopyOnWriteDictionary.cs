@@ -44,7 +44,6 @@ namespace Microsoft.Build.Collections
         private static readonly ImmutableDictionary<string, V> OrdinalIgnoreCaseComparerDictionaryPrototype = ImmutableDictionary.Create<string, V>(StringComparer.OrdinalIgnoreCase);
 #endif
 
-
         /// <summary>
         /// The backing dictionary.
         /// Lazily created.

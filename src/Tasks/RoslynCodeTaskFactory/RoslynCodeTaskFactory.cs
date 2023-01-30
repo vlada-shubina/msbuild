@@ -80,7 +80,6 @@ namespace Microsoft.Build.Tasks
         /// </summary>
         private const string ReferenceAssemblyDirectoryName = "ref";
 
-
         /// <summary>
         /// Array of mono lib directories used to resolve references
         /// </summary>

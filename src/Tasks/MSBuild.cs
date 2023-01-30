@@ -180,7 +180,6 @@ namespace Microsoft.Build.Tasks
             }
         }
 
-
         /// <summary>
         /// Unescape Targets, Properties (including Properties and AdditionalProperties as Project item metadata)
         /// will be un-escaped before processing. e.g. %3B (an escaped ';') in the string for any of them will 

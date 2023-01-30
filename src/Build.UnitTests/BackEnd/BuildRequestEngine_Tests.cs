@@ -52,7 +52,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
                 set;
             }
 
-
             private IBuildComponentHost _host;
             private Thread _builderThread;
             private BuildRequestEntry _entry;
@@ -353,7 +352,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             Assert.Equal(BuildResultCode.Failure, _requestComplete_Result.OverallResult);
             VerifyEngineStatus(BuildRequestEngineStatus.Uninitialized);
         }
-
 
         /// <summary>
         /// This test verifies that issuing a simple request results in a successful completion.

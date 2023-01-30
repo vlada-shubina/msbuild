@@ -130,7 +130,6 @@ namespace Microsoft.Build.Shared
             return StringBuilderCache.GetStringAndRelease(unescapedString);
         }
 
-
         /// <summary>
         /// Adds instances of %XX in the input string where the char to be escaped appears
         /// XX is the hex value of the ASCII code for the char.  Interns and caches the result.

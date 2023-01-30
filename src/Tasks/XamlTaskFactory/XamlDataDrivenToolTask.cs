@@ -154,7 +154,6 @@ namespace Microsoft.Build.Tasks.Xaml
                 }
             }
 
-
             bool success = base.Execute();
             return success;
         }

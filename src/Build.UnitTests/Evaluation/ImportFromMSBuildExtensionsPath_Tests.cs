@@ -349,7 +349,6 @@ namespace Microsoft.Build.UnitTests.Evaluation
                 </Project>
                 ";
 
-
             // File with the same name available in two different extension paths, but the one from the first
             // directory in MSBuildExtensionsPath environment variable should get loaded
             string extnDir1 = GetNewExtensionsPathAndCreateFile("extensions1", Path.Combine("foo", "extn.proj"), extnTargetsFileContent1);

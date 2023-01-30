@@ -263,7 +263,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             Assert.Single(t.ResolvedFiles);
             Assert.Empty(t.RelatedFiles);
 
-
             Assert.Empty(t.ResolvedDependencyFiles);
             Assert.Equal(0, engine.Errors);
             Assert.Equal(0, engine.Warnings);
@@ -366,7 +365,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             engine.AssertLogContainsMessageFromResource(resourceDelegate, "ResolveAssemblyReference.Resolved", @"C:\WinMD\v4\mscorlib.dll");
         }
 
-
         /// <summary>
         /// Verify when a winmd file depends on another winmd file that we do resolve the dependency
         /// </summary>
@@ -403,8 +401,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             Assert.Equal(@"WindowsRuntime 1.0", t.ResolvedDependencyFiles[0].GetMetadata(ItemMetadataNames.imageRuntime));
             Assert.True(bool.Parse(t.ResolvedDependencyFiles[0].GetMetadata(ItemMetadataNames.winMDFile)));
         }
-
-
 
         /// <summary>
         /// We have two dlls which depend on a winmd, the first dll does not have the winmd beside it, the second one does

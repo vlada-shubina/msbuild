@@ -990,7 +990,7 @@ dotnet_diagnostic.SA1505.severity = suggestion
 dotnet_diagnostic.SA1506.severity = warning
 
 # Code should not contain multiple blank lines in a row
-dotnet_diagnostic.SA1507.severity = suggestion
+dotnet_diagnostic.SA1507.severity = warning
 
 # A closing brace should not be preceded by a blank line
 dotnet_diagnostic.SA1508.severity = warning

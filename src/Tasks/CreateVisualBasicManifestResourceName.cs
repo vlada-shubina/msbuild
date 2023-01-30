@@ -127,7 +127,6 @@ namespace Microsoft.Build.Tasks
 
                     manifestName.Append(result.Name);
 
-
                     // Append the culture if there is one.        
                     if (!string.IsNullOrEmpty(info.culture))
                     {

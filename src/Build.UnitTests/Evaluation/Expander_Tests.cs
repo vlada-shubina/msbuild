@@ -20,8 +20,6 @@ using Microsoft.Build.Shared;
 using Microsoft.Build.Utilities;
 using Microsoft.Win32;
 
-
-
 using ProjectHelpers = Microsoft.Build.UnitTests.BackEnd.ProjectHelpers;
 using TaskItem = Microsoft.Build.Execution.ProjectItemInstance.TaskItem;
 
@@ -2155,7 +2153,6 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             Assert.Equal("ff", result);
         }
-
 
         /// <summary>
         /// Expand property function with chained functions on its results

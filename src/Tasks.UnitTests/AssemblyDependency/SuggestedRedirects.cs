@@ -27,7 +27,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
         {
         }
 
-
         /// <summary>
         /// Consider this dependency chain:
         ///
@@ -123,7 +122,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                 engine.Log);
         }
 
-
         /// <summary>
         /// Consider this dependency chain:
         ///
@@ -215,7 +213,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             Assert.True(ContainsItem(t.ResolvedFiles, s_myLibraries_V1_DDllPath)); // "Expected to find assembly, but didn't."
         }
 
-
         /// <summary>
         /// Same as ConflictWithBackVersionPrimary, except AutoUnify is true.
         /// Even when AutoUnify is set we should see a warning since the binder will not allow
@@ -259,7 +256,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             Assert.Equal(3, t.ResolvedFiles.Length);
             Assert.True(ContainsItem(t.ResolvedFiles, s_myLibraries_V1_DDllPath)); // "Expected to find assembly, but didn't."
         }
-
 
         /// <summary>
         /// Consider this dependency chain:

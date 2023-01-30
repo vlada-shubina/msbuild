@@ -125,7 +125,6 @@ namespace Microsoft.Build.Framework
             // do nothing
         }
 
-
         /// <summary>
         /// This constructor which allows a timestamp to be set
         /// </summary>

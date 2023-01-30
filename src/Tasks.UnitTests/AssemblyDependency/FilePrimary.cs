@@ -77,7 +77,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             File.Delete(appConfigFile);
         }
 
-
         /// <summary>
         /// Test the case where the appconfig has a malformed binding redirect version.
         /// </summary>
@@ -91,7 +90,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             {
                         new TaskItem(s_unifyMeDll_V10Path)
             };
-
 
             // Construct the app.config.
             string appConfigFile = WriteAppConfig(
@@ -142,7 +140,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             {
                         new TaskItem(s_unifyMeDll_V10Path)
             };
-
 
             // Construct the app.config.
             string appConfigFile = WriteAppConfig(
@@ -214,7 +211,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             {
                 File.WriteAllText(redistListPath, implicitRedistListContents);
                 File.WriteAllText(subsetListPath, engineOnlySubset);
-
 
                 // Create the engine.
                 MockEngine engine = new MockEngine(_output);
@@ -453,7 +449,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             Assert.True(succeeded);
             Assert.Single(t.ResolvedFiles);
             Assert.Equal(t.ResolvedFiles[0].ItemSpec, assemblyFiles[0].ItemSpec);
-
 
             // Cleanup.
             File.Delete(appConfigFile);

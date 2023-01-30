@@ -711,7 +711,6 @@ namespace Microsoft.Build.Tasks
 #endif
         }
 
-
         /// <summary>
         /// Import extra files. These are usually consituent members of a scatter assembly.
         /// </summary>

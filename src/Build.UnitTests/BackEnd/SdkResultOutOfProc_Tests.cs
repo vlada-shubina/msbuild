@@ -166,13 +166,11 @@ namespace Microsoft.Build.UnitTests.BackEnd
 
             BuildResult result = _buildManager.Build(customparameters, data);
 
-
             result.OverallResult.ShouldBe(BuildResultCode.Success);
 
             ValidateRanInSeparateProcess(result);
             ValidateResolverResults(result);
         }
-
 
         private void ValidateRanInSeparateProcess(BuildResult result)
         {

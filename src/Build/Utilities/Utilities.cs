@@ -551,7 +551,6 @@ namespace Microsoft.Build.Internal
                 localAppData = BuildEnvironmentHelper.Instance.CurrentMSBuildToolsDirectory;
             }
 
-
             environmentProperties.Set(ProjectPropertyInstance.Create(ReservedPropertyNames.localAppData, localAppData));
 
             // Add MSBuildUserExtensionsPath at $(LocalAppData)\Microsoft\MSBuild

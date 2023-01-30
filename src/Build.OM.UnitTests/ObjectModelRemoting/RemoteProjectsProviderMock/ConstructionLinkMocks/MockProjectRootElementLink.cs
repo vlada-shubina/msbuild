@@ -145,7 +145,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
         public void MarkDirty(string reason, string param) { ProjectElementLink.MarkDirty(this.Source, reason, param); }
     }
 
-
     internal class MockProjectRootElementLink : ProjectRootElementLink, ILinkMock, IProjectElementLinkHelper, IProjectElementContainerLinkHelper
     {
         public MockProjectRootElementLink(MockProjectRootElementLinkRemoter proxy, IImportHolder holder)

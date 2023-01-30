@@ -196,7 +196,6 @@ EndGlobal
             }
         }
 
-
         /// <summary>
         /// Build Solution with Multiple Targets (ex. Clean;Build;Custom).
         /// </summary>
@@ -292,7 +291,6 @@ EndGlobal
              *   </Target>
              * </Project
              */
-
             ProjectRootElement projectXml = ProjectRootElement.Create();
             ProjectTargetElement target = projectXml.AddTarget("Build");
             projectXml.DefaultTargets = "Build";

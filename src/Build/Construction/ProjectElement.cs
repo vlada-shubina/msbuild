@@ -306,7 +306,6 @@ namespace Microsoft.Build.Construction
         /// </summary>
         object ILinkableObject.Link => Link;
 
-
         /// <summary>
         /// Gets the XmlElement associated with this project element.
         /// The setter is used when adding new elements.
@@ -604,7 +603,6 @@ namespace Microsoft.Build.Construction
                 }
             }
         }
-
 
         /// <summary>
         /// Special derived variation of ProjectElementContainer used to wrap a ProjectRootElement.

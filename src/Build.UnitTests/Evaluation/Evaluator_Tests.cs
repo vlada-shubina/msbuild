@@ -1711,7 +1711,6 @@ namespace Microsoft.Build.UnitTests.Evaluation
                         </ItemGroup>
                     </Project>");
 
-
             Project project = new Project(XmlReader.Create(new StringReader(content)));
 
             Assert.Collection(project.GetItems("i"), item =>
@@ -1740,7 +1739,6 @@ namespace Microsoft.Build.UnitTests.Evaluation
                           </i>
                         </ItemGroup>
                     </Project>");
-
 
                 Project project = new Project(XmlReader.Create(new StringReader(content)));
 
@@ -2675,7 +2673,6 @@ namespace Microsoft.Build.UnitTests.Evaluation
                 msbuildVersionProperty,
                 "DisplayVersion is semver2 while MSBuildVersion is Major.Minor.Build but should be a prefix match");
         }
-
 
         /// <summary>
         /// Test standard reserved properties
@@ -4542,7 +4539,6 @@ namespace Microsoft.Build.UnitTests.Evaluation
                 File.SetLastWriteTime(project1.ProjectFile, DateTime.Now.AddHours(-1));
                 File.SetLastWriteTime(project2.ProjectFile, DateTime.Now.AddHours(-1));
                 File.SetLastWriteTime(primaryProject.ProjectFile, DateTime.Now);
-
 
                 Project project = new Project(primaryProject.ProjectFile, null, null);
 

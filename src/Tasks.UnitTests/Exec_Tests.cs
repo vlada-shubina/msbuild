@@ -525,7 +525,6 @@ namespace Microsoft.Build.UnitTests
             }
         }
 
-
         /// <summary>
         /// Helper function to run the Exec task with or without ANSI characters in the Command and check for an expected encoding.
         /// </summary>
@@ -882,7 +881,6 @@ namespace Microsoft.Build.UnitTests
 
             // Nothing to run, so the list should be empty
             Assert.Empty(exec.ConsoleOutput);
-
 
             // first echo prints "Hello stderr" to stderr, second echo prints to stdout
             string testString = "echo Hello stderr 1>&2\necho Hello stdout";

@@ -149,7 +149,6 @@ namespace Microsoft.Build.BackEnd.SdkResolution
                 return true;
             }
 
-
             return false;
         }
 

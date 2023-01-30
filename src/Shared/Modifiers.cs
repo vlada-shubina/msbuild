@@ -82,7 +82,6 @@ namespace Microsoft.Build.Shared
                     return false;
                 }
 
-
                 /* 
                  * What follows requires some explanation.
                  * 

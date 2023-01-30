@@ -88,7 +88,6 @@ namespace Microsoft.Build.Tasks.UnitTests.GenerateResource
             AssertSingleStringResource(resxWithSingleString, "StringResource", "StringValue");
         }
 
-
         [Fact]
         public void LoadsMultipleStringsPreservingOrder()
         {

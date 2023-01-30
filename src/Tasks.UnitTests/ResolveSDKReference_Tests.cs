@@ -9,8 +9,6 @@ using Microsoft.Build.Shared;
 using Microsoft.Build.Tasks;
 using Microsoft.Build.Utilities;
 
-
-
 using SDKReference = Microsoft.Build.Tasks.ResolveSDKReference.SDKReference;
 using Microsoft.Build.Evaluation;
 using Microsoft.Build.Execution;
@@ -173,7 +171,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
                 <File AssemblyName = 'Assembly1, Version=8.0' />
                 <DependsOn Identity='Windows SDK, Version 8.0'/>
             </FileList>";
-
 
             try
             {
@@ -571,7 +568,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
             engine.AssertLogContains(errorMessage);
         }
 
-
         /// <summary>
         /// Project: Prefer32bit true  Manifest:SupportPrefer32Bit:true Target:msil Expect: No error
         /// </summary>
@@ -683,7 +679,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
                 }
             }
         }
-
 
         /// <summary>
         /// Project: Prefer32bit true  Manifest:SupportPrefer32Bit:false Target:x86 Expect: No error
@@ -1187,7 +1182,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
             Assert.Equal(item.ItemSpec, t.ResolvedSDKReferences[0].GetMetadata("OriginalItemSpec"), true);
         }
 
-
         /// <summary>
         /// When duplicate references are passed in we only want the first one.
         /// </summary>
@@ -1652,7 +1646,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
                 <File AssemblyName = 'Assembly1, Version=8.0' />
                 <DependsOn Identity='Windows SDK, Version 8.0'/>
             </FileList>";
-
 
             try
             {
@@ -2448,7 +2441,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
             }
         }
 
-
         /// <summary>
         /// Test the case where there is a single supported architecture and the project targets that architecture
         /// </summary>
@@ -3016,7 +3008,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
                 DisplayName = 'GoodTestSDK3 3.0'
                 SupportsMultipleVersions='Warning'>
             </FileList>";
-
 
             string sdkManifestContents4 =
            @"<FileList
@@ -3797,7 +3788,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
                 File.WriteAllText(sdkManifestFile2, sdkManifestContents2);
                 File.WriteAllText(testProjectFile, tempProjectContents);
 
-
                 string redist1 = Path.Combine(archRedist, "A.dll");
                 string redist2 = Path.Combine(neutralRedist, "B.dll");
                 string redist3 = Path.Combine(archCommonRedist, "C.dll");
@@ -3939,7 +3929,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
                 File.WriteAllText(sdkManifestFile2, sdkManifestContents2);
                 File.WriteAllText(testProjectFile, tempProjectContents);
 
-
                 string redist1 = Path.Combine(archRedist, "A.dll");
                 string redist2 = Path.Combine(neutralRedist, "B.dll");
                 string redist3 = Path.Combine(archCommonRedist, "C.dll");
@@ -3991,7 +3980,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
                 }
             }
         }
-
 
         [Fact]
         [PlatformSpecific(TestPlatforms.Windows)]     // No GetResolvedSDKReferences target in Unix
@@ -4055,7 +4043,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
                 File.WriteAllText(sdkManifestFile, sdkManifestContents);
                 File.WriteAllText(testProjectFile, tempProjectContents);
 
-
                 string redist1 = Path.Combine(x86CommonRedist, "A.dll");
                 string redist2 = Path.Combine(x86Redist, "B.dll");
                 string redist3 = Path.Combine(neutralRedist, "C.dll");
@@ -4094,7 +4081,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
             {
                 Environment.SetEnvironmentVariable("MSBUILDSDKREFERENCEDIRECTORY", null);
                 Environment.SetEnvironmentVariable("MSBUILDDISABLEREGISTRYFORSDKLOOKUP", null);
-
 
                 if (Directory.Exists(testDirectoryRoot))
                 {
@@ -4262,8 +4248,6 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
                         <ToolboxItems VSCategory = ""Toolbox.Default"" />
                     </File>
                 </FileList>";
-
-
 
             string tempProjectContents = ObjectModelHelpers.CleanupFileContents(@"
              <Project DefaultTargets=""ExpandSDKReferenceAssemblies"" ToolsVersion=""msbuilddefaulttoolsversion"" xmlns=""msbuildnamespace"">

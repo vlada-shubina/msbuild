@@ -153,7 +153,6 @@ namespace Microsoft.Build.Tasks.UnitTests.AssemblyDependency
                     TargetProcessorArchitecture = "x86"
                 };
 
-
                 Assert.Throws<InternalErrorException>(() => Execute(t));
             }
             finally

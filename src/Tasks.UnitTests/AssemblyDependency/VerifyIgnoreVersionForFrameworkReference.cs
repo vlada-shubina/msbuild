@@ -45,7 +45,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             t.IgnoreVersionForFrameworkReferences = true;
             ExecuteRAROnItemsAndRedist(t, e, items, redistString, true);
 
-
             Assert.Equal(0, e.Warnings); // "No warnings expected in this scenario."
             Assert.Equal(0, e.Errors); // "No errors expected in this scenario."
             Assert.Single(t.ResolvedFiles);
@@ -85,7 +84,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
 
             TaskItem item = new TaskItem("DependsOn9, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b17a5c561934e089");
             item.SetMetadata("IgnoreVersionForFrameworkReference", "True");
-
 
             ITaskItem[] items = new ITaskItem[]
             {
@@ -182,7 +180,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             ResolveAssemblyReference t = new ResolveAssemblyReference();
 
             ExecuteRAROnItemsAndRedist(t, e, items, redistString, true);
-
 
             Assert.Equal(1, e.Warnings); // "Expected one warning in this scenario."
             e.AssertLogContains("MSB3257");

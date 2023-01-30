@@ -36,7 +36,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal("MyResource.resx", info.cultureNeutralFilename);
         }
 
-
         /*
         * Method:   BogusEmbeddedCulture
         *

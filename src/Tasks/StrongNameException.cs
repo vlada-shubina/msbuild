@@ -33,7 +33,6 @@ namespace Microsoft.Build.Tasks
             // do nothing
         }
 
-
         /// <summary>
         /// Constructor to implement required constructors for serialization
         /// </summary>

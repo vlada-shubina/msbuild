@@ -156,7 +156,6 @@ namespace Microsoft.Build.Evaluation
             _addedNodes = new List<XmlNode>(implicitImportCount);
         }
 
-
         /// <summary>
         /// Adds all implicit import nodes to the specified document.
         /// </summary>

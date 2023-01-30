@@ -97,7 +97,6 @@ namespace Microsoft.Runtime.Hosting
             return true;
         }
 
-
         [System.Security.SecurityCritical]
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = "This file is included in a lot of projects some of which only use a subset of the functions.")]
         public static bool StrongNameKeyDelete(string pwzKeyContainer)
@@ -147,7 +146,6 @@ namespace Microsoft.Runtime.Hosting
             int cbSignatureBlob;
             return StrongNameSignatureGeneration(pwzFilePath, pwzKeyContainer, pbKeyBlob, cbKeyBlob, ref ppbSignatureBlob, out cbSignatureBlob);
         }
-
 
         [System.Security.SecurityCritical]
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = "This file is included in a lot of projects some of which only use a subset of the functions.")]

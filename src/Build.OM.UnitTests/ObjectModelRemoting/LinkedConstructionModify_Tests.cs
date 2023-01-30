@@ -136,7 +136,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             Assert.True(string.IsNullOrEmpty(clone.FullPath));
         }
 
-
         [Fact]
         public void ProjectTargetElementModify()
         {
@@ -162,7 +161,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             // Add property groups
             newTarget1.Append2NewChildrenWithVerify<ProjectOnErrorElement>("errTarget", (p, et) => p.CreateOnErrorElement(et), (oe, et) => oe.ExecuteTargetsAttribute == et, out var newOnErr1, out var newOnErr2);
 
-
             // string setters
             newTarget1.VerifySetter("newBeforeTargets", (t) => t.BeforeTargets, (t, v) => t.BeforeTargets = v);
             newTarget1.VerifySetter("newDependsOnTargets", (t) => t.DependsOnTargets, (t, v) => t.DependsOnTargets = v);
@@ -171,7 +169,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             newTarget1.VerifySetter("newInputs", (t) => t.Inputs, (t, v) => t.Inputs = v);
             newTarget1.VerifySetter("newOutputs", (t) => t.Outputs, (t, v) => t.Outputs = v);
             newTarget1.VerifySetter("newKeepDuplicateOutputs", (t) => t.KeepDuplicateOutputs, (t, v) => t.KeepDuplicateOutputs = v);
-
 
             newTarget1.VerifySetter("'Configuration' == 'Foo'", (t) => t.Condition, (t, v) => t.Condition = v);
             newTarget1.VerifySetter("newLabel", (t) => t.Label, (t, v) => t.Label = v);
@@ -191,7 +188,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             // this will rename back, as well as check the reqular way (after we confirmed the view identity dont change on rename).
             newTarget1.VerifySetter(NewTargetName, (t) => t.Name, (t, v) => t.Name = v);
 
-
             // removes
             newTarget1.View.RemoveChild(newTask2.View);
             Assert.ThrowsAny<ArgumentException>(() => newTarget1.Real.RemoveChild(newTask2.Real));
@@ -206,7 +202,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
 
             Assert.Empty(newTarget1.View.ItemGroups);
             Assert.Empty(newTarget1.View.PropertyGroups);
-
 
             newTarget1.Verify();
         }
@@ -229,7 +224,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             Assert.True(newOutputItem1.View.IsOutputItem);
             Assert.False(newOutputItem1.View.IsOutputProperty);
 
-
             const string NewOutputItemWithConfig = "NewOutputItemCfg";
             newTask.Add2NewChildrenWithVerify<ProjectOutputElement>(NewOutputItemWithConfig, (t, n) => t.AddOutputItem(n, "source", "'Configuration'='Foo'"), (oi, n) => oi.TaskParameter == n, out var newOutputItemWithConfig1, out var newOutputItemWithConfig2);
             Assert.True(newOutputItemWithConfig1.View.IsOutputItem);
@@ -239,7 +233,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             newTask.Add2NewChildrenWithVerify<ProjectOutputElement>(NewOutputProperty, (t, n) => t.AddOutputProperty(n, "taskprop"), (oi, n) => oi.TaskParameter == n, out var newOutputProp1, out var newOutputProp2);
             Assert.False(newOutputProp1.View.IsOutputItem);
             Assert.True(newOutputProp1.View.IsOutputProperty);
-
 
             const string NewOutputPropertyWithConfig = "NewOutputPropertyCfg";
             newTask.Add2NewChildrenWithVerify<ProjectOutputElement>(NewOutputPropertyWithConfig, (t, n) => t.AddOutputProperty(n, "source", "'Configuration'='Foo'"), (oi, n) => oi.TaskParameter == n, out var newOutputPropWithConfig1, out var newOutputPropWithConfig2);
@@ -286,11 +279,9 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             Assert.False(newTask.View.Parameters.ContainsKey(paramName.Ver(5)));
             Assert.False(newTask.Real.Parameters.ContainsKey(paramName.Ver(5)));
 
-
             newTask.View.RemoveAllParameters();
             newTask.Verify();
             Assert.Equal(0, newTask.View.Parameters.Count);
-
 
             newTask.View.RemoveChild(newOutputItem2.View);
             Assert.ThrowsAny<ArgumentException>(() => newTask.Real.RemoveChild(newOutputItem2.Real));
@@ -403,7 +394,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             choose.Verify();
         }
 
-
         [Fact]
         public void ProjectWhenElementModify()
         {
@@ -441,7 +431,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
 
             when.Verify();
         }
-
 
         [Fact]
         public void ProjectOtherwiseElementModify()
@@ -506,7 +495,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             Assert.Same(pg.View, usingTaskFile.View.ParameterGroup);
             Assert.Same(pg.Real, usingTaskFile.Real.ParameterGroup);
 
-
             xmlPair.View.RemoveChild(usingTaskFile.View);
 
             var usingTaskName = xmlPair.AddNewChaildWithVerify<ProjectUsingTaskElement>(ObjectType.View, "NewUsingTask", (p, n) => p.AddUsingTask(n, null, "assemblyName"), (ut, n) => true);
@@ -523,7 +511,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             // to add task body we need usingTask with factory.
             usingTask.VerifySetter("TaskFactory", (ut) => ut.TaskFactory, (ut, v) => ut.TaskFactory = v);
             var taskBody = usingTask.AddNewChaildWithVerify<ProjectUsingTaskBodyElement>(ObjectType.View, "eval", (ut, e) => ut.AddUsingTaskBody(e, "body"), (ut, e) => true);
-
 
             taskBody.VerifySetter("newBody", (tb) => tb.TaskBody, (tb, v) => tb.TaskBody = v);
             taskBody.VerifySetter("newEval", (tb) => tb.Evaluate, (tb, v) => tb.Evaluate = v);
@@ -548,7 +535,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
 
             taskParamGroup.Verify();
         }
-
 
         [Fact]
         public void ProjectUsingTaskParameterElementModify()
@@ -588,7 +574,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             import.VerifySetter("newVer", (pi) => pi.Version, (pi, v) => pi.Version = v);
             import.VerifySetter("newMinVer", (pi) => pi.MinimumVersion, (pi, v) => pi.MinimumVersion = v);
         }
-
 
         [Fact]
         public void ProjectImportGroupElementModify()
@@ -675,7 +660,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             Assert.Equal(4, item.View.Metadata.Count);
             item.Add2NewChildrenWithVerify<ProjectMetadataElement>("mlongAttrib", (id, n) => id.AddMetadata(n, $"value{n}", true), (md, n) => md.Name == n, out var mdAttrib1, out var mdAttrib2);
             Assert.Equal(6, item.View.Metadata.Count);
-
 
             // verify target items only props.
             itemInTargt.VerifySetter("newKeepDups", (i) => i.KeepDuplicates, (i, v) => i.KeepDuplicates = v);

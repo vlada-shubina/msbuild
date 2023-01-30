@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-
 using System;
 using System.IO;
 using Microsoft.Build.Shared;
@@ -57,7 +56,6 @@ namespace Microsoft.Build.UnitTests
         {
             Assert.True(TypeLoader.IsPartialTypeNameMatch("Csc", "Microsoft.Build.Tasks.Csc"));
         }
-
 
         [Fact]
         public void LoadNonExistingAssembly()
@@ -266,7 +264,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal(fileLoggerLocation, loadedType.Assembly.AssemblyLocation);
         }
 
-
         /// <summary>
         /// Make sure if no typeName is passed in then pick the first type which matches the desired type filter.
         /// This has been in since whidbey but there has been no test for it and it was broken in the last refactoring of TypeLoader.
@@ -286,7 +283,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal(forwardingLoggerAssemblyLocation, loadedType.Assembly.AssemblyLocation);
             Assert.Equal(firstPublicType, loadedType.Type);
 
-
             Type fileLoggerType = typeof(Microsoft.Build.Logging.FileLogger);
             string fileLoggerAssemblyLocation = forwardingLoggerType.Assembly.Location;
             Func<Type, object, bool> fileLoggerfilter = IsLoggerClass;
@@ -298,7 +294,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal(fileLoggerAssemblyLocation, loadedType.Assembly.AssemblyLocation);
             Assert.Equal(firstPublicType, loadedType.Type);
         }
-
 
         private static Type FirstPublicDesiredType(Func<Type, object, bool> filter, string assemblyLocation)
         {
@@ -316,7 +311,6 @@ namespace Microsoft.Build.UnitTests
 
             return null;
         }
-
 
         private static bool IsLoggerClass(Type type, object unused)
         {

@@ -750,7 +750,6 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
 
         #endregion
 
-
         #region " ReferenceComparer "
 
         private class ReferenceComparer : IComparer

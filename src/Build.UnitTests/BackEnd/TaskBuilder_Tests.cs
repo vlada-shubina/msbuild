@@ -604,7 +604,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             logger.AssertLogDoesntContain("MSB4018");
         }
 
-
 #if FEATURE_CODETASKFACTORY
         /// <summary>
         /// If an item being output from a task has null metadata, we shouldn't crash.

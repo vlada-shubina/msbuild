@@ -317,7 +317,6 @@ namespace Microsoft.Build.Tasks.UnitTests
                 OutputAppConfigFile = new TaskItem(outputAppConfig)
             };
 
-
             bool executionResult = bindingRedirects.Execute();
 
             return new BindingRedirectsExecutionResult

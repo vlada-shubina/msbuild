@@ -321,7 +321,6 @@ namespace Microsoft.Build.Execution
             set => _useSynchronousLogging = value;
         }
 
-
         /// <summary>
         /// Indicates whether to emit a default error if a task returns false without logging an error.
         /// </summary>

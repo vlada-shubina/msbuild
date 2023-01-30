@@ -111,7 +111,6 @@ namespace Microsoft.Build.UnitTests
             AssertParse("namespace MyNamespace { namespace XXX {} class MyClass {} }", "MyNamespace.MyClass");
         }
 
-
         [Fact]
         public void SkipPeerNamespaces()
         {
@@ -221,7 +220,6 @@ namespace Microsoft.Build.UnitTests
         {
             AssertParse("[assembly :MyChar('a')] namespace i { class a { } }", "i.a");
         }
-
 
         [Fact]
         public void ClassAttributeBool()
@@ -392,8 +390,6 @@ namespace i
 #endif
                 ", "a");
         }
-
-
 
         [Theory]
         [InlineData(@"

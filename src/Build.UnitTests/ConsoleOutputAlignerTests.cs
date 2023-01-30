@@ -121,7 +121,6 @@ namespace Microsoft.Build.UnitTests
             output.ShouldBe(expected.Replace("\n", Environment.NewLine));
         }
 
-
         [Theory]
         [InlineData("", "1234", "123", "4")]
         [InlineData(" ", "123", "12", " 3")]

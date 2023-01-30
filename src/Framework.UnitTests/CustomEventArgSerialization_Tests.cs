@@ -36,7 +36,6 @@ namespace Microsoft.Build.UnitTests
 
         private int _eventArgVersion = (Environment.Version.Major * 10) + Environment.Version.Minor;
 
-
         public CustomEventArgSerialization_Tests()
         {
             _stream = new MemoryStream();
@@ -203,7 +202,6 @@ namespace Microsoft.Build.UnitTests
             newGenericEvent.EndLineNumber.ShouldBe(genericEvent.EndLineNumber); // "Expected EndLineNumber to Match"
             newGenericEvent.HelpLink.ShouldBe(genericEvent.HelpLink); // "Expected HelpLink to Match"
         }
-
 
         [Fact]
         public void TestBuildFinishedEventArgs()

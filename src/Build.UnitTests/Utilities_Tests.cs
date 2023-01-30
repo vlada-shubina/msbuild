@@ -14,7 +14,6 @@ using ProjectCollection = Microsoft.Build.Evaluation.ProjectCollection;
 
 using Toolset = Microsoft.Build.Evaluation.Toolset;
 
-
 using XmlDocumentWithLocation = Microsoft.Build.Construction.XmlDocumentWithLocation;
 using XmlElementWithLocation = Microsoft.Build.Construction.XmlElementWithLocation;
 

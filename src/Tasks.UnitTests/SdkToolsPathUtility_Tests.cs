@@ -35,7 +35,6 @@ namespace Microsoft.Build.UnitTests
             _log.TaskResources = AssemblyResources.PrimaryResources;
         }
 
-
         #region Misc
         /// <summary>
         /// Test the case where the sdkToolsPath is null or empty
@@ -90,7 +89,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal(expectedPath, toolPath);
             Assert.True(String.IsNullOrEmpty(_mockEngine.Log));
         }
-
 
         #endregion
 
@@ -159,7 +157,6 @@ namespace Microsoft.Build.UnitTests
             Assert.True(String.IsNullOrEmpty(_mockEngine.Log));
         }
         #endregion
-
 
         /// <summary>
         /// Test the case where the processor architecture is x86 and the tool does not exist in the x86 sdk path (or anywhere for that matter)

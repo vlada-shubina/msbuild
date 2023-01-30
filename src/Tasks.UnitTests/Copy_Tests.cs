@@ -1912,7 +1912,6 @@ namespace Microsoft.Build.UnitTests
             engine.AssertLogContains("MSB3027");
         }
 
-
         /// <summary>
         /// The copy delegate can return false, or throw on failure.
         /// This test tests the throw case.
@@ -2320,7 +2319,6 @@ namespace Microsoft.Build.UnitTests
                 File.WriteAllText(sourceFile, "This is a source temp file."); // HIGHCHAR: Test writes in UTF8 without preamble.
 
                 Directory.CreateDirectory(destFolder);
-
 
                 ITaskItem[] sourceFiles = { new TaskItem(sourceFile) };
 

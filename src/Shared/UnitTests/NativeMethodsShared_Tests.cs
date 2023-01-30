@@ -9,8 +9,6 @@ using System.Runtime.InteropServices;
 using Microsoft.Build.Shared;
 using Xunit;
 
-
-
 #nullable disable
 
 namespace Microsoft.Build.UnitTests
@@ -109,7 +107,6 @@ namespace Microsoft.Build.UnitTests
             Assert.False(NativeMethodsShared.GetLastWriteDirectoryUtcTime(file, out directoryTime));
             Assert.Equal(DateTime.MinValue, directoryTime);
         }
-
 
         /// <summary>
         /// Verifies that NativeMethodsShared.SetCurrentDirectory(), when called on a nonexistent

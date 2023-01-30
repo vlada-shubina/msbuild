@@ -179,7 +179,6 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             IList<ProjectItem> items = ObjectModelHelpers.GetItemsFromFragment(content, allItems: true);
 
-
             var a = new Dictionary<string, string>
             {
                 {"m1", "m1_contents"},

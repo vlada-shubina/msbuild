@@ -733,7 +733,6 @@ class X
                 FileTrackerTestHelper.ReadLineFromFile("test.out", 1).ToUpperInvariant());
         }
 
-
         [Fact(Skip = "FileTracker tests require VS2015 Update 3 or a packaged version of Tracker.exe https://github.com/dotnet/msbuild/issues/649")]
         public void FileTrackerIntermediateDirMissing()
         {
@@ -1455,7 +1454,6 @@ class X
             File.Delete("inlinefind.read.1.tlog");
         }
 
-
         [Fact(Skip = "FileTracker tests require VS2015 Update 3 or a packaged version of Tracker.exe https://github.com/dotnet/msbuild/issues/649")]
         public void InProcTrackingStartProcessFindStrInDefaultTaskName()
         {
@@ -1661,7 +1659,6 @@ class X
             File.AppendAllText(sourceFile, "child thread\r\n");
             FileTracker.WriteContextTLogs(Path.GetFullPath("."), tlogRootName);
         }
-
 
         [Fact(Skip = "FileTracker tests require VS2015 Update 3 or a packaged version of Tracker.exe https://github.com/dotnet/msbuild/issues/649")]
         public void InProcTrackingChildCustomEnvironment()
@@ -2531,7 +2528,6 @@ namespace ConsoleApplication4
         }
 
         public static void WriteAll(string filename, string content) => File.WriteAllText(filename, content);
-
 
         public static bool FindStringInTlog(string file, string tlog)
             => ReadLinesFromFile(tlog).Contains(file, StringComparer.OrdinalIgnoreCase);

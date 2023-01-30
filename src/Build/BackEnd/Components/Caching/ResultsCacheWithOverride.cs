@@ -15,7 +15,6 @@ namespace Microsoft.Build.Execution
         private readonly IResultsCache _override;
         public ResultsCache CurrentCache { get; }
 
-
         public ResultsCacheWithOverride(IResultsCache @override)
         {
             _override = @override;

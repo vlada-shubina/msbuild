@@ -34,7 +34,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             // validate there is exactly 1 item with this include in both view and real and it is the exact same object.
             Assert.Same(result, this.GetSingleItemWithVerify(where, result.EvaluatedInclude));
 
-
             if (metadata != null)
             {
                 foreach (var m in metadata)
@@ -252,7 +251,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             }
         }
 
-
         private static void Verify(SdkReference view, SdkReference real, ValidationContext context = null)
         {
             if (view == null && real == null)
@@ -329,7 +327,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             var view = pair.View;
             context ??= new ValidationContext();
             context.Pair = pair;
-
 
             Verify(view.Xml, real.Xml);
 

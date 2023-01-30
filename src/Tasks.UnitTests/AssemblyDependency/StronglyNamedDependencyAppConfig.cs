@@ -30,7 +30,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             get { return new string[] { s_myApp_V05Path, s_myApp_V10Path, s_myComponentsV05Path, s_myComponentsV10Path, s_myComponentsV20Path, s_myComponentsV30Path }; }
         }
 
-
         /// <summary>
         /// In this case,
         /// - A single reference to DependsOnUnified was passed in.
@@ -115,7 +114,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             {
                 File.WriteAllText(redistListPath, implicitRedistListContents);
                 File.WriteAllText(subsetListPath, engineOnlySubset);
-
 
                 // Create the engine.
                 MockEngine engine = new MockEngine(_output);
@@ -209,7 +207,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             File.Delete(appConfigFile);
         }
 
-
         /// <summary>
         /// In this case,
         /// - A single reference to DependsOnUnified was passed in.
@@ -260,7 +257,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             // Cleanup.
             File.Delete(appConfigFile);
         }
-
 
         /// <summary>
         /// In this case,
@@ -313,7 +309,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
                         String.Format(AssemblyResources.GetString("General.CouldNotLocateAssembly"), "UNIFyMe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")),
                     out shouldContain);
 
-
             engine.AssertLogContains(
                     shouldContain);
 
@@ -322,8 +317,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
 
             engine.AssertLogContains(
                     String.Format(AssemblyResources.GetString("ResolveAssemblyReference.UnifiedDependency"), "UNIFyMe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"));
-
-
 
             // Cleanup.
             File.Delete(appConfigFile);
@@ -509,7 +502,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             // Cleanup.
             File.Delete(appConfigFile);
         }
-
 
         /// <summary>
         /// In this case,

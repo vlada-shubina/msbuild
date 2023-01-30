@@ -58,7 +58,6 @@ namespace Microsoft.Build.Internal
             }
         }
 
-
         /// <summary>
         /// Throw an invalid project exception indicating that the child is not valid beneath the element because it is a duplicate
         /// </summary>

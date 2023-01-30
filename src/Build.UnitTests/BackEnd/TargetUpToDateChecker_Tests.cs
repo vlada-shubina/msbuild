@@ -120,7 +120,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             ml.AssertLogDoesntContain("Running Build target");
         }
 
-
         /// <summary>
         /// Tests this case:
         /// 
@@ -659,7 +658,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
                 true); /* some out of date */
         }
 
-
         /// <summary>
         /// Test comparison of inputs/outputs: second input missing
         /// </summary>
@@ -1031,7 +1029,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
 
                 inputs.Add(inputSymlink);
                 outputs.Add(outputTarget);
-
 
                 DependencyAnalysisLogDetail detail;
                 Assert.Equal(

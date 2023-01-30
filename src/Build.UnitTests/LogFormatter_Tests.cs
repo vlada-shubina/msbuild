@@ -26,7 +26,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal("00:02:05.45", result);
         }
 
-
         /*
         * Method:  TimeSpanZeroDuration
         *

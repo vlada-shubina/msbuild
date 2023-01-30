@@ -24,7 +24,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             return holder.Linker.LinkFactory.Create(link);
         }
 
-
         public string Name { get => this.TargetXml.Name; set => this.TargetXml.Name = value; }
         public string Returns { set => this.TargetXml.Returns = value; }
     }

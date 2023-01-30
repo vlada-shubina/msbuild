@@ -316,7 +316,6 @@ namespace Microsoft.Build.UnitTests
             }
         }
 
-
         /// <summary>
         /// When ToolExe is set, it is used instead of ToolName
         /// </summary>
@@ -807,7 +806,6 @@ namespace Microsoft.Build.UnitTests
                 File.ReadAllText(output.Path).ShouldContain("lol");
             }
         }
-
 
         private sealed class ToolTaskThatNeedsUnicode : ToolTask
         {

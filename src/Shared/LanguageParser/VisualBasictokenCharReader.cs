@@ -197,7 +197,6 @@ namespace Microsoft.Build.Shared.LanguageParser
             return true; // An integer suffix can be zero characters, so there's always a match.
         }
 
-
         /*
          * Method:  SinkOctalDigits
          * 

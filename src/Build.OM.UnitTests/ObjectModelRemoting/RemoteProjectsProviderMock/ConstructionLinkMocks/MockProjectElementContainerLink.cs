@@ -63,7 +63,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
         MockProjectElementLinkRemoter IProjectElementLinkHelper.ElementProxy => this.Proxy;
         MockProjectElementContainerLinkRemoter IProjectElementContainerLinkHelper.ContainerProxy => this.Proxy;
 
-
         #region ProjectElementLink redirectors
         private IProjectElementLinkHelper EImpl => (IProjectElementLinkHelper)this;
         public override ProjectElementContainer Parent => EImpl.GetParent();

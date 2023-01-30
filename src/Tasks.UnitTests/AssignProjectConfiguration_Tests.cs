@@ -110,7 +110,6 @@ namespace Microsoft.Build.UnitTests
                 projectOutputs, true, @"JustConfig", "JustConfig", string.Empty);
         }
 
-
         /// <summary>
         /// Test the case where the project reference does not have either of the metadata set on it.
         ///
@@ -172,7 +171,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Empty(referenceItem.GetMetadata("ReferenceOutputAssembly"));
         }
 
-
         /// <summary>
         /// Test the case where the project reference does not have either of the metadata set on it.
         ///
@@ -214,7 +212,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal("false", referenceItem.GetMetadata("BuildReference"));
             Assert.Equal("false", referenceItem.GetMetadata("ReferenceOutputAssembly"));
         }
-
 
         /// <summary>
         /// Test the case where the project reference does has one or more of the metadata set on it.
@@ -258,7 +255,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal("false", referenceItem.GetMetadata("BuildReference"));
             Assert.Equal("true", referenceItem.GetMetadata("ReferenceOutputAssembly"));
         }
-
 
         private void TestUnresolvedReferencesHelper(ArrayList projectRefs, Hashtable pregenConfigurations,
             out Hashtable unresolvedProjects, out Hashtable resolvedProjects)

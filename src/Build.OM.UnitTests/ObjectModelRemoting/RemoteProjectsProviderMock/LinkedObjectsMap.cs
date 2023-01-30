@@ -36,7 +36,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
         private Dictionary<UInt32, WeakHolder> activeLinks = new Dictionary<UInt32, WeakHolder>();
         private Dictionary<KeyType, WeakHolder> indexByKey = new Dictionary<KeyType, WeakHolder>();
 
-
         private static void Remove(UInt32 collectionId, UInt32 id)
         {
             if (id != 0)

@@ -65,8 +65,6 @@ namespace Microsoft.Build.UnitTests
             new ProduceAssemblyNameEx(ProduceAsLowerBoth)
         };
 
-
-
         private static AssemblyNameExtension ProduceAsString(string name)
         {
             return new AssemblyNameExtension(name);
@@ -220,7 +218,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal(0, String.Compare(AssemblyNameExtension.EscapeDisplayNameCharacters(displayName), @"Hello\,\""Don\'t\"" eat the \\CAT", StringComparison.OrdinalIgnoreCase));
         }
 
-
         /// <summary>
         /// General equals comparison validator.
         /// </summary>
@@ -260,7 +257,6 @@ namespace Microsoft.Build.UnitTests
                 }
             }
         }
-
 
         /// <summary>
         /// General equals comparison validator when we are ignoring the version numbers in the name.
@@ -410,7 +406,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Contains("b03f5f7f11d50a3a", extension.FullName);
             Assert.False(extension.HasProcessorArchitectureInFusionName);
         }
-
 
         /// <summary>
         /// Verify partial matching on the simple name works
@@ -614,7 +609,6 @@ namespace Microsoft.Build.UnitTests
             }
         }
 
-
         /// <summary>
         /// Make sure that our assemblyNameComparers correctly work.
         /// </summary>
@@ -635,7 +629,6 @@ namespace Microsoft.Build.UnitTests
             Assert.True(AssemblyNameComparer.GenericComparerConsiderRetargetable.Equals(a, c));
             Assert.False(AssemblyNameComparer.GenericComparerConsiderRetargetable.Equals(a, d));
 
-
             Assert.Equal(0, AssemblyNameComparer.Comparer.Compare(a, b));
             Assert.True(AssemblyNameComparer.Comparer.Compare(a, d) > 0);
             Assert.True(AssemblyNameComparer.Comparer.Compare(a, e) < 0);
@@ -645,7 +638,6 @@ namespace Microsoft.Build.UnitTests
             Assert.True(AssemblyNameComparer.ComparerConsiderRetargetable.Compare(a, d) > 0);
             Assert.True(AssemblyNameComparer.ComparerConsiderRetargetable.Compare(a, e) < 0);
         }
-
 
         /// <summary>
         /// Make sure the reverse version comparer will compare the version in a way that would sort them in reverse order. 

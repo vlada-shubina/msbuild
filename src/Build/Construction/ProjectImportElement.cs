@@ -130,7 +130,6 @@ namespace Microsoft.Build.Construction
         /// </summary>
         public ProjectElement OriginalElement { get => Link != null ? ImportLink.OriginalElement : _originalElement; internal set => _originalElement = value; }
 
-
         /// <summary>
         /// <see cref="Framework.SdkReference"/> if applicable to this import element.
         /// </summary>

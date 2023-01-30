@@ -85,7 +85,6 @@ namespace Microsoft.Build.Tasks
             }
         }
 
-
         /// <summary>
         /// Set a switch if its value exists by choosing from the input choices
         /// </summary>

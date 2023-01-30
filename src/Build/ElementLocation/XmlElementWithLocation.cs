@@ -54,7 +54,6 @@ namespace Microsoft.Build.Construction
 
         XmlElementWithLocation ILinkedXml.Xml => this;
 
-
         /// <summary>
         /// Returns the line number if available, else 0.
         /// IXmlLineInfo member.

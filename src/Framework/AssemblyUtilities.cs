@@ -10,7 +10,6 @@ using System.Linq;
 using Microsoft.Build.Framework;
 #endif
 
-
 // Declare this to get init properties. See https://github.com/dotnet/roslyn/issues/45510#issuecomment-694977239
 #nullable disable
 

@@ -933,7 +933,6 @@ namespace Microsoft.Build.Tasks
         }
         #endregion
 
-
         #region FileMap
         private class FileMap : IEnumerable
         {

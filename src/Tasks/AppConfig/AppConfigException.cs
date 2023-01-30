@@ -27,7 +27,6 @@ namespace Microsoft.Build.Tasks
             }
         }
 
-
         /// <summary>
         /// The line number with the error. Is initialized to zero
         /// </summary>
@@ -51,7 +50,6 @@ namespace Microsoft.Build.Tasks
                 return column;
             }
         }
-
 
         /// <summary>
         /// Construct the exception.

@@ -330,7 +330,6 @@ namespace Microsoft.Build.UnitTests
             retValue = rcr.IsExistingProjectReference(axAttr, ComReferenceTypes.tlbimp, out referenceInfo);
             Assert.True(!retValue && referenceInfo == null); // "ActiveX ref should NOT be found for tlbimp ref types"
 
-
             // find the Tlb ref, matching with any type of reference - should find it
             retValue = rcr.IsExistingProjectReference(tlbAttr, null, out referenceInfo);
             Assert.True(retValue && referenceInfo == tlbRefInfo); // "Tlb ref should be found for any type of ref"
@@ -342,7 +341,6 @@ namespace Microsoft.Build.UnitTests
             // find the Tlb ref, matching with pia types - should NOT find it
             retValue = rcr.IsExistingProjectReference(tlbAttr, ComReferenceTypes.primary, out referenceInfo);
             Assert.True(!retValue && referenceInfo == null); // "Tlb ref should NOT be found for primary ref types"
-
 
             // find the Pia ref, matching with any type of reference - should find it
             retValue = rcr.IsExistingProjectReference(piaAttr, null, out referenceInfo);
@@ -636,7 +634,6 @@ namespace Microsoft.Build.UnitTests
             // no conflicts should be found with just the three initial refs
             Assert.True(rcr.CheckForConflictingReferences());
             Assert.Equal(3, rcr.allProjectRefs.Count);
-
 
             // duplicate refs should not be treated as conflicts
             ComReferenceInfo referenceInfo = new ComReferenceInfo(tlbRefInfo);

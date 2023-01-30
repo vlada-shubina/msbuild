@@ -398,7 +398,6 @@ namespace Microsoft.Build.UnitTests
             engine.AssertLogContains("MSB3098");
         }
 
-
         /// <summary>
         /// Some attributes only allow positional constructor arguments.
         /// To set those, use metadata names like "_Parameter1", "_Parameter2" etc.

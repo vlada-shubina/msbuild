@@ -49,7 +49,6 @@ namespace Microsoft.Build.Evaluation
                 return _itemGetter(itemType);
             }
 
-
             public IDictionary<string, List<TargetSpecification>> AfterTargets
             {
                 get
@@ -163,7 +162,6 @@ namespace Microsoft.Build.Evaluation
                     return _wrappedData.ItemDefinitionsEnumerable;
                 }
             }
-
 
             public bool CanEvaluateElementsWithFalseConditions
             {

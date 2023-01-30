@@ -272,7 +272,6 @@ namespace Microsoft.Build.Engine.UnitTests.Construction
                 sp.ProjectShouldBuild(Path.Combine("src", Path.GetFileName(microsoftBuild.Path)!)).ShouldBeTrue();
                 sp.ProjectShouldBuild(Path.Combine("src", Path.GetFileName(tasksUnitTests.Path)!)).ShouldBeTrue();
 
-
                 (sp.ProjectShouldBuild(Path.Combine("src", Path.GetFileName(commandLineUnitTests.Path)!))
                  || sp.ProjectShouldBuild(Path.Combine("src", Path.GetFileName(msbuild.Path)!))
                  || sp.ProjectShouldBuild(Path.Combine("src", "notAProject.csproj")))

@@ -11,7 +11,6 @@ using System.Text.RegularExpressions;
 using Microsoft.Build.Evaluation;
 using Microsoft.Build.Shared;
 
-
 #nullable disable
 
 namespace Microsoft.Build.UnitTests.OM.Construction

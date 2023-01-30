@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 
-
 using Microsoft.Build.BackEnd;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Shared;

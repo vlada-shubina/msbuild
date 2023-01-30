@@ -44,7 +44,6 @@ namespace Microsoft.Build.Tasks
         [Output]
         public ITaskItem[] DeletedFiles { get; set; }
 
-
         /// <summary>
         /// Gets or sets the delay, in milliseconds, between any necessary retries.
         /// </summary>

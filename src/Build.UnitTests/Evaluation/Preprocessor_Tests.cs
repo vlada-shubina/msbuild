@@ -852,7 +852,6 @@ namespace Microsoft.Build.UnitTests.Preprocessor
                     {"MSBuildUnitTestSdk", testSdkDirectory}
                 }));
 
-
                 string sdkPropsPath = Path.Combine(testSdkDirectory, "Sdk.props");
                 string sdkTargetsPath = Path.Combine(testSdkDirectory, "Sdk.targets");
 
@@ -866,7 +865,6 @@ namespace Microsoft.Build.UnitTests.Preprocessor
         <SdkTargetsImported>true</SdkTargetsImported>
     </PropertyGroup>
 </Project>");
-
 
                 string content = @"<Project Sdk='MSBuildUnitTestSdk'>
   <PropertyGroup>
@@ -1088,7 +1086,6 @@ namespace Microsoft.Build.UnitTests.Preprocessor
     </PropertyGroup>
 </Project>");
 
-
                 TransientTestProjectWithFiles import = env.CreateTestProjectWithFiles(@"<Project Sdk='MSBuildUnitTestSdk2'>
     <PropertyGroup>
         <MyImportWasImported>true</MyImportWasImported>
@@ -1209,8 +1206,6 @@ namespace Microsoft.Build.UnitTests.Preprocessor
                 Helpers.VerifyAssertLineByLine(expected, writer.ToString());
             }
         }
-
-
 
         /// <summary>
         /// Verifies that the Preprocessor works when the import graph contains unevaluated duplicates.  This can occur if two projects in 

@@ -198,7 +198,6 @@ namespace Microsoft.Build.UnitTests
                 "Keyword(Class).Keyword(MyClass)eol");
         }
 
-
         [Fact]
         public void Regress_Mutation_x0dx0aIsASingleLine()
         {

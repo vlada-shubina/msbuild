@@ -231,7 +231,6 @@ namespace Microsoft.Build.UnitTests
                 createFile: true, expectedAsOutput: false));
         }
 
-
         /// <summary>
         ///     Gets a transient test file associated with a unique file name but does not create the file.
         /// </summary>
@@ -588,7 +587,6 @@ namespace Microsoft.Build.UnitTests
             }
         }
     }
-
 
     public class TransientTestFile : TransientTestState
     {

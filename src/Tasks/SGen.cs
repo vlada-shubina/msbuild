@@ -197,7 +197,6 @@ namespace Microsoft.Build.Tasks
             get => GetBoolParameterWithDefault(nameof(UseProxyTypes), false);
         }
 
-
         public bool UseKeep
         {
             set => Bag[nameof(UseKeep)] = value;

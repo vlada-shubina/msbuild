@@ -13,8 +13,6 @@ using Microsoft.Build.Shared;
 using Microsoft.Build.Shared.FileSystem;
 using Xunit;
 
-
-
 #nullable disable
 
 namespace Microsoft.Build.UnitTests
@@ -269,7 +267,6 @@ namespace Microsoft.Build.UnitTests
             AssertParseEvaluate(p, "!((($(foo) != 'twoo' or !$(bar)) and 5 >= 1) or $(two) == 1)", expander, false);
         }
 
-
         /// <summary>
         /// Make sure when a non number is used in an expression which expects a numeric value that a error is emitted.
         /// </summary>
@@ -454,7 +451,6 @@ namespace Microsoft.Build.UnitTests
             bool result = tree.Evaluate(state);
             Assert.Equal(expected, result);
         }
-
 
         private void AssertParseEvaluateThrow(Parser p, string expression, Expander<ProjectPropertyInstance, ProjectItemInstance> expander)
         {

@@ -297,7 +297,6 @@ namespace Microsoft.Build.UnitTests
             }
         }
 
-
         /// <summary>
         /// Move should overwrite any destination file even if it's not r/o
         /// if OverwriteReadOnlyFiles is set.
@@ -725,7 +724,6 @@ namespace Microsoft.Build.UnitTests
                 FileUtilities.DeleteWithoutTrailingBackslash(destFolder);
             }
         }
-
 
         /// <summary>
         /// DestinationFiles should only include files that were successfully moved,

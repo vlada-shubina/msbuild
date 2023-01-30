@@ -9,7 +9,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
     using System.Collections.Generic;
     using Microsoft.Build.Construction;
 
-
     /// <summary>
     /// We need to know the actual type of ProjectElements in order to do a proper remoting.
     /// Unless we do some explicit ProjectElement.GetXMLType() thing we need to use heuristic.
@@ -33,7 +32,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
                 this.Checker = checker;
                 this.ExportFactory = factory;
             }
-
 
             public ElementInfo(Func<ProjectElement, bool> checker, ExporterFactory factory)
             {
@@ -90,7 +88,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
                 knownTypes.Add(v.CanonicalType, v.ExportFactory);
             }
         }
-
 
         private static MockProjectElementLinkRemoter NotImplemented(ProjectCollectionLinker exporter, ProjectElement xml)
         {

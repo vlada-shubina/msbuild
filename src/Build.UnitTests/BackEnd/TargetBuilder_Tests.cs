@@ -974,7 +974,6 @@ path);
             result.ResultsByTarget["Build"].AfterTargetsHaveFailed.ShouldBe(false);
         }
 
-
         /// <summary>
         /// Test after target on a skipped target
         /// </summary>

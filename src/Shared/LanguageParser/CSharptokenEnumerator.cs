@@ -309,7 +309,6 @@ namespace Microsoft.Build.Shared.LanguageParser
                                                     "while"
                                               };
 
-
         /*
         * Method:  Reader
         * 

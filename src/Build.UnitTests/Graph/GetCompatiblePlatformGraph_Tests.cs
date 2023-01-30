@@ -68,7 +68,6 @@ namespace Microsoft.Build.Graph.UnitTests
                                                         </PropertyGroup>
                                                     </Project>");
 
-
                 ProjectGraph graph = new ProjectGraph(entryProject.Path);
                 GetFirstNodeWithProjectNumber(graph, 2).ProjectInstance.GlobalProperties["Platform"].ShouldBe("x86");
                 GetFirstNodeWithProjectNumber(graph, 3).ProjectInstance.GlobalProperties["Platform"].ShouldBe("x86");
@@ -107,7 +106,6 @@ namespace Microsoft.Build.Graph.UnitTests
                                                             <Platforms>AnyCPU</Platforms>
                                                         </PropertyGroup>
                                                     </Project>");
-
 
                 ProjectGraph graph = new ProjectGraph(entryProject.Path);
                 GetFirstNodeWithProjectNumber(graph, 2).ProjectInstance.GlobalProperties["Platform"].ShouldBe("AnyCPU");

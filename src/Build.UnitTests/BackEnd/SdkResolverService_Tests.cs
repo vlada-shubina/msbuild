@@ -112,7 +112,6 @@ namespace Microsoft.Build.Engine.UnitTests.BackEnd
             e.Sdk.Name.ShouldBe("1sdkName");
         }
 
-
         [Fact]
         // Scenario: MockSdkResolverWithResolvableSdkPattern2 is a specific resolver (i.e. resolver with pattern)
         // and it successfully resolves sdk.
@@ -612,7 +611,6 @@ namespace Microsoft.Build.Engine.UnitTests.BackEnd
         {
             private List<SdkResolver> _resolvers;
             private List<(string ResolvableSdkPattern, SdkResolver Resolver)> _resolversWithPatterns;
-
 
             public MockLoaderStrategy(bool includeErrorResolver = false, bool includeResolversWithPatterns = false) : this()
             {

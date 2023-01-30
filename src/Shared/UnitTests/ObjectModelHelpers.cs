@@ -1674,7 +1674,6 @@ namespace Microsoft.Build.UnitTests
 
             sb.Append("</ItemGroup>");
 
-
             foreach (var defaultTarget in (defaultTargets ?? string.Empty).Split(MSBuildConstants.SemicolonChar, StringSplitOptions.RemoveEmptyEntries))
             {
                 sb.Append("<Target Name='").Append(defaultTarget).Append("'/>");

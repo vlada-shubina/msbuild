@@ -26,8 +26,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             group.Clear();
         }
 
-
-
         [Fact]
         public void ProjectModifyRenameAndSafeAs()
         {
@@ -38,7 +36,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             var realProj = pcRemote.LoadProject(proj1Path);
             pcLocal.Importing = true;
             var viewProj = pcLocal.Collection.GetLoadedProjects(proj1Path).FirstOrDefault();
-
 
             ViewValidation.Verify(viewProj, realProj);
             var savedPath = this.StdGroup.Disk.GetAbsolutePath("Saved.proj");
@@ -64,12 +61,10 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             Assert.True(viewProj.IsDirty);
             // it should still be dirty since it is not reevaluated.
 
-
             Assert.True(File.Exists(savedPath));
 
             var lwtAfter = new FileInfo(proj1Path).LastWriteTimeUtc;
             Assert.Equal(lwtBefore, lwtAfter);
-
 
             viewProj.ReevaluateIfNecessary();
 
@@ -116,7 +111,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             ProjectPair pair = new ProjectPair(viewProj, realProj);
             ViewValidation.Verify(pair);
 
-
             List<KeyValuePair<string, string>> testMedatada = new List<KeyValuePair<string, string>>()
             {
                 new KeyValuePair<string, string>("a", "aValue"),
@@ -149,7 +143,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
 
             Assert.Null(pair.GetSingleItemWithVerify(ObjectType.Real, "barWithMetadataFast.cpp"));
             var barWithMetadataRealFast = pair.AddSingleItemWithVerify(ObjectType.Real, "cpp", "barWithMetadataFast.cpp", testMedatada);
-
 
             ViewValidation.Verify(pair);
 
@@ -190,7 +183,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
                 Assert.Null(pair.GetSingleItemWithVerify(ObjectType.View, "barWithMetadata.cpp"));
             }
 
-
             // remove single from real
             {
                 Assert.NotNull(pair.GetSingleItemWithVerify(ObjectType.Real, "fooWithMetadataFast.cpp"));
@@ -204,7 +196,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
                 {
                     pair.View.RemoveItem(fooWithMetadataRealFast);
                 });
-
 
                 pair.Real.RemoveItem(fooWithMetadataRealFast);
                 Assert.Null(pair.GetSingleItemWithVerify(ObjectType.Real, "fooWithMetadataFast.cpp"));
@@ -228,7 +219,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
                 Assert.Null(pair.GetSingleItemWithVerify(ObjectType.Real, "barFast.cpp"));
             }
 
-
             // Check metadata modify
             var fooReal = pair.GetSingleItemWithVerify(ObjectType.Real, "foo.cpp");
             ViewValidation.Verify(fooView, fooReal, validationContext);
@@ -238,7 +228,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             Assert.True(fooView.HasMetadata("xx"));
             Assert.Equal("xxValue", fooView.GetMetadataValue("xx"));
             ViewValidation.Verify(fooView, fooReal, validationContext);
-
 
             Assert.False(fooView.RemoveMetadata("xxNone"));
             Assert.True(fooView.RemoveMetadata("xx"));
@@ -293,7 +282,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             Assert.Equal("fooRenamedLastTimeForSure.cpp", fooReal.UnevaluatedInclude);
             ViewValidation.Verify(fooView, fooReal, validationContext);
 
-
             // and finally again verify the two projects are equivalent as a whole.
             ViewValidation.Verify(pair);
         }
@@ -325,7 +313,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             pair.ValidatePropertyValue("gpt1", "NotFoo");
             pair.View.ReevaluateIfNecessary();
             pair.ValidatePropertyValue("gpt1", "NotFooGP1V");
-
 
             pair.Real.SetGlobalProperty("Configuration", "Foo");
             Assert.True(pair.View.GlobalProperties.ContainsKey("Configuration"));

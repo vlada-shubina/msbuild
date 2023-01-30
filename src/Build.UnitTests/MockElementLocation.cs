@@ -19,7 +19,6 @@ namespace Microsoft.Build.UnitTests
 
         private string _file = "mock.targets";
 
-
         /// <summary>
         /// Initializes a new instance of the MockElementLocation class.
         /// </summary>

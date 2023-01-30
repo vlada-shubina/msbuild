@@ -135,7 +135,6 @@ namespace Microsoft.Build.Evaluation
             LoadProjectsReadOnly = loadProjectsReadOnly;
         }
 
-
         /// <summary>
         /// Returns true if given cache entry exists and is outdated.
         /// </summary>

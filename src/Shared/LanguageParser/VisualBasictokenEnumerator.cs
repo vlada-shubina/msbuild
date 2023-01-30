@@ -270,7 +270,6 @@ namespace Microsoft.Build.Shared.LanguageParser
                 return true;
             }
 
-
             // We didn't recognize the token, so this is a syntax error. 
             _reader.SinkCharacter();
             current = new UnrecognizedToken();
@@ -315,7 +314,6 @@ namespace Microsoft.Build.Shared.LanguageParser
                                                     "WHILE",  "WIDENING", "WITH",  "WITHEVENTS",  "WRITEONLY",
                                                     "XOR"
                                               };
-
 
         /*
         * Method:  Reader

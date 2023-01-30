@@ -447,7 +447,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             Assert.Equal(String.Empty, group.First().GetMetadataValue("m3"));
         }
 
-
         [Fact]
         public void ItemKeepMetadataNotExistent()
         {
@@ -2987,7 +2986,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             Assert.Equal("m3", item2.GetMetadataValue("m"));
         }
 
-
         [Fact]
         public void ModifyItemInTargetWithConditionOnMetadataWithoutItemTypeOnMetadataInCondition()
         {
@@ -3197,7 +3195,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             Assert.Equal("m0", p.ItemsToBuildWith["i0"].First().GetMetadataValue("m"));
             Assert.Equal("n0", p.ItemsToBuildWith["i0"].First().GetMetadataValue("n"));
         }
-
 
         /// <summary>
         /// The case is where a transform is done on an item to generate a pdb file name when the extension of an item is dll

@@ -237,7 +237,6 @@ namespace Microsoft.Build.UnitTests
             referencePathBuilder.Append('a', referencePathLength - (3 /* 3 digit identifier */ + 4 /* file extension */));
             string longReferenceNameBase = referencePathBuilder.ToString();
 
-
             // reference switch length plus the length of the reference path
             int referenceArgumentLength = referencePathLength + referenceSwitchDelta;
 
@@ -273,7 +272,6 @@ namespace Microsoft.Build.UnitTests
                 references.Add(new TaskItem() { ItemSpec = (longReferenceNameBase + refIndex + ".dll") });
             }
 
-
             //
             // Case 1: Command line length is equal to the maximum allowed value
             //
@@ -301,7 +299,6 @@ namespace Microsoft.Build.UnitTests
             //
             // Case 2: Command line length is one more than the maximum allowed value
             //
-
 
             // make last reference name longer by one character so that command line should become too long
             referencePathBuilder.Insert(0, 'b');

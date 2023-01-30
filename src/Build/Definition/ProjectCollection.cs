@@ -283,7 +283,6 @@ namespace Microsoft.Build.Evaluation
         {
         }
 
-
         /// <summary>
         /// Instantiates a project collection with specified global properties and loggers and using the
         /// specified toolset locations, node count, and setting of onlyLogCriticalEvents.

@@ -342,7 +342,6 @@ namespace Microsoft.Build.UnitTests
                 return false;
             }
 
-
             if (!Object.ReferenceEquals(args.TargetOutputs, other.TargetOutputs))
             {
                 // See if one is null, if so they are not equal

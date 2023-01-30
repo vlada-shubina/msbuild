@@ -291,7 +291,6 @@ namespace Microsoft.Build.UnitTests
             Assert.DoesNotContain("MSB3202", logger.FullLog); // project file not found error
         }
 
-
         /// <summary>
         /// </summary>
         [Fact]

@@ -261,7 +261,6 @@ namespace Microsoft.Build.Tasks
                         string commandLine = (m.Groups.Count > 2 && m.Groups[2].Captures.Count > 0) ?
                             m.Groups[2].Captures[0].Value : "";
 
-
                         // If we are trying to run a .exe file, prepend mono as the file may
                         // not be runnable
                         if (exe.EndsWith(".exe", StringComparison.OrdinalIgnoreCase)

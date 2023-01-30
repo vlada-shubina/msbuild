@@ -138,7 +138,6 @@ namespace Microsoft.Build.Tasks
                 Log.LogMessageFromResources(MessageImportance.Low, "CreateManifestResourceName.NoRootNamespace");
             }
 
-
             foreach (ITaskItem resourceFile in ResourceFiles)
             {
                 try

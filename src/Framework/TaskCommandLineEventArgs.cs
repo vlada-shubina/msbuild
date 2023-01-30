@@ -50,7 +50,6 @@ namespace Microsoft.Build.Framework
             // do nothing
         }
 
-
         /// <summary>
         /// Creates an instance of this class for the given task command line. This constructor allows the timestamp to be set
         /// </summary>

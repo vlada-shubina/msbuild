@@ -34,7 +34,6 @@ namespace Microsoft.Build.Tasks
             }
         }
 
-
         /// <summary>
         /// Extract the class name.
         /// </summary>

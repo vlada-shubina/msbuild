@@ -1916,7 +1916,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
                     toolset
                 };
 
-
                 ProjectUsingTaskElement taskbyFile1 = project.AddUsingTask("t1", "f1", null);
                 taskbyFile1.TaskFactory = "f1";
                 taskbyFile1.Architecture = "a1";

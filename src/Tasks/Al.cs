@@ -254,7 +254,6 @@ namespace Microsoft.Build.Tasks
             get => (string)Bag[nameof(Win32Resource)];
         }
 
-
         // Input files: file[,target]
         // This is not required.
         public ITaskItem[] SourceModules

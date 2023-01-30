@@ -341,7 +341,6 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
             Path.GetExtension(resourceOutput).ShouldBe(".resources");
             Path.GetExtension(t.FilesWritten[0].ItemSpec).ShouldBe(".resources");
 
-
             /* Unmerged change from project 'Microsoft.Build.Tasks.UnitTests (net7.0)'
             Before:
             Utilities.AssertLogContainsResource(t, "GenerateResource.OutputDoesntExist", t.OutputResources[0].ItemSpec);

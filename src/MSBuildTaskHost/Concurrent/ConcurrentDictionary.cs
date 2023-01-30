@@ -352,7 +352,6 @@ namespace Microsoft.Build.Shared.Concurrent
                     return;
                 }
 
-
                 // Compute the new table size. We find the smallest integer larger than twice the previous table size, and not divisible by
                 // 2,3,5 or 7. We can consider a different table-sizing policy in the future.
                 int newLength = 0;

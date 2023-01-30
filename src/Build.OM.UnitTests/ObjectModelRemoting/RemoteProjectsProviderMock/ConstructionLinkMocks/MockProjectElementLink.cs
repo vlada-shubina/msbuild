@@ -18,7 +18,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
 
         public abstract ProjectElement ImportImpl(ProjectCollectionLinker remote);
 
-
         // ProjectElementLink remoting
         public MockProjectElementContainerLinkRemoter Parent => (MockProjectElementContainerLinkRemoter)this.Export(Source.Parent);
 
@@ -84,7 +83,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
         public MockProjectElementLinkRemoter Proxy { get; }
         object ILinkMock.Remoter => this.Proxy;
         MockProjectElementLinkRemoter IProjectElementLinkHelper.ElementProxy => this.Proxy;
-
 
         #region standard ProjectElementLink implementation
         private IProjectElementLinkHelper EImpl => (IProjectElementLinkHelper)this;

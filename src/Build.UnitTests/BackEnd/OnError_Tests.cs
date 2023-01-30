@@ -304,7 +304,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             Assert.True(l.FullLog.IndexOf("Error-in-build-step-1") != -1); // "The BuildStep1 target should have been called."
         }
 
-
         /*
          * Method:  NonExistentExecuteTarget
          *
@@ -376,7 +375,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
                       <OnError Condition=""'A'=='B'"" ExecuteTargets='CleanUp'/>
                    </Target>
                 </Project>"))));
-
 
             p.Build(new string[] { "Build" }, new ILogger[] { l });
 
@@ -527,7 +525,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
                       <OnError ExecuteTargets='Build'/>
                    </Target>
                 </Project>"))));
-
 
             p.Build(new string[] { "Build" }, new ILogger[] { l });
 
@@ -723,7 +720,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             Assert.True(l.FullLog.IndexOf("GenerateSatellites-step-failed") != -1); // "The GenerateSatellites target should have failed."
             Assert.True(l.FullLog.IndexOf("PostBuild-was-called") != -1); // "The PostBuild target should have been called."
         }
-
 
         /*
          * The different places that PostBuildBuilder might be instructed to fail at

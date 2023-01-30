@@ -369,7 +369,6 @@ namespace Microsoft.Build.UnitTests
             _projectCollection.UnloadAllProjects();
         }
 
-
         /// <summary>
         /// Assert that the mock log in the engine doesn't contain a certain message based on a resource string and some parameters
         /// </summary>

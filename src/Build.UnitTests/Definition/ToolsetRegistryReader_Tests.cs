@@ -126,7 +126,6 @@ namespace Microsoft.Build.UnitTests.Definition
 
             Dictionary<string, Toolset> values = new Dictionary<string, Toolset>(StringComparer.OrdinalIgnoreCase);
 
-
             // Should not throw
             string msbuildOverrideTasksPath;
             string defaultOverrideToolsVersion;

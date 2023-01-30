@@ -7,8 +7,6 @@ using Microsoft.Build.Evaluation;
 using Microsoft.Build.Exceptions;
 using Xunit;
 
-
-
 #nullable disable
 
 namespace Microsoft.Build.UnitTests
@@ -29,42 +27,29 @@ namespace Microsoft.Build.UnitTests
             Parser p = new Parser();
             GenericExpressionNode tree = p.Parse("$(foo)", ParserOptions.AllowAll, _elementLocation);
 
-
             tree = p.Parse("$(foo)=='hello'", ParserOptions.AllowAll, _elementLocation);
-
 
             tree = p.Parse("$(foo)==''", ParserOptions.AllowAll, _elementLocation);
 
-
             tree = p.Parse("$(debug) and $(buildlab) and $(full)", ParserOptions.AllowAll, _elementLocation);
-
 
             tree = p.Parse("$(debug) or $(buildlab) or $(full)", ParserOptions.AllowAll, _elementLocation);
 
-
             tree = p.Parse("$(debug) and $(buildlab) or $(full)", ParserOptions.AllowAll, _elementLocation);
-
 
             tree = p.Parse("$(full) or $(debug) and $(buildlab)", ParserOptions.AllowAll, _elementLocation);
 
-
             tree = p.Parse("%(culture)", ParserOptions.AllowAll, _elementLocation);
-
 
             tree = p.Parse("%(culture)=='french'", ParserOptions.AllowAll, _elementLocation);
 
-
             tree = p.Parse("'foo_%(culture)'=='foo_french'", ParserOptions.AllowAll, _elementLocation);
-
 
             tree = p.Parse("true", ParserOptions.AllowAll, _elementLocation);
 
-
             tree = p.Parse("false", ParserOptions.AllowAll, _elementLocation);
 
-
             tree = p.Parse("0", ParserOptions.AllowAll, _elementLocation);
-
 
             tree = p.Parse("0.0 == 0", ParserOptions.AllowAll, _elementLocation);
         }
@@ -78,21 +63,15 @@ namespace Microsoft.Build.UnitTests
             Parser p = new Parser();
             GenericExpressionNode tree = p.Parse("$(foo)", ParserOptions.AllowAll, _elementLocation);
 
-
             tree = p.Parse("($(foo) or $(bar)) and $(baz)", ParserOptions.AllowAll, _elementLocation);
-
 
             tree = p.Parse("$(foo) <= 5 and $(bar) >= 15", ParserOptions.AllowAll, _elementLocation);
 
-
             tree = p.Parse("(($(foo) <= 5 and $(bar) >= 15) and $(baz) == simplestring) and 'a more complex string' != $(quux)", ParserOptions.AllowAll, _elementLocation);
-
 
             tree = p.Parse("(($(foo) or $(bar) == false) and !($(baz) == simplestring))", ParserOptions.AllowAll, _elementLocation);
 
-
             tree = p.Parse("(($(foo) or Exists('c:\\foo.txt')) and !(($(baz) == simplestring)))", ParserOptions.AllowAll, _elementLocation);
-
 
             tree = p.Parse("'CONTAINS%27QUOTE%27' == '$(TestQuote)'", ParserOptions.AllowAll, _elementLocation);
         }
@@ -575,7 +554,6 @@ namespace Microsoft.Build.UnitTests
                     </Choose>
                 </Project>
                 ".Cleanup();
-
 
             var project = ObjectModelHelpers.CreateInMemoryProject(projectContent);
 

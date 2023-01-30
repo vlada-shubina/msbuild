@@ -666,7 +666,6 @@ namespace Microsoft.Build.Tasks
                 return false;
             }
 
-
             if (ErrorIfLinkFails && !UseHardlinksIfPossible && !UseSymboliclinksIfPossible)
             {
                 Log.LogErrorWithCodeFromResources("Copy.ErrorIfLinkFailsSetWithoutLinkOption");

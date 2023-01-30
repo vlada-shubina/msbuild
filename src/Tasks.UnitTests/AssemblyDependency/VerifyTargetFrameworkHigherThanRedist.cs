@@ -471,7 +471,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             additionalPaths.Add(s_myVersion40Path);
             additionalPaths.Add(s_myVersion90Path + Path.DirectorySeparatorChar);
 
-
             ResolveAssemblyReference t = new ResolveAssemblyReference();
             ExecuteRAROnItemsAndRedist(t, e, items, redistString, false, additionalPaths);
 

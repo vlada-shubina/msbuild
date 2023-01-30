@@ -479,7 +479,6 @@ namespace Microsoft.Build.UnitTests
                 }
                 ");
 
-
             // -------------------------------------------------------
             // TeamBuild.proj
             // -------------------------------------------------------
@@ -703,7 +702,6 @@ namespace Microsoft.Build.UnitTests
             }
         }
 
-
         /// <summary>
         /// Include and Exclude items outside and inside targets should result in same behavior on
         ///  platform specific paths.
@@ -842,7 +840,6 @@ namespace Microsoft.Build.UnitTests
             }
         }
 
-
         /// <summary>
         /// Check if passing different global properties via metadata works
         /// </summary>
@@ -965,7 +962,6 @@ namespace Microsoft.Build.UnitTests
             }
         }
 
-
         /// <summary>
         /// Check if passing additional global properties via metadata works
         /// </summary>
@@ -1034,7 +1030,6 @@ namespace Microsoft.Build.UnitTests
                 File.Delete(projectFile2);
             }
         }
-
 
         /// <summary>
         /// Check if passing additional global properties via metadata works

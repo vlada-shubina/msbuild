@@ -156,8 +156,6 @@ BuildEngine5.BuildProjectFilesInParallel(
             _env.Dispose();
         }
 
-
-
         [Theory]
         [InlineData(BuildResultCode.Success, new string[] { })]
         [InlineData(BuildResultCode.Success, new[] { "BuildSelf" })]

@@ -50,11 +50,8 @@ namespace Microsoft.Build.Shared
                 newElement.AppendChild(oldElement.FirstChild);
             }
 
-
-
             // Add the new element in the same place the old element was.
             oldElement.ParentNode?.ReplaceChild(newElement, oldElement);
-
 
             return newElement;
         }

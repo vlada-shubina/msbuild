@@ -14,7 +14,6 @@ using Microsoft.Build.Framework;
 using Microsoft.Build.Logging;
 using Microsoft.Build.Shared;
 
-
 using TaskItem = Microsoft.Build.Execution.ProjectItemInstance.TaskItem;
 using Shouldly;
 using Xunit;
@@ -135,7 +134,6 @@ namespace Microsoft.Build.UnitTests
             _output = output;
         }
 
-
         /// <summary>
         /// Verify when the project has not been named that we correctly get the same placeholder
         /// project name for project started event and the target started event.
@@ -169,7 +167,6 @@ namespace Microsoft.Build.UnitTests
             targetStartedEvents.Count.ShouldBe(1);
             targetStartedEvents[0].ProjectFile.ShouldBe(projectStartedName); // "Expected the project started and target started target names to match"
         }
-
 
         /// <summary>
         /// Make sure the first message after a project started event prints out the target name. This was annoying a lot of people when there were messages right after the project
@@ -524,7 +521,6 @@ namespace Microsoft.Build.UnitTests
             MyCustomBuildEventArgs2 mcea = new MyCustomBuildEventArgs2();
             mcea.BuildEventContext = buildEventContext;
 
-
             // Not all parameters are null here, but that's fine, we assume the engine will never
             // fire a ProjectStarted without a project name, etc.
             es.Consume(bse);
@@ -715,7 +711,6 @@ namespace Microsoft.Build.UnitTests
             }
         }
 
-
         [Fact]
         public void TestQuietWithHighMessage()
         {
@@ -883,7 +878,6 @@ namespace Microsoft.Build.UnitTests
                     "VBC",
                     "31415", "file.vb", 42, 0, 0, 0,
                     "Some long message", "help", "sender");
-
 
                 beea.BuildEventContext = buildEventContext;
                 es.Consume(beea);
@@ -1097,7 +1091,6 @@ namespace Microsoft.Build.UnitTests
                     "31415", "file.vb", 42, 0, 0, 0,
                     "Some long message", "help", "sender");
 
-
                 beea.BuildEventContext = buildEventContext;
                 es.Consume(beea);
 
@@ -1174,7 +1167,6 @@ namespace Microsoft.Build.UnitTests
                     "VBC",
                     "31415", "file.vb", 42, 0, 0, 0,
                     "Some long message", "help", "sender");
-
 
                 beea.BuildEventContext = buildEventContext;
                 L.WarningHandler(null, beea);
@@ -1320,7 +1312,6 @@ namespace Microsoft.Build.UnitTests
             L.Initialize(es);
 
             es.Consume(new BuildStartedEventArgs("bs", null));
-
 
             // Clear time dependent build started message
             sc.Clear();
@@ -1527,7 +1518,6 @@ namespace Microsoft.Build.UnitTests
             WriteAndValidateProperties(cl2, sc, false);
         }
 
-
         /// <summary>
         /// Basic test of environment list not being displayed except in Diagnostic or if the showenvironment flag is set
         /// </summary>
@@ -1544,8 +1534,6 @@ namespace Microsoft.Build.UnitTests
 
             WriteEnvironment(cl2, sc, false);
         }
-
-
 
         /// <summary>
         /// Basic test of environment list not being displayed except in Diagnostic or if the showenvironment flag is set
@@ -1603,8 +1591,6 @@ namespace Microsoft.Build.UnitTests
             WriteEnvironment(cl2, sc, false);
         }
 
-
-
         /// <summary>
         /// Basic test of environment list not being displayed except in Diagnostic or if the showenvironment flag is set
         /// </summary>
@@ -1647,7 +1633,6 @@ namespace Microsoft.Build.UnitTests
 
             WriteAndValidateProperties(cl, sc, false);
         }
-
 
         /// <summary>
         /// Create some items and log them
@@ -1736,8 +1721,6 @@ namespace Microsoft.Build.UnitTests
             string log = sc.ToString();
 
             _output.WriteLine("[" + log + "]");
-
-
 
             // Being careful not to make locale assumptions here, eg about sorting
             if (expectToSeeLogging)
@@ -2274,7 +2257,6 @@ namespace Microsoft.Build.UnitTests
             }
         }
 
-
         [Fact]
         public void DeferredMessages()
         {
@@ -2421,7 +2403,6 @@ namespace Microsoft.Build.UnitTests
             for (int i = 0; i < 3; i++)
             {
                 _output.WriteLine("Iteration of I is {" + i + "}");
-
 
                 EventSourceSink es = new EventSourceSink();
                 // Create a simulated console

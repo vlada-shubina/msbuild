@@ -545,7 +545,6 @@ namespace Microsoft.Build.Graph
         {
             var referenceInfos = new List<ProjectInterpretation.ReferenceInfo>();
 
-
             foreach (var referenceInfo in _projectInterpretation.GetReferences(parsedProject.ProjectInstance, _projectCollection, _projectInstanceFactory))
             {
                 if (FileUtilities.IsSolutionFilename(referenceInfo.ReferenceConfiguration.ProjectFullPath))

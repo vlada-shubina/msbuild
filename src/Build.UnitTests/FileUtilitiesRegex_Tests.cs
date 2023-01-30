@@ -225,7 +225,6 @@ namespace Microsoft.Build.Engine.UnitTests
             UncPattern.IsMatch(unixDirectory).ShouldBeTrue();
         }
 
-
         [Fact]
         public void StartWithUncPatternExactDirectory()
         {

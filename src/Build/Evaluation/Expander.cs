@@ -1836,7 +1836,6 @@ namespace Microsoft.Build.Evaluation
                     itemFactory.ItemType = expressionCapture.ItemType;
                 }
 
-
                 IList<T> result;
                 if (expressionCapture.Separator != null)
                 {

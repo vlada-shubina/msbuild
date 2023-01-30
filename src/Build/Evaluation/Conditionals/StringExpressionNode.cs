@@ -116,7 +116,6 @@ namespace Microsoft.Build.Evaluation
             return _cachedExpandedValue.Length == 0;
         }
 
-
         /// <summary>
         /// Value before any item and property expressions are expanded
         /// </summary>

@@ -56,7 +56,6 @@ namespace Microsoft.Build.UnitTests
             CommandLine.ValidateEquals(t, @"-v /MyApp", false);
         }
 
-
         [Fact]
         public void OnlyPhysicalPath()
         {

@@ -92,7 +92,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal(t.Include[0].ItemSpec, t.Include[0].ItemSpec);
         }
 
-
         /// <summary>
         /// If 'Include' is unspecified, then empty is the result.
         /// </summary>
@@ -124,7 +123,6 @@ namespace Microsoft.Build.UnitTests
             Assert.True(success);
             Assert.Empty(t.Include);
         }
-
 
         /// <summary>
         /// CreateItem is case insensitive.

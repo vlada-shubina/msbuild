@@ -55,7 +55,6 @@ using Microsoft.Build.Shared;
          -- Brian Grunkemeyer, 1/16/2003
 */
 
-
 #nullable disable
 
 namespace Microsoft.Build.Tasks
@@ -750,7 +749,6 @@ namespace Microsoft.Build.Tasks
                 {
                     continue;
                 }
-
 
                 if (!codeProvider.IsValidIdentifier(key))
                 {

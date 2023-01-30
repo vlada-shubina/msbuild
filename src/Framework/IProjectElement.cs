@@ -16,7 +16,6 @@ namespace Microsoft.Build.Framework
         /// </summary>
         string ElementName { get; }
 
-
         /// <summary>
         /// The outer markup associated with this project element
         /// </summary>

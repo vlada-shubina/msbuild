@@ -170,7 +170,6 @@ namespace Microsoft.Build.Execution
             RequestedProjectState = requestedProjectState;
         }
 
-
         /// <summary>
         /// Constructs a BuildRequestData for build requests based on project files.
         /// </summary>

@@ -1550,7 +1550,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             BuildSubmission asyncResult = _buildManager.PendBuildRequest(data);
             Console.WriteLine("CancelledBuild: pend build returned");
 
-
             asyncResult.ExecuteAsync(null, null);
             Console.WriteLine("CancelledBuild: ExecuteAsync called");
             _buildManager.CancelAllSubmissions();
@@ -3664,7 +3663,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
   </Target>
 
 </Project>";
-
 
             var p2pProjectContents =
 @"<Project>

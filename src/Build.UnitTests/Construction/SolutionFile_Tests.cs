@@ -237,7 +237,6 @@ namespace Microsoft.Build.UnitTests.Construction
                             EndProjectSection
                         EndProject";
 
-
                 SolutionFile solution = ParseSolutionHelper(solutionFileContents);
                 ProjectInSolution project = solution.ProjectsByGuid["{AD0F3D02-9925-4D57-9DAF-E0A9D936ABDB}"];
                 ProjectInSolution project2 = solution.ProjectsByGuid["{CCCCCCCC-9925-4D57-9DAF-E0A9D936ABDB}"];

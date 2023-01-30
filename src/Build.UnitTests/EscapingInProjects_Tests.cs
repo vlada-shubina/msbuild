@@ -210,7 +210,6 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
                 </Project>
                 ";
 
-
             // ************************************
             //               AFTER
             // ************************************
@@ -251,7 +250,6 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
                 </Project>
                 ";
 
-
             // ************************************
             //               AFTER
             // ************************************
@@ -266,7 +264,6 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
                     </ItemGroup>
                 </Project>
                 ";
-
 
             Project project = ObjectModelHelpers.CreateInMemoryProject(projectOriginalContents);
             project.AddItem("MyWildCard", "$(FilenameWithSemicolon).weirdo");
@@ -294,7 +291,6 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
 
                 </Project>
                 ";
-
 
             // ************************************
             //               AFTER
@@ -347,7 +343,6 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
 
                 </Project>
                 ";
-
 
             // ************************************
             //               AFTER
@@ -409,7 +404,6 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
                 </Project>
                 ";
 
-
             // ************************************
             //               AFTER
             // ************************************
@@ -464,7 +458,6 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
                 </Project>
                 ";
 
-
             // ************************************
             //               AFTER
             // ************************************
@@ -505,7 +498,6 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
                     </ItemGroup>
                 </Project>
                 ";
-
 
             // ************************************
             //               AFTER
@@ -677,7 +669,6 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
                 }
             }
         }
-
 
         /// <summary>
         /// Test that we can pass in global properties containing escaped characters and they

@@ -244,7 +244,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             log.AssertLogContains("[AToBBatched: a;b]");
         }
 
-
         /// <summary>
         /// When removing an item in a target which is batched and called by call target there was an exception thrown
         /// due to us adding the same item instance to the remove item lists when merging the lookups between the two batches.
@@ -393,7 +392,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             Assert.Equal("high", log.Warnings[0].Code);
             Assert.Null(log.Warnings[1].Code);
         }
-
 
         /// <summary>
         /// It is important that the batching engine invokes the different batches in the same

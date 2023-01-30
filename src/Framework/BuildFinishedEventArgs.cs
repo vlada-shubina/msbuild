@@ -83,7 +83,6 @@ namespace Microsoft.Build.Framework
             this.succeeded = succeeded;
         }
 
-
         #region CustomSerializationToStream
         /// <summary>
         /// Serializes to a stream through a binary writer

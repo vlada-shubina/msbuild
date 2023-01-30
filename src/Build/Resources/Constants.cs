@@ -259,7 +259,6 @@ namespace Microsoft.Build.Internal
             return $"{typeFullName}::{simpleMethodName}";
         }
 
-
         /// <summary>
         /// Re-initialize.
         /// Unit tests need this when they enable "unsafe" methods -- which will then go in the collection,

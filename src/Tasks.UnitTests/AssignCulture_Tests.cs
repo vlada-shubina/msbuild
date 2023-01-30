@@ -80,8 +80,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal("MyResource.resx", t.CultureNeutralAssignedFiles[0].ItemSpec);
         }
 
-
-
         /*
         * Method:   AttributeForwarding
         *
@@ -105,7 +103,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Equal("MyResource.fr.resx", t.AssignedFiles[0].ItemSpec);
             Assert.Equal("MyResource.resx", t.CultureNeutralAssignedFiles[0].ItemSpec);
         }
-
 
         /*
         * Method:   NoCulture

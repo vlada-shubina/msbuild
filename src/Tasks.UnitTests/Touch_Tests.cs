@@ -86,7 +86,6 @@ namespace Microsoft.Build.UnitTests
                 throw new DirectoryNotFoundException();
             }
 
-
             Assert.True(false, "Unexpected file create: " + path);
             return null;
         }
@@ -176,7 +175,6 @@ namespace Microsoft.Build.UnitTests
             {
                 return;
             }
-
 
             Assert.True(false, "Unexpected set last write time: " + path);
         }

@@ -141,7 +141,6 @@ namespace Microsoft.Build.UnitTests.OM.Construction
             ResolvedImport initialResolvedImport = project.Imports[0];
             Assert.Equal(_sdkPropsPath, initialResolvedImport.ImportedProject.FullPath);
 
-
             ResolvedImport finalResolvedImport = project.Imports[1];
             Assert.Equal(_sdkTargetsPath, finalResolvedImport.ImportedProject.FullPath);
 

@@ -238,7 +238,6 @@ namespace Microsoft.Build.UnitTests
         [Fact]
         public void Preprocessor() { AssertTokenize("#if\x0d", ".OpenConditionalDirective.Whitespace"); }
 
-
         /*
         * Method:  AssertTokenize
         * 

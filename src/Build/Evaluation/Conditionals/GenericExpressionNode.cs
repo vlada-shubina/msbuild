@@ -73,7 +73,6 @@ namespace Microsoft.Build.Evaluation
         /// </summary>
         internal virtual string DebuggerDisplay { get; }
 
-
         #region REMOVE_COMPAT_WARNING
         internal virtual bool PossibleAndCollision
         {

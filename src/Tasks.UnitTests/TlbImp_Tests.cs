@@ -289,7 +289,6 @@ namespace Microsoft.Build.UnitTests.AxTlbImp_Tests
                 @"/transform:DispRet",
                 false /* no response file */);
 
-
             t.Transform = serialize;
             Assert.Equal(serialize, t.Transform); // "New Transform value should be set"
             CommandLine.ValidateHasParameter(
@@ -314,7 +313,6 @@ namespace Microsoft.Build.UnitTests.AxTlbImp_Tests
                 t,
                 @"/verbose",
                 false /* no response file */);
-
 
             t.Verbose = true;
             Assert.True(t.Verbose); // "Verbose should be true"

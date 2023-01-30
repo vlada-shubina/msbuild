@@ -11,8 +11,6 @@ using Microsoft.Build.Utilities;
 using Shouldly;
 using Xunit;
 
-
-
 #nullable disable
 
 namespace Microsoft.Build.UnitTests
@@ -315,7 +313,6 @@ namespace Microsoft.Build.UnitTests
             Assert.True(lexer.Advance());
             Assert.True(lexer.IsNext(Token.TokenType.Not));
         }
-
 
         /// <summary>
         /// </summary>

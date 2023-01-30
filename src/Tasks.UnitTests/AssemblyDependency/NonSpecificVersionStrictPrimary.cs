@@ -28,7 +28,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             get { return new string[] { s_myComponentsV05Path, s_myComponentsV10Path, s_myComponentsV20Path, s_myComponentsV30Path }; }
         }
 
-
         /// <summary>
         /// In this case,
         /// - A single primary non-version-strict reference was passed in to assembly version 1.0.0.0
@@ -56,7 +55,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             };
             assemblyNames[0].SetMetadata("SpecificVersion", "false");
 
-
             // Construct the app.config.
             string appConfigFile = WriteAppConfig(
                     "        <dependentAssembly>\n" +
@@ -81,8 +79,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             // Cleanup.
             File.Delete(appConfigFile);
         }
-
-
 
         /// <summary>
         /// In this case,
@@ -133,7 +129,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             // Cleanup.
             File.Delete(appConfigFile);
         }
-
 
         /// <summary>
         /// In this case,

@@ -343,7 +343,6 @@ namespace Microsoft.Build.UnitTests.Definition
             logger.AssertLogContains("[{a.cpp}{DEBUG;CODEANALYSIS}]"); // Unexpected value after evaluation
         }
 
-
         [Fact]
         public void SelfReferencingMetadataReferencesUseItemDefinitionInTarget()
         {
@@ -727,7 +726,6 @@ namespace Microsoft.Build.UnitTests.Definition
 
             logger.AssertLogContains("[$(xyz)]");
         }
-
 
         [Fact]
         public void ItemDefinitionForOtherItemType()

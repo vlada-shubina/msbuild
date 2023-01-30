@@ -889,7 +889,6 @@ internal static class NativeMethods
 
     #region Wrapper methods
 
-
     [DllImport("kernel32.dll", SetLastError = true)]
     [SupportedOSPlatform("windows")]
     internal static extern void GetSystemInfo(ref SYSTEM_INFO lpSystemInfo);

@@ -9,7 +9,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
     using Microsoft.Build.Evaluation;
     using Microsoft.Build.Framework;
 
-
     internal static class DirectlyRemotedClasses
     {
         internal static RemotedResolvedImport Export(this ResolvedImport resolvedImport, ProjectCollectionLinker exporter)

@@ -247,7 +247,6 @@ namespace Microsoft.Build.CommandLine
             {
                 Console.CancelKeyPress += Console_CancelKeyPress;
 
-
                 // Use the client app to execute build in msbuild server. Opt-in feature.
                 exitCode = ((s_initialized && MSBuildClientApp.Execute(
 #if FEATURE_GET_COMMANDLINE
@@ -276,7 +275,6 @@ namespace Microsoft.Build.CommandLine
 
             return exitCode;
         }
-
 
         /// <summary>
         /// Returns true if arguments allows or make sense to leverage msbuild server.
@@ -1610,7 +1608,6 @@ namespace Microsoft.Build.CommandLine
             return ExecuteBuild(buildManager, restoreRequest);
         }
 
-
         /// <summary>
         /// Verifies that the code is running on a supported operating system.
         /// </summary>
@@ -2248,7 +2245,6 @@ namespace Microsoft.Build.CommandLine
             {
                 DisplayVersionMessage();
             }
-
 
             // Idle priority would prevent the build from proceeding as the user does normal actions.
             // This switch is processed early to capture both the command line case (main node should

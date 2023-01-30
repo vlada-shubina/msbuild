@@ -57,7 +57,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
         public ICollection<MockProjectPropertyLinkRemoter> AllEvaluatedProperties
             => this.OwningCollection.ExportCollection<ProjectProperty, MockProjectPropertyLinkRemoter>(this.Source.AllEvaluatedProperties);
 
-
         public IList<MockProjectMetadataLinkRemoter> AllEvaluatedItemDefinitionMetadata
             => this.OwningCollection.ExportCollection<ProjectMetadata, MockProjectMetadataLinkRemoter>(this.Source.AllEvaluatedItemDefinitionMetadata);
 

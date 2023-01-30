@@ -47,7 +47,6 @@ namespace Microsoft.Build.UnitTests
             CommandLine.ValidateHasParameter(t, "/nowarn:41999,42016", useResponseFile: true);
         }
 
-
         // Tests the "GenerateDocumentation" and "DocumentationFile" parameters on the Vbc task,
         // and confirms that it sets the /doc switch on the command-line correctly.
         [Fact]

@@ -176,7 +176,6 @@ namespace Microsoft.Build.UnitTests.GetSDKReferenceFiles_Tests
         }
     }
 
-
     /// <summary>
     /// Test the expansion of sdk reference assemblies.
     /// </summary>
@@ -802,7 +801,6 @@ namespace Microsoft.Build.UnitTests.GetSDKReferenceFiles_Tests
             engine.AssertLogContainsMessageFromResource(_resourceDelegate, "GetSDKReferenceFiles.CannotHaveEmptyTargetArchitecture", _sdkDirectory);
         }
 
-
         /// <summary>
         /// Verify the correct reference files are found and that by default we do log the reference files
         /// added.
@@ -1267,7 +1265,6 @@ namespace Microsoft.Build.UnitTests.GetSDKReferenceFiles_Tests
             engine.AssertLogContainsMessageFromResource(_resourceDelegate, "GetSDKReferenceFiles.ConflictRedistDifferentSDK", "B.PRI", "SDKWithManifest, Version=2.0", "AnotherSDK, Version=2.0", redistWinner, redistVictim);
             engine.AssertLogContainsMessageFromResource(_resourceDelegate, "GetSDKReferenceFiles.ConflictReferenceDifferentSDK", "SDKWithManifest, Version=2.0", "AnotherSDK, Version=2.0", referenceWinner, referenceVictim);
         }
-
 
         /// <summary>
         /// If a user create a target path that causes a conflict between two sdks then we want to warn

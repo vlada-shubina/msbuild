@@ -265,7 +265,6 @@ namespace Microsoft.Build.UnitTests.OM.Construction
             });
         }
 
-
         [Fact]
         public void SetExpressedAsAttributeIllegalName()
         {

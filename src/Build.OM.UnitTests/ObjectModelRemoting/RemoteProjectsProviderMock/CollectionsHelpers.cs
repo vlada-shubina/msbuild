@@ -99,7 +99,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             return result;
         }
 
-
         public static IDictionary<TKey, TValue> ImportDictionary<TKey, TValue, RMock>(this ProjectCollectionLinker importer, IDictionary<TKey, RMock> source)
             where TValue : class
             where RMock : MockLinkRemoter<TValue>, new()

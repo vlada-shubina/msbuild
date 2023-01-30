@@ -365,7 +365,6 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
             return true;
         }
 
-
         /// <summary>
         /// Converts an array of permission identity strings to a permission set object.
         /// </summary>

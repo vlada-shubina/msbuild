@@ -163,7 +163,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
         public Project LoadProjectIgnoreMissingImports(string path) => LoadProjectWithSettings(path, ProjectLoadSettings.IgnoreMissingImports);
         public Project LoadProjectWithSettings(string path, ProjectLoadSettings settings) => new Project(path, null, null, this.Collection, settings);
 
-
         public Project LoadInMemoryWithSettings(string content, ProjectLoadSettings settings = ProjectLoadSettings.Default)
         {
             content = ObjectModelHelpers.CleanupFileContents(content);
@@ -217,7 +216,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
         }
 
         private static bool dbgValidateDuplicateViews = false;
-
 
         internal void ValidateNoDuplicates()
         {
@@ -301,7 +299,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
                 }
             }
 
-
             return proxy.Linked;
         }
 
@@ -365,7 +362,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             return remoted;
         }
 
-
         private interface IActiveImportDBG
         {
             object Linked { get; }
@@ -391,7 +387,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             public T Linked { get; protected set; }
             public RMock Remoter { get; protected set; }
         }
-
 
         public static ConnectedProjectCollections CreateGroup()
         {
@@ -439,7 +434,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
                 i.Value.Clear();
             }
         }
-
 
         private class ExternalConnection
         {

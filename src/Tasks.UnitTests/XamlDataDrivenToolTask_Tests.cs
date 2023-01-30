@@ -269,7 +269,6 @@ namespace Microsoft.Build.UnitTests.XamlDataDrivenToolTask_Tests
                         </Target>
                       </Project>";
 
-
             string directoryWithAmpersand = "xaml&datadriven";
             string newTmp = Path.Combine(Path.GetTempPath(), directoryWithAmpersand);
             string oldTmp = Environment.GetEnvironmentVariable("TMP");
@@ -299,7 +298,6 @@ namespace Microsoft.Build.UnitTests.XamlDataDrivenToolTask_Tests
                 }
             }
         }
-
 
         /// <summary>
         /// Tests that when a call to a XamlDataDrivenTask fails, the commandline is reported in the error message.

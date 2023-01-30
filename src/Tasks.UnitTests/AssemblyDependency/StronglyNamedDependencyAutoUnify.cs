@@ -30,7 +30,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             get { return new string[] { s_myApp_V05Path, s_myApp_V10Path, s_myApp_V20Path, s_myApp_V30Path, s_myComponentsV05Path, s_myComponentsV10Path, s_myComponentsV20Path, s_myComponentsV30Path }; }
         }
 
-
         /// <summary>
         /// In this case,
         /// - Two references are passed in:
@@ -127,7 +126,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
                 File.WriteAllText(redistListPath, implicitRedistListContents);
                 File.WriteAllText(subsetListPath, engineOnlySubset);
 
-
                 // Create the engine.
                 MockEngine engine = new MockEngine(_output);
 
@@ -169,7 +167,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             }
         }
 
-
         /// <summary>
         /// In this case,
         /// - Two references are passed in:
@@ -206,7 +203,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             {
                 File.WriteAllText(redistListPath, implicitRedistListContents);
                 File.WriteAllText(subsetListPath, engineOnlySubset);
-
 
                 // Create the engine.
                 MockEngine engine = new MockEngine(_output);
@@ -283,7 +279,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             {
                 File.WriteAllText(redistListPath, implicitRedistListContents);
                 File.WriteAllText(subsetListPath, engineOnlySubset);
-
 
                 // Create the engine.
                 MockEngine engine = new MockEngine(_output);
@@ -477,7 +472,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
                 new TaskItem("DependsOnUnified, Version=0.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"),
                 new TaskItem("DependsOnUnified, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")
             };
-
 
             // Now, pass feed resolved primary references into ResolveAssemblyReference.
             ResolveAssemblyReference t = new ResolveAssemblyReference();

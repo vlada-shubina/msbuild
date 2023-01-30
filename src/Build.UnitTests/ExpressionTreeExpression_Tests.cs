@@ -22,7 +22,6 @@ namespace Microsoft.Build.UnitTests
     {
         private readonly ITestOutputHelper output;
 
-
         private static readonly string[] FilesWithExistenceChecks = { "a", "c", "a;b", "a'b", ";", "'" };
 
         private readonly Expander<ProjectPropertyInstance, ProjectItemInstance> _expander;

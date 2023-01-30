@@ -152,7 +152,6 @@ namespace Microsoft.Build.BackEnd
             }
         }
 
-
         /// <summary>
         /// When buckets are being created for batching purposes, this indicates which order the 
         /// buckets were created in, so that the target/task being batched gets called with the items

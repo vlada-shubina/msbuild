@@ -487,7 +487,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
         {
         }
 
-
         /// <inheritdoc />
         public BuildEventContext CreateEvaluationBuildEventContext(int nodeId, int submissionId)
             => new BuildEventContext(0, 0, 0, 0, 0, 0, 0);

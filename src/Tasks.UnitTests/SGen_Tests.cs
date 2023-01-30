@@ -105,7 +105,6 @@ namespace Microsoft.Build.UnitTests
             Assert.True(commandLine.IndexOf("/keep", StringComparison.OrdinalIgnoreCase) < 0);
         }
 
-
         [Fact]
         public void TestInputChecks1()
         {

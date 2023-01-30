@@ -201,8 +201,6 @@ namespace Microsoft.Build.UnitTests
             Assert.Contains("Dependent Assembly", s);
         }
 
-
-
         /// <summary>
         /// Summarize the parsed contents of the app.config files.
         /// </summary>

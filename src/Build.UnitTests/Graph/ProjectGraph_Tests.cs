@@ -853,7 +853,6 @@ namespace Microsoft.Build.Graph.UnitTests
             }
         }
 
-
         [Fact]
         public void GetTargetListsUsesAllTargetsForNonMultitargetingNodes()
         {
@@ -908,7 +907,6 @@ namespace Microsoft.Build.Graph.UnitTests
                     projectReferenceTargets: null,
                     defaultTargets: null,
                     extraContent: singleTargetedSpec);
-
 
                 var projectGraph = new ProjectGraph(root1);
 
@@ -1562,7 +1560,6 @@ $@"
                 defaultTargets: null,
                 extraContent: MultitargetingSpecificationPropertyGroup);
 
-
             var graph = new ProjectGraph(entryProject);
 
             var dot = graph.ToDot();
@@ -1595,7 +1592,6 @@ $@"
                 projectReferenceTargets: null,
                 defaultTargets: null,
                 extraContent: MultitargetingSpecificationPropertyGroup);
-
 
             var graph = new ProjectGraph(entryProject);
 

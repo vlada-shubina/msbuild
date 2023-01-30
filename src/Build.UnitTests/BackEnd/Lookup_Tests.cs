@@ -584,7 +584,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             Assert.Equal("m4", group.First().GetMetadataValue("m4"));
         }
 
-
         /// <summary>
         /// Ensure that once keepOnlySpecified is set to true, it remains in effect, and that if a metadata modification is declared as 'keep value' that
         /// the value as lower scopes is retained.
@@ -961,7 +960,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             Assert.Equal("o1", item1.GetMetadataValue("o"));
         }
 
-
         [Fact]
         public void ModifyItemThatWasAddedInSameScope()
         {
@@ -1065,7 +1063,6 @@ namespace Microsoft.Build.UnitTests.BackEnd
             Assert.Single(group5);
             Assert.Equal("m3", group5.First().GetMetadataValue("m"));
         }
-
 
         /// <summary>
         /// After modification, should be able to GetItem and then modify it again

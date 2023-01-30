@@ -995,7 +995,6 @@ namespace Microsoft.Build.UnitTests
 
         private static string SystemSpecificAbsolutePath => FileUtilities.ExecutingAssemblyPath;
 
-
         [Fact]
         public void GetFolderAboveTest()
         {

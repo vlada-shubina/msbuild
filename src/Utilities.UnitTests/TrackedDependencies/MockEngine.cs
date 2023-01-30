@@ -34,7 +34,6 @@ namespace Microsoft.Build.UnitTests.TrackedDependencies
 
         internal int Errors { set; get; }
 
-
         public void LogErrorEvent(BuildErrorEventArgs eventArgs)
         {
             if (!string.IsNullOrEmpty(eventArgs.File))

@@ -107,7 +107,6 @@ namespace Microsoft.Build.Shared
 #endif
         }
 
-
         #endregion
 
         /// <summary>

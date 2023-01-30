@@ -100,7 +100,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
 
             sourceProject ??= xmlPair.View;
 
-
             // var existingItemGroup1 = sourceProject.QuerySingleChildrenWithValidation<ProjectItemGroupElement>((ig) => ig.Label == "Group1");
             var existingItemGroupList = sourceProject.AllChildren.OfType<ProjectItemGroupElement>().Where((ig) => ig.Label == "Group1").ToList();
             Assert.Single(existingItemGroupList);
@@ -112,7 +111,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
 
             var sourceIsALink = ViewValidation.IsLinkedObject(sourceProject);
             ViewValidation.VerifyNotNull(cloned, sourceIsALink);
-
 
             if (externalSource)
             {
@@ -136,7 +134,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
                 Assert.Equal("Group1", existingItemGroup.Label);
             }
         }
-
 
         private void CopyFromInternal(ProjectRootElement sourceProject)
         {
@@ -175,7 +172,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             // Assert.Equal("2", ProjectElementLink.GetAttributeValue(existingItemGroup, "FunnyAttribute", true));
             // Assert.Equal("2", ProjectElementLink.GetAttributeValue(newCopyFrom.View, "FunnyAttribute", true));
             newCopyFrom.VerifyNotSame(ourGroup1);
-
 
             Assert.True(xmlPair.View.HasUnsavedChanges);
             Assert.False(externalSource && sourceProject.HasUnsavedChanges);
@@ -226,7 +222,6 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             // view gets "a view" object as argument from different project and collection (double proxy)
             CloneAndAddInternal(this.StdGroup.GuestXmlPair.View);
         }
-
 
         [Fact]
         public void CopyFromInnerProject()

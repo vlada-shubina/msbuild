@@ -164,8 +164,6 @@ namespace Microsoft.Build.UnitTests
                 // don't set text
             };
 
-
-
             bool retval = err.Execute();
 
             Console.WriteLine("===");
@@ -190,7 +188,6 @@ namespace Microsoft.Build.UnitTests
                 Code = "999"
                 // don't set text
             };
-
 
             bool retval = err.Execute();
 

@@ -110,7 +110,6 @@ namespace Microsoft.Build.BackEnd.Logging
             set;
         }
 
-
         /// <summary>
         /// This property is ignored by this event sink and relies on the receiver to keep track of whether or not any errors have been logged.
         /// </summary>

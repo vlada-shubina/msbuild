@@ -84,7 +84,6 @@ namespace Microsoft.Build.UnitTests
             ValidateFileNameError(@"foo.cpp : warning LNK4048: Invalid format file; ignored", @"foo.cpp", CanonicalError.Parts.Category.Warning, "LNK4048", "Invalid format file; ignored");
         }
 
-
         [Fact]
         public void LibWithFilename()
         {

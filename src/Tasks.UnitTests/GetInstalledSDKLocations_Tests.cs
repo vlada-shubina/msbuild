@@ -222,7 +222,6 @@ namespace Microsoft.Build.UnitTests.GetInstalledSDKLocation_Tests
             bool success = t.Execute();
             Assert.False(success);
 
-
             Assert.Equal(1, engine.Errors);
             engine.AssertLogContains("MSB3784");
         }
@@ -240,7 +239,6 @@ namespace Microsoft.Build.UnitTests.GetInstalledSDKLocation_Tests
             t.BuildEngine = engine;
             bool success = t.Execute();
             Assert.False(success);
-
 
             Assert.Equal(1, engine.Errors);
             engine.AssertLogContains("MSB3786");

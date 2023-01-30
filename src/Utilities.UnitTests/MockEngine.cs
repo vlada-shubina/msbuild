@@ -106,7 +106,6 @@ namespace Microsoft.Build.UnitTests
             bool useResultsCache,
             bool unloadProjectsOnCompletion) => false;
 
-
         public BuildEngineResult BuildProjectFilesInParallel(
             string[] projectFileNames,
             string[] targetNames,

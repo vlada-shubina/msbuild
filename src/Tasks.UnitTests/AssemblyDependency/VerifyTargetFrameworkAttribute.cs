@@ -315,7 +315,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             Assert.True(ContainsItem(t.ResolvedFiles, Path.Combine(s_frameworksPath, "DependsOnFoo45Framework.dll"))); // "Expected to find assembly, but didn't."
         }
 
-
         /// <summary>
         /// Verify there are warnings if there is a direct reference to a dll that is higher that what the current target framework is.
         /// </summary>
@@ -390,7 +389,6 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                     checkIfAssemblyIsInGac,
                     isWinMDFile,
                     readMachineTypeFromPEHeader));
-
 
             Assert.Equal(0, e.Warnings); // "No warning expected in this scenario."
             Assert.Equal(0, e.Errors); // "No errors expected in this scenario."
