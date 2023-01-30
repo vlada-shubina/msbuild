@@ -54,7 +54,8 @@ namespace Xunit.NetCore.Extensions
 
         protected override Task<RunSummary> RunTestMethodAsync(ITestMethod testMethod, IReflectionMethodInfo method, IEnumerable<IXunitTestCase> testCases, object[] constructorArguments)
         {
-            return new XunitTestMethodRunnerWithAssemblyFixture(assemblyFixtureAttributes,
+            return new XunitTestMethodRunnerWithAssemblyFixture(
+                assemblyFixtureAttributes,
                 testMethod, Class, method, testCases, DiagnosticMessageSink, MessageBus,
                 new ExceptionAggregator(Aggregator), CancellationTokenSource, constructorArguments).RunAsync();
         }

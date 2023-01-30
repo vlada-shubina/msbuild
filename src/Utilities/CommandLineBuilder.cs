@@ -199,7 +199,8 @@ namespace Microsoft.Build.Utilities
                 isQuotingRequired = !hasAllUnquotedCharacters;
                 isQuotingRequired = isQuotingRequired || hasSomeQuotedCharacters;
 
-                Debug.Assert(!hasAllUnquotedCharacters || !hasSomeQuotedCharacters,
+                Debug.Assert(
+                    !hasAllUnquotedCharacters || !hasSomeQuotedCharacters,
                     "At least one of allowedUnquoted or definitelyNeedQuotes is wrong.");
             }
 

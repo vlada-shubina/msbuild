@@ -163,7 +163,8 @@ BuildEngine5.BuildProjectFilesInParallel(
         [InlineData(BuildResultCode.Success, new[] { "BuildSelf" })]
         public void CacheAndUndeclaredReferenceEnforcementShouldAcceptSelfReferences(BuildResultCode expectedBuildResult, string[] targets)
         {
-            AssertBuild(targets,
+            AssertBuild(
+                targets,
                 (result, logger) =>
                 {
                     result.OverallResult.ShouldBe(expectedBuildResult);
@@ -175,7 +176,8 @@ BuildEngine5.BuildProjectFilesInParallel(
         [Fact]
         public void CacheAndUndeclaredReferenceEnforcementShouldAcceptCallTarget()
         {
-            AssertBuild(new[] { "CallTarget" },
+            AssertBuild(
+                new[] { "CallTarget" },
                 (result, logger) =>
                 {
                     result.OverallResult.ShouldBe(BuildResultCode.Success);
@@ -272,7 +274,8 @@ BuildEngine5.BuildProjectFilesInParallel(
         [InlineData("BuildDeclaredReferenceViaTask")]
         public void CacheEnforcementShouldAcceptPreviouslyBuiltReferences(string targetName)
         {
-            AssertBuild(new[] { targetName },
+            AssertBuild(
+                new[] { targetName },
                 (result, logger) =>
                 {
                     result.OverallResult.ShouldBe(BuildResultCode.Success);
@@ -289,7 +292,8 @@ BuildEngine5.BuildProjectFilesInParallel(
         // [InlineData(true, "BuildUndeclaredReferenceViaTask")] https://github.com/dotnet/msbuild/issues/4385
         public void UndeclaredReferenceEnforcementShouldFailOnUndeclaredReference(bool addContinueOnError, string targetName)
         {
-            AssertBuild(new[] { targetName },
+            AssertBuild(
+                new[] { targetName },
                 (result, logger) =>
                 {
                     result.OverallResult.ShouldBe(BuildResultCode.Failure);
@@ -306,7 +310,8 @@ BuildEngine5.BuildProjectFilesInParallel(
         // [InlineData("BuildUndeclaredReferenceViaTask")] https://github.com/dotnet/msbuild/issues/4385
         public void UndeclaredReferenceEnforcementShouldFailOnPreviouslyBuiltButUndeclaredReferences(string targetName)
         {
-            AssertBuild(new[] { targetName },
+            AssertBuild(
+                new[] { targetName },
                 (result, logger) =>
                 {
                     result.OverallResult.ShouldBe(BuildResultCode.Failure);
@@ -364,7 +369,8 @@ BuildEngine5.BuildProjectFilesInParallel(
         [MemberData(nameof(UndeclaredReferenceEnforcementShouldNormalizeFilePathsTestData))]
         public void UndeclaredReferenceEnforcementShouldNormalizeFilePaths(Func<string, string> projectReferenceModifier, Func<string, string> msbuildProjectModifier, string targetName)
         {
-            AssertBuild(new[] { targetName },
+            AssertBuild(
+                new[] { targetName },
                 (result, logger) =>
                 {
                     result.OverallResult.ShouldBe(BuildResultCode.Success);

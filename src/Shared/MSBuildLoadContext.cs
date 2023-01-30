@@ -79,7 +79,8 @@ namespace Microsoft.Build.Shared
                 // bare search directory if that fails.
                 : new[] { assemblyName.CultureName, string.Empty })
             {
-                var candidatePath = Path.Combine(_directory,
+                var candidatePath = Path.Combine(
+                    _directory,
                     cultureSubfolder,
                     $"{assemblyName.Name}.dll");
 
@@ -101,7 +102,8 @@ namespace Microsoft.Build.Shared
             // - the assembly from the user specified path is loaded, if it exists, into the custom ALC, or
             // - if the simple name of the assembly exists in the same folder as msbuild.exe, then that assembly gets loaded
             //   into the default ALC (so it's shared with other uses).
-            var assemblyNameInExecutableDirectory = Path.Combine(BuildEnvironmentHelper.Instance.CurrentMSBuildToolsDirectory,
+            var assemblyNameInExecutableDirectory = Path.Combine(
+                BuildEnvironmentHelper.Instance.CurrentMSBuildToolsDirectory,
                 $"{assemblyName.Name}.dll");
 
             if (FileSystems.Default.FileExists(assemblyNameInExecutableDirectory))

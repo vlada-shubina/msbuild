@@ -301,15 +301,20 @@ namespace Microsoft.Build.UnitTests
             if (walker.EncounteredProblems.Count > 0)
             {
                 TYPELIBATTR[] dependencies = walker.GetDependencies();
-                AssertDependenciesContainTypeLib("Test failed for failure point " + failurePoint.ToString(),
+                AssertDependenciesContainTypeLib(
+                    "Test failed for failure point " + failurePoint.ToString(),
                     dependencies, mainTypeLib, true);
-                AssertDependenciesContainTypeLib("Test failed for failure point " + failurePoint.ToString(),
+                AssertDependenciesContainTypeLib(
+                    "Test failed for failure point " + failurePoint.ToString(),
                     dependencies, dependencyTypeLibGood1, true);
-                AssertDependenciesContainTypeLib("Test failed for failure point " + failurePoint.ToString(),
+                AssertDependenciesContainTypeLib(
+                    "Test failed for failure point " + failurePoint.ToString(),
                     dependencies, dependencyTypeLibGood2, true);
-                AssertDependenciesContainTypeLib("Test failed for failure point " + failurePoint.ToString(),
+                AssertDependenciesContainTypeLib(
+                    "Test failed for failure point " + failurePoint.ToString(),
                     dependencies, dependencyTypeLibBad1, false);
-                AssertDependenciesContainTypeLib("Test failed for failure point " + failurePoint.ToString(),
+                AssertDependenciesContainTypeLib(
+                    "Test failed for failure point " + failurePoint.ToString(),
                     dependencies, dependencyTypeLibBad2, false);
             }
 

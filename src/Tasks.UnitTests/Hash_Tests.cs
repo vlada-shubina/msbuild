@@ -124,7 +124,8 @@ namespace Microsoft.Build.Tasks.UnitTests
         public void HashTaskIgnoreCaseTest()
         {
             var uppercaseHash =
-                ExecuteHashTask(new ITaskItem[]
+                ExecuteHashTask(
+                    new ITaskItem[]
                     {
                         new TaskItem("ITEM1"),
                         new TaskItem("ITEM2"),
@@ -132,7 +133,8 @@ namespace Microsoft.Build.Tasks.UnitTests
                     },
                     true);
             var mixedcaseHash =
-                ExecuteHashTask(new ITaskItem[]
+                ExecuteHashTask(
+                    new ITaskItem[]
                     {
                         new TaskItem("Item1"),
                         new TaskItem("iTEm2"),
@@ -140,7 +142,8 @@ namespace Microsoft.Build.Tasks.UnitTests
                     },
                     true);
             var lowercaseHash =
-                ExecuteHashTask(new ITaskItem[]
+                ExecuteHashTask(
+                    new ITaskItem[]
                     {
                         new TaskItem("item1"),
                         new TaskItem("item2"),

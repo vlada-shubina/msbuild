@@ -2666,11 +2666,13 @@ namespace Microsoft.Build.UnitTests.Evaluation
             msbuildVersionAsVersion.Revision.ShouldBe(-1);
 
             msbuildFileVersionProperty.ShouldBe(ProjectCollection.Version.ToString());
-            ProjectCollection.Version.ToString().ShouldStartWith(msbuildVersionProperty,
+            ProjectCollection.Version.ToString().ShouldStartWith(
+                msbuildVersionProperty,
                 "ProjectCollection.Version should match the property MSBuildVersion, but can contain another version part");
 
             msbuildSemanticVersionProperty.ShouldBe(ProjectCollection.DisplayVersion);
-            ProjectCollection.DisplayVersion.ShouldStartWith(msbuildVersionProperty,
+            ProjectCollection.DisplayVersion.ShouldStartWith(
+                msbuildVersionProperty,
                 "DisplayVersion is semver2 while MSBuildVersion is Major.Minor.Build but should be a prefix match");
         }
 

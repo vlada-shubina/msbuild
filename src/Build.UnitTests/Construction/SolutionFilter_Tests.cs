@@ -147,7 +147,8 @@ namespace Microsoft.Build.Engine.UnitTests.Construction
         }
 
         [Theory]
-        [InlineData(@"
+        [InlineData(
+            @"
                 {
                   ""solution"": {
                     ""path"": ""C:\\notAPath\\MSBuild.Dev.sln"",
@@ -160,7 +161,8 @@ namespace Microsoft.Build.Engine.UnitTests.Construction
                     }
                 }
                 ", "MSBuild.SolutionFilterJsonParsingError")]
-        [InlineData(@"
+        [InlineData(
+            @"
                 [{
                   ""solution"": {
                     ""path"": ""C:\\notAPath\\MSBuild.Dev.sln"",
@@ -173,7 +175,8 @@ namespace Microsoft.Build.Engine.UnitTests.Construction
                     }
                 }]
                 ", "MSBuild.SolutionFilterJsonParsingError")]
-        [InlineData(@"
+        [InlineData(
+            @"
                 {
                   ""solution"": {
                     ""path"": ""C:\\notAPath\\MSBuild.Dev.sln"",
@@ -186,7 +189,8 @@ namespace Microsoft.Build.Engine.UnitTests.Construction
                     }
                 }
                 ", "MSBuild.SolutionFilterJsonParsingError")]
-        [InlineData(@"
+        [InlineData(
+            @"
                 {
                   ""solution"": {
                     ""path"": ""C:\\notAPath2\\MSBuild.Dev.sln"",

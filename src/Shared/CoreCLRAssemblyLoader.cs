@@ -156,7 +156,8 @@ namespace Microsoft.Build.Shared
             {
                 foreach (var searchPath in searchPaths)
                 {
-                    var candidatePath = Path.Combine(searchPath,
+                    var candidatePath = Path.Combine(
+                        searchPath,
                         cultureSubfolder,
                         $"{assemblyName.Name}.dll");
 

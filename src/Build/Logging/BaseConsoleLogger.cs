@@ -844,7 +844,8 @@ namespace Microsoft.Build.BackEnd.Logging
                 if (!reenteredScope)
                 {
                     // round: sub-millisecond values are not meaningful
-                    time = String.Format(CultureInfo.CurrentCulture,
+                    time = String.Format(
+                        CultureInfo.CurrentCulture,
                         "{0,5}", Math.Round(elapsedTime.TotalMilliseconds, 0));
                 }
                 else

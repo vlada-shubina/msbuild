@@ -66,7 +66,8 @@ namespace Microsoft.Build.Tasks.UnitTests
                 rarWriterTask.WriteStateFile();
 
                 string dllName = Path.Combine(Path.GetDirectoryName(standardCache.Path), "randomFolder", "dll.dll");
-                rarWriterTask._cache.instanceLocalFileStateCache.Add(dllName,
+                rarWriterTask._cache.instanceLocalFileStateCache.Add(
+                    dllName,
                     new SystemState.FileState(DateTime.Now)
                     {
                         Assembly = null,

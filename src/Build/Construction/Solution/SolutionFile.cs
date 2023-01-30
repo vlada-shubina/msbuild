@@ -1024,18 +1024,20 @@ namespace Microsoft.Build.Construction
             ErrorUtilities.VerifyThrow(proj.RelativePath != null, "Project relative path cannot be null.");
 
             // Verify the relative path does not contain invalid characters
-            ProjectFileErrorUtilities.VerifyThrowInvalidProjectFile(proj.RelativePath.IndexOfAny(Path.GetInvalidPathChars()) == -1,
-              "SubCategoryForSolutionParsingErrors",
-              new BuildEventFileInfo(FullPath, _currentLineNumber, 0),
-              "SolutionParseInvalidProjectFileNameCharacters",
-              proj.ProjectName, proj.RelativePath);
+            ProjectFileErrorUtilities.VerifyThrowInvalidProjectFile(
+                proj.RelativePath.IndexOfAny(Path.GetInvalidPathChars()) == -1,
+                "SubCategoryForSolutionParsingErrors",
+                new BuildEventFileInfo(FullPath, _currentLineNumber, 0),
+                "SolutionParseInvalidProjectFileNameCharacters",
+                proj.ProjectName, proj.RelativePath);
 
             // Verify the relative path is not empty string
-            ProjectFileErrorUtilities.VerifyThrowInvalidProjectFile(proj.RelativePath.Length > 0,
-                  "SubCategoryForSolutionParsingErrors",
-                  new BuildEventFileInfo(FullPath, _currentLineNumber, 0),
-                  "SolutionParseInvalidProjectFileNameEmpty",
-                  proj.ProjectName);
+            ProjectFileErrorUtilities.VerifyThrowInvalidProjectFile(
+                proj.RelativePath.Length > 0,
+                "SubCategoryForSolutionParsingErrors",
+                new BuildEventFileInfo(FullPath, _currentLineNumber, 0),
+                "SolutionParseInvalidProjectFileNameEmpty",
+                proj.ProjectName);
         }
 
         /// <summary>
@@ -1195,7 +1197,8 @@ namespace Microsoft.Build.Construction
                                 int indexOfClosingBrace = projectReferenceEntry.IndexOf('}', indexOfOpeningBrace);
                                 if (indexOfClosingBrace != -1)
                                 {
-                                    string referencedProjectGuid = projectReferenceEntry.Substring(indexOfOpeningBrace,
+                                    string referencedProjectGuid = projectReferenceEntry.Substring(
+                                        indexOfOpeningBrace,
                                         indexOfClosingBrace - indexOfOpeningBrace + 1);
 
                                     proj.AddDependency(referencedProjectGuid);

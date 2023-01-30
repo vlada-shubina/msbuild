@@ -88,7 +88,8 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
         [Fact]
         public void SemicolonInPropertyPassedIntoStringParam()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(
+                @"
                 <Project ToolsVersion=`msbuilddefaulttoolsversion`>
                     <PropertyGroup>
                         <MyPropertyWithSemicolons>abc %3b def %3b ghi</MyPropertyWithSemicolons>
@@ -110,7 +111,8 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
         [Trait("Category", "mono-osx-failing")]
         public void SemicolonInPropertyPassedIntoStringParam_UsingTaskHost()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(
+                @"
                 <Project ToolsVersion=`msbuilddefaulttoolsversion`>
                     <UsingTask TaskName=`Message` AssemblyFile=`$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll` TaskFactory=`TaskHostFactory` />
                     <PropertyGroup>
@@ -133,7 +135,8 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
         [Fact]
         public void SemicolonInPropertyPassedIntoITaskItemParam()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(@$"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(
+                @$"
 
                 <Project ToolsVersion=`msbuilddefaulttoolsversion`>
 
@@ -163,7 +166,9 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
         [Trait("Category", "mono-osx-failing")]
         public void SemicolonInPropertyPassedIntoITaskItemParam_UsingTaskHost()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(String.Format(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(
+                String.Format(
+                @"
 
                 <Project ToolsVersion=`msbuilddefaulttoolsversion`>
 
@@ -541,7 +546,9 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
                 inputFile = FileUtilities.GetTemporaryFile();
                 outputFile = FileUtilities.GetTemporaryFile();
 
-                MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(String.Format(@"
+                MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(
+                    String.Format(
+                    @"
 
                 <Project DefaultTargets=`Build` ToolsVersion=`msbuilddefaulttoolsversion`>
 
@@ -558,7 +565,7 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
                 </Project>
 
                 ", inputFile, outputFile),
-                logger: new MockLogger(_output));
+                    logger: new MockLogger(_output));
 
                 logger.AssertLogContains("Resources = aaa%3bbbb.resx;ccc%3bddd.resx");
             }
@@ -583,7 +590,8 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
         [Fact]
         public void ItemTransformContainingSemicolon()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(
+                @"
 
                 <Project ToolsVersion=`msbuilddefaulttoolsversion`>
                     <ItemGroup>
@@ -609,7 +617,8 @@ namespace Microsoft.Build.UnitTests.EscapingInProjects_Tests
         [Trait("Category", "mono-osx-failing")]
         public void ItemTransformContainingSemicolon_InTaskHost()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectSuccess(
+                @"
 
                 <Project ToolsVersion=`msbuilddefaulttoolsversion`>
                     <UsingTask TaskName=`Message` AssemblyFile=`$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll` TaskFactory=`TaskHostFactory` />

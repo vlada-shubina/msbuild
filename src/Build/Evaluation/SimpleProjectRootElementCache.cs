@@ -71,7 +71,8 @@ namespace Microsoft.Build.Evaluation
 
                 AddEntry(rootElement);
 
-                ErrorUtilities.VerifyThrow(_cache.TryGetValue(key, out _),
+                ErrorUtilities.VerifyThrow(
+                    _cache.TryGetValue(key, out _),
                     "Project should have been added into cache and boosted");
 
                 return rootElement;

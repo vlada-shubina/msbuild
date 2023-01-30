@@ -240,7 +240,8 @@ namespace Microsoft.Build.Shared
                         if (string.Equals(param.GetType().ToString(), param.ToString(), StringComparison.Ordinal) &&
                             param.GetType() != typeof(string))
                         {
-                            ErrorUtilities.ThrowInternalError("Invalid resource parameter type, was {0}",
+                            ErrorUtilities.ThrowInternalError(
+                                "Invalid resource parameter type, was {0}",
                                 param.GetType().FullName);
                         }
                     }

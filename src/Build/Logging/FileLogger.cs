@@ -177,7 +177,8 @@ namespace Microsoft.Build.Logging
 
                 var parameterAndValue = parameter.Split(s_fileLoggerParameterValueSplitCharacter);
 
-                ApplyFileLoggerParameter(parameterAndValue[0],
+                ApplyFileLoggerParameter(
+                    parameterAndValue[0],
                     parameterAndValue.Length > 1 ? parameterAndValue[1] : null);
             }
         }

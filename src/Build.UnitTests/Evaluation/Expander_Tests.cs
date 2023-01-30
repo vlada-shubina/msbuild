@@ -72,7 +72,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             IList<TaskItem> itemsOut = expander.ExpandIntoTaskItemsLeaveEscaped("foo;bar", ExpanderOptions.ExpandProperties, MockElementLocation.Instance);
 
-            ObjectModelHelpers.AssertItemsMatch(@"
+            ObjectModelHelpers.AssertItemsMatch(
+                @"
                 foo
                 bar
                 ", GetTaskArrayFromItemList(itemsOut));
@@ -99,7 +100,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             IList<TaskItem> itemsOut = expander.ExpandIntoTaskItemsLeaveEscaped("foo;bar;@(compile);@(resource)", ExpanderOptions.ExpandPropertiesAndItems, MockElementLocation.Instance);
 
-            ObjectModelHelpers.AssertItemsMatch(@"
+            ObjectModelHelpers.AssertItemsMatch(
+                @"
                 foo
                 bar
                 foo.cs
@@ -120,7 +122,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             IList<TaskItem> itemsOut = expander.ExpandIntoTaskItemsLeaveEscaped("foo$(a);$(b);$(c)", ExpanderOptions.ExpandProperties, MockElementLocation.Instance);
 
-            ObjectModelHelpers.AssertItemsMatch(@"
+            ObjectModelHelpers.AssertItemsMatch(
+                @"
                 fooaaa
                 bbb
                 cc
@@ -880,7 +883,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [PlatformSpecific(TestPlatforms.Windows)]
         public void InvalidPathAndMetadataItemFunctionPathTooLong()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(
+                @"
                 <Project DefaultTargets='Build'>
                     <ItemGroup>
                         <x Include='" + new string('x', 250) + @"'/>
@@ -902,7 +906,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [SkipOnTargetFramework(TargetFrameworkMonikers.Netcoreapp, ".NET Core 2.1+ no longer validates paths: https://github.com/dotnet/corefx/issues/27779#issuecomment-371253486")]
         public void InvalidPathAndMetadataItemFunctionInvalidWindowsPathChars()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(
+                @"
                 <Project DefaultTargets='Build'>
                     <ItemGroup>
                         <x Include='" + ":|?*" + @"'/>
@@ -921,7 +926,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [Fact]
         public void InvalidMetadataName()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(
+                @"
                 <Project DefaultTargets='Build'>
                     <ItemGroup>
                         <x Include='x'/>
@@ -942,7 +948,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [PlatformSpecific(TestPlatforms.Windows)]
         public void InvalidPathAndMetadataItemFunctionPathTooLong2()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(
+                @"
                 <Project DefaultTargets='Build'>
                     <ItemGroup>
                         <x Include='" + new string('x', 250) + @"'/>
@@ -964,7 +971,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [SkipOnTargetFramework(TargetFrameworkMonikers.Netcoreapp, ".NET Core 2.1+ no longer validates paths: https://github.com/dotnet/corefx/issues/27779#issuecomment-371253486")]
         public void InvalidPathAndMetadataItemFunctionInvalidWindowsPathChars2()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(
+                @"
                 <Project DefaultTargets='Build'>
                     <ItemGroup>
                         <x Include='" + ":|?*" + @"'/>
@@ -983,7 +991,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [Fact]
         public void InvalidMetadataName2()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(
+                @"
                 <Project DefaultTargets='Build'>
                     <ItemGroup>
                         <x Include='x'/>
@@ -1004,7 +1013,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [PlatformSpecific(TestPlatforms.Windows)]
         public void InvalidPathAndMetadataItemFunctionPathTooLong3()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(
+                @"
                 <Project DefaultTargets='Build'>
                     <ItemGroup>
                         <x Include='" + new string('x', 250) + @"'/>
@@ -1026,7 +1036,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [SkipOnTargetFramework(TargetFrameworkMonikers.Netcoreapp, ".NET Core 2.1+ no longer validates paths: https://github.com/dotnet/corefx/issues/27779#issuecomment-371253486")]
         public void InvalidPathAndMetadataItemInvalidWindowsPathChars3()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(
+                @"
                 <Project DefaultTargets='Build'>
                     <ItemGroup>
                         <x Include='" + ":|?*" + @"'/>
@@ -1081,7 +1092,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [Fact]
         public void InvalidMetadataName3()
         {
-            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(@"
+            MockLogger logger = Helpers.BuildProjectWithNewOMExpectFailure(
+                @"
                 <Project DefaultTargets='Build'>
                     <ItemGroup>
                         <x Include='x'/>
@@ -1224,7 +1236,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         {
             try
             {
-                Helpers.BuildProjectWithNewOMExpectFailure(@"
+                Helpers.BuildProjectWithNewOMExpectFailure(
+                    @"
                 <Project DefaultTargets='Build'>
                     <PropertyGroup>
                         <Function>$([System.IO.Path]::Combine(null,''))</Function>
@@ -1251,7 +1264,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         {
             try
             {
-                Helpers.BuildProjectWithNewOMExpectFailure(@"
+                Helpers.BuildProjectWithNewOMExpectFailure(
+                    @"
                 <Project DefaultTargets='Build'>
                     <PropertyGroup>
                         <Function>$(System.IO.Path::Combine('a','b'))</Function>
@@ -1354,7 +1368,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             // the following items are passed to the TaskItem constructor, and thus their ItemSpecs should be
             // in escaped form.
-            ObjectModelHelpers.AssertItemsMatch(@"
+            ObjectModelHelpers.AssertItemsMatch(
+                @"
                 string$(p): ddd=444
                 dialogs%253b: eee=555
                 splash.bmp: ccc=333
@@ -2635,7 +2650,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             Expander<ProjectPropertyInstance, ProjectItemInstance> expander = new Expander<ProjectPropertyInstance, ProjectItemInstance>(pg, FileSystems.Default);
 
-            string result = expander.ExpandIntoStringLeaveEscaped(@"$([System.IO.Path]::Combine(`" +
+            string result = expander.ExpandIntoStringLeaveEscaped(
+                @"$([System.IO.Path]::Combine(`" +
                 Path.Combine(s_rootPathPrefix, "foo goo") + "`, `$(File)`))",
                 ExpanderOptions.ExpandProperties, MockElementLocation.Instance);
 
@@ -2653,7 +2669,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             Expander<ProjectPropertyInstance, ProjectItemInstance> expander = new Expander<ProjectPropertyInstance, ProjectItemInstance>(pg, FileSystems.Default);
 
-            string result = expander.ExpandIntoStringLeaveEscaped(@"$([System.IO.Path]::Combine(`" +
+            string result = expander.ExpandIntoStringLeaveEscaped(
+                @"$([System.IO.Path]::Combine(`" +
                 Path.Combine(s_rootPathPrefix, "foo baz") + @"`, `$(File)`))",
                 ExpanderOptions.ExpandProperties, MockElementLocation.Instance);
 
@@ -2671,7 +2688,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             Expander<ProjectPropertyInstance, ProjectItemInstance> expander = new Expander<ProjectPropertyInstance, ProjectItemInstance>(pg, FileSystems.Default);
 
-            string result = expander.ExpandIntoStringLeaveEscaped(@"$([System.IO.Path]::Combine(`" +
+            string result = expander.ExpandIntoStringLeaveEscaped(
+                @"$([System.IO.Path]::Combine(`" +
                 Path.Combine(s_rootPathPrefix, "foo baz") + @" `, `$(File)`))", ExpanderOptions.ExpandProperties, MockElementLocation.Instance);
 
             Assert.Equal(Path.Combine(s_rootPathPrefix, "foo baz ", "foo bar", "baz.txt"), result);
@@ -2734,7 +2752,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
             Expander<ProjectPropertyInstance, ProjectItemInstance> expander = new Expander<ProjectPropertyInstance, ProjectItemInstance>(pg, FileSystems.Default);
 
-            string result = expander.ExpandIntoStringLeaveEscaped(@"$([System.IO.Path]::Combine(`" +
+            string result = expander.ExpandIntoStringLeaveEscaped(
+                @"$([System.IO.Path]::Combine(`" +
                 s_rootPathPrefix +
                 @"`, $([System.IO.Path]::Combine(`foo`,`file.txt`))))", ExpanderOptions.ExpandProperties, MockElementLocation.Instance);
 
@@ -3262,7 +3281,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [Fact]
         public void PropertyFunctionNormalizeDirectory()
         {
-            Expander<ProjectPropertyInstance, ProjectItemInstance> expander = new Expander<ProjectPropertyInstance, ProjectItemInstance>(new PropertyDictionary<ProjectPropertyInstance>(new[]
+            Expander<ProjectPropertyInstance, ProjectItemInstance> expander = new Expander<ProjectPropertyInstance, ProjectItemInstance>(
+                new PropertyDictionary<ProjectPropertyInstance>(new[]
             {
                 ProjectPropertyInstance.Create("MyPath", "one"),
                 ProjectPropertyInstance.Create("MySecondPath", "two"),
@@ -4030,8 +4050,9 @@ $(
             string propertyFunction = @"$([System.String]::Copy($(X)).LastIndexOf(
                                                 '.designer.cs',
                                                 System.StringComparison.OrdinalIgnoreCase))";
-            TestPropertyFunction(propertyFunction,
-                                "X", "test.designer.cs", "4");
+            TestPropertyFunction(
+                propertyFunction,
+                "X", "test.designer.cs", "4");
         }
 
         [Fact]
@@ -4404,7 +4425,8 @@ $(
                 var expectedAlphaSquigglePath = Path.Combine("Alpha", ".squiggle");
                 var expectedBetaSquigglePath = Path.Combine("Beta", ".squiggle");
                 var expectedAlphaGammaSquigglePath = Path.Combine("Alpha", "Gamma", ".squiggle");
-                squiggles.Select(i => i.EvaluatedInclude).ShouldBe(new[]
+                squiggles.Select(i => i.EvaluatedInclude).ShouldBe(
+                    new[]
                 {
                     expectedAlphaSquigglePath,
                     expectedBetaSquigglePath,

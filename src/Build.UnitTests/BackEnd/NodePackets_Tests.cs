@@ -165,7 +165,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
             result.ColumnNumber = 50;
 
             // normalize line endings as we can't rely on the line endings of NodePackets_Tests.cs
-            Assert.Equal(@"Task Parameter:
+            Assert.Equal(
+                @"Task Parameter:
     ItemName=
         ItemSpec1
         ItemSpec1

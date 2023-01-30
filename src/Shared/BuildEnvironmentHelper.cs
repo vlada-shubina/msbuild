@@ -349,7 +349,8 @@ namespace Microsoft.Build.Shared
         private static string GetVsRootFromMSBuildAssembly(string msBuildAssembly)
         {
             string directory = Path.GetDirectoryName(msBuildAssembly);
-            return FileUtilities.GetFolderAbove(msBuildAssembly,
+            return FileUtilities.GetFolderAbove(
+                msBuildAssembly,
                 directory.EndsWith(@"\amd64", StringComparison.OrdinalIgnoreCase) ||
                 directory.EndsWith(@"\arm64", StringComparison.OrdinalIgnoreCase)
                     ? 5
@@ -454,7 +455,8 @@ namespace Microsoft.Build.Shared
         /// <summary>
         /// Resets the current singleton instance (for testing).
         /// </summary>
-        internal static void ResetInstance_ForUnitTestsOnly(Func<string> getProcessFromRunningProcess = null,
+        internal static void ResetInstance_ForUnitTestsOnly(
+            Func<string> getProcessFromRunningProcess = null,
             Func<string> getExecutingAssemblyPath = null, Func<string> getAppContextBaseDirectory = null,
             Func<IEnumerable<VisualStudioInstance>> getVisualStudioInstances = null,
             Func<string, string> getEnvironmentVariable = null,

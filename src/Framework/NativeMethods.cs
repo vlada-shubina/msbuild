@@ -1152,7 +1152,8 @@ internal static class NativeMethods
     [SupportedOSPlatform("windows")]
     private static SafeFileHandle OpenFileThroughSymlinks(string fullPath)
     {
-        return CreateFile(fullPath,
+        return CreateFile(
+            fullPath,
             GENERIC_READ,
             FILE_SHARE_READ,
             IntPtr.Zero,

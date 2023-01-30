@@ -923,7 +923,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
         [SupportedOSPlatform("windows")]
         public void NewSymlinkOldDestinationIsUpToDate()
         {
-            SimpleSymlinkInputCheck(symlinkWriteTime: New,
+            SimpleSymlinkInputCheck(
+                symlinkWriteTime: New,
                 targetWriteTime: Old,
                 outputWriteTime: Middle,
                 expectedOutOfDate: false);
@@ -934,7 +935,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
         [SupportedOSPlatform("windows")]
         public void OldSymlinkOldDestinationIsUpToDate()
         {
-            SimpleSymlinkInputCheck(symlinkWriteTime: Old,
+            SimpleSymlinkInputCheck(
+                symlinkWriteTime: Old,
                 targetWriteTime: Middle,
                 outputWriteTime: New,
                 expectedOutOfDate: false);
@@ -945,7 +947,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
         [SupportedOSPlatform("windows")]
         public void OldSymlinkNewDestinationIsNotUpToDate()
         {
-            SimpleSymlinkInputCheck(symlinkWriteTime: Old,
+            SimpleSymlinkInputCheck(
+                symlinkWriteTime: Old,
                 targetWriteTime: New,
                 outputWriteTime: Middle,
                 expectedOutOfDate: true);
@@ -956,7 +959,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
         [SupportedOSPlatform("windows")]
         public void NewSymlinkNewDestinationIsNotUpToDate()
         {
-            SimpleSymlinkInputCheck(symlinkWriteTime: Middle,
+            SimpleSymlinkInputCheck(
+                symlinkWriteTime: Middle,
                 targetWriteTime: Middle,
                 outputWriteTime: Old,
                 expectedOutOfDate: true);
@@ -1030,7 +1034,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
 
 
                 DependencyAnalysisLogDetail detail;
-                Assert.Equal(expectedOutOfDate,
+                Assert.Equal(
+                    expectedOutOfDate,
                     TargetUpToDateChecker.IsAnyOutOfDate(out detail, Directory.GetCurrentDirectory(), inputs, outputs));
             }
             finally

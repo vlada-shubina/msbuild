@@ -214,11 +214,12 @@ namespace Microsoft.Build.Shared
         {
             public string Path { get; }
 
-            public TempWorkingDirectory(string sourcePath,
+            public TempWorkingDirectory(
+                string sourcePath,
 #if !CLR2COMPATIBILITY
-            [CallerMemberName]
+                [CallerMemberName]
 #endif
-            string name = null)
+                string name = null)
             {
                 Path = name == null
                     ? GetTemporaryDirectory()

@@ -846,7 +846,8 @@ namespace Microsoft.Build.Tasks.Deployment.Bootstrapper
 
                                 // if our schema namespace gets out of sync,
                                 //   then all of our calls to SelectNodes and SelectSingleNode will fail
-                                Debug.Assert((xmlSchema != null) &&
+                                Debug.Assert(
+                                    (xmlSchema != null) &&
                                     string.Equals(schemaNamespace, xmlSchema.TargetNamespace, StringComparison.Ordinal),
                                     System.IO.Path.GetFileName(schemaPath) + " and BootstrapperBuilder.vb have mismatched namespaces, so the BootstrapperBuilder will fail to work.");
 
@@ -893,7 +894,8 @@ namespace Microsoft.Build.Tasks.Deployment.Bootstrapper
 
                     // Note that the xml document's default namespace must match the schema namespace
                     //   or none of our SelectNodes/SelectSingleNode calls will succeed
-                    Debug.Assert(xmlDocument.DocumentElement != null &&
+                    Debug.Assert(
+                        xmlDocument.DocumentElement != null &&
                         string.Equals(xmlDocument.DocumentElement.NamespaceURI, schemaNamespace, StringComparison.Ordinal),
                         "'" + xmlDocument.DocumentElement.NamespaceURI + "' is not '" + schemaNamespace + "'...");
 

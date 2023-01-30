@@ -155,16 +155,19 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         /// Verifies that when a user specifies more than one SDK that everything works as expected
         /// </summary>
         [Theory]
-        [InlineData(@"
+        [InlineData(
+            @"
 <Project Sdk=""{0};{1};{2}"">
 </Project >", false)]
-        [InlineData(@"
+        [InlineData(
+            @"
 <Project>
   <Sdk Name=""{0}"" />
   <Sdk Name=""{1}"" />
   <Sdk Name=""{2}"" />
 </Project>", false)]
-        [InlineData(@"
+        [InlineData(
+            @"
 <Project>
   <Import Project=""Sdk.props"" Sdk=""{0}"" />
   <Import Project=""Sdk.props"" Sdk=""{1}"" />
@@ -470,7 +473,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
 
             ProjectRootElement rootElement = ObjectModelHelpers.CreateInMemoryProjectRootElement(projectContents);
 
-            Project project = new Project(rootElement,
+            Project project = new Project(
+                rootElement,
                 globalProperties: null,
                 toolsVersion: null,
                 projectCollection: projectCollection,
@@ -567,7 +571,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
 
         internal class SdkPropertiesAreExpandedCase
         {
-            public SdkPropertiesAreExpandedCase(SdkReferencePropertyExpansionMode? mode,
+            public SdkPropertiesAreExpandedCase(
+                SdkReferencePropertyExpansionMode? mode,
                 SdkPropertiesAreExpandedDataTemplate template, bool setName, bool setVersion, bool expectedSuccess)
             {
                 Mode = mode;

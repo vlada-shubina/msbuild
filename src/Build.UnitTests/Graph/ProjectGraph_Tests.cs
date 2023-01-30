@@ -1779,12 +1779,13 @@ $@"
 
             var additionalGlobalProperties = new Dictionary<string, string> { { "x", "y" } };
 
-            var graph = new ProjectGraph(new[]
+            var graph = new ProjectGraph(
+                new[]
             {
                 CreateProjectFile(env: _env, projectNumber: 1, projectReferences: null, projectReferenceTargets: null, defaultTargets: null, extraContent: MultitargetingSpecificationPropertyGroup).Path,
                 CreateProjectFile(env: _env, projectNumber: 2, projectReferences: null, projectReferenceTargets: null, defaultTargets: null, extraContent: referenceToInnerBuild).Path
             },
-            additionalGlobalProperties);
+                additionalGlobalProperties);
 
             var dot = graph.ToDot();
 

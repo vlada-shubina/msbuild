@@ -75,7 +75,8 @@ namespace Microsoft.Build.Evaluation
         protected void AppendDefaultHeaderWithSeparator(StringBuilder stringBuilder, string separator)
         {
             stringBuilder.AppendLine(
-                string.Join(separator,
+                string.Join(
+                    separator,
                     new[]
                     {
                         "Id", "ParentId", "Pass", "File", "Line #", "Expression", "Inc (ms)", "Inc (%)", "Exc (ms)",
@@ -88,7 +89,8 @@ namespace Microsoft.Build.Evaluation
         /// </summary>
         protected void AppendDefaultLocationWithSeparator(StringBuilder stringBuilder, TimeSpan totalTime, EvaluationLocation evaluationLocation, ProfiledLocation profiledLocation, string separator)
         {
-            stringBuilder.AppendLine(string.Join(separator,
+            stringBuilder.AppendLine(string.Join(
+                separator,
                 evaluationLocation.Id,
                 evaluationLocation.ParentId?.ToString() ?? string.Empty,
                 evaluationLocation.EvaluationPassDescription,

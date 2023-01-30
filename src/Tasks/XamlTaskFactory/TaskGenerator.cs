@@ -840,13 +840,15 @@ namespace Microsoft.Build.Tasks.Xaml
                         var argumentInitializers = new List<CodeObjectCreateExpression>(val.Arguments.Count);
                         foreach (Argument arg in val.Arguments)
                         {
-                            argumentInitializers.Add(new CodeObjectCreateExpression(new CodeTypeReference("Tuple<string, bool>"),
+                            argumentInitializers.Add(new CodeObjectCreateExpression(
+                                new CodeTypeReference("Tuple<string, bool>"),
                                 new CodeSnippetExpression(SurroundWithQuotes(arg.Parameter)),
                                 new CodePrimitiveExpression(arg.Required)));
                         }
 
                         // Now create the entry for the switch itself.
-                        var valueExpression = new CodeObjectCreateExpression(new CodeTypeReference("Tuple<string, string, Tuple<string, bool>[]>"),
+                        var valueExpression = new CodeObjectCreateExpression(
+                            new CodeTypeReference("Tuple<string, string, Tuple<string, bool>[]>"),
                             new CodeSnippetExpression(SurroundWithQuotes(val.Name)),
                             val.SwitchName != String.Empty ? new CodeSnippetExpression(SurroundWithQuotes(val.Prefix + val.SwitchName)) : new CodeSnippetExpression(SurroundWithQuotes("")),
                             new CodeArrayCreateExpression(new CodeTypeReference("Tuple<string, bool>"), argumentInitializers.ToArray()));

@@ -44,7 +44,8 @@ namespace Microsoft.Build.UnitTests
             rpc.CacheProjectElementsFromXml(xmlString);
             bool result = rpc.ResolveProject(reference, out resolvedProjectWithConfiguration);
 
-            string message = string.Format("Reference \"{0}\" [project \"{1}\", package \"{2}\", name \"{3}\"] Pregen Xml string : \"{4}\"" +
+            string message = string.Format(
+                "Reference \"{0}\" [project \"{1}\", package \"{2}\", name \"{3}\"] Pregen Xml string : \"{4}\"" +
                 "expected result \"{5}\", actual result \"{6}\", expected configuration \"{7}\", actual configuration \"{8}\".",
                 itemSpec, projectGuid, package, name, xmlString, expectedResult, result, expectedFullConfiguration,
                 (resolvedProjectWithConfiguration == null) ? string.Empty : resolvedProjectWithConfiguration.GetMetadata("FullConfiguration"));

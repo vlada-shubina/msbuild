@@ -325,10 +325,11 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
             }
         }
 
-        internal static bool ParseElementForAssemblyIdentification(SecurityElement el,
-                                                                   out String className,
-                                                                   out String assemblyName, // for example "WindowsBase"
-                                                                   out String assemblyVersion)
+        internal static bool ParseElementForAssemblyIdentification(
+            SecurityElement el,
+            out String className,
+            out String assemblyName, // for example "WindowsBase"
+            out String assemblyVersion)
         {
             className = null;
             assemblyName = null;
@@ -513,10 +514,11 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
         /// <param name="path">Path of the file to sign with the certificate.</param>
         /// <param name="targetFrameworkVersion">Version of the .NET Framework for the target.</param>
         [SupportedOSPlatform("windows")]
-        public static void SignFile(string certThumbprint,
-                                    Uri timestampUrl,
-                                    string path,
-                                    string targetFrameworkVersion)
+        public static void SignFile(
+            string certThumbprint,
+            Uri timestampUrl,
+            string path,
+            string targetFrameworkVersion)
         {
             SignFile(certThumbprint, timestampUrl, path, targetFrameworkVersion, null);
         }
@@ -530,11 +532,12 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
         /// <param name="targetFrameworkVersion">Version of the .NET Framework for the target.</param>
         /// <param name="targetFrameworkIdentifier">.NET Framework identifier for the target.</param>
         [SupportedOSPlatform("windows")]
-        public static void SignFile(string certThumbprint,
-                                    Uri timestampUrl,
-                                    string path,
-                                    string targetFrameworkVersion,
-                                    string targetFrameworkIdentifier)
+        public static void SignFile(
+            string certThumbprint,
+            Uri timestampUrl,
+            string path,
+            string targetFrameworkVersion,
+            string targetFrameworkIdentifier)
         {
             SignFile(certThumbprint, timestampUrl, path, targetFrameworkVersion, targetFrameworkIdentifier, false);
         }
@@ -549,12 +552,13 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
         /// <param name="targetFrameworkIdentifier">.NET Framework identifier for the target.</param>
         /// <param name="disallowMansignTimestampFallback">Disallow fallback to legacy timestamping when RFC3161 timestamping fails during manifest signing</param>
         [SupportedOSPlatform("windows")]
-        public static void SignFile(string certThumbprint,
-                                    Uri timestampUrl,
-                                    string path,
-                                    string targetFrameworkVersion,
-                                    string targetFrameworkIdentifier,
-                                    bool disallowMansignTimestampFallback)
+        public static void SignFile(
+            string certThumbprint,
+            Uri timestampUrl,
+            string path,
+            string targetFrameworkVersion,
+            string targetFrameworkIdentifier,
+            bool disallowMansignTimestampFallback)
         {
             System.Resources.ResourceManager resources = new System.Resources.ResourceManager("Microsoft.Build.Tasks.Core.Strings.ManifestUtilities", typeof(SecurityUtilities).Module.Assembly);
 
@@ -641,12 +645,13 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
         }
 
         [SupportedOSPlatform("windows")]
-        private static void SignFileInternal(X509Certificate2 cert,
-                                            Uri timestampUrl,
-                                            string path,
-                                            bool targetFrameworkSupportsSha256,
-                                            System.Resources.ResourceManager resources,
-                                            bool disallowMansignTimestampFallback = false)
+        private static void SignFileInternal(
+            X509Certificate2 cert,
+            Uri timestampUrl,
+            string path,
+            bool targetFrameworkSupportsSha256,
+            System.Resources.ResourceManager resources,
+            bool disallowMansignTimestampFallback = false)
         {
             if (cert == null)
             {
@@ -836,10 +841,11 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
 
             if (timestampUrl != null)
             {
-                commandLine.AppendFormat(CultureInfo.InvariantCulture,
-                                            "{0} {1} ",
-                                            useRFC3161Timestamp ? "/tr" : "/t",
-                                            timestampUrl.ToString());
+                commandLine.AppendFormat(
+                    CultureInfo.InvariantCulture,
+                    "{0} {1} ",
+                    useRFC3161Timestamp ? "/tr" : "/t",
+                    timestampUrl.ToString());
             }
             commandLine.AppendFormat(CultureInfo.InvariantCulture, "\"{0}\"", path);
             return commandLine.ToString();
@@ -872,7 +878,8 @@ namespace Microsoft.Build.Tasks.Deployment.ManifestUtilities
             }
             if (!FileSystems.Default.FileExists(toolPath))
             {
-                throw new ApplicationException(String.Format(CultureInfo.CurrentCulture,
+                throw new ApplicationException(String.Format(
+                    CultureInfo.CurrentCulture,
                     resources.GetString("SecurityUtil.SigntoolNotFound"), toolPath));
             }
 

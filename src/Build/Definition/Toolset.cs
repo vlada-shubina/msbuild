@@ -914,7 +914,8 @@ namespace Microsoft.Build.Evaluation
                     reservedProperties.Add(ProjectPropertyInstance.Create(ReservedPropertyNames.assemblyVersion, Constants.AssemblyVersion, mayBeReserved: true));
                     reservedProperties.Add(ProjectPropertyInstance.Create(ReservedPropertyNames.version, MSBuildAssemblyFileVersion.Instance.MajorMinorBuild, mayBeReserved: true));
 
-                    reservedProperties.Add(ProjectPropertyInstance.Create(ReservedPropertyNames.msbuildRuntimeType,
+                    reservedProperties.Add(ProjectPropertyInstance.Create(
+                        ReservedPropertyNames.msbuildRuntimeType,
 #if RUNTIME_TYPE_NETCORE
                         Traits.Instance.ForceEvaluateAsFullFramework ? "Full" : "Core",
 #elif MONO

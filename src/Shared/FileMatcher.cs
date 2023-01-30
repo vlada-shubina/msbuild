@@ -446,7 +446,8 @@ namespace Microsoft.Build.Shared
                 return path;
             }
 
-            ErrorUtilities.VerifyThrow(!HasWildcards(path),
+            ErrorUtilities.VerifyThrow(
+                !HasWildcards(path),
                 "GetLongPathName does not handle wildcards and was passed '{0}'.", path);
 
             string[] parts = path.Split(directorySeparatorCharacters);
@@ -516,7 +517,8 @@ namespace Microsoft.Build.Shared
                         }
 
                         // Since we know there are no wild cards, this should be length one, i.e. MoveNext should return false.
-                        ErrorUtilities.VerifyThrow(entries.Count == 1,
+                        ErrorUtilities.VerifyThrow(
+                            entries.Count == 1,
                             "Unexpected number of entries ({3}) found when enumerating '{0}' under '{1}'. Original path was '{2}'",
                             parts[i], longPath, path, entries.Count);
 
@@ -841,10 +843,12 @@ namespace Microsoft.Build.Shared
             catch (UnauthorizedAccessException) { }
 #endif
 
-            ErrorUtilities.VerifyThrow((recursionState.SearchData.Filespec == null) || (recursionState.SearchData.RegexFileMatch == null),
+            ErrorUtilities.VerifyThrow(
+                (recursionState.SearchData.Filespec == null) || (recursionState.SearchData.RegexFileMatch == null),
                 "File-spec overrides the regular expression -- pass null for file-spec if you want to use the regular expression.");
 
-            ErrorUtilities.VerifyThrow((recursionState.SearchData.Filespec != null) || (recursionState.SearchData.RegexFileMatch != null),
+            ErrorUtilities.VerifyThrow(
+                (recursionState.SearchData.Filespec != null) || (recursionState.SearchData.RegexFileMatch != null),
                 "Need either a file-spec or a regular expression to match files.");
 
             ErrorUtilities.VerifyThrow(recursionState.RemainingWildcardDirectory != null, "Expected non-null remaning wildcard directory.");
@@ -1503,7 +1507,8 @@ namespace Microsoft.Build.Shared
             out bool needsRecursion,
             out bool isLegalFileSpec)
         {
-            GetFileSpecInfo(filespec,
+            GetFileSpecInfo(
+                filespec,
                 out string fixedDirectoryPart, out string wildcardDirectoryPart, out string filenamePart,
                 out needsRecursion, out isLegalFileSpec);
 
@@ -2526,7 +2531,8 @@ namespace Microsoft.Build.Shared
                                 //  BaseDirectory to be the same as the exclude BaseDirectory, and change the wildcard part to be "**\"
                                 //  because we don't know where the different parts of the exclude wildcard part would be matched.
                                 //  Example: include="c:\git\msbuild\src\Framework\**\*.*" exclude="c:\git\msbuild\**\bin\**\*.*"
-                                Debug.Assert(excludeState.SearchData.RegexFileMatch != null || excludeState.SearchData.DirectoryPattern != null,
+                                Debug.Assert(
+                                    excludeState.SearchData.RegexFileMatch != null || excludeState.SearchData.DirectoryPattern != null,
                                     "Expected Regex or directory pattern to be used for exclude file matching");
                                 excludeState.BaseDirectory = state.BaseDirectory;
                                 excludeState.RemainingWildcardDirectory = recursiveDirectoryMatch + s_directorySeparator;

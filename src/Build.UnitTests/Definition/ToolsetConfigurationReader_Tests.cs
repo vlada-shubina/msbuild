@@ -489,10 +489,12 @@ namespace Microsoft.Build.UnitTests.Definition
             Assert.Equal("2.0", msbuildToolsetSection.Default);
             Assert.Single(msbuildToolsetSection.Toolsets);
             Assert.Equal(2, msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.Count);
-            Assert.Equal(@"D:\windows\Microsoft.NET\Framework\v2.0.x86ret\",
-                                   msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.GetElement("MSBuildBinPath").Value);
-            Assert.Equal(@"SomeOtherPropertyValue",
-                                   msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.GetElement("SomeOtherPropertyName").Value);
+            Assert.Equal(
+                @"D:\windows\Microsoft.NET\Framework\v2.0.x86ret\",
+                msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.GetElement("MSBuildBinPath").Value);
+            Assert.Equal(
+                @"SomeOtherPropertyValue",
+                msbuildToolsetSection.Toolsets.GetElement("2.0").PropertyElements.GetElement("SomeOtherPropertyName").Value);
         }
 
         #endregion

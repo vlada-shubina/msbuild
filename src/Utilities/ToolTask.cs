@@ -927,7 +927,8 @@ namespace Microsoft.Build.Utilities
 
                 if (!isBeingCancelled)
                 {
-                    ErrorUtilities.VerifyThrow(Timeout != System.Threading.Timeout.Infinite,
+                    ErrorUtilities.VerifyThrow(
+                        Timeout != System.Threading.Timeout.Infinite,
                         "A time-out value must have been specified or the task must be cancelled.");
 
                     LogShared.LogWarningWithCodeFromResources("Shared.KillingProcess", processName, Timeout);
@@ -1029,7 +1030,8 @@ namespace Microsoft.Build.Utilities
             MessageImportance messageImportance,
             StandardOutputOrErrorQueueType queueType)
         {
-            ErrorUtilities.VerifyThrow(dataQueue != null,
+            ErrorUtilities.VerifyThrow(
+                dataQueue != null,
                 "The data queue must be available.");
 
             // synchronize access to the queue -- this is a producer-consumer problem
@@ -1062,7 +1064,8 @@ namespace Microsoft.Build.Utilities
                     }
                 }
 
-                ErrorUtilities.VerifyThrow(dataAvailableSignal != null,
+                ErrorUtilities.VerifyThrow(
+                    dataAvailableSignal != null,
                     "The signalling event must be available.");
 
                 // the queue is empty, so reset the notification
@@ -1091,7 +1094,8 @@ namespace Microsoft.Build.Utilities
         /// <param name="unused"></param>
         private void ReceiveTimeoutNotification(object unused)
         {
-            ErrorUtilities.VerifyThrow(_toolTimeoutExpired != null,
+            ErrorUtilities.VerifyThrow(
+                _toolTimeoutExpired != null,
                 "The signalling event for tool time-out must be available.");
             lock (_eventCloseLock)
             {
@@ -1111,7 +1115,8 @@ namespace Microsoft.Build.Utilities
         /// <param name="e"></param>
         private void ReceiveExitNotification(object sender, EventArgs e)
         {
-            ErrorUtilities.VerifyThrow(_toolExited != null,
+            ErrorUtilities.VerifyThrow(
+                _toolExited != null,
                 "The signalling event for tool exit must be available.");
 
             lock (_eventCloseLock)
@@ -1159,7 +1164,8 @@ namespace Microsoft.Build.Utilities
             // NOTE: don't ignore empty string, because we need to log that
             if (e.Data != null)
             {
-                ErrorUtilities.VerifyThrow(dataQueue != null,
+                ErrorUtilities.VerifyThrow(
+                    dataQueue != null,
                     "The data queue must be available.");
 
                 // synchronize access to the queue -- this is a producer-consumer problem
@@ -1173,7 +1179,8 @@ namespace Microsoft.Build.Utilities
                 {
                     dataQueue.Enqueue(e.Data);
 
-                    ErrorUtilities.VerifyThrow(dataAvailableSignal != null,
+                    ErrorUtilities.VerifyThrow(
+                        dataAvailableSignal != null,
                         "The signalling event must be available.");
 
                     // signal the availability of data
@@ -1375,9 +1382,10 @@ namespace Microsoft.Build.Utilities
                                 // which for a new console (as here) is OEMCP
                                 // this string should ideally always be ASCII
                                 // and the same in any OEMCP.
-                                File.AppendAllText(_temporaryBatchFile,
-                                                   $@"%SystemRoot%\System32\chcp.com {encoding.CodePage}>nul{Environment.NewLine}",
-                                                   EncodingUtilities.CurrentSystemOemEncoding);
+                                File.AppendAllText(
+                                    _temporaryBatchFile,
+                                    $@"%SystemRoot%\System32\chcp.com {encoding.CodePage}>nul{Environment.NewLine}",
+                                    EncodingUtilities.CurrentSystemOemEncoding);
                             }
                         }
 
@@ -1498,7 +1506,8 @@ namespace Microsoft.Build.Utilities
                 }
                 else
                 {
-                    ErrorUtilities.VerifyThrow(nextAction == HostObjectInitializationStatus.UseAlternateToolToExecute,
+                    ErrorUtilities.VerifyThrow(
+                        nextAction == HostObjectInitializationStatus.UseAlternateToolToExecute,
                         "Invalid return status");
 
                     // No host object was provided, or at least not one that supports all of the

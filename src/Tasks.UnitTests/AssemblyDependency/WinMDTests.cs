@@ -221,7 +221,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             t.ResolvedFiles.ShouldHaveSingleItem();
             t.RelatedFiles.ShouldHaveSingleItem();
 
-            t.RelatedFiles[0].ItemSpec.ShouldBe(@"C:\WinMDLib\LibWithWinmdAndNoDll.pri",
+            t.RelatedFiles[0].ItemSpec.ShouldBe(
+                @"C:\WinMDLib\LibWithWinmdAndNoDll.pri",
                 "Expected to find .pri related files but NOT the lib.");
 
             t.RelatedFiles[0].GetMetadata(ItemMetadataNames.imageRuntime).ShouldBeEmpty();

@@ -37,7 +37,8 @@ namespace Microsoft.Build.Execution
             string targetName,
             string taskName,
             Exception innerException) :
-            base(ErrorMessagePrefix
+            base(
+                ErrorMessagePrefix
                 + string.Format(ErrorMessageProjectTargetTask, projectFile, targetName, taskName)
                 + (innerException == null ? string.Empty : ("\n=============\n" + innerException.ToString() + "\n\n")),
                 innerException)

@@ -520,56 +520,65 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
         [Theory]
         // items as strings: escaped includes appear as unescaped
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             "%61;%62",
             "b",
             new string[0],
             new[] { "a" })]
         // items as strings: escaped include matches non-escaped exclude
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             "%61",
             "a",
             new string[0],
             new string[0])]
         // items as strings: non-escaped include matches escaped exclude
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             "a",
             "%61",
             new string[0],
             new string[0])]
         // items as files: non-escaped wildcard include matches escaped non-wildcard character
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             "a?b",
             "a%40b",
             new[] { "acb", "a@b" },
             new[] { "acb" })]
         // items as files: non-escaped non-wildcard include matches escaped non-wildcard character
-        [InlineData(ItemWithIncludeAndExclude,
-           "acb;a@b",
-           "a%40b",
-           new string[0],
-           new[] { "acb" })]
+        [InlineData(
+            ItemWithIncludeAndExclude,
+            "acb;a@b",
+            "a%40b",
+            new string[0],
+            new[] { "acb" })]
         // items as files: escaped wildcard include matches escaped non-wildcard exclude
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             "a%40*b",
             "a%40bb",
             new[] { "a@b", "a@ab", "a@bb" },
             new[] { "a@ab", "a@b" })]
         // items as files: escaped wildcard include matches escaped wildcard exclude
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             "a%40*b",
             "a%40?b",
             new[] { "a@b", "a@ab", "a@bb" },
             new[] { "a@b" })]
         // items as files: non-escaped recursive wildcard include matches escaped recursive wildcard exclude
-        [InlineData(ItemWithIncludeAndExclude,
-           @"**\a*b",
-           @"**\a*%78b",
-           new[] { "aab", "aaxb", @"dir\abb", @"dir\abxb" },
-           new[] { "aab", @"dir\abb" })]
+        [InlineData(
+            ItemWithIncludeAndExclude,
+            @"**\a*b",
+            @"**\a*%78b",
+            new[] { "aab", "aaxb", @"dir\abb", @"dir\abxb" },
+            new[] { "aab", @"dir\abb" })]
         // items as files: include with non-escaped glob does not match exclude with escaped wildcard character.
         // The exclude is treated as a literal, not a glob, and therefore should not match the input files
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"**\a*b",
             @"**\a%2Axb",
             new[] { "aab", "aaxb", @"dir\abb", @"dir\abxb" },
@@ -581,20 +590,23 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
         [Theory]
         // items as strings: include with both escaped and unescaped glob should be treated as literal and therefore not match against files as a glob
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"**\a%2Axb",
             @"foo",
             new[] { "aab", "aaxb", @"dir\abb", @"dir\abxb" },
             new[] { @"**\a*xb" })]
         // Include with both escaped and unescaped glob does not match exclude with escaped wildcard character which has a different slash orientation
         // The presence of the escaped and unescaped glob should make things behave as strings-which-are-not-paths and not as strings-which-are-paths
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"**\a%2Axb",
             @"**/a%2Axb",
             new string[0],
             new[] { @"**\a*xb" })]
         // Slashes are not normalized when contents is not a path
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"a/b/foo::||bar;a/b/foo::||bar/;a/b/foo::||bar\;a/b\foo::||bar",
             @"a/b/foo::||bar",
             new string[0],
@@ -614,7 +626,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
         }
 
         [Theory]
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"**\*",
             @"excludes\**.*",
             new[]
@@ -630,7 +643,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                 @"excludes\b.cs",
                 @"excludes\subdir\c.cs",
             })]
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"**\*",
             @"excludes\**..\*",
             new[]
@@ -646,7 +660,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                 @"excludes\b.cs",
                 @"excludes\subdir\c.cs",
             })]
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"**\*",
             @"**.*",
             new[]
@@ -662,7 +677,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                 @"excludes\b.cs",
                 @"excludes\subdir\c.cs",
             })]
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             "*;**a",
             "**a",
             new[]
@@ -674,7 +690,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                 "a",
                 "build.proj"
             })]
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"**1;**2",
             @"**1",
             new[]
@@ -690,7 +707,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
             {
                 "**2"
             })]
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @":||;||:",
             @"||:",
             new string[0],
@@ -705,7 +723,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
         [Theory]
         [PlatformSpecific(TestPlatforms.Windows)]
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"src/**/*.cs",
             new[]
             {
@@ -717,7 +736,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                 @"src/a.cs",
                 @"src/a/b/b.cs",
             })]
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"src/test/**/*.cs",
             new[]
             {
@@ -729,7 +749,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
                 @"src/test/a.cs",
                 @"src/test/a/b/c.cs",
             })]
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"src/test/**/a/b/**/*.cs",
             new[]
             {
@@ -1000,7 +1021,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
         [Theory]
         // exclude matches include; file is next to project file
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"a", // include item
             @"", // path relative from projectFile. Empty string if current directory
 
@@ -1014,7 +1036,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
             false) // whether the include survives the exclude (true) or not (false)
             ]
         // exclude matches include; file is below the project file
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"a",
             @"dir",
 
@@ -1027,7 +1050,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
             },
             false)]
         // exclude matches include; file is above the project file
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             @"a",
             @"..",
 
@@ -1040,7 +1064,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
             },
             false)]
         // exclude does not match include; file is next to project file; exclude points above the project file
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             "a",
             "",
 
@@ -1053,7 +1078,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
             },
             true)]
         // exclude does not match include; file is below the project file; exclude points next to the project file
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             "a",
             "dir",
 
@@ -1066,7 +1092,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
             },
             true)]
         // exclude does not match include; file is above the project file; exclude points next to the project file
-        [InlineData(ItemWithIncludeAndExclude,
+        [InlineData(
+            ItemWithIncludeAndExclude,
             "a",
             "..",
 

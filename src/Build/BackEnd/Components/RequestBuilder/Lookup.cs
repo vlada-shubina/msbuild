@@ -894,9 +894,10 @@ namespace Microsoft.Build.BackEnd
         /// If the item already exists in the table, merges in the modifications; if there is a conflict
         /// the mergeType indicates which should win.
         /// </summary>
-        private void MergeModificationsIntoModificationTable(Dictionary<ProjectItemInstance, MetadataModifications> modifiesOfType,
-                                                             KeyValuePair<ProjectItemInstance, MetadataModifications> modify,
-                                                             ModifyMergeType mergeType)
+        private void MergeModificationsIntoModificationTable(
+            Dictionary<ProjectItemInstance, MetadataModifications> modifiesOfType,
+            KeyValuePair<ProjectItemInstance, MetadataModifications> modify,
+            ModifyMergeType mergeType)
         {
             MetadataModifications existingMetadataChanges;
             if (modifiesOfType.TryGetValue(modify.Key, out existingMetadataChanges))

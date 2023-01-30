@@ -179,7 +179,8 @@ namespace Microsoft.Build.Globbing
 
             globRoot = Strings.WeakIntern(FileUtilities.NormalizePath(globRoot).WithTrailingSlash());
 
-            var lazyState = new Lazy<GlobState>(() =>
+            var lazyState = new Lazy<GlobState>(
+                () =>
             {
                 FileMatcher.Default.GetFileSpecInfo(
                     fileSpec,
@@ -227,7 +228,7 @@ namespace Microsoft.Build.Globbing
                 }
                 return new GlobState(globRoot, fileSpec, isLegalFileSpec, fixedDirectoryPart, wildcardDirectoryPart, filenamePart, needsRecursion, regex);
             },
-            true);
+                true);
 
             return new MSBuildGlob(lazyState);
         }

@@ -44,7 +44,8 @@ namespace Microsoft.Runtime.Hosting
 
                     if (s_GetRuntimeInterfaceAsObjectMethod != null)
                     {
-                        s_StrongName = (IClrStrongName)s_GetRuntimeInterfaceAsObjectMethod.Invoke(null,
+                        s_StrongName = (IClrStrongName)s_GetRuntimeInterfaceAsObjectMethod.Invoke(
+                            null,
                             new object[]
                             {
                                 new Guid("B79B0ACD-F5CD-409b-B5A5-A16244610B92"),

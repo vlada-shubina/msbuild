@@ -27,7 +27,8 @@ namespace Microsoft.Build.BackEnd
 #if RUNTIME_TYPE_NETCORE || MONO
             if (s_currentHost == null)
             {
-                string dotnetExe = Path.Combine(FileUtilities.GetFolderAbove(BuildEnvironmentHelper.Instance.CurrentMSBuildToolsDirectory, 2),
+                string dotnetExe = Path.Combine(
+                    FileUtilities.GetFolderAbove(BuildEnvironmentHelper.Instance.CurrentMSBuildToolsDirectory, 2),
                     NativeMethodsShared.IsWindows ? "dotnet.exe" : "dotnet");
                 if (File.Exists(dotnetExe))
                 {

@@ -191,7 +191,8 @@ namespace Microsoft.Build.Construction
             var document = new XmlDocumentWithLocation();
             var xrs = new XmlReaderSettings { DtdProcessing = DtdProcessing.Ignore };
 
-            var emptyProjectFile = string.Format(EmptyProjectFileContent,
+            var emptyProjectFile = string.Format(
+                EmptyProjectFileContent,
                 (projectFileOptions & NewProjectFileOptions.IncludeXmlDeclaration) != 0 ? EmptyProjectFileXmlDeclaration : string.Empty,
                 (projectFileOptions & NewProjectFileOptions.IncludeToolsVersion) != 0 ? EmptyProjectFileToolsVersion : string.Empty,
                 (projectFileOptions & NewProjectFileOptions.IncludeXmlNamespace) != 0 ? EmptyProjectFileXmlNamespace : string.Empty);
@@ -1743,7 +1744,8 @@ namespace Microsoft.Build.Construction
         {
             ErrorUtilities.VerifyThrowInternalRooted(path);
 
-            ProjectRootElement projectRootElement = projectRootElementCache.Get(path,
+            ProjectRootElement projectRootElement = projectRootElementCache.Get(
+                path,
                 preserveFormatting ?? false ? s_openLoaderPreserveFormattingDelegate : s_openLoaderDelegate,
                 isExplicitlyLoaded, preserveFormatting);
 

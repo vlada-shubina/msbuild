@@ -1785,12 +1785,13 @@ namespace Microsoft.Build.Evaluation
             _toolsets = new Dictionary<string, Toolset>(StringComparer.OrdinalIgnoreCase);
 
             // We only want our local toolset (as defined in MSBuild.exe.config) when we're operating locally...
-            _defaultToolsVersion = ToolsetReader.ReadAllToolsets(_toolsets,
+            _defaultToolsVersion = ToolsetReader.ReadAllToolsets(
+                _toolsets,
 #if FEATURE_WIN32_REGISTRY
-                    registryReader,
+                registryReader,
 #endif
-                    configReader,
-                    EnvironmentProperties, _globalProperties, ToolsetLocations);
+                configReader,
+                EnvironmentProperties, _globalProperties, ToolsetLocations);
 
             _toolsetsVersion++;
         }

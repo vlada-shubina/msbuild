@@ -267,15 +267,18 @@ namespace System.Deployment.Internal.CodeSigning
 
         private void init()
         {
-            CryptoConfig.AddAlgorithm(typeof(RSAPKCS1SHA256SignatureDescription),
-                               Sha256SignatureMethodUri);
+            CryptoConfig.AddAlgorithm(
+                typeof(RSAPKCS1SHA256SignatureDescription),
+                Sha256SignatureMethodUri);
 
 #if RUNTIME_TYPE_NETCORE
-            CryptoConfig.AddAlgorithm(typeof(SHA256),
-                               Sha256DigestMethod);
+            CryptoConfig.AddAlgorithm(
+                typeof(SHA256),
+                Sha256DigestMethod);
 #else
-            CryptoConfig.AddAlgorithm(typeof(System.Security.Cryptography.SHA256Cng),
-                               Sha256DigestMethod);
+            CryptoConfig.AddAlgorithm(
+                typeof(System.Security.Cryptography.SHA256Cng),
+                Sha256DigestMethod);
 #endif
         }
 
@@ -1275,8 +1278,9 @@ namespace System.Deployment.Internal.CodeSigning
             _error = errorCode;
         }
 
-        internal CmiAuthenticodeSignerInfo(Win32.AXL_SIGNER_INFO signerInfo,
-                                            Win32.AXL_TIMESTAMPER_INFO timestamperInfo)
+        internal CmiAuthenticodeSignerInfo(
+            Win32.AXL_SIGNER_INFO signerInfo,
+            Win32.AXL_TIMESTAMPER_INFO timestamperInfo)
         {
             _error = (int)signerInfo.dwError;
             if (signerInfo.pChainContext != IntPtr.Zero)

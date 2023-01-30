@@ -86,10 +86,11 @@ namespace Microsoft.Build.BackEnd.SdkResolution
 
             translator.Translate(ref _additionalPaths, (ITranslator t, ref string s) => t.Translate(ref s), count => new List<string>(count));
             translator.TranslateDictionary(ref _propertiesToAdd, count => new Dictionary<string, string>(count, StringComparer.OrdinalIgnoreCase));
-            translator.TranslateDictionary(ref _itemsToAdd,
-                                           keyTranslator: (ITranslator t, ref string s) => t.Translate(ref s),
-                                           valueTranslator: SdkResultTranslationHelpers.Translate,
-                                           dictionaryCreator: count => new Dictionary<string, SdkResultItem>(count, StringComparer.OrdinalIgnoreCase));
+            translator.TranslateDictionary(
+                ref _itemsToAdd,
+                keyTranslator: (ITranslator t, ref string s) => t.Translate(ref s),
+                valueTranslator: SdkResultTranslationHelpers.Translate,
+                dictionaryCreator: count => new Dictionary<string, SdkResultItem>(count, StringComparer.OrdinalIgnoreCase));
 
             translator.Translate(ref _sdkReference);
         }

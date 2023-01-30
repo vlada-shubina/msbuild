@@ -334,7 +334,8 @@ namespace Microsoft.Build.UnitTests
             </Target>
          </Project>");
 
-            buildManager.Build(new BuildParameters() { Loggers = new ILogger[] { binaryLogger } },
+            buildManager.Build(
+                new BuildParameters() { Loggers = new ILogger[] { binaryLogger } },
                 new BuildRequestData(entryProject.ProjectFile, new Dictionary<string, string>(), null, new string[] { "BuildSelf" }, null))
                 .OverallResult.ShouldBe(BuildResultCode.Success);
         }

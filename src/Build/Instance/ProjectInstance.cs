@@ -572,7 +572,8 @@ namespace Microsoft.Build.Execution
         /// </summary>
         private ProjectInstance(ProjectInstance that, bool isImmutable, RequestedProjectState filter = null)
         {
-            ErrorUtilities.VerifyThrow(filter == null || isImmutable,
+            ErrorUtilities.VerifyThrow(
+                filter == null || isImmutable,
                 "The result of a filtered ProjectInstance clone must be immutable.");
 
             _directory = that._directory;
@@ -2122,7 +2123,8 @@ namespace Microsoft.Build.Execution
 
         private void TranslateTargets(ITranslator translator)
         {
-            translator.TranslateDictionary(ref _targets,
+            translator.TranslateDictionary(
+                ref _targets,
                 ProjectTargetInstance.FactoryForDeserialization,
                 capacity => new RetrievableEntryHashSet<ProjectTargetInstance>(capacity, MSBuildNameIgnoreCaseComparer.Default));
 

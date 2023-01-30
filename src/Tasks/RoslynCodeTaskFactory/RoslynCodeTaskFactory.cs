@@ -373,7 +373,8 @@ namespace Microsoft.Build.Tasks
                         }
                         else
                         {
-                            log.LogErrorWithCodeFromResources("CodeTaskFactory.InvalidElementLocation",
+                            log.LogErrorWithCodeFromResources(
+                                "CodeTaskFactory.InvalidElementLocation",
                                 child.Name.LocalName,
                                 document.Root.Name.LocalName);
                             return false;
@@ -382,7 +383,8 @@ namespace Microsoft.Build.Tasks
                         break;
 
                     default:
-                        log.LogErrorWithCodeFromResources("CodeTaskFactory.InvalidElementLocation",
+                        log.LogErrorWithCodeFromResources(
+                            "CodeTaskFactory.InvalidElementLocation",
                             node.NodeType,
                             document.Root.Name.LocalName);
                         return false;
@@ -423,7 +425,8 @@ namespace Microsoft.Build.Tasks
                         break;
 
                     default:
-                        log.LogErrorWithCodeFromResources("CodeTaskFactory.InvalidCodeElementAttribute",
+                        log.LogErrorWithCodeFromResources(
+                            "CodeTaskFactory.InvalidCodeElementAttribute",
                             attribute.Name.LocalName);
                         return false;
                 }

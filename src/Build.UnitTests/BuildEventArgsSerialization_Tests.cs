@@ -37,7 +37,8 @@ namespace Microsoft.Build.UnitTests
                 "Message",
                 "HelpKeyword",
                 DateTime.Parse("3/1/2017 11:11:56 AM"));
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.Message,
                 e => e.HelpKeyword,
                 e => e.Timestamp.ToString());
@@ -49,7 +50,8 @@ namespace Microsoft.Build.UnitTests
                 {
                 { "SampleName", "SampleValue" }
                 });
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => serializeAllEnvironmentVariables ? TranslationHelpers.ToString(e.BuildEnvironment) : null,
                 e => e.HelpKeyword,
                 e => e.ThreadId.ToString(),
@@ -68,7 +70,8 @@ namespace Microsoft.Build.UnitTests
                 eventTimestamp: DateTime.Parse("12/12/2015 06:11:56 PM"));
             args.BuildEventContext = new BuildEventContext(1, 2, 3, 4, 5, 6);
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => ToString(e.BuildEventContext),
                 e => e.Succeeded.ToString());
         }
@@ -89,7 +92,8 @@ namespace Microsoft.Build.UnitTests
                 toolsVersion: "Current");
             args.BuildEventContext = new BuildEventContext(1, 2, 3, 4, 5, 6);
 
-            Roundtrip<ProjectStartedEventArgs>(args,
+            Roundtrip<ProjectStartedEventArgs>(
+                args,
                 e => ToString(e.BuildEventContext),
                 e => TranslationHelpers.GetPropertiesString(e.GlobalProperties),
                 e => TranslationHelpers.GetMultiItemsString(e.Items),
@@ -114,7 +118,8 @@ namespace Microsoft.Build.UnitTests
                 true,
                 DateTime.Parse("12/12/2015 06:11:56 PM"));
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.ProjectFile,
                 e => e.Succeeded.ToString());
         }
@@ -132,7 +137,8 @@ namespace Microsoft.Build.UnitTests
                 TargetBuiltReason.AfterTargets,
                 DateTime.Parse("12/12/2015 06:11:56 PM"));
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.ParentTarget,
                 e => e.ProjectFile,
                 e => e.TargetFile,
@@ -153,7 +159,8 @@ namespace Microsoft.Build.UnitTests
                 true,
                 new List<ITaskItem> { new MyTaskItem() });
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.ProjectFile,
                 e => e.Succeeded.ToString(),
                 e => e.TargetFile,
@@ -173,7 +180,8 @@ namespace Microsoft.Build.UnitTests
             args.LineNumber = 42;
             args.ColumnNumber = 999;
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.ProjectFile,
                 e => e.TaskFile,
                 e => e.TaskName,
@@ -186,7 +194,8 @@ namespace Microsoft.Build.UnitTests
         {
             EnvironmentVariableReadEventArgs args = new("VarName", "VarValue");
             args.BuildEventContext = new BuildEventContext(4, 5, 6, 7);
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.Message,
                 e => e.EnvironmentVariableName,
                 e => e.BuildEventContext.ToString());
@@ -203,7 +212,8 @@ namespace Microsoft.Build.UnitTests
                 "Csc",
                 succeeded: false);
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.ProjectFile,
                 e => e.TaskFile,
                 e => e.TaskName,
@@ -229,7 +239,8 @@ namespace Microsoft.Build.UnitTests
                 DateTime.Parse("9/1/2021 12:02:07 PM"),
                 useArguments ? new object[] { "argument0" } : null);
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.Code,
                 e => e.ColumnNumber.ToString(),
                 e => e.EndColumnNumber.ToString(),
@@ -261,7 +272,8 @@ namespace Microsoft.Build.UnitTests
                 DateTime.Parse("9/1/2021 12:02:07 PM"),
                 useArguments ? new object[] { "argument0" } : null);
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.Code,
                 e => e.ColumnNumber.ToString(),
                 e => e.EndColumnNumber.ToString(),
@@ -294,7 +306,8 @@ namespace Microsoft.Build.UnitTests
                 DateTime.Parse("12/12/2015 06:11:56 PM"),
                 useArguments ? new object[] { "argument0" } : null);
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.Code,
                 e => e.ColumnNumber.ToString(),
                 e => e.EndColumnNumber.ToString(),
@@ -312,7 +325,8 @@ namespace Microsoft.Build.UnitTests
         public void RoundtripResponseFileUsedEventArgs()
         {
             var args = new ResponseFileUsedEventArgs("MSBuild.rsp");
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.ResponseFilePath);
         }
 
@@ -332,7 +346,8 @@ namespace Microsoft.Build.UnitTests
                 "SenderName",
                 DateTime.Parse("12/12/2015 06:11:56 PM"));
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.Code,
                 e => e.ColumnNumber.ToString(),
                 e => e.EndColumnNumber.ToString(),
@@ -353,7 +368,8 @@ namespace Microsoft.Build.UnitTests
                 MessageImportance.Low,
                 DateTime.Parse("12/12/2015 06:11:56 PM"));
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.CommandLine,
                 e => e.TaskName,
                 e => e.Importance.ToString(),
@@ -377,7 +393,8 @@ namespace Microsoft.Build.UnitTests
             args.LineNumber = 265;
             args.ColumnNumber = 6;
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.Kind.ToString(),
                 e => e.ItemType,
                 e => e.LogItemMetadata.ToString(),
@@ -398,7 +415,8 @@ namespace Microsoft.Build.UnitTests
                 ProjectFile = projectFile,
             };
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.Message,
                 e => e.ProjectFile);
         }
@@ -418,7 +436,8 @@ namespace Microsoft.Build.UnitTests
                 Items = new List<DictionaryEntry>() { new DictionaryEntry("Key", new MyTaskItem() { ItemSpec = "TestItemSpec" }) }
             };
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.Message,
                 e => e.ProjectFile,
                 e => TranslationHelpers.GetPropertiesString(e.GlobalProperties),
@@ -453,7 +472,8 @@ namespace Microsoft.Build.UnitTests
                 })
             };
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.Message,
                 e => e.ProjectFile,
                 e => ToString(e.ProfilerResult.Value.ProfiledLocations));
@@ -473,7 +493,8 @@ namespace Microsoft.Build.UnitTests
                 UnexpandedProject = "$(Something)"
             };
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.ImportedProjectFile,
                 e => e.UnexpandedProject,
                 e => e.Importance.ToString(),
@@ -503,7 +524,8 @@ namespace Microsoft.Build.UnitTests
                 TargetFile = "foo.csproj"
             };
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.BuildEventContext.ToString(),
                 e => e.ParentTarget,
                 e => e.Importance.ToString(),
@@ -530,7 +552,8 @@ namespace Microsoft.Build.UnitTests
                 helpKeyword: Guid.NewGuid().ToString(),
                 senderName: Guid.NewGuid().ToString());
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.EnvironmentVariableName,
                 e => e.Message,
                 e => e.HelpKeyword,
@@ -549,7 +572,8 @@ namespace Microsoft.Build.UnitTests
                 helpKeyword: "e",
                 senderName: "f");
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.PropertyName,
                 e => e.PreviousValue,
                 e => e.NewValue,
@@ -568,7 +592,8 @@ namespace Microsoft.Build.UnitTests
                 helpKeyword: Guid.NewGuid().ToString(),
                 senderName: Guid.NewGuid().ToString());
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.PropertyName,
                 e => e.Message,
                 e => e.HelpKeyword,
@@ -586,7 +611,8 @@ namespace Microsoft.Build.UnitTests
                 helpKeyword: Guid.NewGuid().ToString(),
                 senderName: Guid.NewGuid().ToString());
 
-            Roundtrip(args,
+            Roundtrip(
+                args,
                 e => e.PropertyName,
                 e => e.PropertyValue,
                 e => e.PropertySource,

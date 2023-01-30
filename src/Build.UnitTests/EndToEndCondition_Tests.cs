@@ -32,7 +32,8 @@ namespace Microsoft.Build.UnitTests
         public void TrueComparisonsInvolvingMSBuildToolsVersion(string condition)
         {
             MockLogger logger = new MockLogger(_output, profileEvaluation: false, printEventsToStdout: false);
-            BuildResult result = Helpers.BuildProjectContentUsingBuildManager($@"<Project>
+            BuildResult result = Helpers.BuildProjectContentUsingBuildManager(
+                $@"<Project>
  <Target Name=""Print"">
   <Message Importance=""High""
            Text=""Condition evaluated true: '{condition}'""
@@ -55,7 +56,8 @@ namespace Microsoft.Build.UnitTests
         public void FalseComparisonsInvolvingMSBuildToolsVersion(string condition)
         {
             MockLogger logger = new MockLogger(_output, profileEvaluation: false, printEventsToStdout: false);
-            BuildResult result = Helpers.BuildProjectContentUsingBuildManager($@"<Project>
+            BuildResult result = Helpers.BuildProjectContentUsingBuildManager(
+                $@"<Project>
  <Target Name=""Print"">
   <Message Importance=""High""
            Text=""Condition evaluated false: '{condition}'""

@@ -56,7 +56,8 @@ namespace Microsoft.Build.UnitTests
             string missingAttr;
             bool result = rvpo.VerifyReferenceAttributes(reference, out missingAttr);
 
-            string message = string.Format("Reference \"{0}\" [project \"{1}\", package \"{2}\", name \"{3}\"], " +
+            string message = string.Format(
+                "Reference \"{0}\" [project \"{1}\", package \"{2}\", name \"{3}\"], " +
                 "expected result \"{4}\", actual result \"{5}\", expected missing attr \"{6}\", actual missing attr \"{7}\".",
                 itemSpec, projectGuid, package, name, expectedResult, result,
                 expectedMissingAttribute, missingAttr);
@@ -109,7 +110,8 @@ namespace Microsoft.Build.UnitTests
             rvpo.CacheProjectElementsFromXml(xmlString);
             bool result = rvpo.ResolveProject(reference, out resolvedPath);
 
-            string message = string.Format("Reference \"{0}\" [project \"{1}\", package \"{2}\", name \"{3}\"] Pregen Xml string : \"{4}\"" +
+            string message = string.Format(
+                "Reference \"{0}\" [project \"{1}\", package \"{2}\", name \"{3}\"] Pregen Xml string : \"{4}\"" +
                 "expected result \"{5}\", actual result \"{6}\", expected path \"{7}\", actual path \"{8}\".",
                 itemSpec, projectGuid, package, name, xmlString, expectedResult, result, expectedPath, resolvedPath);
 

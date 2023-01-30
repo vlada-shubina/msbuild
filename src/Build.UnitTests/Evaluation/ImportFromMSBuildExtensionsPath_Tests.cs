@@ -566,7 +566,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
                 extnDir1 = GetNewExtensionsPathAndCreateFile("extensions1", Path.Combine("foo", "extn.proj"),
                     extnTargetsFileContentTemplate);
 
-                mainProjectPath = ObjectModelHelpers.CreateFileInTempProjectDirectory("main.proj",
+                mainProjectPath = ObjectModelHelpers.CreateFileInTempProjectDirectory(
+                    "main.proj",
                     GetMainTargetFileContent());
 
                 ToolsetConfigurationReaderTestHelper.WriteConfigFile(configFileContents);
@@ -627,7 +628,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
                 extnDir1 = GetNewExtensionsPathAndCreateFile("extensions1", Path.Combine("foo", "extn.proj"),
                     extnTargetsFileContentTemplate);
 
-                mainProjectPath = ObjectModelHelpers.CreateFileInTempProjectDirectory("main.proj",
+                mainProjectPath = ObjectModelHelpers.CreateFileInTempProjectDirectory(
+                    "main.proj",
                     GetMainTargetFileContent());
 
                 ToolsetConfigurationReaderTestHelper.WriteConfigFile(configFileContents);

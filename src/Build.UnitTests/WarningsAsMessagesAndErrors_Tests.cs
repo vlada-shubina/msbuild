@@ -278,11 +278,12 @@ namespace Microsoft.Build.Engine.UnitTests
         [InlineData("MSB1235", "MSB1234", "MSB1234", "MSB1234", false)] // Log MSB1234, treat as error via MSBuildWarningsAsErrors
         [InlineData("MSB1235", "", "MSB1234", "MSB1234", true)] // Log MSB1234, expect MSB1234 as error via MSBuildTreatWarningsAsErrors
         [InlineData("MSB1234", "MSB1234", "MSB1234", "MSB4181", true)]// Log MSB1234, MSBuildWarningsAsMessages takes priority
-        public void WarningsAsErrorsAndMessages_Tests(string WarningsAsMessages,
-                                                      string WarningsAsErrors,
-                                                      string WarningToLog,
-                                                      string LogShouldContain,
-                                                      bool allWarningsAreErrors = false)
+        public void WarningsAsErrorsAndMessages_Tests(
+            string WarningsAsMessages,
+            string WarningsAsErrors,
+            string WarningToLog,
+            string LogShouldContain,
+            bool allWarningsAreErrors = false)
         {
             using (TestEnvironment env = TestEnvironment.Create(_output))
             {

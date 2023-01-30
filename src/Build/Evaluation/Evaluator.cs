@@ -1154,7 +1154,8 @@ namespace Microsoft.Build.Evaluation
             }
 
 #if RUNTIME_TYPE_NETCORE
-            SetBuiltInProperty(ReservedPropertyNames.msbuildRuntimeType,
+            SetBuiltInProperty(
+                ReservedPropertyNames.msbuildRuntimeType,
                 Traits.Instance.ForceEvaluateAsFullFramework ? "Full" : "Core");
 #elif MONO
             SetBuiltInProperty(ReservedPropertyNames.msbuildRuntimeType,
@@ -2558,7 +2559,8 @@ namespace Microsoft.Build.Evaluation
 #if FEATURE_SYSTEM_CONFIGURATION
             string configLocation = AppDomain.CurrentDomain.SetupInformation.ConfigurationFile;
 
-            ProjectErrorUtilities.ThrowInvalidProject(importElement.ProjectLocation,
+            ProjectErrorUtilities.ThrowInvalidProject(
+                importElement.ProjectLocation,
                 "ImportedProjectFromExtensionsPathNotFoundFromAppConfig",
                 importExpandedWithDefaultPath,
                 relativeProjectPath,

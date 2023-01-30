@@ -264,7 +264,8 @@ namespace Microsoft.Build.Execution
         /// <summary>
         /// <code>true</code> to wait for a debugger to be attached, otherwise <code>false</code>.
         /// </summary>
-        [SuppressMessage("ApiDesign",
+        [SuppressMessage(
+            "ApiDesign",
             "RS0016:Add public types and members to the declared API",
             Justification = "Only available in the Debug configuration.")]
         public static bool WaitForDebugger { get; set; }
@@ -1959,7 +1960,8 @@ namespace Microsoft.Build.Execution
                         var innerBuildSubmission = PendBuildRequest(request);
                         buildingNodes.Add(innerBuildSubmission, node);
                         blockedNodes.Remove(node);
-                        innerBuildSubmission.ExecuteAsync(finishedBuildSubmission =>
+                        innerBuildSubmission.ExecuteAsync(
+                            finishedBuildSubmission =>
                         {
                             lock (graphBuildStateLock)
                             {
@@ -2286,7 +2288,8 @@ namespace Microsoft.Build.Execution
             {
                 // Resource request requires a response and may be blocking. Our continuation is effectively a callback
                 // to be called once at least one core becomes available.
-                _scheduler.RequestCores(request.GlobalRequestId, request.NumCores, request.IsBlocking).ContinueWith((Task<int> task) =>
+                _scheduler.RequestCores(request.GlobalRequestId, request.NumCores, request.IsBlocking).ContinueWith(
+                    (Task<int> task) =>
                 {
                     var response = new ResourceResponse(request.GlobalRequestId, task.Result);
                     _nodeManager.SendData(node, response);
@@ -2812,7 +2815,8 @@ namespace Microsoft.Build.Execution
                                         ? LoggerMode.Synchronous
                                         : LoggerMode.Asynchronous;
 
-            ILoggingService loggingService = LoggingService.CreateLoggingService(loggerMode,
+            ILoggingService loggingService = LoggingService.CreateLoggingService(
+                loggerMode,
                 1 /*This logging service is used for the build manager and the inproc node, therefore it should have the first nodeId*/);
 
             ((IBuildComponent)loggingService).InitializeComponent(this);

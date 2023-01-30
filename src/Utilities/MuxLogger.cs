@@ -860,9 +860,10 @@ namespace Microsoft.Build.Utilities
 
                         // We've never seen a project started event, so raise the build started event and save this project started event.
                         BuildStartedEventArgs startedEvent =
-                            new BuildStartedEventArgs(_buildStartedEvent.Message,
-                            _buildStartedEvent.HelpKeyword,
-                            Traits.LogAllEnvironmentVariables ? _buildStartedEvent.BuildEnvironment : _buildStartedEvent.BuildEnvironment?.Where(kvp => EnvironmentUtilities.IsWellKnownEnvironmentDerivedProperty(kvp.Key)).ToDictionary(kvp => kvp.Key, kvp => kvp.Value));
+                            new BuildStartedEventArgs(
+                                _buildStartedEvent.Message,
+                                _buildStartedEvent.HelpKeyword,
+                                Traits.LogAllEnvironmentVariables ? _buildStartedEvent.BuildEnvironment : _buildStartedEvent.BuildEnvironment?.Where(kvp => EnvironmentUtilities.IsWellKnownEnvironmentDerivedProperty(kvp.Key)).ToDictionary(kvp => kvp.Key, kvp => kvp.Value));
                         RaiseBuildStartedEvent(sender, startedEvent);
                     }
 

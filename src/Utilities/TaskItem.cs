@@ -239,7 +239,8 @@ namespace Microsoft.Build.Utilities
         public void RemoveMetadata(string metadataName)
         {
             ErrorUtilities.VerifyThrowArgumentNull(metadataName, nameof(metadataName));
-            ErrorUtilities.VerifyThrowArgument(!FileUtilities.ItemSpecModifiers.IsItemSpecModifier(metadataName),
+            ErrorUtilities.VerifyThrowArgument(
+                !FileUtilities.ItemSpecModifiers.IsItemSpecModifier(metadataName),
                 "Shared.CannotChangeItemSpecModifiers", metadataName);
 
             _metadata?.Remove(metadataName);
@@ -261,7 +262,8 @@ namespace Microsoft.Build.Utilities
 
             // Non-derivable metadata can only be set at construction time.
             // That's why this is IsItemSpecModifier and not IsDerivableItemSpecModifier.
-            ErrorUtilities.VerifyThrowArgument(!FileUtilities.ItemSpecModifiers.IsDerivableItemSpecModifier(metadataName),
+            ErrorUtilities.VerifyThrowArgument(
+                !FileUtilities.ItemSpecModifiers.IsDerivableItemSpecModifier(metadataName),
                 "Shared.CannotChangeItemSpecModifiers", metadataName);
 
             _metadata ??= new CopyOnWriteDictionary<string>(MSBuildNameIgnoreCaseComparer.Default);

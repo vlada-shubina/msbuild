@@ -326,9 +326,10 @@ namespace Microsoft.Build.Construction
                     // MSBuild supports project files with an empty (supported in Visual Studio 2017) or the default MSBuild
                     // namespace.
                     bool emptyNamespace = string.IsNullOrEmpty(mainProjectElement.NamespaceURI);
-                    bool defaultNamespace = String.Equals(mainProjectElement.NamespaceURI,
-                                                XMakeAttributes.defaultXmlNamespace,
-                                                StringComparison.OrdinalIgnoreCase);
+                    bool defaultNamespace = String.Equals(
+                        mainProjectElement.NamespaceURI,
+                        XMakeAttributes.defaultXmlNamespace,
+                        StringComparison.OrdinalIgnoreCase);
                     bool projectElementInvalid = ElementContainsInvalidNamespaceDefitions(mainProjectElement);
 
                     // If the MSBuild namespace is declared, it is very likely an MSBuild project that should be built.

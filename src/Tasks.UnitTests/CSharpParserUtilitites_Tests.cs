@@ -284,7 +284,8 @@ namespace Microsoft.Build.UnitTests
         {
             // This works by coincidence since preprocessor directives are currently ignored.
             // Note: If the condition were #if (true), the result would still be n1.c
-            AssertParse(@"
+            AssertParse(
+                @"
 #if (false)
 namespace n1
 #else
@@ -300,13 +301,15 @@ namespace n2
         /// the last namespace would win. This test explicitly tests that.
         /// </summary>
         [Theory]
-        [InlineData(@"
+        [InlineData(
+            @"
 namespace n1
     namespace n2
     namespace n3
     namespace n4
     { class c { } }", "n4.c")]
-        [InlineData(@"
+        [InlineData(
+            @"
 namespace n1;
 namespace n2;
 namespace n3;
@@ -322,7 +325,8 @@ class c {} ", "n1.n2.n3.n4.c")]
         /// Note: Preprocessor conditions are not implemented
         /// </summary>
         [Theory]
-        [InlineData(@"
+        [InlineData(
+            @"
 #if (false)
 namespace n1
 #else
@@ -330,7 +334,8 @@ using a=b;
 namespace n2
 #endif    
 { class c {} }", "n2.c")]
-        [InlineData(@"
+        [InlineData(
+            @"
 #if (false)
 namespace n1;
 #else

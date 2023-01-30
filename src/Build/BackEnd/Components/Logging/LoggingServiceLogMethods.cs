@@ -440,7 +440,8 @@ namespace Microsoft.Build.BackEnd.Logging
         public void LogProjectEvaluationStarted(BuildEventContext projectEvaluationEventContext, string projectFile)
         {
             ProjectEvaluationStartedEventArgs evaluationEvent =
-                new ProjectEvaluationStartedEventArgs(ResourceUtilities.GetResourceString("EvaluationStarted"),
+                new ProjectEvaluationStartedEventArgs(
+                    ResourceUtilities.GetResourceString("EvaluationStarted"),
                     projectFile)
                 {
                     BuildEventContext = projectEvaluationEventContext,

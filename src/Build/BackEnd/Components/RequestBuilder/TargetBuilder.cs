@@ -148,7 +148,8 @@ namespace Microsoft.Build.BackEnd
                 var targetExists = _projectInstance.Targets.TryGetValue(targetName, out ProjectTargetInstance targetInstance);
                 if (!targetExists && entry.Request.BuildRequestDataFlags.HasFlag(BuildRequestDataFlags.SkipNonexistentTargets))
                 {
-                    _projectLoggingContext.LogComment(Framework.MessageImportance.Low,
+                    _projectLoggingContext.LogComment(
+                        Framework.MessageImportance.Low,
                         "TargetSkippedWhenSkipNonexistentTargets", targetName);
                 }
                 else

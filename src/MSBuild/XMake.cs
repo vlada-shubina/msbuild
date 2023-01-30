@@ -1860,10 +1860,12 @@ namespace Microsoft.Build.CommandLine
             // check if there is any quoting in the name portion of the switch
             string unquotedSwitchIndicatorAndName = QuotingUtilities.Unquote(commandLineArg.Substring(0, quotedSwitchParameterIndicator), out var doubleQuotesRemovedFromSwitchIndicatorAndName);
 
-            ErrorUtilities.VerifyThrow(switchName == unquotedSwitchIndicatorAndName.Substring(switchIndicatorsLength),
+            ErrorUtilities.VerifyThrow(
+                switchName == unquotedSwitchIndicatorAndName.Substring(switchIndicatorsLength),
                 "The switch name extracted from either the partially or completely unquoted arg should be the same.");
 
-            ErrorUtilities.VerifyThrow(doubleQuotesRemovedFromArg >= doubleQuotesRemovedFromSwitchIndicatorAndName,
+            ErrorUtilities.VerifyThrow(
+                doubleQuotesRemovedFromArg >= doubleQuotesRemovedFromSwitchIndicatorAndName,
                 "The name portion of the switch cannot contain more quoting than the arg itself.");
 
             string switchParameters;
@@ -2160,7 +2162,8 @@ namespace Microsoft.Build.CommandLine
                 // if the "/noautoresponse" switch was set in the auto-response file, flag an error
                 if (switchesFromAutoResponseFile[CommandLineSwitches.ParameterlessSwitch.NoAutoResponse])
                 {
-                    switchesFromAutoResponseFile.SetSwitchError("CannotAutoDisableAutoResponseFile",
+                    switchesFromAutoResponseFile.SetSwitchError(
+                        "CannotAutoDisableAutoResponseFile",
                         switchesFromAutoResponseFile.GetParameterlessSwitchCommandLineArg(CommandLineSwitches.ParameterlessSwitch.NoAutoResponse), commandLine);
                 }
 
@@ -2460,9 +2463,10 @@ namespace Microsoft.Build.CommandLine
                     if (commandLineSwitches.IsParameterizedSwitchSet(CommandLineSwitches.ParameterizedSwitch.WarningsNotAsErrors) &&
                         !WarningsAsErrorsSwitchIsEmpty(commandLineSwitches)!)
                     {
-                        commandLineSwitches.SetSwitchError("NotWarnAsErrorWithoutWarnAsError",
-                        commandLineSwitches.GetParameterizedSwitchCommandLineArg(CommandLineSwitches.ParameterizedSwitch.WarningsNotAsErrors),
-                        commandLine);
+                        commandLineSwitches.SetSwitchError(
+                            "NotWarnAsErrorWithoutWarnAsError",
+                            commandLineSwitches.GetParameterizedSwitchCommandLineArg(CommandLineSwitches.ParameterizedSwitch.WarningsNotAsErrors),
+                            commandLine);
                         commandLineSwitches.ThrowErrors();
                     }
                 }
@@ -3162,11 +3166,13 @@ namespace Microsoft.Build.CommandLine
                 // split each <prop>=<value> string into 2 pieces, breaking on the first = that is found
                 string[] parameterSections = parameter.Split(s_propertyValueSeparator, 2);
 
-                Debug.Assert((parameterSections.Length >= 1) && (parameterSections.Length <= 2),
+                Debug.Assert(
+                    (parameterSections.Length >= 1) && (parameterSections.Length <= 2),
                     "String.Split() will return at least one string, and no more than two.");
 
                 // check that the property name is not blank, and the property has a value
-                CommandLineSwitchException.VerifyThrow((parameterSections[0].Length > 0) && (parameterSections.Length == 2),
+                CommandLineSwitchException.VerifyThrow(
+                    (parameterSections[0].Length > 0) && (parameterSections.Length == 2),
                     "InvalidPropertyError", parameter);
 
                 // Validation of whether the property has a reserved name will occur when
@@ -3493,7 +3499,8 @@ namespace Microsoft.Build.CommandLine
                     // If the string is empty then send it through as the distributed file logger WILL deal with EMPTY logfile paths
                     if (!string.IsNullOrEmpty(logFileName) && !Path.IsPathRooted(logFileName))
                     {
-                        fileParameters = fileParameters.Replace(logFileParameter,
+                        fileParameters = fileParameters.Replace(
+                            logFileParameter,
                             $"logFile={Path.Combine(Directory.GetCurrentDirectory(), logFileName)}");
                     }
                 }
@@ -3651,7 +3658,8 @@ namespace Microsoft.Build.CommandLine
                 // split each <central logger>|<node logger> string into two pieces, breaking on the first | that is found
                 var loggerSpec = QuotingUtilities.SplitUnquoted(parameter, 2, true /* keep empty splits */, false /* keep quotes */, out _, '*');
 
-                ErrorUtilities.VerifyThrow((loggerSpec.Count >= 1) && (loggerSpec.Count <= 2),
+                ErrorUtilities.VerifyThrow(
+                    (loggerSpec.Count >= 1) && (loggerSpec.Count <= 2),
                     "SplitUnquoted() must return at least one string, and no more than two.");
 
                 string unquotedParameter = QuotingUtilities.Unquote(loggerSpec[0]);
@@ -3697,11 +3705,13 @@ namespace Microsoft.Build.CommandLine
             // split each <logger type>;<logger parameters> string into two pieces, breaking on the first ; that is found
             var loggerSpec = QuotingUtilities.SplitUnquoted(parameter, 2, true /* keep empty splits */, false /* keep quotes */, out _, ';');
 
-            ErrorUtilities.VerifyThrow((loggerSpec.Count >= 1) && (loggerSpec.Count <= 2),
+            ErrorUtilities.VerifyThrow(
+                (loggerSpec.Count >= 1) && (loggerSpec.Count <= 2),
                 "SplitUnquoted() must return at least one string, and no more than two.");
 
             // check that the logger is specified
-            CommandLineSwitchException.VerifyThrow(loggerSpec[0].Length > 0,
+            CommandLineSwitchException.VerifyThrow(
+                loggerSpec[0].Length > 0,
                 "InvalidLoggerError", unquotedParameter);
 
             // extract logger parameters if present
@@ -3738,7 +3748,8 @@ namespace Microsoft.Build.CommandLine
                 }
             }
 
-            CommandLineSwitchException.VerifyThrow(loggerAssemblySpec.Length > 0,
+            CommandLineSwitchException.VerifyThrow(
+                loggerAssemblySpec.Length > 0,
                 "InvalidLoggerError", unquotedParameter);
 
             string loggerAssemblyName = null;

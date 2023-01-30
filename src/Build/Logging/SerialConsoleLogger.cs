@@ -241,24 +241,26 @@ namespace Microsoft.Build.BackEnd.Logging
                     this.VerifyStack(contextStack.Peek().type == FrameType.Target, "Bad stack -- Top is target {0}", contextStack.Peek().ID);
                 }
 
-                contextStack.Push(new Frame(FrameType.Project,
-                                            false, // message not yet displayed
-                                            this.currentIndentLevel,
-                                            e.ProjectFile,
-                                            e.TargetNames,
-                                            null,
-                                            GetCurrentlyBuildingProjectFile()));
+                contextStack.Push(new Frame(
+                    FrameType.Project,
+                    false, // message not yet displayed
+                    this.currentIndentLevel,
+                    e.ProjectFile,
+                    e.TargetNames,
+                    null,
+                    GetCurrentlyBuildingProjectFile()));
                 WriteProjectStarted();
             }
             else
             {
-                contextStack.Push(new Frame(FrameType.Project,
-                                            false, // message not yet displayed
-                                            this.currentIndentLevel,
-                                            e.ProjectFile,
-                                            e.TargetNames,
-                                            null,
-                                            GetCurrentlyBuildingProjectFile()));
+                contextStack.Push(new Frame(
+                    FrameType.Project,
+                    false, // message not yet displayed
+                    this.currentIndentLevel,
+                    e.ProjectFile,
+                    e.TargetNames,
+                    null,
+                    GetCurrentlyBuildingProjectFile()));
             }
 
             if (this.showPerfSummary)
@@ -330,13 +332,14 @@ namespace Microsoft.Build.BackEnd.Logging
         /// <param name="e">event arguments</param>
         public override void TargetStartedHandler(object sender, TargetStartedEventArgs e)
         {
-            contextStack.Push(new Frame(FrameType.Target,
-                                        false,
-                                        this.currentIndentLevel,
-                                        e.TargetName,
-                                        null,
-                                        e.TargetFile,
-                                        GetCurrentlyBuildingProjectFile()));
+            contextStack.Push(new Frame(
+                FrameType.Target,
+                false,
+                this.currentIndentLevel,
+                e.TargetName,
+                null,
+                e.TargetFile,
+                GetCurrentlyBuildingProjectFile()));
 
             // if verbosity is detailed or diagnostic
             if (IsVerbosityAtLeast(LoggerVerbosity.Detailed))
@@ -675,7 +678,8 @@ namespace Microsoft.Build.BackEnd.Logging
             }
             else
             {
-                WriteLinePrettyFromResource(this.IsVerbosityAtLeast(LoggerVerbosity.Normal) ? f.indentLevel : 0,
+                WriteLinePrettyFromResource(
+                    this.IsVerbosityAtLeast(LoggerVerbosity.Normal) ? f.indentLevel : 0,
                     "TargetStartedPrefix", f.ID);
             }
 
@@ -748,7 +752,8 @@ namespace Microsoft.Build.BackEnd.Logging
                         // we're at a higher verbosity, we can assume that all
                         // targets have already be printed.  If we're at lower
                         // verbosity we don't need to print at all.
-                        ErrorUtilities.VerifyThrow(this.Verbosity < LoggerVerbosity.Detailed,
+                        ErrorUtilities.VerifyThrow(
+                            this.Verbosity < LoggerVerbosity.Detailed,
                             "This target should have already been printed at a higher verbosity.");
 
                         if (IsVerbosityAtLeast(LoggerVerbosity.Normal))

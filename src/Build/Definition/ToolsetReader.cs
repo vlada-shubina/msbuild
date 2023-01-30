@@ -87,7 +87,8 @@ namespace Microsoft.Build.Evaluation
         /// </summary>
         internal static string ReadAllToolsets(Dictionary<string, Toolset> toolsets, PropertyDictionary<ProjectPropertyInstance> environmentProperties, PropertyDictionary<ProjectPropertyInstance> globalProperties, ToolsetDefinitionLocations locations)
         {
-            return ReadAllToolsets(toolsets,
+            return ReadAllToolsets(
+                toolsets,
 #if FEATURE_WIN32_REGISTRY
                 null,
 #endif

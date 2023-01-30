@@ -111,7 +111,8 @@ namespace Microsoft.Build.Shared.FileSystem
         /// <summary>
         /// Represents the result of attempting to enumerate a directory.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Performance",
             "CA1815:OverrideEqualsAndOperatorEqualsOnValueTypes")]
         public struct EnumerateDirectoryResult
         {

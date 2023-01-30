@@ -104,7 +104,8 @@ namespace Microsoft.Build.Tasks
 
         public override void Translate(ITranslator translator)
         {
-            translator.TranslateDictionary(ref resXFiles,
+            translator.TranslateDictionary(
+                ref resXFiles,
                 (ITranslator translator, ref string s) => translator.Translate(ref s),
                 (ITranslator translator, ref ResXFile resx) =>
                 {
@@ -113,7 +114,8 @@ namespace Microsoft.Build.Tasks
                     resx = temp;
                 },
                 count => new Dictionary<string, ResXFile>(count));
-            translator.TranslateDictionary(ref portableLibraries,
+            translator.TranslateDictionary(
+                ref portableLibraries,
                 (ITranslator translator, ref string s) => translator.Translate(ref s),
                 (ITranslator translator, ref PortableLibraryFile portableLibrary) =>
                 {

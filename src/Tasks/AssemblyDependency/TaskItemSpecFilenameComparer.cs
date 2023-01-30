@@ -67,7 +67,8 @@ namespace Microsoft.Build.Tasks
                 yFilenameStart = 0;
             }
 
-            int fileComparison = string.Compare(xItemSpec,
+            int fileComparison = string.Compare(
+                xItemSpec,
                 xFilenameStart,
                 yItemSpec,
                 yFilenameStart,

@@ -39,7 +39,8 @@ namespace Microsoft.Build.Evaluation
         {
             yield return new ToolsetPropertyDefinition(MSBuildConstants.ToolsPath, BuildEnvironmentHelper.Instance.CurrentMSBuildToolsDirectory, _sourceLocation);
             yield return new ToolsetPropertyDefinition(MSBuildConstants.SdksPath, BuildEnvironmentHelper.Instance.MSBuildSDKsPath, _sourceLocation);
-            yield return new ToolsetPropertyDefinition("RoslynTargetsPath",
+            yield return new ToolsetPropertyDefinition(
+                "RoslynTargetsPath",
                 System.IO.Path.Combine(BuildEnvironmentHelper.Instance.CurrentMSBuildToolsDirectory, "Roslyn"),
                 _sourceLocation);
         }

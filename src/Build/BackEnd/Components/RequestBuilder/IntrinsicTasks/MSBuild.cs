@@ -68,7 +68,8 @@ namespace Microsoft.Build.BackEnd
 
         public IBuildEngine3 BuildEngine3 => (IBuildEngine3)BuildEngine;
 
-        public TaskLoggingHelper Log => _logHelper ?? (_logHelper = new TaskLoggingHelperExtension(this,
+        public TaskLoggingHelper Log => _logHelper ?? (_logHelper = new TaskLoggingHelperExtension(
+            this,
             AssemblyResources.PrimaryResources, AssemblyResources.SharedResources, "MSBuild."));
 
         /// <inheritdoc />

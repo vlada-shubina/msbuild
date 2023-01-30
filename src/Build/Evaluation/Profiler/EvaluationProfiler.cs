@@ -42,7 +42,8 @@ namespace Microsoft.Build.Evaluation
         public IDisposable TrackPass(EvaluationPass evaluationPass, string passDescription = null)
         {
             return _shouldTrackElements
-                ? new EvaluationFrame(this,
+                ? new EvaluationFrame(
+                    this,
                     CurrentLocation.WithEvaluationPass(evaluationPass, passDescription))
                 : null;
         }
@@ -59,7 +60,8 @@ namespace Microsoft.Build.Evaluation
         public IDisposable TrackGlob(string rootDirectory, string glob, ISet<string> excludePatterns)
         {
             return _shouldTrackElements
-                ? new EvaluationFrame(this,
+                ? new EvaluationFrame(
+                    this,
                     CurrentLocation.WithGlob(
                         $"root: '${rootDirectory}', pattern: '${glob}', excludes: '${string.Join(";", excludePatterns)}'"))
                 : null;

@@ -944,8 +944,9 @@ namespace Microsoft.Build.UnitTests.Preprocessor
                 var itemsToAdd = new Dictionary<string, SdkResultItem>(StringComparer.OrdinalIgnoreCase)
                 {
                     {
-                        "ItemNameFromSdkResolver", new SdkResultItem( "ItemValueFromSdkResolver",
-                        new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+                        "ItemNameFromSdkResolver", new SdkResultItem( 
+                            "ItemValueFromSdkResolver",
+                            new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                         {
                             { "MetadataName", "MetadataValue" }
                         })

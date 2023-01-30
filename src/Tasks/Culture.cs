@@ -37,9 +37,10 @@ namespace Microsoft.Build.Tasks
             info.culture = null;
             string parentName = dependentUponFilename ?? String.Empty;
 
-            if (treatAsCultureNeutral || string.Equals(Path.GetFileNameWithoutExtension(parentName),
-                                   Path.GetFileNameWithoutExtension(name),
-                                   StringComparison.OrdinalIgnoreCase))
+            if (treatAsCultureNeutral || string.Equals(
+                Path.GetFileNameWithoutExtension(parentName),
+                Path.GetFileNameWithoutExtension(name),
+                StringComparison.OrdinalIgnoreCase))
             {
                 // Dependent but we treat it is as not localized because they have same base filename
                 // Or we want to treat this as a 'culture-neutral' file and retain the culture in the name. https://github.com/dotnet/msbuild/pull/5824

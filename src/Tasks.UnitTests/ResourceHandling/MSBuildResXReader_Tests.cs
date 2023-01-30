@@ -164,9 +164,10 @@ $@"  <assembly alias=""System.Windows.Forms"" name=""System.Windows.Forms, Versi
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 #endif
 
-                File.WriteAllText(linkedTextFile.Path,
-                                  JapaneseString,
-                                  Encoding.GetEncoding("shift_jis"));
+                File.WriteAllText(
+                    linkedTextFile.Path,
+                    JapaneseString,
+                    Encoding.GetEncoding("shift_jis"));
 
                 var resxWithLinkedString = MSBuildResXReader.GetResourcesFromString(
                     ResXHelper.SurroundWithBoilerplate(
@@ -293,8 +294,9 @@ $@"  <data name='Image1' type='System.Resources.ResXFileRef, System.Windows.Form
 
             var linkedTextFile = resourceHandlingFolder.CreateFile("FileToBeIncluded.txt");
 
-            File.WriteAllText(linkedTextFile.Path,
-                  "Test data");
+            File.WriteAllText(
+                linkedTextFile.Path,
+                "Test data");
 
             var resources = MSBuildResXReader.GetResourcesFromString(
                 ResXHelper.SurroundWithBoilerplate(

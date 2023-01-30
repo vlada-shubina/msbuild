@@ -85,7 +85,8 @@ namespace Microsoft.Build.UnitTests
         [Fact]
         public void TestMergeRuntimeValuesAnyAcceptsCurrent()
         {
-            XMakeAttributes.TryMergeRuntimeValues(XMakeAttributes.MSBuildRuntimeValues.any,
+            XMakeAttributes.TryMergeRuntimeValues(
+                XMakeAttributes.MSBuildRuntimeValues.any,
                 XMakeAttributes.MSBuildRuntimeValues.currentRuntime,
                 out string mergedRuntime)
                 .ShouldBeTrue();
@@ -94,7 +95,8 @@ namespace Microsoft.Build.UnitTests
         }
 
         [Fact]
-        [SkipOnTargetFramework(TargetFrameworkMonikers.Netcoreapp,
+        [SkipOnTargetFramework(
+            TargetFrameworkMonikers.Netcoreapp,
             "Tests whether 'current' merges with 'clr4' which is true only on Framework")]
         public void TestMergeRuntimeValuesCurrentToClr4()
         {
@@ -112,7 +114,8 @@ namespace Microsoft.Build.UnitTests
         }
 
         [Fact]
-        [SkipOnTargetFramework(TargetFrameworkMonikers.NetFramework,
+        [SkipOnTargetFramework(
+            TargetFrameworkMonikers.NetFramework,
             "Tests whether 'current' merges with 'net' which is true only on core")]
         public void TestMergeRuntimeValuesCurrentToCore()
         {

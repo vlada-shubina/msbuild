@@ -138,7 +138,8 @@ namespace Microsoft.Build.BackEnd
             _uniqueTargetInputs.Clear();
             _uniqueTargetOutputs.Clear();
 
-            ProjectErrorUtilities.VerifyThrowInvalidProject((TargetOutputSpecification.Length > 0) || (TargetInputSpecification.Length == 0),
+            ProjectErrorUtilities.VerifyThrowInvalidProject(
+                (TargetOutputSpecification.Length > 0) || (TargetInputSpecification.Length == 0),
                 _targetToAnalyze.InputsLocation, "TargetInputsSpecifiedWithoutOutputs", TargetToAnalyze.Name);
 
             DependencyAnalysisResult result = DependencyAnalysisResult.SkipUpToDate;
@@ -153,7 +154,8 @@ namespace Microsoft.Build.BackEnd
             }
             else
             {
-                ParseTargetInputOutputSpecifications(bucket,
+                ParseTargetInputOutputSpecifications(
+                    bucket,
                     out ItemVectorPartitionCollection itemVectorsInTargetInputs,
                     out ItemVectorPartitionCollection itemVectorTransformsInTargetInputs,
                     out Dictionary<string, string> discreteItemsInTargetInputs,
@@ -203,9 +205,10 @@ namespace Microsoft.Build.BackEnd
                         ErrorUtilities.VerifyThrow(itemVectorsReferencedInBothTargetInputsAndOutputs.Count > 0, "The target must have inputs.");
                         ErrorUtilities.VerifyThrow(GetItemSpecsFromItemVectors(itemVectorsInTargetInputs).Count > 0, "The target must have inputs.");
 
-                        result = PerformDependencyAnalysisIfDiscreteInputs(itemVectorsInTargetInputs,
-                                    itemVectorTransformsInTargetInputs, discreteItemsInTargetInputs, itemVectorsReferencedOnlyInTargetInputs,
-                                    targetOutputItemSpecs);
+                        result = PerformDependencyAnalysisIfDiscreteInputs(
+                            itemVectorsInTargetInputs,
+                            itemVectorTransformsInTargetInputs, discreteItemsInTargetInputs, itemVectorsReferencedOnlyInTargetInputs,
+                            targetOutputItemSpecs);
 
                         if (result != DependencyAnalysisResult.FullBuild)
                         {
@@ -586,7 +589,8 @@ namespace Microsoft.Build.BackEnd
                 ItemVectorPartition outputItemVectors = itemVectorsInTargetOutputs[itemVectorType];
 
                 // NOTE: recall that transforms have been separated out already
-                ErrorUtilities.VerifyThrow(inputItemVectors.Count == 1,
+                ErrorUtilities.VerifyThrow(
+                    inputItemVectors.Count == 1,
                     "There should only be one item vector of a particular type in the target inputs that can be filtered.");
 
                 // NOTE: Because the input items which were transformed have already been pulled out, this loop
@@ -690,13 +694,15 @@ namespace Microsoft.Build.BackEnd
                 }
             }
 
-            ErrorUtilities.VerifyThrow(numberOfInputItemVectorsWithAllChangedItems <= itemVectorsReferencedInBothTargetInputsAndOutputs.Count,
+            ErrorUtilities.VerifyThrow(
+                numberOfInputItemVectorsWithAllChangedItems <= itemVectorsReferencedInBothTargetInputsAndOutputs.Count,
                 "The number of vectors containing all changed items cannot exceed the number of correlated vectors.");
 
             // if all correlated input items have changed
             if (numberOfInputItemVectorsWithAllChangedItems == itemVectorsReferencedInBothTargetInputsAndOutputs.Count)
             {
-                ErrorUtilities.VerifyThrow(result == DependencyAnalysisResult.IncrementalBuild,
+                ErrorUtilities.VerifyThrow(
+                    result == DependencyAnalysisResult.IncrementalBuild,
                     "If inputs have changed, this must be an incremental build.");
 
                 // then the incremental build is really a full build
@@ -829,7 +835,8 @@ namespace Microsoft.Build.BackEnd
                         ErrorUtilities.VerifyThrow(!itemVectorCollection[itemVectorType].ContainsKey(item), "ItemVectorPartition already contains a vector for items with the expression '{0}'", item);
                         itemVectorPartition[item] = itemVectorContents;
 
-                        ErrorUtilities.VerifyThrow((itemVectorTransforms == null) || (itemVectorCollection.Equals(itemVectorTransforms)) || (itemVectorPartition.Count == 1),
+                        ErrorUtilities.VerifyThrow(
+                            (itemVectorTransforms == null) || (itemVectorCollection.Equals(itemVectorTransforms)) || (itemVectorPartition.Count == 1),
                             "If transforms have been separated out, there should only be one item vector per partition.");
                     }
                 }
@@ -1166,7 +1173,8 @@ namespace Microsoft.Build.BackEnd
         /// </returns>
         private int CompareLastWriteTimes(string path1, string path2, out bool path1DoesNotExist, out bool path2DoesNotExist)
         {
-            ErrorUtilities.VerifyThrow(!string.IsNullOrEmpty(path1) && !string.IsNullOrEmpty(path2),
+            ErrorUtilities.VerifyThrow(
+                !string.IsNullOrEmpty(path1) && !string.IsNullOrEmpty(path2),
                 "Need to specify paths to compare.");
 
             path1 = Path.Combine(_project.Directory, path1);

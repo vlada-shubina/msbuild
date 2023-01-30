@@ -44,7 +44,8 @@ namespace Microsoft.Build.Shared
         // internal for unit testing only
         internal static readonly Lazy<Regex> itemVectorTransformPattern = new Lazy<Regex>(
             () =>
-                new Regex(itemVectorTransformSpecification,
+                new Regex(
+                    itemVectorTransformSpecification,
                     RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture | RegexOptions.Compiled));
 
         // description of an item vector transform, including the optional separator specification, but with no (named) capturing
@@ -60,7 +61,8 @@ namespace Microsoft.Build.Shared
         // internal for unit testing only
         internal static readonly Lazy<Regex> itemVectorTransformRawPattern = new Lazy<Regex>(
             () =>
-                new Regex(itemVectorTransformRawSpecification,
+                new Regex(
+                    itemVectorTransformRawSpecification,
                     RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture | RegexOptions.Compiled));
 
         /**************************************************************************************************************************
@@ -139,7 +141,8 @@ namespace Microsoft.Build.Shared
                 // NOTE: use the Regex with no (named) capturing groups, otherwise Regex.Split() will split on them
                 string[] surroundingTextPieces = itemVectorTransformRawPattern.Value.Split(text);
 
-                ErrorUtilities.VerifyThrow(itemVectorTransforms.Count == (surroundingTextPieces.Length - 1),
+                ErrorUtilities.VerifyThrow(
+                    itemVectorTransforms.Count == (surroundingTextPieces.Length - 1),
                     "We must have two pieces of surrounding text for every item vector transform found.");
 
                 // write each piece of text before a transform, followed by the transform
@@ -151,7 +154,8 @@ namespace Microsoft.Build.Shared
                     // break up the transform into its constituent pieces
                     Match itemVectorTransform = itemVectorTransformPattern.Value.Match(itemVectorTransforms[i].Value);
 
-                    ErrorUtilities.VerifyThrow(itemVectorTransform.Success,
+                    ErrorUtilities.VerifyThrow(
+                        itemVectorTransform.Success,
                         "Item vector transform must be matched by both the raw and decorated regular expressions.");
 
                     // write each piece of the transform normally, except for the arrow -- write that without escaping

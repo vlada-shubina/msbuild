@@ -21,7 +21,8 @@ namespace Microsoft.Build.Tasks
 
         protected RoslynCodeTaskFactoryCompilerBase()
         {
-            _executablePath = new Lazy<string>(() =>
+            _executablePath = new Lazy<string>(
+                () =>
             {
                 string pathToBuildTools = ToolLocationHelper.GetPathToBuildTools(ToolLocationHelper.CurrentToolsVersion, DotNetFrameworkArchitecture.Bitness32);
 

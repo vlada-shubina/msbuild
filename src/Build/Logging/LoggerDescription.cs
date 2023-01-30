@@ -36,12 +36,13 @@ namespace Microsoft.Build.Logging
             string loggerAssemblyName,
             string loggerAssemblyFile,
             string loggerSwitchParameters,
-            LoggerVerbosity verbosity) : this(loggerClassName,
-            loggerAssemblyName,
-            loggerAssemblyFile,
-            loggerSwitchParameters,
-            verbosity,
-            isOptional: false)
+            LoggerVerbosity verbosity) : this(
+                loggerClassName,
+                loggerAssemblyName,
+                loggerAssemblyFile,
+                loggerSwitchParameters,
+                verbosity,
+                isOptional: false)
         {
         }
 

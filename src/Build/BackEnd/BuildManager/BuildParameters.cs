@@ -412,7 +412,8 @@ namespace Microsoft.Build.Execution
         {
             get
             {
-                return new ReadOnlyConvertingDictionary<string, ProjectPropertyInstance, string>(_environmentProperties,
+                return new ReadOnlyConvertingDictionary<string, ProjectPropertyInstance, string>(
+                    _environmentProperties,
                     instance => ((IProperty)instance).EvaluatedValueEscaped);
             }
         }
@@ -447,7 +448,8 @@ namespace Microsoft.Build.Execution
         {
             get
             {
-                return new ReadOnlyConvertingDictionary<string, ProjectPropertyInstance, string>(_globalProperties,
+                return new ReadOnlyConvertingDictionary<string, ProjectPropertyInstance, string>(
+                    _globalProperties,
                     instance => ((IProperty)instance).EvaluatedValueEscaped);
             }
 
@@ -613,7 +615,8 @@ namespace Microsoft.Build.Execution
         /// <summary>
         /// Gets the maximum number of idle request builders to retain.
         /// </summary>
-        internal static int IdleRequestBuilderLimit => GetStaticIntVariableOrDefault("MSBUILDIDLEREQUESTBUILDERLIMIT",
+        internal static int IdleRequestBuilderLimit => GetStaticIntVariableOrDefault(
+            "MSBUILDIDLEREQUESTBUILDERLIMIT",
             ref s_idleRequestBuilderLimit, DefaultIdleRequestBuilderLimit);
 
         /// <summary>
@@ -644,7 +647,8 @@ namespace Microsoft.Build.Execution
         /// <summary>
         /// Indicates whether the build plan is enabled or not.
         /// </summary>
-        internal static bool EnableBuildPlan => GetStaticBoolVariableOrDefault("MSBUILDENABLEBUILDPLAN",
+        internal static bool EnableBuildPlan => GetStaticBoolVariableOrDefault(
+            "MSBUILDENABLEBUILDPLAN",
             ref s_enableBuildPlan, false);
 
         /// <summary>
@@ -652,7 +656,8 @@ namespace Microsoft.Build.Execution
         /// </summary>
         internal static bool WarnOnUninitializedProperty
         {
-            get => GetStaticBoolVariableOrDefault("MSBUILDWARNONUNINITIALIZEDPROPERTY",
+            get => GetStaticBoolVariableOrDefault(
+                "MSBUILDWARNONUNINITIALIZEDPROPERTY",
                 ref s_warnOnUninitializedProperty, false);
 
             set => s_warnOnUninitializedProperty = value;
@@ -667,13 +672,15 @@ namespace Microsoft.Build.Execution
         /// <summary>
         /// Indicates whether we should dump debugging information about the expander
         /// </summary>
-        internal static bool DebugExpansion => GetStaticBoolVariableOrDefault("MSBUILDDEBUGEXPANSION",
+        internal static bool DebugExpansion => GetStaticBoolVariableOrDefault(
+            "MSBUILDDEBUGEXPANSION",
             ref s_debugExpansion, false);
 
         /// <summary>
         /// Indicates whether we should keep duplicate target outputs
         /// </summary>
-        internal static bool KeepDuplicateOutputs => GetStaticBoolVariableOrDefault("MSBUILDKEEPDUPLICATEOUTPUTS",
+        internal static bool KeepDuplicateOutputs => GetStaticBoolVariableOrDefault(
+            "MSBUILDKEEPDUPLICATEOUTPUTS",
             ref s_keepDuplicateOutputs, false);
 
         /// <summary>

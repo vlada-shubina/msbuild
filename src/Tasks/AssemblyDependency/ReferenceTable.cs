@@ -784,7 +784,8 @@ namespace Microsoft.Build.Tasks
                 return;
             }
 
-            string newFusionName = String.Format(CultureInfo.InvariantCulture,
+            string newFusionName = String.Format(
+                CultureInfo.InvariantCulture,
                 "{0}, Version={1}, Culture={2}, PublicKeyToken={3}",
                 name, version, culture, publicKeyToken);
 

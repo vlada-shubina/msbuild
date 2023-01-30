@@ -43,7 +43,8 @@ namespace Microsoft.Build.BackEnd.SdkResolution
             return resolvers;
         }
 
-        internal virtual IList<SdkResolver> LoadAllResolvers(LoggingContext loggingContext,
+        internal virtual IList<SdkResolver> LoadAllResolvers(
+            LoggingContext loggingContext,
             ElementLocation location)
         {
             var resolvers = !String.Equals(IncludeDefaultResolver, "false", StringComparison.OrdinalIgnoreCase) ?
@@ -66,7 +67,8 @@ namespace Microsoft.Build.BackEnd.SdkResolution
             return resolvers.OrderBy(t => t.Priority).ToList();
         }
 
-        internal virtual IList<SdkResolverManifest> GetResolversManifests(LoggingContext loggingContext,
+        internal virtual IList<SdkResolverManifest> GetResolversManifests(
+            LoggingContext loggingContext,
             ElementLocation location)
         {
             return FindPotentialSdkResolversManifests(

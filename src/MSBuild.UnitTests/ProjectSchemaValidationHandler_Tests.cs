@@ -239,7 +239,8 @@ namespace Microsoft.Build.UnitTests
                     </Project>
                 ");
 
-            string projectFilename = CreateTempFileOnDisk(@"
+            string projectFilename = CreateTempFileOnDisk(
+                @"
                     <Project xmlns=`msbuildnamespace`>
                         <Import Project=`{0}` />
                     </Project>

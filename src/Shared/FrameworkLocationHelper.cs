@@ -1629,13 +1629,14 @@ namespace Microsoft.Build.Shared
                 string dotNetFrameworkVersionFolderPrefix,
                 string dotNetFrameworkSdkRegistryInstallationFolderName,
                 bool hasMSBuild)
-                : base(version,
-                      dotNetFrameworkRegistryKey,
-                      dotNetFrameworkSetupRegistryInstalledName,
-                      dotNetFrameworkVersionFolderPrefix,
-                      null,
-                      dotNetFrameworkSdkRegistryInstallationFolderName,
-                      hasMSBuild)
+                : base(
+                    version,
+                    dotNetFrameworkRegistryKey,
+                    dotNetFrameworkSetupRegistryInstalledName,
+                    dotNetFrameworkVersionFolderPrefix,
+                    null,
+                    dotNetFrameworkSdkRegistryInstallationFolderName,
+                    hasMSBuild)
             {
             }
 
@@ -1697,13 +1698,14 @@ namespace Microsoft.Build.Shared
                 string dotNetFrameworkSdkRegistryToolsKey,
                 string dotNetFrameworkSdkRegistryInstallationFolderName,
                 bool hasMSBuild)
-                : base(version,
-                      dotNetFrameworkRegistryKey,
-                      dotNetFrameworkSetupRegistryInstalledName,
-                      dotNetFrameworkVersionFolderPrefix,
-                      dotNetFrameworkSdkRegistryToolsKey,
-                      dotNetFrameworkSdkRegistryInstallationFolderName,
-                      hasMSBuild)
+                : base(
+                    version,
+                    dotNetFrameworkRegistryKey,
+                    dotNetFrameworkSetupRegistryInstalledName,
+                    dotNetFrameworkVersionFolderPrefix,
+                    dotNetFrameworkSdkRegistryToolsKey,
+                    dotNetFrameworkSdkRegistryInstallationFolderName,
+                    hasMSBuild)
             {
             }
 

@@ -2448,7 +2448,8 @@ namespace Microsoft.Build.Utilities
 
             string registryRoot = NativeMethodsShared.IsWindows ? GetTargetPlatformMonikerRegistryRoots(registrySearchLocation) : string.Empty;
 
-            string cachedTargetPlatformsKey = string.Join("|",
+            string cachedTargetPlatformsKey = string.Join(
+                "|",
                 string.Join(";", sdkDiskRoots),
                 registryRoot);
 

@@ -76,7 +76,8 @@ namespace Microsoft.Build.Construction
         }
 
         /// <inheritdoc />
-        internal override void VerifyThrowInvalidOperationAcceptableLocation(ProjectElementContainer parent,
+        internal override void VerifyThrowInvalidOperationAcceptableLocation(
+            ProjectElementContainer parent,
             ProjectElement previousSibling, ProjectElement nextSibling)
         {
             ErrorUtilities.VerifyThrowInvalidOperation(parent is ProjectRootElement, "OM_CannotAcceptParent");

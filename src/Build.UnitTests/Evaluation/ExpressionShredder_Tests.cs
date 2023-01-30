@@ -411,7 +411,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
         [Fact]
         public void RealisticExample()
         {
-            VerifySplitSemiColonSeparatedList("@(_OutputPathItem->'%(FullPath)', ';');$(MSBuildAllProjects);\n                @(Compile);\n                @(ManifestResourceWithNoCulture);\n                $(ApplicationIcon);\n                $(AssemblyOriginatorKeyFile);\n                @(ManifestNonResxWithNoCultureOnDisk);\n                @(ReferencePath);\n                @(CompiledLicenseFile);\n                @(EmbeddedDocumentation);                \n                @(CustomAdditionalCompileInputs)",
+            VerifySplitSemiColonSeparatedList(
+                "@(_OutputPathItem->'%(FullPath)', ';');$(MSBuildAllProjects);\n                @(Compile);\n                @(ManifestResourceWithNoCulture);\n                $(ApplicationIcon);\n                $(AssemblyOriginatorKeyFile);\n                @(ManifestNonResxWithNoCultureOnDisk);\n                @(ReferencePath);\n                @(CompiledLicenseFile);\n                @(EmbeddedDocumentation);                \n                @(CustomAdditionalCompileInputs)",
                 "@(_OutputPathItem->'%(FullPath)', ';')", "$(MSBuildAllProjects)", "@(Compile)", "@(ManifestResourceWithNoCulture)", "$(ApplicationIcon)", "$(AssemblyOriginatorKeyFile)", "@(ManifestNonResxWithNoCultureOnDisk)", "@(ReferencePath)", "@(CompiledLicenseFile)", "@(EmbeddedDocumentation)", "@(CustomAdditionalCompileInputs)");
         }
 
@@ -1208,10 +1209,11 @@ namespace Microsoft.Build.UnitTests.Evaluation
         // regular expression used to match a list of item vectors that have no separator specification -- the item vectors
         // themselves may be optionally separated by semi-colons, or they might be all jammed together
         private static readonly Regex s_listOfItemVectorsWithoutSeparatorsPattern =
-            new Regex(@"^\s*(;\s*)*(" +
+            new Regex(
+                @"^\s*(;\s*)*(" +
                       itemVectorWithoutSeparatorSpecification +
                       @"\s*(;\s*)*)+$",
-                      RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture);
+                RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture);
 
         // the leading characters that indicate the start of an item metadata reference
         private const string itemMetadataPrefix = "%(";
@@ -1233,10 +1235,11 @@ namespace Microsoft.Build.UnitTests.Evaluation
         // PERF WARNING: this Regex is complex and tends to run slowly
         // regular expression used to match item metadata references outside of item vector expressions
         private static readonly Regex s_nonTransformItemMetadataPattern =
-            new Regex(@"((?<=" + itemVectorWithTransformLHS + @")" + itemMetadataSpecification + @"(?!" + itemVectorWithTransformRHS + @")) |
+            new Regex(
+                @"((?<=" + itemVectorWithTransformLHS + @")" + itemMetadataSpecification + @"(?!" + itemVectorWithTransformRHS + @")) |
                         ((?<!" + itemVectorWithTransformLHS + @")" + itemMetadataSpecification + @"(?=" + itemVectorWithTransformRHS + @")) |
                         ((?<!" + itemVectorWithTransformLHS + @")" + itemMetadataSpecification + @"(?!" + itemVectorWithTransformRHS + @"))",
-                        RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture);
+                RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture);
 
         /// <summary>
         /// Looks through a single parameter of the batchable object, and finds all references to item metadata

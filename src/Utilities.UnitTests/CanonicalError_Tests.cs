@@ -167,17 +167,20 @@ namespace Microsoft.Build.UnitTests
         [Fact]
         public void ValidateErrorMessageWithFileName()
         {
-            ValidateFileNameError("error CS2011: Error opening response file 'e:\foo\test.rsp' -- 'The device is not ready. '",
+            ValidateFileNameError(
+                "error CS2011: Error opening response file 'e:\foo\test.rsp' -- 'The device is not ready. '",
                 "", CanonicalError.Parts.Category.Error, "CS2011", "Error opening response file 'e:\foo\test.rsp' -- 'The device is not ready. '");
         }
 
         [Fact]
         public void ValidateErrorMessageWithFileName2()
         {
-            ValidateFileNameError(@"BUILDMSG: error: Path 'c:\binaries.x86chk\bin\i386\System.AddIn.Contract.dll' is not under client's root 'c:\vstamq'.",
+            ValidateFileNameError(
+                @"BUILDMSG: error: Path 'c:\binaries.x86chk\bin\i386\System.AddIn.Contract.dll' is not under client's root 'c:\vstamq'.",
                 "BUILDMSG", CanonicalError.Parts.Category.Error, "", @"Path 'c:\binaries.x86chk\bin\i386\System.AddIn.Contract.dll' is not under client's root 'c:\vstamq'.");
 
-            ValidateFileNameError(@"BUILDMSG: error : Path 'c:\binaries.x86chk\bin\i386\System.AddIn.Contract.dll' is not under client's root 'c:\vstamq'.",
+            ValidateFileNameError(
+                @"BUILDMSG: error : Path 'c:\binaries.x86chk\bin\i386\System.AddIn.Contract.dll' is not under client's root 'c:\vstamq'.",
                 "BUILDMSG", CanonicalError.Parts.Category.Error, "", @"Path 'c:\binaries.x86chk\bin\i386\System.AddIn.Contract.dll' is not under client's root 'c:\vstamq'.");
         }
 
@@ -193,109 +196,133 @@ namespace Microsoft.Build.UnitTests
         public void ValidateErrorMessageVariableNotUsed()
         {
             // (line)
-            ValidateFileNameMultiLineColumnError("Main.cs():Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs():Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
             // This one actually falls under the (line-line) category. I'm not going to tweak the regex for this incorrect input just so we can
             // pretend -3 == 0, and just leaving it here for completeness
-            ValidateFileNameMultiLineColumnError("Main.cs(-3):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(-3):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, 3, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
             // (line-line)
-            ValidateFileNameMultiLineColumnError("Main.cs(-):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(-):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(-2):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(-2):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, 2, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(1-):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(1-):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", 1, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
             // (line,col)
-            ValidateFileNameMultiLineColumnError("Main.cs(,):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(,2):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,2):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, 2, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(1,):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(1,):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", 1, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
             // Similarly to the previous odd case, this really falls under (line,col-col). Included for completeness, even if results are
             // not intuitive
-            ValidateFileNameMultiLineColumnError("Main.cs(,-2):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,-2):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, 2,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(-1,):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(-1,):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
             // (line,col-col)
-            ValidateFileNameMultiLineColumnError("Main.cs(,-):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,-):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(2,-):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(2,-):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", 2, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(,4-):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,4-):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, 4, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(,-6):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,-6):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, 6,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(-1,-):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(-1,-):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
             // (line,col,line,col)
-            ValidateFileNameMultiLineColumnError("Main.cs(,,,):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,,,):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(2,,,):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(2,,,):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", 2, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(,3,,):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,3,,):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, 3, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(,,4,):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,,4,):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, 4, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(,,,5):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,,,5):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, 5,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
             // negative numbers are not matched at all for this format and I don't think we should tweak regexes to accept invalid input
             // in that form
-            ValidateFileNameMultiLineColumnError("Main.cs(-2,,1,):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(-2,,1,):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(,-3,,2):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,-3,,2):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(3,,-4,):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(3,,-4,):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
 
-            ValidateFileNameMultiLineColumnError("Main.cs(,4,,-5):Command line warning CS0168: The variable 'foo' is declared but never used",
+            ValidateFileNameMultiLineColumnError(
+                "Main.cs(,4,,-5):Command line warning CS0168: The variable 'foo' is declared but never used",
                 "Main.cs", CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified, CanonicalError.Parts.numberNotSpecified,
                 CanonicalError.Parts.Category.Warning, "CS0168", "The variable 'foo' is declared but never used");
         }

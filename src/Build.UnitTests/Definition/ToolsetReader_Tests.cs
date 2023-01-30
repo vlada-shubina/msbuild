@@ -1732,40 +1732,45 @@ namespace Microsoft.Build.UnitTests.Definition
         public void ConfigFileStringEmptyRegistryExpression1()
         {
             // Regular undefined property beginning with "Registry"
-            ConfigFileValidRegistryExpressionHelper(@"<property name=""p"" value=""$(Registry)""/>",
-                                          String.Empty);
+            ConfigFileValidRegistryExpressionHelper(
+                @"<property name=""p"" value=""$(Registry)""/>",
+                String.Empty);
         }
 
         [Fact]
         public void ConfigFileStringEmptyRegistryExpression2()
         {
             // Nonexistent key
-            ConfigFileValidRegistryExpressionHelper(@"<property name=""p"" value=""$(Registry:HKEY_CURRENT_USER\Nonexistent_Key\Software\Vendor\Tools@TaskLocation)""/>",
-                                          String.Empty);
+            ConfigFileValidRegistryExpressionHelper(
+                @"<property name=""p"" value=""$(Registry:HKEY_CURRENT_USER\Nonexistent_Key\Software\Vendor\Tools@TaskLocation)""/>",
+                String.Empty);
         }
 
         [Fact]
         public void ConfigFileNonPropertyRegistryExpression1()
         {
             // Property not terminated with paren, does not look like property
-            ConfigFileValidRegistryExpressionHelper(@"<property name=""p"" value=""$(Registry:HKEY_CURRENT_USER\Software\Vendor\Tools@TaskLocation""/>",
-                                          @"$(Registry:HKEY_CURRENT_USER\Software\Vendor\Tools@TaskLocation");
+            ConfigFileValidRegistryExpressionHelper(
+                @"<property name=""p"" value=""$(Registry:HKEY_CURRENT_USER\Software\Vendor\Tools@TaskLocation""/>",
+                @"$(Registry:HKEY_CURRENT_USER\Software\Vendor\Tools@TaskLocation");
         }
 
         [Fact]
         public void ConfigFileNonPropertyRegistryExpression2()
         {
             // Missing colon, looks like regular property (but with invalid property name chars, we will return blank as a result)
-            ConfigFileValidRegistryExpressionHelper(@"<property name=""p"" value=""$(RegistryHKEY_CURRENT_USER\Software\Vendor\Tools@@TaskLocation)""/>",
-                                          String.Empty);
+            ConfigFileValidRegistryExpressionHelper(
+                @"<property name=""p"" value=""$(RegistryHKEY_CURRENT_USER\Software\Vendor\Tools@@TaskLocation)""/>",
+                String.Empty);
         }
 
         [Fact]
         public void ConfigFileItemExpressionsDoNotExpandInConfigurationProperties()
         {
             // Expect that item expressions such as '@(SomeItem)' are not evaluated in any way, e.g., they are treated literally
-            ConfigFileValidRegistryExpressionHelper(@"<property name=""p"" value=""@(SomeItem)""/>",
-                                          @"@(SomeItem)");
+            ConfigFileValidRegistryExpressionHelper(
+                @"<property name=""p"" value=""@(SomeItem)""/>",
+                @"@(SomeItem)");
         }
 
         [Fact]

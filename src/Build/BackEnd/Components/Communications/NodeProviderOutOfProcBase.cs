@@ -183,7 +183,8 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Finds or creates a child processes which can act as a node.
         /// </summary>
-        protected IList<NodeContext> GetNodes(string msbuildLocation,
+        protected IList<NodeContext> GetNodes(
+            string msbuildLocation,
             string commandLineArgs,
             int nextNodeId,
             INodePacketFactory factory,
@@ -728,7 +729,8 @@ namespace Microsoft.Build.BackEnd
                 {
                     // average latency between the moment this runs and when the delegate starts
                     // running is about 100-200 microseconds (unless there's thread pool saturation)
-                    _packetWriteDrainTask = _packetWriteDrainTask.ContinueWith(_ =>
+                    _packetWriteDrainTask = _packetWriteDrainTask.ContinueWith(
+                        _ =>
                     {
                         while (_packetWriteQueue.TryTake(out var packet))
                         {

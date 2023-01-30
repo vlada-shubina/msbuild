@@ -131,9 +131,10 @@ namespace Microsoft.Build.UnitTests
         public void FormatEventMessageOnBEEA()
         {
             MyLogger l = new MyLogger();
-            BuildErrorEventArgs beea = new BuildErrorEventArgs("VBC",
-                        "31415", "file.vb", 42, 0, 0, 0,
-                        "Some long message", "help", "sender");
+            BuildErrorEventArgs beea = new BuildErrorEventArgs(
+                "VBC",
+                "31415", "file.vb", 42, 0, 0, 0,
+                "Some long message", "help", "sender");
             string s = l.FormatErrorEvent(beea);
             s.ShouldBe("file.vb(42): VBC error 31415: Some long message");
         }
@@ -145,9 +146,10 @@ namespace Microsoft.Build.UnitTests
         public void FormatEventMessageOnBWEA()
         {
             MyLogger l = new MyLogger();
-            BuildWarningEventArgs bwea = new BuildWarningEventArgs("VBC",
-                        "31415", "file.vb", 42, 0, 0, 0,
-                        "Some long message", "help", "sender");
+            BuildWarningEventArgs bwea = new BuildWarningEventArgs(
+                "VBC",
+                "31415", "file.vb", 42, 0, 0, 0,
+                "Some long message", "help", "sender");
             string s = l.FormatWarningEvent(bwea);
             s.ShouldBe("file.vb(42): VBC warning 31415: Some long message");
         }

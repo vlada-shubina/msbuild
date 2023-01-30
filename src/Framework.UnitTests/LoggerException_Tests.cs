@@ -21,7 +21,8 @@ namespace Microsoft.Build.UnitTests
         [Fact]
         public void SerializeDeserialize()
         {
-            LoggerException e = new LoggerException("message",
+            LoggerException e = new LoggerException(
+                "message",
                 new Exception("innerException"),
                 "errorCode",
                 "helpKeyword");

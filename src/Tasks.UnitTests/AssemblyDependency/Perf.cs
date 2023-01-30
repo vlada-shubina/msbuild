@@ -108,7 +108,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
                 ITaskItem[] assemblyNames =
                 {
                     new TaskItem(@"C:\DependsOnNuget\A.dll"), // depends on N, version 1.0.0.0
-                    new TaskItem(@"C:\NugetCache\N\lib\N.dll", // version 2.0.0.0
+                    new TaskItem(
+                        @"C:\NugetCache\N\lib\N.dll", // version 2.0.0.0
                         new Dictionary<string, string>
                         {
                             {"ExternallyResolved", "true"}

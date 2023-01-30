@@ -419,7 +419,8 @@ namespace Microsoft.Build.Tasks
                 int displayFlags);
 
         [PreserveSig]
-        int Reserved(ref Guid guid,
+        int Reserved(
+            ref Guid guid,
             Object obj1,
             Object obj2,
             String string1,

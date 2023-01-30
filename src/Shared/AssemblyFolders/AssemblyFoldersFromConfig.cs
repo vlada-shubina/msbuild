@@ -45,22 +45,27 @@ namespace Microsoft.Build.Tasks.AssemblyFoldersFromConfig
             {
                 if (targeting64Bit)
                 {
-                    FindDirectories(assemblyTargets,
+                    FindDirectories(
+                        assemblyTargets,
                         target => !string.IsNullOrEmpty(target.Platform) && target.Platform.Equals("x64", StringComparison.OrdinalIgnoreCase));
-                    FindDirectories(assemblyTargets,
+                    FindDirectories(
+                        assemblyTargets,
                         target => !string.IsNullOrEmpty(target.Platform) && target.Platform.Equals("x86", StringComparison.OrdinalIgnoreCase));
                 }
                 else
                 {
-                    FindDirectories(assemblyTargets,
+                    FindDirectories(
+                        assemblyTargets,
                         target => !string.IsNullOrEmpty(target.Platform) && target.Platform.Equals("x86", StringComparison.OrdinalIgnoreCase));
-                    FindDirectories(assemblyTargets,
+                    FindDirectories(
+                        assemblyTargets,
                         target => !string.IsNullOrEmpty(target.Platform) && target.Platform.Equals("x64", StringComparison.OrdinalIgnoreCase));
                 }
             }
             else
             {
-                FindDirectories(assemblyTargets,
+                FindDirectories(
+                    assemblyTargets,
                     target => !string.IsNullOrEmpty(target.Platform) && target.Platform.Equals("x86", StringComparison.OrdinalIgnoreCase));
             }
         }

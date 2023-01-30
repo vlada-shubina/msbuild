@@ -135,7 +135,8 @@ namespace Microsoft.Build.UnitTests
                 }
             }
 
-            Assert.False(Directory.Exists(nonexistentDirectory),
+            Assert.False(
+                Directory.Exists(nonexistentDirectory),
                 "Tried 10 times to get a nonexistent directory name and failed -- please try again");
 
             bool exceptionCaught = false;

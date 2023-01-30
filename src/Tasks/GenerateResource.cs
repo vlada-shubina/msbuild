@@ -794,21 +794,22 @@ namespace Microsoft.Build.Tasks
                                 process = new ProcessResourceFiles();
                             }
 
-                            process.Run(Log,
-                                        _references,
-                                        inputsToProcess,
-                                        _satelliteInputs,
-                                        outputsToProcess,
-                                        UseSourcePath,
-                                        UsePreserializedResources,
-                                        StronglyTypedLanguage,
-                                        _stronglyTypedNamespace,
-                                        _stronglyTypedManifestPrefix,
-                                        StronglyTypedFileName,
-                                        StronglyTypedClassName,
-                                        PublicClass,
-                                        ExtractResWFiles,
-                                        OutputDirectory);
+                            process.Run(
+                                Log,
+                                _references,
+                                inputsToProcess,
+                                _satelliteInputs,
+                                outputsToProcess,
+                                UseSourcePath,
+                                UsePreserializedResources,
+                                StronglyTypedLanguage,
+                                _stronglyTypedNamespace,
+                                _stronglyTypedManifestPrefix,
+                                StronglyTypedFileName,
+                                StronglyTypedClassName,
+                                PublicClass,
+                                ExtractResWFiles,
+                                OutputDirectory);
 
                             this.StronglyTypedClassName = process.StronglyTypedClassName; // in case a default was chosen
                             this.StronglyTypedFileName = process.StronglyTypedFilename;   // in case a default was chosen
@@ -2628,9 +2629,11 @@ namespace Microsoft.Build.Tasks
                         String currentOutputFileNoPath = reader.outputFileName + ".resw";
                         currentOutputFile = null;
                         currentOutputDirectoryAlreadyExisted = true;
-                        string priDirectory = Path.Combine(outFileOrDir ?? String.Empty,
+                        string priDirectory = Path.Combine(
+                            outFileOrDir ?? String.Empty,
                             reader.assemblySimpleName);
-                        currentOutputDirectory = Path.Combine(priDirectory,
+                        currentOutputDirectory = Path.Combine(
+                            priDirectory,
                             reader.cultureName ?? String.Empty);
 
                         if (!FileSystems.Default.DirectoryExists(currentOutputDirectory))
@@ -2676,7 +2679,8 @@ namespace Microsoft.Build.Tasks
                 else
                 {
                     currentOutputFile = outFileOrDir;
-                    ErrorUtilities.VerifyThrow(_readers.Count == 1,
+                    ErrorUtilities.VerifyThrow(
+                        _readers.Count == 1,
                         "We have no readers, or we have multiple readers & are ignoring subsequent ones.  Num readers: {0}",
                         _readers.Count);
                     WriteResources(_readers[0], outFileOrDir);
@@ -2686,7 +2690,8 @@ namespace Microsoft.Build.Tasks
                 {
                     try
                     {
-                        ErrorUtilities.VerifyThrow(_readers.Count == 1,
+                        ErrorUtilities.VerifyThrow(
+                            _readers.Count == 1,
                             "We have no readers, or we have multiple readers & are ignoring subsequent ones.  Num readers: {0}",
                             _readers.Count);
                         CreateStronglyTypedResources(_readers[0], outFileOrDir, inFile, out currentOutputSourceCodeFile);
@@ -2694,7 +2699,8 @@ namespace Microsoft.Build.Tasks
                     catch (Exception e) when (ExceptionHandling.IsIoRelatedException(e))
                     {
                         // IO Error
-                        _logger.LogErrorWithCodeFromResources("GenerateResource.CannotWriteSTRFile",
+                        _logger.LogErrorWithCodeFromResources(
+                            "GenerateResource.CannotWriteSTRFile",
                             _stronglyTypedFilename, e.Message);
 
                         if (FileSystems.Default.FileExists(outFileOrDir)
@@ -2717,7 +2723,8 @@ namespace Microsoft.Build.Tasks
             {
                 if (currentOutputFile != null)
                 {
-                    _logger.LogErrorWithCodeFromResources("GenerateResource.CannotWriteOutput",
+                    _logger.LogErrorWithCodeFromResources(
+                        "GenerateResource.CannotWriteOutput",
                         FileUtilities.GetFullPathNoThrow(currentOutputFile), io.Message);
                     if (FileSystems.Default.FileExists(currentOutputFile))
                     {
@@ -2751,7 +2758,8 @@ namespace Microsoft.Build.Tasks
                 // DDB #9819
                 // SerializationException and TargetInvocationException can occur when trying to serialize a type into a resource format (typically with other exceptions inside)
                 // This is a bug in the type being serialized, so the best we can do is dump diagnostic information and move on to the next input resource file.
-                _logger.LogErrorWithCodeFromResources("GenerateResource.CannotWriteOutput",
+                _logger.LogErrorWithCodeFromResources(
+                    "GenerateResource.CannotWriteOutput",
                     FileUtilities.GetFullPathNoThrow(inFile), e.Message); // Input file is more useful to log
 
                 // Log the stack, so the problem with the type in the .resx is diagnosable by the customer
@@ -2762,7 +2770,8 @@ namespace Microsoft.Build.Tasks
             catch (Exception e) when (ExceptionHandling.IsIoRelatedException(e))
             {
                 // Regular IO error
-                _logger.LogErrorWithCodeFromResources("GenerateResource.CannotWriteOutput",
+                _logger.LogErrorWithCodeFromResources(
+                    "GenerateResource.CannotWriteOutput",
                     FileUtilities.GetFullPathNoThrow(currentOutputFile), e.Message);
                 return false;
             }
@@ -3701,7 +3710,8 @@ namespace Microsoft.Build.Tasks
         /// <remarks>Closes writer automatically</remarks>
         /// <param name="reader">Reader information</param>
         /// <param name="writer">Appropriate IResourceWriter</param>
-        private void WriteResources(ReaderInfo reader,
+        private void WriteResources(
+            ReaderInfo reader,
             IResourceWriter writer)
         {
             Exception capturedException = null;

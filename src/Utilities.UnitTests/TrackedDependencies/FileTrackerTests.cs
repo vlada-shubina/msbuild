@@ -585,8 +585,9 @@ class X
 
             Console.WriteLine("");
             Assert.Equal(0, exit);
-            Assert.Equal("^JIBBIT",
-                                   FileTrackerTestHelper.ReadLineFromFile("findstr.read.1.tlog", 1).ToUpperInvariant());
+            Assert.Equal(
+                "^JIBBIT",
+                FileTrackerTestHelper.ReadLineFromFile("findstr.read.1.tlog", 1).ToUpperInvariant());
             FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath("test.in").ToUpperInvariant(), "findstr.read.1.tlog");
         }
 
@@ -602,8 +603,9 @@ class X
 
             Console.WriteLine("");
             Assert.Equal(0, exit);
-            Assert.Equal("^JIBBIT",
-                                   FileTrackerTestHelper.ReadLineFromFile("findstr.read.1.tlog", 1).ToUpperInvariant());
+            Assert.Equal(
+                "^JIBBIT",
+                FileTrackerTestHelper.ReadLineFromFile("findstr.read.1.tlog", 1).ToUpperInvariant());
             FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath("test.in").ToUpperInvariant(), "findstr.read.1.tlog");
         }
 
@@ -620,11 +622,13 @@ class X
 
             Console.WriteLine("");
             Assert.Equal(0, exit);
-            Assert.Equal("^JIBBIT",
-                                   FileTrackerTestHelper.ReadLineFromFile("findstr.read.1.tlog", 1).ToUpperInvariant());
+            Assert.Equal(
+                "^JIBBIT",
+                FileTrackerTestHelper.ReadLineFromFile("findstr.read.1.tlog", 1).ToUpperInvariant());
             FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath("test.in").ToUpperInvariant(), "findstr.read.1.tlog");
-            Assert.Equal("findstr /ip foo test.in",
-                                   FileTrackerTestHelper.ReadLineFromFile("findstr.command.1.tlog", 2));
+            Assert.Equal(
+                "findstr /ip foo test.in",
+                FileTrackerTestHelper.ReadLineFromFile("findstr.command.1.tlog", 2));
         }
 
         [Fact(Skip = "FileTracker tests require VS2015 Update 3 or a packaged version of Tracker.exe https://github.com/dotnet/msbuild/issues/649")]
@@ -639,8 +643,9 @@ class X
 
             Console.WriteLine("");
             Assert.Equal(0, exit);
-            Assert.Equal("^JIBBIT GOO",
-                                   FileTrackerTestHelper.ReadLineFromFile("findstr.read.1.tlog", 1).ToUpperInvariant());
+            Assert.Equal(
+                "^JIBBIT GOO",
+                FileTrackerTestHelper.ReadLineFromFile("findstr.read.1.tlog", 1).ToUpperInvariant());
             FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath("test.in").ToUpperInvariant(), "findstr.read.1.tlog");
         }
 
@@ -663,8 +668,9 @@ class X
 
             Console.WriteLine("");
             Assert.Equal(0, exit);
-            Assert.Equal("^JIBBIT GOO",
-                                   FileTrackerTestHelper.ReadLineFromFile("findstr.read.1.tlog", 1).ToUpperInvariant());
+            Assert.Equal(
+                "^JIBBIT GOO",
+                FileTrackerTestHelper.ReadLineFromFile("findstr.read.1.tlog", 1).ToUpperInvariant());
             FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath("test.in").ToUpperInvariant(), "findstr.read.1.tlog");
         }
 
@@ -688,11 +694,13 @@ class X
             FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath("test.in").ToUpperInvariant(), "sort.read.1.tlog");
             FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath("test.out").ToUpperInvariant(), "sort.write.1.tlog");
 
-            Assert.Equal("AFOO",
-                                   FileTrackerTestHelper.ReadLineFromFile("test.out", 0).ToUpperInvariant());
+            Assert.Equal(
+                "AFOO",
+                FileTrackerTestHelper.ReadLineFromFile("test.out", 0).ToUpperInvariant());
 
-            Assert.Equal("BFOO",
-                                   FileTrackerTestHelper.ReadLineFromFile("test.out", 1).ToUpperInvariant());
+            Assert.Equal(
+                "BFOO",
+                FileTrackerTestHelper.ReadLineFromFile("test.out", 1).ToUpperInvariant());
         }
 
         [Fact(Skip = "FileTracker tests require VS2015 Update 3 or a packaged version of Tracker.exe https://github.com/dotnet/msbuild/issues/649")]
@@ -716,11 +724,13 @@ class X
             FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath("test.in").ToUpperInvariant(), "outdir\\sort.read.1.tlog");
             FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath("test.out").ToUpperInvariant(), "outdir\\sort.write.1.tlog");
 
-            Assert.Equal("AFOO",
-                                   FileTrackerTestHelper.ReadLineFromFile("test.out", 0).ToUpperInvariant());
+            Assert.Equal(
+                "AFOO",
+                FileTrackerTestHelper.ReadLineFromFile("test.out", 0).ToUpperInvariant());
 
-            Assert.Equal("BFOO",
-                                   FileTrackerTestHelper.ReadLineFromFile("test.out", 1).ToUpperInvariant());
+            Assert.Equal(
+                "BFOO",
+                FileTrackerTestHelper.ReadLineFromFile("test.out", 1).ToUpperInvariant());
         }
 
 
@@ -748,11 +758,13 @@ class X
             FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath("test.in").ToUpperInvariant(), "outdir\\sort.read.1.tlog");
             FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath("test.out").ToUpperInvariant(), "outdir\\sort.write.1.tlog");
 
-            Assert.Equal("AFOO",
-                                   FileTrackerTestHelper.ReadLineFromFile("test.out", 0).ToUpperInvariant());
+            Assert.Equal(
+                "AFOO",
+                FileTrackerTestHelper.ReadLineFromFile("test.out", 0).ToUpperInvariant());
 
-            Assert.Equal("BFOO",
-                                   FileTrackerTestHelper.ReadLineFromFile("test.out", 1).ToUpperInvariant());
+            Assert.Equal(
+                "BFOO",
+                FileTrackerTestHelper.ReadLineFromFile("test.out", 1).ToUpperInvariant());
         }
 
         [Fact(Skip = "FileTracker tests require VS2015 Update 3 or a packaged version of Tracker.exe https://github.com/dotnet/msbuild/issues/649")]
@@ -2352,13 +2364,15 @@ namespace ConsoleApplication4
                         testInFile));
 
                 Assert.Equal(0, exit);
-                Assert.Equal("^" + rootingMarker.ToUpperInvariant(),
-                                       FileTrackerTestHelper.ReadLineFromFile(toolReadTlog, 1).ToUpperInvariant());
+                Assert.Equal(
+                    "^" + rootingMarker.ToUpperInvariant(),
+                    FileTrackerTestHelper.ReadLineFromFile(toolReadTlog, 1).ToUpperInvariant());
                 FileTrackerTestHelper.AssertFoundStringInTLog(Path.GetFullPath(testInFile).ToUpperInvariant(), toolReadTlog);
 
                 FileTracker.WriteContextTLogs(Path.GetFullPath("."), tlogRootName);
-                Assert.Equal(Path.GetFullPath(sourceFile).ToUpperInvariant(),
-                                       FileTrackerTestHelper.ReadLineFromFile(tlogRootName + ".write.1.tlog", 1).ToUpperInvariant());
+                Assert.Equal(
+                    Path.GetFullPath(sourceFile).ToUpperInvariant(),
+                    FileTrackerTestHelper.ReadLineFromFile(tlogRootName + ".write.1.tlog", 1).ToUpperInvariant());
             }
             finally
             {

@@ -509,7 +509,8 @@ namespace Microsoft.Build.UnitTests
                 output.WriteLine(expression + " caused '" + ex.Message + "'");
                 caughtException = true;
             }
-            Assert.True(caughtException,
+            Assert.True(
+                caughtException,
                 "expected '" + expression + "' to not parse or not be evaluated");
         }
     }

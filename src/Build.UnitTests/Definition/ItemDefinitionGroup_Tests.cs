@@ -1048,7 +1048,8 @@ namespace Microsoft.Build.UnitTests.Definition
         [Fact]
         public void ItemDefinitionGroupTask()
         {
-            MockLogger ml = Helpers.BuildProjectWithNewOMExpectSuccess(String.Format(@"
+            MockLogger ml = Helpers.BuildProjectWithNewOMExpectSuccess(String.Format(
+                @"
                     <Project ToolsVersion=""msbuilddefaulttoolsversion"">
                         <UsingTask TaskName=""ItemDefinitionGroup"" AssemblyFile=""{0}""/>
                         <Target Name=""Build"">

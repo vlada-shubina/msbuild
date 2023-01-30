@@ -133,7 +133,8 @@ namespace Microsoft.Build.UnitTests
                 bool success = msbuildTask.Execute();
                 Assert.True(success); // "Build failed.  See 'Standard Out' tab for details."
 
-                string expectedItemOutputs = string.Format(@"
+                string expectedItemOutputs = string.Format(
+                    @"
                     a1.dll : MSBuildSourceProjectFile={0} ; MSBuildSourceTargetName=TargetA
                     b1.dll : MSBuildSourceProjectFile={0} ; MSBuildSourceTargetName=TargetB
                     b2.dll : MSBuildSourceProjectFile={0} ; MSBuildSourceTargetName=TargetB
@@ -530,7 +531,8 @@ namespace Microsoft.Build.UnitTests
                 bool success = msbuildTask.Execute();
                 Assert.True(success); // "Build failed.  See 'Standard Out' tab for details."
 
-                string expectedItemOutputs = string.Format(@"
+                string expectedItemOutputs = string.Format(
+                    @"
                     a1.dll : MSBuildSourceProjectFile={0} ; MSBuildSourceTargetName=TargetA
                     b1.dll : MSBuildSourceProjectFile={0} ; MSBuildSourceTargetName=TargetB
                     g1.dll : MSBuildSourceProjectFile={1} ; MSBuildSourceTargetName=TargetG
@@ -588,7 +590,8 @@ namespace Microsoft.Build.UnitTests
                 bool success = msbuildTask.Execute();
                 Assert.True(success); // "Build failed.  See 'Standard Out' tab for details."
 
-                string expectedItemOutputs = string.Format(@"
+                string expectedItemOutputs = string.Format(
+                    @"
                     b1.dll : MSBuildSourceProjectFile={0} ; MSBuildSourceTargetName=TargetB
                     h1.dll : MSBuildSourceProjectFile={1} ; MSBuildSourceTargetName=TargetH
                     ", projectFile1, projectFile2);
@@ -644,7 +647,8 @@ namespace Microsoft.Build.UnitTests
                 bool success = msbuildTask.Execute();
                 Assert.True(success); // "Build failed.  See 'Standard Out' tab for details."
 
-                string expectedItemOutputs = string.Format(@"
+                string expectedItemOutputs = string.Format(
+                    @"
                     h1.dll : MSBuildSourceProjectFile={0} ; MSBuildSourceTargetName=TargetH
                     ", projectFile2);
 
@@ -746,7 +750,8 @@ namespace Microsoft.Build.UnitTests
                 bool success = msbuildTask.Execute();
                 Assert.True(success); // "Build failed.  See 'Standard Out' tab for details."
 
-                string expectedItemOutputs = string.Format(@"
+                string expectedItemOutputs = string.Format(
+                    @"
                     a1.dll : MSBuildSourceProjectFile={0} ; MSBuildSourceTargetName=TargetA
                     b1.dll : MSBuildSourceProjectFile={0} ; MSBuildSourceTargetName=TargetB
                     g1.dll : MSBuildSourceProjectFile={1} ; MSBuildSourceTargetName=TargetG
@@ -804,7 +809,8 @@ namespace Microsoft.Build.UnitTests
                 bool success = msbuildTask.Execute();
                 Assert.True(success); // "Build failed.  See 'Standard Out' tab for details."
 
-                string expectedItemOutputs = string.Format(@"
+                string expectedItemOutputs = string.Format(
+                    @"
                     b1.dll : MSBuildSourceProjectFile={0} ; MSBuildSourceTargetName=TargetB
                     g1.dll : MSBuildSourceProjectFile={1} ; MSBuildSourceTargetName=TargetG
                     h1.dll : MSBuildSourceProjectFile={1} ; MSBuildSourceTargetName=TargetH
@@ -859,7 +865,8 @@ namespace Microsoft.Build.UnitTests
                 bool success = msbuildTask.Execute();
                 Assert.True(success); // "Build failed.  See 'Standard Out' tab for details."
 
-                string expectedItemOutputs = string.Format(@"
+                string expectedItemOutputs = string.Format(
+                    @"
                     b1.dll : MSBuildSourceProjectFile={0} ; MSBuildSourceTargetName=TargetB
                     h1.dll : MSBuildSourceProjectFile={1} ; MSBuildSourceTargetName=TargetH
                     ", projectFile1, projectFile2);

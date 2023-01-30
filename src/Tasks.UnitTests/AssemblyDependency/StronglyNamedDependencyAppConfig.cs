@@ -308,7 +308,8 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests.VersioningAnd
             string shouldContain;
 
             string code = t.Log.ExtractMessageCode(
-                    String.Format(AssemblyResources.GetString("ResolveAssemblyReference.FailedToResolveReference"),
+                    String.Format(
+                        AssemblyResources.GetString("ResolveAssemblyReference.FailedToResolveReference"),
                         String.Format(AssemblyResources.GetString("General.CouldNotLocateAssembly"), "UNIFyMe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")),
                     out shouldContain);
 

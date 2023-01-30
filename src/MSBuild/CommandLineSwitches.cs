@@ -398,20 +398,24 @@ namespace Microsoft.Build.CommandLine
         internal CommandLineSwitches()
         {
 #if DEBUG
-            Debug.Assert(s_parameterlessSwitchesMap.Length == (int)ParameterlessSwitch.NumberOfParameterlessSwitches,
+            Debug.Assert(
+                s_parameterlessSwitchesMap.Length == (int)ParameterlessSwitch.NumberOfParameterlessSwitches,
                 "The map of parameterless switches must have an entry for each switch in the ParameterlessSwitch enumeration.");
-            Debug.Assert(s_parameterizedSwitchesMap.Length == (int)ParameterizedSwitch.NumberOfParameterizedSwitches,
+            Debug.Assert(
+                s_parameterizedSwitchesMap.Length == (int)ParameterizedSwitch.NumberOfParameterizedSwitches,
                 "The map of parameterized switches must have an entry for each switch in the ParameterizedSwitch enumeration.");
 
             for (int i = 0; i < s_parameterlessSwitchesMap.Length; i++)
             {
-                Debug.Assert(i == (int)(s_parameterlessSwitchesMap[i].parameterlessSwitch),
+                Debug.Assert(
+                    i == (int)(s_parameterlessSwitchesMap[i].parameterlessSwitch),
                     "The map of parameterless switches must be ordered the same way as the ParameterlessSwitch enumeration.");
             }
 
             for (int i = 0; i < s_parameterizedSwitchesMap.Length; i++)
             {
-                Debug.Assert(i == (int)(s_parameterizedSwitchesMap[i].parameterizedSwitch),
+                Debug.Assert(
+                    i == (int)(s_parameterizedSwitchesMap[i].parameterizedSwitch),
                     "The map of parameterized switches must be ordered the same way as the ParameterizedSwitch enumeration.");
             }
 #endif
@@ -849,7 +853,8 @@ namespace Microsoft.Build.CommandLine
                     }
                     else
                     {
-                        SetSwitchError(s_parameterlessSwitchesMap[i].duplicateSwitchErrorMessage,
+                        SetSwitchError(
+                            s_parameterlessSwitchesMap[i].duplicateSwitchErrorMessage,
                             switchesToAppend.GetParameterlessSwitchCommandLineArg((ParameterlessSwitch)i), commandLine);
                     }
                 }
@@ -873,7 +878,8 @@ namespace Microsoft.Build.CommandLine
                     }
                     else
                     {
-                        SetSwitchError(s_parameterizedSwitchesMap[j].duplicateSwitchErrorMessage,
+                        SetSwitchError(
+                            s_parameterizedSwitchesMap[j].duplicateSwitchErrorMessage,
                             switchesToAppend.GetParameterizedSwitchCommandLineArg((ParameterizedSwitch)j), commandLine);
                     }
                 }

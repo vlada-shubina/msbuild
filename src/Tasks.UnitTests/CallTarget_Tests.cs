@@ -187,7 +187,8 @@ namespace Microsoft.Build.UnitTests
             }
 
             // Order independent verification of the right set of items.
-            ObjectModelHelpers.AssertItemsMatch(@"
+            ObjectModelHelpers.AssertItemsMatch(
+                @"
                 c.txt
                 b.txt
                 a.t!@#$%^xt

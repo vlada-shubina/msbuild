@@ -108,7 +108,8 @@ namespace Microsoft.Build.Engine.OM.UnitTests.Construction
   </ItemGroup>
 </Project>");
 
-            ProjectRootElement xml = ProjectRootElement.Create(XmlReader.Create(new StringReader(content)),
+            ProjectRootElement xml = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(content)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             Project project = new Project(xml);
@@ -141,7 +142,8 @@ namespace Microsoft.Build.Engine.OM.UnitTests.Construction
   </ItemGroup>
 </Project>");
 
-            ProjectRootElement xml = ProjectRootElement.Create(XmlReader.Create(new StringReader(content)),
+            ProjectRootElement xml = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(content)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             Project project = new Project(xml);
@@ -174,7 +176,8 @@ namespace Microsoft.Build.Engine.OM.UnitTests.Construction
   </ItemGroup>
 </Project>");
 
-            ProjectRootElement xml = ProjectRootElement.Create(XmlReader.Create(new StringReader(content)),
+            ProjectRootElement xml = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(content)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             Project project = new Project(xml);
@@ -204,7 +207,8 @@ namespace Microsoft.Build.Engine.OM.UnitTests.Construction
   <ItemGroup>
   </ItemGroup>
 </Project>");
-            ProjectRootElement xml = ProjectRootElement.Create(XmlReader.Create(new StringReader(content)),
+            ProjectRootElement xml = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(content)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             Project project = new Project(xml);
@@ -231,7 +235,8 @@ namespace Microsoft.Build.Engine.OM.UnitTests.Construction
 <Project DefaultTargets=`Build` ToolsVersion=`msbuilddefaulttoolsversion` xmlns=`msbuildnamespace`>
 </Project>");
 
-            ProjectRootElement xml = ProjectRootElement.Create(XmlReader.Create(new StringReader(content)),
+            ProjectRootElement xml = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(content)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             Project project = new Project(xml);
@@ -263,7 +268,8 @@ namespace Microsoft.Build.Engine.OM.UnitTests.Construction
   </ItemGroup>
 </Project>");
 
-            ProjectRootElement xml = ProjectRootElement.Create(XmlReader.Create(new StringReader(content)),
+            ProjectRootElement xml = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(content)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             Project project = new Project(xml);
@@ -299,7 +305,8 @@ namespace Microsoft.Build.Engine.OM.UnitTests.Construction
   </ItemGroup>
 </Project>");
 
-            ProjectRootElement xml = ProjectRootElement.Create(XmlReader.Create(new StringReader(content)),
+            ProjectRootElement xml = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(content)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             Project project = new Project(xml);
@@ -362,7 +369,8 @@ namespace Microsoft.Build.Engine.OM.UnitTests.Construction
 
         private void VerifyFormattingPreservedFromString(string projectContents)
         {
-            ProjectRootElement xml = ProjectRootElement.Create(XmlReader.Create(new StringReader(projectContents)),
+            ProjectRootElement xml = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(projectContents)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             Project project = new Project(xml);
@@ -414,7 +422,8 @@ namespace Microsoft.Build.Engine.OM.UnitTests.Construction
 
         private void VerifyProjectReformattingFromString(string originalContents, string expectedContents)
         {
-            ProjectRootElement xml = ProjectRootElement.Create(XmlReader.Create(new StringReader(originalContents)),
+            ProjectRootElement xml = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(originalContents)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: false);
             Project project = new Project(xml);

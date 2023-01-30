@@ -42,8 +42,9 @@ namespace Microsoft.Build.Tasks.UnitTests
             // Arrange
             var baseOutputPath = "bin";
 
-            var projectFilePath = ObjectModelHelpers.CreateFileInTempProjectDirectory(_projectRelativePath,
-$@"<Project DefaultTargets=`Build` xmlns=`msbuildnamespace` ToolsVersion=`msbuilddefaulttoolsversion`>
+            var projectFilePath = ObjectModelHelpers.CreateFileInTempProjectDirectory(
+                _projectRelativePath,
+                $@"<Project DefaultTargets=`Build` xmlns=`msbuildnamespace` ToolsVersion=`msbuilddefaulttoolsversion`>
 
     <Import Project=`$(MSBuildToolsPath)\Microsoft.Common.props`/>
 
@@ -77,8 +78,9 @@ $@"<Project DefaultTargets=`Build` xmlns=`msbuildnamespace` ToolsVersion=`msbuil
             // Arrange
             var baseOutputPath = Path.Combine("build", "bin");
 
-            var projectFilePath = ObjectModelHelpers.CreateFileInTempProjectDirectory(_projectRelativePath,
-$@"<Project DefaultTargets=`Build` xmlns=`msbuildnamespace` ToolsVersion=`msbuilddefaulttoolsversion`>
+            var projectFilePath = ObjectModelHelpers.CreateFileInTempProjectDirectory(
+                _projectRelativePath,
+                $@"<Project DefaultTargets=`Build` xmlns=`msbuildnamespace` ToolsVersion=`msbuilddefaulttoolsversion`>
 
     <Import Project=`$(MSBuildToolsPath)\Microsoft.Common.props`/>
 
@@ -115,8 +117,9 @@ $@"<Project DefaultTargets=`Build` xmlns=`msbuildnamespace` ToolsVersion=`msbuil
             var outputPath = Path.Combine("bin", "Debug");
             var outputPathAlt = Path.Combine("bin", "Release");
 
-            var projectFilePath = ObjectModelHelpers.CreateFileInTempProjectDirectory(_projectRelativePath,
-$@"<Project DefaultTargets=`Build` xmlns=`msbuildnamespace` ToolsVersion=`msbuilddefaulttoolsversion`>
+            var projectFilePath = ObjectModelHelpers.CreateFileInTempProjectDirectory(
+                _projectRelativePath,
+                $@"<Project DefaultTargets=`Build` xmlns=`msbuildnamespace` ToolsVersion=`msbuilddefaulttoolsversion`>
 
     <Import Project=`$(MSBuildToolsPath)\Microsoft.Common.props`/>
 
@@ -158,8 +161,9 @@ $@"<Project DefaultTargets=`Build` xmlns=`msbuildnamespace` ToolsVersion=`msbuil
             var configuration = "Debug";
             var baseOutputPath = "bin";
 
-            var projectFilePath = ObjectModelHelpers.CreateFileInTempProjectDirectory(_projectRelativePath,
-$@"<Project DefaultTargets=`Build` xmlns=`msbuildnamespace` ToolsVersion=`msbuilddefaulttoolsversion`>
+            var projectFilePath = ObjectModelHelpers.CreateFileInTempProjectDirectory(
+                _projectRelativePath,
+                $@"<Project DefaultTargets=`Build` xmlns=`msbuildnamespace` ToolsVersion=`msbuilddefaulttoolsversion`>
 
     <Import Project=`$(MSBuildToolsPath)\Microsoft.Common.props`/>
 

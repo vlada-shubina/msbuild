@@ -544,7 +544,8 @@ namespace Microsoft.Build.UnitTests
         [InlineData("lowPriority")]
         public void LowPrioritySwitchIdentificationTests(string lowpriority)
         {
-            CommandLineSwitches.IsParameterizedSwitch(lowpriority,
+            CommandLineSwitches.IsParameterizedSwitch(
+                lowpriority,
                 out CommandLineSwitches.ParameterizedSwitch parameterizedSwitch,
                 out string duplicateSwitchErrorMessage,
                 out bool multipleParametersAllowed,
@@ -1110,7 +1111,8 @@ namespace Microsoft.Build.UnitTests
 
             CommandLineSwitches commandLineSwitches = new CommandLineSwitches();
 
-            MSBuildApp.GatherCommandLineSwitches(new List<string>(new[]
+            MSBuildApp.GatherCommandLineSwitches(
+                new List<string>(new[]
             {
                 "\"/warnaserror: a,B ; c \"", // Leading, trailing, leading and trailing whitespace
                 "/warnaserror:A,b,C",         // Repeats of different case
@@ -1135,7 +1137,8 @@ namespace Microsoft.Build.UnitTests
         {
             CommandLineSwitches commandLineSwitches = new CommandLineSwitches();
 
-            MSBuildApp.GatherCommandLineSwitches(new List<string>(new[]
+            MSBuildApp.GatherCommandLineSwitches(
+                new List<string>(new[]
             {
                 "/warnaserror:a;b;c",
                 "/warnaserror",
@@ -1158,7 +1161,8 @@ namespace Microsoft.Build.UnitTests
 
             CommandLineSwitches commandLineSwitches = new CommandLineSwitches();
 
-            MSBuildApp.GatherCommandLineSwitches(new List<string>(new[]
+            MSBuildApp.GatherCommandLineSwitches(
+                new List<string>(new[]
             {
                 "/warnaserror:a;b;c",
                 "/warnaserror",
@@ -1237,7 +1241,8 @@ namespace Microsoft.Build.UnitTests
 
             CommandLineSwitches commandLineSwitches = new CommandLineSwitches();
 
-            MSBuildApp.GatherCommandLineSwitches(new List<string>(new[]
+            MSBuildApp.GatherCommandLineSwitches(
+                new List<string>(new[]
             {
                 "\"/warnasmessage: a,B ; c \"", // Leading, trailing, leading and trailing whitespace
                 "/warnasmessage:A,b,C",         // Repeats of different case

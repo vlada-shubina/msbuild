@@ -797,7 +797,7 @@ dotnet_diagnostic.SA1114.severity = suggestion
 dotnet_diagnostic.SA1115.severity = none
 
 # Split parameters should start on line after declaration
-dotnet_diagnostic.SA1116.severity = suggestion
+dotnet_diagnostic.SA1116.severity = warning
 
 # Parameters should be on same line or separate lines
 dotnet_diagnostic.SA1117.severity = suggestion

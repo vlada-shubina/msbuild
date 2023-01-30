@@ -140,7 +140,8 @@ namespace Microsoft.Build.Framework
 
                 static string GetVsRootFromMSBuildAssembly(string msBuildAssembly)
                 {
-                    return GetFolderAbove(msBuildAssembly,
+                    return GetFolderAbove(
+                        msBuildAssembly,
                         Path.GetDirectoryName(msBuildAssembly)?.EndsWith(@"\amd64", StringComparison.OrdinalIgnoreCase) == true
                             ? 5
                             : 4);

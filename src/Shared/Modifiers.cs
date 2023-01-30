@@ -414,7 +414,8 @@ namespace Microsoft.Build.Shared
 
                         if (!EndsWithSlash(modifiedItemSpec))
                         {
-                            ErrorUtilities.VerifyThrow(FileUtilitiesRegex.StartsWithUncPattern(modifiedItemSpec),
+                            ErrorUtilities.VerifyThrow(
+                                FileUtilitiesRegex.StartsWithUncPattern(modifiedItemSpec),
                                 "Only UNC shares should be missing trailing slashes.");
 
                             // restore/append trailing slash if Path.GetPathRoot() has either removed it, or failed to add it
@@ -475,16 +476,18 @@ namespace Microsoft.Build.Shared
 
                             if (length != -1)
                             {
-                                ErrorUtilities.VerifyThrow((modifiedItemSpec.Length > length) && IsSlash(modifiedItemSpec[length]),
-                                                           "Root directory must have a trailing slash.");
+                                ErrorUtilities.VerifyThrow(
+                                    (modifiedItemSpec.Length > length) && IsSlash(modifiedItemSpec[length]),
+                                    "Root directory must have a trailing slash.");
 
                                 modifiedItemSpec = modifiedItemSpec.Substring(length + 1);
                             }
                         }
                         else
                         {
-                            ErrorUtilities.VerifyThrow(!string.IsNullOrEmpty(modifiedItemSpec) && IsSlash(modifiedItemSpec[0]),
-                                                       "Expected a full non-windows path rooted at '/'.");
+                            ErrorUtilities.VerifyThrow(
+                                !string.IsNullOrEmpty(modifiedItemSpec) && IsSlash(modifiedItemSpec[0]),
+                                "Expected a full non-windows path rooted at '/'.");
 
                             // A full unix path is always rooted at
                             // `/`, and a root-relative path is the

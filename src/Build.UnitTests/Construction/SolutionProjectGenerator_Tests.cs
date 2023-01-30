@@ -866,8 +866,9 @@ EndGlobal
                 TransientTestFile proj1 = env.CreateFile("A.csproj", @"<Project><Target Name=""Printer""><Message Importance=""high"" Text=""print string"" /></Target></Project>");
                 TransientTestFile proj2 = env.CreateFile("B.csproj", @"<Project><Target Name=""Printer""><Message Importance=""high"" Text=""print string"" /></Target></Project>");
                 TransientTestFile proj3 = env.CreateFile("C.csproj", @"<Project><Target Name=""Printer""><Message Importance=""high"" Text=""print string"" /></Target></Project>");
-                TransientTestFile proj = env.CreateFile("mysln.sln",
-                @$"
+                TransientTestFile proj = env.CreateFile(
+                    "mysln.sln",
+                    @$"
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 11
 Project(`{"{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"}`) = `A`, `{proj1.Path}`, `{"{786E302A-96CE-43DC-B640-D6B6CC9BF6C0}"}`

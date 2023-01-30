@@ -378,7 +378,8 @@ namespace Microsoft.Build.Tasks
                         // behavior from AssemblyName.GetAssemblyName(). RAR will deal with this correctly.
                         if (!hasMetadata)
                         {
-                            throw new BadImageFormatException(string.Format(CultureInfo.CurrentCulture,
+                            throw new BadImageFormatException(string.Format(
+                                CultureInfo.CurrentCulture,
                                 AssemblyResources.GetString("ResolveAssemblyReference.AssemblyDoesNotContainPEMetadata"),
                                 _sourceFile));
                         }
@@ -735,7 +736,8 @@ namespace Microsoft.Build.Tasks
                     for (uint i = 0; i < fetched; i++)
                     {
                         // Retrieve file properties.
-                        _assemblyImport.GetFileProps(fileTokens[i],
+                        _assemblyImport.GetFileProps(
+                            fileTokens[i],
                             fileNameBuf, (uint)fileNameBuf.Length, out uint fileNameLength,
                             out _, out _, out _);
 

@@ -148,7 +148,8 @@ namespace Microsoft.Build.UnitTests
         /// <param name="environmentVariableName">Name of the environment variable.</param>
         public TestInvariant WithEnvironmentVariableInvariant(string environmentVariableName)
         {
-            return WithInvariant(new StringInvariant(environmentVariableName,
+            return WithInvariant(new StringInvariant(
+                environmentVariableName,
                 () => Environment.GetEnvironmentVariable(environmentVariableName)));
         }
         /// <summary>

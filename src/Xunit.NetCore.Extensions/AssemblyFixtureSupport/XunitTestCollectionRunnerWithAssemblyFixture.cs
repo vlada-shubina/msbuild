@@ -18,15 +18,16 @@ namespace Xunit.NetCore.Extensions
         private readonly IMessageSink diagnosticMessageSink;
         private readonly List<AssemblyFixtureAttribute> assemblyFixtureAttributes;
 
-        public XunitTestCollectionRunnerWithAssemblyFixture(Dictionary<Type, object> assemblyFixtureMappings,
-                                                            List<AssemblyFixtureAttribute> assemblyFixtureAttributes,
-                                                            ITestCollection testCollection,
-                                                            IEnumerable<IXunitTestCase> testCases,
-                                                            IMessageSink diagnosticMessageSink,
-                                                            IMessageBus messageBus,
-                                                            ITestCaseOrderer testCaseOrderer,
-                                                            ExceptionAggregator aggregator,
-                                                            CancellationTokenSource cancellationTokenSource)
+        public XunitTestCollectionRunnerWithAssemblyFixture(
+            Dictionary<Type, object> assemblyFixtureMappings,
+            List<AssemblyFixtureAttribute> assemblyFixtureAttributes,
+            ITestCollection testCollection,
+            IEnumerable<IXunitTestCase> testCases,
+            IMessageSink diagnosticMessageSink,
+            IMessageBus messageBus,
+            ITestCaseOrderer testCaseOrderer,
+            ExceptionAggregator aggregator,
+            CancellationTokenSource cancellationTokenSource)
             : base(testCollection, testCases, diagnosticMessageSink, messageBus, testCaseOrderer, aggregator, cancellationTokenSource)
         {
             this.assemblyFixtureMappings = assemblyFixtureMappings;

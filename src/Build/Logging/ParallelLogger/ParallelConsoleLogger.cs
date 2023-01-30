@@ -1747,8 +1747,9 @@ namespace Microsoft.Build.BackEnd.Logging
             internal override void PrintCounterMessage(WriteLinePrettyFromResourceDelegate WriteLinePrettyFromResource, ColorSetter setColor, ColorResetter resetColor)
             {
                 // round: sub-millisecond values are not meaningful
-                string time = String.Format(CultureInfo.CurrentCulture,
-                       "{0,5}", Math.Round(elapsedTime.TotalMilliseconds, 0));
+                string time = String.Format(
+                    CultureInfo.CurrentCulture,
+                    "{0,5}", Math.Round(elapsedTime.TotalMilliseconds, 0));
 
                 WriteLinePrettyFromResource(
                     MessageIndentLevel,

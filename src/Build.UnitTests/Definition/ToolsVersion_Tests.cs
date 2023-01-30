@@ -46,26 +46,30 @@ namespace Microsoft.Build.UnitTests.Definition
 
             foreach (string expectedRegisteredTask in expectedRegisteredTasks)
             {
-                Assert.True(taskRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(expectedRegisteredTask, null)),
-                              String.Format("Expected task '{0}' registered!", expectedRegisteredTask));
+                Assert.True(
+                    taskRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(expectedRegisteredTask, null)),
+                    String.Format("Expected task '{0}' registered!", expectedRegisteredTask));
             }
 
             foreach (string expectedRegisteredTask in expectedOverrideTasks)
             {
-                Assert.True(taskoverrideRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(expectedRegisteredTask, null)),
-                              String.Format("Expected task '{0}' registered!", expectedRegisteredTask));
+                Assert.True(
+                    taskoverrideRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(expectedRegisteredTask, null)),
+                    String.Format("Expected task '{0}' registered!", expectedRegisteredTask));
             }
 
             foreach (string unexpectedRegisteredTask in unexpectedRegisteredTasks)
             {
-                Assert.False(taskRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(unexpectedRegisteredTask, null)),
-                              String.Format("Unexpected task '{0}' registered!", unexpectedRegisteredTask));
+                Assert.False(
+                    taskRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(unexpectedRegisteredTask, null)),
+                    String.Format("Unexpected task '{0}' registered!", unexpectedRegisteredTask));
             }
 
             foreach (string unexpectedRegisteredTask in unexpectedOverrideRegisteredTasks)
             {
-                Assert.False(taskoverrideRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(unexpectedRegisteredTask, null)),
-                              String.Format("Unexpected task '{0}' registered!", unexpectedRegisteredTask));
+                Assert.False(
+                    taskoverrideRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(unexpectedRegisteredTask, null)),
+                    String.Format("Unexpected task '{0}' registered!", unexpectedRegisteredTask));
             }
         }
 
@@ -161,13 +165,15 @@ namespace Microsoft.Build.UnitTests.Definition
 
             foreach (string expectedRegisteredTask in expectedRegisteredTasks)
             {
-                Assert.True(taskRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(expectedRegisteredTask, null)),
-                              String.Format("Expected task '{0}' registered!", expectedRegisteredTask));
+                Assert.True(
+                    taskRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(expectedRegisteredTask, null)),
+                    String.Format("Expected task '{0}' registered!", expectedRegisteredTask));
             }
             foreach (string unexpectedRegisteredTask in unexpectedRegisteredTasks)
             {
-                Assert.False(taskRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(unexpectedRegisteredTask, null)),
-                              String.Format("Unexpected task '{0}' registered!", unexpectedRegisteredTask));
+                Assert.False(
+                    taskRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(unexpectedRegisteredTask, null)),
+                    String.Format("Unexpected task '{0}' registered!", unexpectedRegisteredTask));
             }
         }
 
@@ -189,8 +195,9 @@ namespace Microsoft.Build.UnitTests.Definition
             Assert.Equal(1, mockLogger.WarningCount); // "Expected 1 warning logged!"
             foreach (string unexpectedRegisteredTask in unexpectedRegisteredTasks)
             {
-                Assert.False(taskRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(unexpectedRegisteredTask, null)),
-                               String.Format("Unexpected task '{0}' registered!", unexpectedRegisteredTask));
+                Assert.False(
+                    taskRegistry.TaskRegistrations.ContainsKey(new TaskRegistry.RegisteredTaskIdentity(unexpectedRegisteredTask, null)),
+                    String.Format("Unexpected task '{0}' registered!", unexpectedRegisteredTask));
             }
         }
 
@@ -291,7 +298,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='98.6'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='98.6'>
                         <Target Name='Foo'>
                         </Target>
                        </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -326,7 +334,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='0.1'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='0.1'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -359,7 +368,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='invalidToolsVersion'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='invalidToolsVersion'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -387,7 +397,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='invalidToolsVersion'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='invalidToolsVersion'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, "goober", p);
@@ -417,7 +428,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -486,7 +498,8 @@ namespace Microsoft.Build.UnitTests.Definition
             MockLogger mockLogger = new MockLogger();
             LoggingService service = (LoggingService)LoggingService.CreateLoggingService(LoggerMode.Synchronous, 1);
             service.RegisterLogger(mockLogger);
-            Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+            Project project = new Project(
+                XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -521,7 +534,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -558,7 +572,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -598,7 +613,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -631,7 +647,8 @@ namespace Microsoft.Build.UnitTests.Definition
             MockLogger mockLogger = new MockLogger();
             LoggingService service = (LoggingService)LoggingService.CreateLoggingService(LoggerMode.Synchronous, 1);
             service.RegisterLogger(mockLogger);
-            Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+            Project project = new Project(
+                XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -667,7 +684,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -707,7 +725,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -750,7 +769,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -783,7 +803,8 @@ namespace Microsoft.Build.UnitTests.Definition
             MockLogger mockLogger = new MockLogger();
             LoggingService service = (LoggingService)LoggingService.CreateLoggingService(LoggerMode.Synchronous, 1);
             service.RegisterLogger(mockLogger);
-            Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+            Project project = new Project(
+                XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -818,7 +839,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -858,7 +880,8 @@ namespace Microsoft.Build.UnitTests.Definition
                 service.RegisterLogger(mockLogger);
 
                 bool success = false;
-                Project project = new Project(XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
+                Project project = new Project(
+                    XmlReader.Create(new StringReader(@"<Project ToolsVersion='4.0'>
                     <Target Name='Foo'>
                     </Target>
                    </Project>")), null /* no global properties */, null /* don't explicitly set the toolsversion */, p);
@@ -932,9 +955,10 @@ namespace Microsoft.Build.UnitTests.Definition
             matches.RemoveAll(
                 delegate (string candidate)
                 {
-                    bool sameFolder = (String.Equals(Path.GetDirectoryName(candidate),
-                                                           pathWithoutTrailingSlash,
-                                                           StringComparison.OrdinalIgnoreCase));
+                    bool sameFolder = (String.Equals(
+                        Path.GetDirectoryName(candidate),
+                        pathWithoutTrailingSlash,
+                        StringComparison.OrdinalIgnoreCase));
                     return !sameFolder || !Regex.IsMatch(Path.GetFileName(candidate), finalPattern);
                 });
             return matches.ToArray();
@@ -952,71 +976,81 @@ namespace Microsoft.Build.UnitTests.Definition
 
         private DefaultTasksFile[] _defaultTasksFileCandidates =
             {
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "c:\\directory1\\directory2\\a.tasks"
                                          : "/directory1/directory2/a.tasks",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='a1' AssemblyName='a' />
                             <UsingTask TaskName='a2' AssemblyName='a' />
                             <UsingTask TaskName='a3' AssemblyName='a' />
                             <UsingTask TaskName='a4' AssemblyName='a' />
                        </Project>"),
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "c:\\directory1\\directory2\\b.tasks"
                                          : "/directory1/directory2/b.tasks",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='b1' AssemblyName='b' />
                        </Project>"),
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "c:\\directory1\\directory2\\c.tasksfile"
                                          : "/directory1/directory2/c.taskfile",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='c1' AssemblyName='c' />
                        </Project>"),
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "c:\\directory1\\directory2\\directory3\\d.tasks"
                                          : "/directory1/directory2/directory3/d.tasks",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='d1' AssemblyName='d' />
                        </Project>"),
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "c:\\directory1\\directory2\\e.tasks"
                                          : "/directory1/directory2/e.tasks",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='e1' AssemblyName='e' />
                        </Project>"),
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "d:\\directory1\\directory2\\f.tasks"
                                          : "/d/directory1/directory2/f.tasks",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='f1' AssemblyName='f' />
                        </Project>"),
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "c:\\directory1\\directory2\\g.custom.tasks"
                                          : "/directory1/directory2/g.custom.tasks",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='g1' AssemblyName='g' />
                             <UsingTask TaskName='g2' AssemblyName='g' />
                             <UsingTask TaskName='g3' AssemblyName='g' />
                        </Project>"),
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "c:\\somepath\\1.tasks"
                                          : "/somepath/1.tasks",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='11' AssemblyName='1' />
                             <UsingTask TaskName='12' AssemblyName='1' />
                             <UsingTask TaskName='13' AssemblyName='1' />
                        </Project>"),
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "c:\\somepath\\2.tasks"
                                          : "/somepath/2.tasks",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='21' AssemblyName='2' />
                        </Project>"),
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "c:\\inline\\inlinetasks.tasks"
                                          : "/inline/inlinetasks.tasks",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='t2' AssemblyName='an' Condition='true' TaskFactory='AssemblyFactory' Runtime='CLR2' Architecture='x86' RequiredRuntime='2.0' RequiredPlatform='x86'>
                                 <ParameterGroup>
                                    <MyParameter ParameterType='System.String' Output='true' Required='false'/>
@@ -1026,19 +1060,21 @@ namespace Microsoft.Build.UnitTests.Definition
                                 </Task>
                             </UsingTask>
                        </Project>"),
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "c:\\msbuildoverridetasks\\1.overridetasks"
                                          : "/msbuildoverridetasks/1.overridetasks",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='a1' AssemblyName='o' />
                             <UsingTask TaskName='oa1' AssemblyName='o' />
                             <UsingTask TaskName='oa2' AssemblyName='o' />
                             <UsingTask TaskName='og1' AssemblyName='o' />
                         </Project>"),
-                new DefaultTasksFile(NativeMethodsShared.IsWindows
+                new DefaultTasksFile(
+                    NativeMethodsShared.IsWindows
                                          ? "c:\\msbuildoverridetasks\\2.overridetasks"
                                          : "/msbuildoverridetasks/2.overridetasks",
-                      @"<Project>
+                    @"<Project>
                             <UsingTask TaskName='ooo' AssemblyName='o' />
                         </Project>")
             };

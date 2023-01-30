@@ -120,19 +120,20 @@ namespace Microsoft.Build.UnitTests
 
         internal static void AssertItemEvaluationFromProject(string projectContents, string[] inputFiles, string[] expectedInclude, Dictionary<string, string>[] expectedMetadataPerItem = null, bool normalizeSlashes = false, bool makeExpectedIncludeAbsolute = false)
         {
-            AssertItemEvaluationFromGenericItemEvaluator((p, c) =>
+            AssertItemEvaluationFromGenericItemEvaluator(
+                (p, c) =>
                 {
                     return new Project(p, new Dictionary<string, string>(), MSBuildConstants.CurrentToolsVersion, c)
                         .Items
                         .Select(i => (ITestItem)new ProjectItemTestItemAdapter(i))
                         .ToList();
                 },
-            projectContents,
-            inputFiles,
-            expectedInclude,
-            makeExpectedIncludeAbsolute,
-            expectedMetadataPerItem,
-            normalizeSlashes);
+                projectContents,
+                inputFiles,
+                expectedInclude,
+                makeExpectedIncludeAbsolute,
+                expectedMetadataPerItem,
+                normalizeSlashes);
         }
 
         internal static void AssertItemEvaluationFromGenericItemEvaluator(Func<string, ProjectCollection, IList<ITestItem>> itemEvaluator, string projectContents, string[] inputFiles, string[] expectedInclude, bool makeExpectedIncludeAbsolute = false, Dictionary<string, string>[] expectedMetadataPerItem = null, bool normalizeSlashes = false)
@@ -302,7 +303,8 @@ namespace Microsoft.Build.UnitTests
                 AssertItemHasMetadata(expectedDirectMetadataPerItem[i], items[i]);
             }
 
-            items.Count.ShouldBe(expectedItems.Length,
+            items.Count.ShouldBe(
+                expectedItems.Length,
                 () => $"got items \"{string.Join(", ", items)}\", expected \"{string.Join(", ", expectedItems)}\"");
 
             expectedItems.Length.ShouldBe(expectedDirectMetadataPerItem.Length);
@@ -2062,7 +2064,8 @@ namespace Microsoft.Build.UnitTests
             {
                 var completion = new TaskCompletionSource<BuildResult>();
 
-                _buildManager.PendBuildRequest(requestData).ExecuteAsync(submission =>
+                _buildManager.PendBuildRequest(requestData).ExecuteAsync(
+                    submission =>
                 {
                     completion.SetResult(submission.BuildResult);
                 }, null);

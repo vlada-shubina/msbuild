@@ -224,8 +224,9 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.OutOfProc
             Assert.Equal(".resx", Path.GetExtension(t2b.FilesWritten[0].ItemSpec));
 
             // make sure the output resx files from each fork are the same
-            Assert.Equal(Utilities.ReadFileContent(t.OutputResources[0].ItemSpec),
-                                   Utilities.ReadFileContent(t2b.OutputResources[0].ItemSpec));
+            Assert.Equal(
+                Utilities.ReadFileContent(t.OutputResources[0].ItemSpec),
+                Utilities.ReadFileContent(t2b.OutputResources[0].ItemSpec));
 
             // Done, so clean up.
             File.Delete(resourcesFile);
@@ -773,8 +774,9 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.OutOfProc
                 Assert.Equal(".resx", Path.GetExtension(t2b.FilesWritten[0].ItemSpec));
 
                 // make sure the output resx files from each fork are the same
-                Assert.Equal(Utilities.ReadFileContent(t.OutputResources[0].ItemSpec),
-                                       Utilities.ReadFileContent(t2b.OutputResources[0].ItemSpec));
+                Assert.Equal(
+                    Utilities.ReadFileContent(t.OutputResources[0].ItemSpec),
+                    Utilities.ReadFileContent(t2b.OutputResources[0].ItemSpec));
 
                 // Done, so clean up.
                 File.Delete(resourcesFile);

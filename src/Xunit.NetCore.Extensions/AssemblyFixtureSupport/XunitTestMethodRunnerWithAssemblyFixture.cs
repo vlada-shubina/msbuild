@@ -17,16 +17,17 @@ namespace Xunit.NetCore.Extensions
         private readonly Dictionary<Type, object> assemblyFixtureMappings = new Dictionary<Type, object>();
         private readonly List<AssemblyFixtureAttribute> assemblyFixtureAttributes;
 
-        public XunitTestMethodRunnerWithAssemblyFixture(List<AssemblyFixtureAttribute> assemblyFixtureAttributes,
-                             ITestMethod testMethod,
-                             IReflectionTypeInfo @class,
-                             IReflectionMethodInfo method,
-                             IEnumerable<IXunitTestCase> testCases,
-                             IMessageSink diagnosticMessageSink,
-                             IMessageBus messageBus,
-                             ExceptionAggregator aggregator,
-                             CancellationTokenSource cancellationTokenSource,
-                             object[] constructorArguments)
+        public XunitTestMethodRunnerWithAssemblyFixture(
+            List<AssemblyFixtureAttribute> assemblyFixtureAttributes,
+            ITestMethod testMethod,
+            IReflectionTypeInfo @class,
+            IReflectionMethodInfo method,
+            IEnumerable<IXunitTestCase> testCases,
+            IMessageSink diagnosticMessageSink,
+            IMessageBus messageBus,
+            ExceptionAggregator aggregator,
+            CancellationTokenSource cancellationTokenSource,
+            object[] constructorArguments)
             : base(testMethod, @class, method, testCases, diagnosticMessageSink, messageBus, aggregator, cancellationTokenSource, constructorArguments)
         {
             this.assemblyFixtureAttributes = assemblyFixtureAttributes;

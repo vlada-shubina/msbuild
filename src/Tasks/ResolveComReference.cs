@@ -431,7 +431,8 @@ namespace Microsoft.Build.Tasks
                             }
                             catch (SystemException ex)
                             {
-                                Log.LogErrorWithCodeFromResources("ResolveComReference.FailedToResolveComReference",
+                                Log.LogErrorWithCodeFromResources(
+                                    "ResolveComReference.FailedToResolveComReference",
                                     projectRefInfo.attr.guid, projectRefInfo.attr.wMajorVerNum, projectRefInfo.attr.wMinorVerNum,
                                     ex.Message);
                             }
@@ -1682,7 +1683,8 @@ namespace Microsoft.Build.Tasks
                 {
                     // A failure to resolve a reference due to something possibly being missing from disk is not
                     // an error; the user may not be actually consuming types from it
-                    Log.LogWarningWithCodeFromResources("ResolveComReference.FailedToScanDependencies",
+                    Log.LogWarningWithCodeFromResources(
+                        "ResolveComReference.FailedToScanDependencies",
                         reference.SourceItemSpec, ex.Message);
                 }
             }

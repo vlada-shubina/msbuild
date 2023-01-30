@@ -541,7 +541,8 @@ namespace Microsoft.Build.Utilities
             // current folder.
             if (s_FileTrackerFilename.Equals(filename, StringComparison.OrdinalIgnoreCase))
             {
-                string progfilesPath = Path.Combine(FrameworkLocationHelper.GenerateProgramFiles32(),
+                string progfilesPath = Path.Combine(
+                    FrameworkLocationHelper.GenerateProgramFiles32(),
                     "MSBuild", "15.0", "FileTracker", s_FileTrackerFilename);
 
                 if (FileSystems.Default.FileExists(progfilesPath))

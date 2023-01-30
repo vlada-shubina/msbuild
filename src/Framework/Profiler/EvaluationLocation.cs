@@ -128,7 +128,8 @@ namespace Microsoft.Build.Framework.Profiler
         /// <nodoc/>
         public static EvaluationLocation CreateLocationForAggregatedGlob()
         {
-            return new EvaluationLocation(EvaluationPass.TotalGlobbing,
+            return new EvaluationLocation(
+                EvaluationPass.TotalGlobbing,
                 PassDefaultDescription[EvaluationPass.TotalGlobbing], file: null, kind: EvaluationLocationKind.Glob,
                 line: null, elementName: null, elementDescription: null);
         }

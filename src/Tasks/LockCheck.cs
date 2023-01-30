@@ -46,7 +46,8 @@ namespace Microsoft.Build.Tasks
         private const string RestartManagerDll = "rstrtmgr.dll";
 
         [DllImport(RestartManagerDll, CharSet = CharSet.Unicode)]
-        private static extern int RmRegisterResources(uint pSessionHandle,
+        private static extern int RmRegisterResources(
+            uint pSessionHandle,
             uint nFiles,
             string[] rgsFilenames,
             uint nApplications,
@@ -109,7 +110,8 @@ namespace Microsoft.Build.Tasks
         private static extern int RmEndSession(uint pSessionHandle);
 
         [DllImport(RestartManagerDll, CharSet = CharSet.Unicode)]
-        public static extern int RmGetList(uint dwSessionHandle,
+        public static extern int RmGetList(
+            uint dwSessionHandle,
             out uint pnProcInfoNeeded,
             ref uint pnProcInfo,
             [In, Out] RM_PROCESS_INFO[] rgAffectedApps,

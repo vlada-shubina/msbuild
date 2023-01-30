@@ -328,7 +328,8 @@ namespace Microsoft.Build.UnitTests
         {
             SimulatedConsole sc = new SimulatedConsole();
             ConsoleLogger logger = new ConsoleLogger(LoggerVerbosity.Diagnostic, sc.Write, null, null);
-            ObjectModelHelpers.BuildProjectExpectSuccess(@"
+            ObjectModelHelpers.BuildProjectExpectSuccess(
+                @"
 <Project>
 <ItemDefinitionGroup>
   <F>
@@ -461,9 +462,10 @@ namespace Microsoft.Build.UnitTests
         {
             EventSourceSink es = new EventSourceSink();
             SimulatedConsole sc = new SimulatedConsole();
-            ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Diagnostic,
-                                                sc.Write, sc.SetColor,
-                                                sc.ResetColor);
+            ConsoleLogger L = new ConsoleLogger(
+                LoggerVerbosity.Diagnostic,
+                sc.Write, sc.SetColor,
+                sc.ResetColor);
             L.Initialize(es);
 
             // Not all parameters are null here, but that's fine, we assume the engine will never
@@ -490,9 +492,10 @@ namespace Microsoft.Build.UnitTests
         {
             EventSourceSink es = new EventSourceSink();
             SimulatedConsole sc = new SimulatedConsole();
-            ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Diagnostic,
-                                                sc.Write, sc.SetColor,
-                                                sc.ResetColor);
+            ConsoleLogger L = new ConsoleLogger(
+                LoggerVerbosity.Diagnostic,
+                sc.Write, sc.SetColor,
+                sc.ResetColor);
             L.Initialize(es, 2);
             BuildEventContext buildEventContext = new BuildEventContext(1, 2, 3, 4);
 
@@ -720,9 +723,10 @@ namespace Microsoft.Build.UnitTests
             {
                 EventSourceSink es = new EventSourceSink();
                 SimulatedConsole sc = new SimulatedConsole();
-                ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Quiet,
-                                                    sc.Write, sc.SetColor,
-                                                    sc.ResetColor);
+                ConsoleLogger L = new ConsoleLogger(
+                    LoggerVerbosity.Quiet,
+                    sc.Write, sc.SetColor,
+                    sc.ResetColor);
                 L.Initialize(es, i);
 
                 BuildEventContext buildEventContext = new BuildEventContext(1, 2, 3, 4);
@@ -774,8 +778,9 @@ namespace Microsoft.Build.UnitTests
             {
                 EventSourceSink es = new EventSourceSink();
                 SimulatedConsole sc = new SimulatedConsole();
-                ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Quiet,
-                                                    sc.Write, sc.SetColor, sc.ResetColor);
+                ConsoleLogger L = new ConsoleLogger(
+                    LoggerVerbosity.Quiet,
+                    sc.Write, sc.SetColor, sc.ResetColor);
                 L.Initialize(es, i);
 
                 BuildEventContext buildEventContext = new BuildEventContext(1, 2, 3, 4);
@@ -796,9 +801,10 @@ namespace Microsoft.Build.UnitTests
                 tase.BuildEventContext = buildEventContext;
                 es.Consume(tase);
 
-                BuildErrorEventArgs beea = new BuildErrorEventArgs("VBC",
-                                "31415", "file.vb", 42, 0, 0, 0,
-                                "Some long message", "help", "sender");
+                BuildErrorEventArgs beea = new BuildErrorEventArgs(
+                    "VBC",
+                    "31415", "file.vb", 42, 0, 0, 0,
+                    "Some long message", "help", "sender");
 
                 beea.BuildEventContext = buildEventContext;
                 es.Consume(beea);
@@ -850,8 +856,9 @@ namespace Microsoft.Build.UnitTests
             {
                 EventSourceSink es = new EventSourceSink();
                 SimulatedConsole sc = new SimulatedConsole();
-                ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Quiet,
-                                                    sc.Write, sc.SetColor, sc.ResetColor);
+                ConsoleLogger L = new ConsoleLogger(
+                    LoggerVerbosity.Quiet,
+                    sc.Write, sc.SetColor, sc.ResetColor);
                 L.Initialize(es, i);
 
                 BuildEventContext buildEventContext = new BuildEventContext(1, 2, 3, 4);
@@ -872,9 +879,10 @@ namespace Microsoft.Build.UnitTests
                 tase.BuildEventContext = buildEventContext;
                 es.Consume(tase);
 
-                BuildWarningEventArgs beea = new BuildWarningEventArgs("VBC",
-                                "31415", "file.vb", 42, 0, 0, 0,
-                                "Some long message", "help", "sender");
+                BuildWarningEventArgs beea = new BuildWarningEventArgs(
+                    "VBC",
+                    "31415", "file.vb", 42, 0, 0, 0,
+                    "Some long message", "help", "sender");
 
 
                 beea.BuildEventContext = buildEventContext;
@@ -926,9 +934,10 @@ namespace Microsoft.Build.UnitTests
             {
                 EventSourceSink es = new EventSourceSink();
                 SimulatedConsole sc = new SimulatedConsole();
-                ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Minimal,
-                                                    sc.Write, sc.SetColor,
-                                                    sc.ResetColor);
+                ConsoleLogger L = new ConsoleLogger(
+                    LoggerVerbosity.Minimal,
+                    sc.Write, sc.SetColor,
+                    sc.ResetColor);
                 L.Initialize(es, i);
 
                 BuildEventContext buildEventContext = new BuildEventContext(1, 2, 3, 4);
@@ -983,8 +992,9 @@ namespace Microsoft.Build.UnitTests
             {
                 EventSourceSink es = new EventSourceSink();
                 SimulatedConsole sc = new SimulatedConsole();
-                ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Minimal,
-                                                    sc.Write, sc.SetColor, sc.ResetColor);
+                ConsoleLogger L = new ConsoleLogger(
+                    LoggerVerbosity.Minimal,
+                    sc.Write, sc.SetColor, sc.ResetColor);
                 L.Initialize(es, i);
 
                 BuildEventContext buildEventContext = new BuildEventContext(1, 2, 3, 4);
@@ -1005,9 +1015,10 @@ namespace Microsoft.Build.UnitTests
                 tase.BuildEventContext = buildEventContext;
                 es.Consume(tase);
 
-                BuildErrorEventArgs beea = new BuildErrorEventArgs("VBC",
-                                "31415", "file.vb", 42, 0, 0, 0,
-                                "Some long message", "help", "sender");
+                BuildErrorEventArgs beea = new BuildErrorEventArgs(
+                    "VBC",
+                    "31415", "file.vb", 42, 0, 0, 0,
+                    "Some long message", "help", "sender");
 
                 beea.BuildEventContext = buildEventContext;
                 es.Consume(beea);
@@ -1058,8 +1069,9 @@ namespace Microsoft.Build.UnitTests
             {
                 EventSourceSink es = new EventSourceSink();
                 SimulatedConsole sc = new SimulatedConsole();
-                ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Quiet,
-                                                    sc.Write, sc.SetColor, sc.ResetColor);
+                ConsoleLogger L = new ConsoleLogger(
+                    LoggerVerbosity.Quiet,
+                    sc.Write, sc.SetColor, sc.ResetColor);
                 L.Initialize(es, i);
 
                 BuildEventContext buildEventContext = new BuildEventContext(1, 2, 3, 4);
@@ -1080,9 +1092,10 @@ namespace Microsoft.Build.UnitTests
                 tase.BuildEventContext = buildEventContext;
                 es.Consume(tase);
 
-                BuildWarningEventArgs beea = new BuildWarningEventArgs("VBC",
-                                "31415", "file.vb", 42, 0, 0, 0,
-                                "Some long message", "help", "sender");
+                BuildWarningEventArgs beea = new BuildWarningEventArgs(
+                    "VBC",
+                    "31415", "file.vb", 42, 0, 0, 0,
+                    "Some long message", "help", "sender");
 
 
                 beea.BuildEventContext = buildEventContext;
@@ -1134,8 +1147,9 @@ namespace Microsoft.Build.UnitTests
             {
                 EventSourceSink es = new EventSourceSink();
                 SimulatedConsole sc = new SimulatedConsole();
-                ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Quiet,
-                                                    sc.Write, sc.SetColor, sc.ResetColor);
+                ConsoleLogger L = new ConsoleLogger(
+                    LoggerVerbosity.Quiet,
+                    sc.Write, sc.SetColor, sc.ResetColor);
                 L.Initialize(es, i);
 
                 BuildEventContext buildEventContext = new BuildEventContext(1, 2, 3, 4);
@@ -1156,9 +1170,10 @@ namespace Microsoft.Build.UnitTests
                 tase.BuildEventContext = buildEventContext;
                 L.TaskStartedHandler(null, tase);
 
-                BuildWarningEventArgs beea = new BuildWarningEventArgs("VBC",
-                                "31415", "file.vb", 42, 0, 0, 0,
-                                "Some long message", "help", "sender");
+                BuildWarningEventArgs beea = new BuildWarningEventArgs(
+                    "VBC",
+                    "31415", "file.vb", 42, 0, 0, 0,
+                    "Some long message", "help", "sender");
 
 
                 beea.BuildEventContext = buildEventContext;
@@ -1257,8 +1272,9 @@ namespace Microsoft.Build.UnitTests
         {
             EventSourceSink es = new EventSourceSink();
             SimulatedConsole sc = new SimulatedConsole();
-            ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Minimal,
-                                                sc.Write, sc.SetColor, sc.ResetColor);
+            ConsoleLogger L = new ConsoleLogger(
+                LoggerVerbosity.Minimal,
+                sc.Write, sc.SetColor, sc.ResetColor);
             L.Initialize(es, 1);
 
             es.Consume(new BuildStartedEventArgs("bs", null));
@@ -1275,9 +1291,10 @@ namespace Microsoft.Build.UnitTests
 
             sc.ToString().ShouldBeEmpty();
 
-            BuildErrorEventArgs beea = new BuildErrorEventArgs("VBC",
-                        "31415", "file.vb", 42, 0, 0, 0,
-                        "Some long message", "help", "sender");
+            BuildErrorEventArgs beea = new BuildErrorEventArgs(
+                "VBC",
+                "31415", "file.vb", 42, 0, 0, 0,
+                "Some long message", "help", "sender");
 
             es.Consume(beea);
 
@@ -1297,8 +1314,9 @@ namespace Microsoft.Build.UnitTests
         {
             EventSourceSink es = new EventSourceSink();
             SimulatedConsole sc = new SimulatedConsole();
-            ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Normal,
-                                                sc.Write, sc.SetColor, sc.ResetColor);
+            ConsoleLogger L = new ConsoleLogger(
+                LoggerVerbosity.Normal,
+                sc.Write, sc.SetColor, sc.ResetColor);
             L.Initialize(es);
 
             es.Consume(new BuildStartedEventArgs("bs", null));
@@ -1374,8 +1392,9 @@ namespace Microsoft.Build.UnitTests
         {
             EventSourceSink es = new EventSourceSink();
             SimulatedConsole sc = new SimulatedConsole();
-            ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Detailed,
-                                                sc.Write, null, null);
+            ConsoleLogger L = new ConsoleLogger(
+                LoggerVerbosity.Detailed,
+                sc.Write, null, null);
             L.Initialize(es);
 
             MyCustomBuildEventArgs c =
@@ -1391,8 +1410,9 @@ namespace Microsoft.Build.UnitTests
         {
             EventSourceSink es = new EventSourceSink();
             SimulatedConsole sc = new SimulatedConsole();
-            ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Diagnostic,
-                                                sc.Write, null, null);
+            ConsoleLogger L = new ConsoleLogger(
+                LoggerVerbosity.Diagnostic,
+                sc.Write, null, null);
             L.Initialize(es, 2);
 
             MyCustomBuildEventArgs c =
@@ -1408,8 +1428,9 @@ namespace Microsoft.Build.UnitTests
         {
             EventSourceSink es = new EventSourceSink();
             SimulatedConsole sc = new SimulatedConsole();
-            ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Normal,
-                                                sc.Write, null, null);
+            ConsoleLogger L = new ConsoleLogger(
+                LoggerVerbosity.Normal,
+                sc.Write, null, null);
             L.Initialize(es);
 
             MyCustomBuildEventArgs c =
@@ -1952,8 +1973,9 @@ namespace Microsoft.Build.UnitTests
             string warningString = ResourceUtilities.FormatResourceStringStripCodeAndKeyword("WarningCount", 1);
 
             // Create a ConsoleLogger with Normal verbosity
-            ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Normal,
-                                                sc.Write, sc.SetColor, sc.ResetColor);
+            ConsoleLogger L = new ConsoleLogger(
+                LoggerVerbosity.Normal,
+                sc.Write, sc.SetColor, sc.ResetColor);
             // Initialize ConsoleLogger
             L.Initialize(es);
 
@@ -1961,22 +1983,25 @@ namespace Microsoft.Build.UnitTests
             es.Consume(new BuildStartedEventArgs("bs", null));
 
             // Introduce a warning
-            BuildWarningEventArgs bwea = new BuildWarningEventArgs("VBC",
-                            "31415", "file.vb", 42, 0, 0, 0,
-                            "Some long message", "help", "sender");
+            BuildWarningEventArgs bwea = new BuildWarningEventArgs(
+                "VBC",
+                "31415", "file.vb", 42, 0, 0, 0,
+                "Some long message", "help", "sender");
 
             es.Consume(bwea);
 
             // Introduce an error
-            BuildErrorEventArgs beea = new BuildErrorEventArgs("VBC",
-                        "31415", "file.vb", 42, 0, 0, 0,
-                        "Some long message", "help", "sender");
+            BuildErrorEventArgs beea = new BuildErrorEventArgs(
+                "VBC",
+                "31415", "file.vb", 42, 0, 0, 0,
+                "Some long message", "help", "sender");
 
             es.Consume(beea);
 
             // BuildFinished Event
-            es.Consume(new BuildFinishedEventArgs("bf",
-                                                     null, true));
+            es.Consume(new BuildFinishedEventArgs(
+                "bf",
+                null, true));
 
             // Log so far
             string actualLog = sc.ToString();
@@ -1998,8 +2023,9 @@ namespace Microsoft.Build.UnitTests
             es.Consume(new BuildStartedEventArgs("bs", null));
 
             // BuildFinished
-            es.Consume(new BuildFinishedEventArgs("bf",
-                                                     null, true));
+            es.Consume(new BuildFinishedEventArgs(
+                "bf",
+                null, true));
             // Log so far
             actualLog = sc.ToString();
 
@@ -2042,8 +2068,9 @@ namespace Microsoft.Build.UnitTests
             string warningString = ResourceUtilities.FormatResourceStringStripCodeAndKeyword("WarningCount", 1);
 
             // Create a ConsoleLogger with Normal verbosity
-            ConsoleLogger L = new ConsoleLogger(LoggerVerbosity.Normal,
-                                                sc.Write, sc.SetColor, sc.ResetColor);
+            ConsoleLogger L = new ConsoleLogger(
+                LoggerVerbosity.Normal,
+                sc.Write, sc.SetColor, sc.ResetColor);
             // Initialize ConsoleLogger
             L.Initialize(es);
 
@@ -2051,16 +2078,18 @@ namespace Microsoft.Build.UnitTests
             es.Consume(new BuildStartedEventArgs("bs", null));
 
             // Introduce a warning
-            BuildWarningEventArgs bwea = new BuildWarningEventArgs("VBC",
-                            "31415", "file.vb", 42, 0, 0, 0,
-                            "Some long message", "help", "sender");
+            BuildWarningEventArgs bwea = new BuildWarningEventArgs(
+                "VBC",
+                "31415", "file.vb", 42, 0, 0, 0,
+                "Some long message", "help", "sender");
 
             es.Consume(bwea);
 
             // Introduce an error
-            BuildErrorEventArgs beea = new BuildErrorEventArgs("VBC",
-                        "31415", "file.vb", 42, 0, 0, 0,
-                        "Some long message", "help", "sender");
+            BuildErrorEventArgs beea = new BuildErrorEventArgs(
+                "VBC",
+                "31415", "file.vb", 42, 0, 0, 0,
+                "Some long message", "help", "sender");
 
             es.Consume(beea);
 
@@ -2089,8 +2118,9 @@ namespace Microsoft.Build.UnitTests
             es.Consume(new BuildStartedEventArgs("bs", null));
 
             // BuildFinished
-            es.Consume(new BuildFinishedEventArgs("bf",
-                                                     null, true));
+            es.Consume(new BuildFinishedEventArgs(
+                "bf",
+                null, true));
             // Log so far
             actualLog = sc.ToString();
 
@@ -2203,8 +2233,9 @@ namespace Microsoft.Build.UnitTests
                 finished1.BuildEventContext = project1Started.BuildEventContext;
                 // ProjectFinished Event
                 es.Consume(finished1);            // BuildFinished Event
-                es.Consume(new BuildFinishedEventArgs("bf",
-                                                         null, true));
+                es.Consume(new BuildFinishedEventArgs(
+                    "bf",
+                    null, true));
                 // Log so far
                 string actualLog = sc.ToString();
 
@@ -2226,8 +2257,9 @@ namespace Microsoft.Build.UnitTests
                 // BuildStarted event
                 es.Consume(new BuildStartedEventArgs("bs", null));
                 // BuildFinished
-                es.Consume(new BuildFinishedEventArgs("bf",
-                                                         null, true));
+                es.Consume(new BuildFinishedEventArgs(
+                    "bf",
+                    null, true));
                 // Log so far
                 actualLog = sc.ToString();
 

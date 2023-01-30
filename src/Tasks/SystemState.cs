@@ -163,9 +163,11 @@ namespace Microsoft.Build.Tasks
                 ErrorUtilities.VerifyThrowArgumentNull(translator, nameof(translator));
 
                 translator.Translate(ref lastModified);
-                translator.Translate(ref assemblyName,
+                translator.Translate(
+                    ref assemblyName,
                     (ITranslator t) => new AssemblyNameExtension(t));
-                translator.TranslateArray(ref dependencies,
+                translator.TranslateArray(
+                    ref dependencies,
                     (ITranslator t) => new AssemblyNameExtension(t));
                 translator.Translate(ref scatterFiles);
                 translator.Translate(ref runtimeVersion);

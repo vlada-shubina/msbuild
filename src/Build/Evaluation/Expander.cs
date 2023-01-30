@@ -3012,7 +3012,8 @@ namespace Microsoft.Build.Evaluation
             /// For example, %(Compile.DependsOn) or %(DependsOn).
             /// </summary>
             internal static readonly Lazy<Regex> ItemMetadataPattern = new Lazy<Regex>(
-                () => new Regex(ItemMetadataSpecification,
+                () => new Regex(
+                    ItemMetadataSpecification,
                     RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture | RegexOptions.Compiled));
 
             /// <summary>

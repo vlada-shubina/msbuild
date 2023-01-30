@@ -400,7 +400,8 @@ namespace Microsoft.Build.BackEnd
                     }
                     catch (InvalidOperationException e)
                     {
-                        ProjectErrorUtilities.ThrowInvalidProject(elementLocation,
+                        ProjectErrorUtilities.ThrowInvalidProject(
+                            elementLocation,
                             "CannotEvaluateItemMetadata", metadataName, e.Message);
                     }
                 }

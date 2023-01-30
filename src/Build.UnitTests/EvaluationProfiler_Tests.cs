@@ -75,17 +75,20 @@ namespace Microsoft.Build.Engine.UnitTests
         /// Verifies that a given element name shows up in a profiled MSBuild project
         /// </summary>
         [InlineData("Target", "<Target Name='test'/>")]
-        [InlineData("Message",
-@"<Target Name='echo'>
+        [InlineData(
+            "Message",
+            @"<Target Name='echo'>
     <Message text='echo!'/>
 </Target>")]
-        [InlineData("appname",
-@"<Target Name='test'/>
+        [InlineData(
+            "appname",
+            @"<Target Name='test'/>
 <PropertyGroup>
     <appname>Hello</appname>
 </PropertyGroup>")]
-        [InlineData("CSFile",
-@"<Target Name='test'/>
+        [InlineData(
+            "CSFile",
+            @"<Target Name='test'/>
 <ItemGroup>
     <CSFile Include='file.cs'/>
 </ItemGroup>")]
@@ -111,16 +114,19 @@ namespace Microsoft.Build.Engine.UnitTests
         /// Verifies that a given element name shows up in a profiled MSBuild project
         /// </summary>
         [InlineData("Target", "<Target Name='test'/>")]
-        [InlineData("Message",
+        [InlineData(
+            "Message",
             @"<Target Name='echo'>
     <Message text='echo!'/>
 </Target>")]
-        [InlineData("appname",
+        [InlineData(
+            "appname",
             @"<Target Name='test'/>
 <PropertyGroup>
     <appname>Hello</appname>
 </PropertyGroup>")]
-        [InlineData("CSFile",
+        [InlineData(
+            "CSFile",
             @"<Target Name='test'/>
 <ItemGroup>
     <CSFile Include='file.cs'/>

@@ -1303,7 +1303,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
             _buildManager.BeginBuild(_parameters);
             BuildSubmission submission1 = _buildManager.PendBuildRequest(data);
             var callbackFinished = new AutoResetEvent(false);
-            submission1.ExecuteAsync(submission =>
+            submission1.ExecuteAsync(
+                submission =>
             {
                 _buildManager.EndBuild();
                 callbackFinished.Set();
@@ -3797,7 +3798,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
                 var result = submission.Execute();
 
                 Assert.Equal(BuildResultCode.Success, result.OverallResult);
-                Assert.Equal("foo;bar",
+                Assert.Equal(
+                    "foo;bar",
                     string.Join(";", result.ResultsByTarget["MainTarget"].Items.Select(i => i.ItemSpec)));
             }
             finally

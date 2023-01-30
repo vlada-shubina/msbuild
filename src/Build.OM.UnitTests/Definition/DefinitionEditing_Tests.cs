@@ -2245,7 +2245,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
         public void AddItemFast_ContainingWildcardNoMatches()
         {
             Project project = new Project();
-            IList<ProjectItem> items = project.AddItemFast("i",
+            IList<ProjectItem> items = project.AddItemFast(
+                "i",
                 NativeMethodsShared.IsWindows ? @"c:\" + Guid.NewGuid().ToString() + @"\**\i1" : "/" + Guid.NewGuid().ToString() + "/**/i1");
 
             Assert.Empty(items);
@@ -2435,11 +2436,13 @@ namespace Microsoft.Build.UnitTests.OM.Definition
         public void AddItemFast_MatchesComplicatedWildcard()
         {
             Project project = new Project();
-            ProjectItemElement item1 = project.Xml.AddItem("i",
+            ProjectItemElement item1 = project.Xml.AddItem(
+                "i",
                 NativeMethodsShared.IsWindows ? @"c:\subdir1\**\subdir2\**\*.x?x" : "/subdir1/**/subdir2/**/*.x?x");
             project.ReevaluateIfNecessary();
 
-            ProjectItemElement item2 = project.AddItemFast("i",
+            ProjectItemElement item2 = project.AddItemFast(
+                "i",
                 NativeMethodsShared.IsWindows ? @"c:\subdir1\a\b\subdir2\c\i1.xyx" : "/subdir1/a/b/subdir2/c/i1.xyx")[0].Xml;
 
             string expected = ObjectModelHelpers.CleanupFileContents(

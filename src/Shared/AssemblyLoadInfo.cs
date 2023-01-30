@@ -24,9 +24,11 @@ namespace Microsoft.Build.Shared
         /// </summary>
         internal static AssemblyLoadInfo Create(string assemblyName, string assemblyFile)
         {
-            ErrorUtilities.VerifyThrow((!string.IsNullOrEmpty(assemblyName)) || (!string.IsNullOrEmpty(assemblyFile)),
+            ErrorUtilities.VerifyThrow(
+                (!string.IsNullOrEmpty(assemblyName)) || (!string.IsNullOrEmpty(assemblyFile)),
                 "We must have either the assembly name or the assembly file/path.");
-            ErrorUtilities.VerifyThrow((assemblyName == null) || (assemblyFile == null),
+            ErrorUtilities.VerifyThrow(
+                (assemblyName == null) || (assemblyFile == null),
                 "We must not have both the assembly name and the assembly file/path.");
 
             if (assemblyName != null)

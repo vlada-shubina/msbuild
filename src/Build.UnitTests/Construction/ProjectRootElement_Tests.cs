@@ -21,9 +21,11 @@ namespace Microsoft.Build.UnitTests.Construction
         [InlineData("", false)]
         [InlineData(@"<?xml version=""1.0"" encoding=""utf-8""?>", true)]
         [InlineData(@"<?xml version=""1.0"" encoding=""utf-8""?>", false)]
-        [InlineData(@"<?xml version=""1.0"" encoding=""utf-8""?>
+        [InlineData(
+            @"<?xml version=""1.0"" encoding=""utf-8""?>
 ", true)]
-        [InlineData(@"<?xml version=""1.0"" encoding=""utf-8""?>
+        [InlineData(
+            @"<?xml version=""1.0"" encoding=""utf-8""?>
 ", false)]
         public void IsEmptyXmlFileReturnsTrue(string contents, bool useByteOrderMark)
         {
@@ -37,13 +39,17 @@ namespace Microsoft.Build.UnitTests.Construction
         [Theory]
         [InlineData("<Foo/>", true)]
         [InlineData("Foo/>", false)]
-        [InlineData(@"<?xml version=""1.0"" encoding=""utf-8""?>
+        [InlineData(
+            @"<?xml version=""1.0"" encoding=""utf-8""?>
 <Foo/>", true)]
-        [InlineData(@"<?xml version=""1.0"" encoding=""utf-8""?>
+        [InlineData(
+            @"<?xml version=""1.0"" encoding=""utf-8""?>
 <Foo/>", false)]
-        [InlineData(@"<?xml version=""1.0"" encoding=""utf-8""?>
+        [InlineData(
+            @"<?xml version=""1.0"" encoding=""utf-8""?>
 bar", true)]
-        [InlineData(@"<?xml version=""1.0"" encoding=""utf-8""?>
+        [InlineData(
+            @"<?xml version=""1.0"" encoding=""utf-8""?>
 bar", false)]
         public void IsEmptyXmlFileReturnsFalse(string contents, bool useByteOrderMark)
         {

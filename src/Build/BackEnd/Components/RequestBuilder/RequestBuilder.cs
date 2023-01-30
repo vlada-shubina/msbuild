@@ -754,7 +754,8 @@ namespace Microsoft.Build.BackEnd
         /// </summary>
         private void VerifyEntryInActiveOrWaitingState()
         {
-            ErrorUtilities.VerifyThrow(_requestEntry.State == BuildRequestEntryState.Active || _requestEntry.State == BuildRequestEntryState.Waiting,
+            ErrorUtilities.VerifyThrow(
+                _requestEntry.State == BuildRequestEntryState.Active || _requestEntry.State == BuildRequestEntryState.Waiting,
                 "Entry is not in the Active or Waiting state, it is in the {0} state.", _requestEntry.State);
         }
 

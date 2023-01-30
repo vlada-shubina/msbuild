@@ -303,8 +303,9 @@ namespace Microsoft.Build.Engine.UnitTests.BackEnd
             itemsToAdd = new Dictionary<string, SdkResultItem>(StringComparer.OrdinalIgnoreCase)
                 {
                     {
-                        "ItemNameFromSdkResolver", new SdkResultItem( "ItemValueFromSdkResolver",
-                        new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+                        "ItemNameFromSdkResolver", new SdkResultItem( 
+                            "ItemValueFromSdkResolver",
+                            new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                         {
                             { "MetadataName", "MetadataValue" }
                         })
@@ -645,8 +646,9 @@ namespace Microsoft.Build.Engine.UnitTests.BackEnd
                 return _resolvers.OrderBy(i => i.Priority).ToList();
             }
 
-            internal override IList<SdkResolverManifest> GetResolversManifests(LoggingContext loggingContext,
-            ElementLocation location)
+            internal override IList<SdkResolverManifest> GetResolversManifests(
+                LoggingContext loggingContext,
+                ElementLocation location)
             {
                 var manifests = new List<SdkResolverManifest>();
                 foreach (SdkResolver resolver in _resolvers)

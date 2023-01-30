@@ -759,7 +759,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
                 generateSatellites = "<Error Text='GenerateSatellites-step-failed'/>";
             }
 
-            return String.Format(ObjectModelHelpers.CleanupFileContents(@"
+            return String.Format(
+                ObjectModelHelpers.CleanupFileContents(@"
                 <Project DefaultTargets='Build' ToolsVersion='msbuilddefaulttoolsversion' xmlns='msbuildnamespace'>
                    <PropertyGroup>
                      <Flag>{0}</Flag>

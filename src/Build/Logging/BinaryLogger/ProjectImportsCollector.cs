@@ -85,7 +85,8 @@ namespace Microsoft.Build.Logging
                 {
                     // enqueue the task to add a file and return quickly
                     // to avoid holding up the current thread
-                    _currentTask = _currentTask.ContinueWith(t =>
+                    _currentTask = _currentTask.ContinueWith(
+                        t =>
                     {
                         try
                         {
@@ -107,7 +108,8 @@ namespace Microsoft.Build.Logging
                 {
                     // enqueue the task to add a file and return quickly
                     // to avoid holding up the current thread
-                    _currentTask = _currentTask.ContinueWith(t =>
+                    _currentTask = _currentTask.ContinueWith(
+                        t =>
                     {
                         try
                         {

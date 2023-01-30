@@ -572,7 +572,8 @@ namespace Microsoft.Build.UnitTests
 
                     if (shouldNotCopy)
                     {
-                        engine.AssertLogContainsMessageFromResource(AssemblyResources.GetString,
+                        engine.AssertLogContainsMessageFromResource(
+                            AssemblyResources.GetString,
                             "Copy.DidNotCopyBecauseOfFileMatch",
                             sourceFile,
                             destinationFile,
@@ -581,7 +582,8 @@ namespace Microsoft.Build.UnitTests
                     }
                     else
                     {
-                        engine.AssertLogDoesntContainMessageFromResource(AssemblyResources.GetString,
+                        engine.AssertLogDoesntContainMessageFromResource(
+                            AssemblyResources.GetString,
                             "Copy.DidNotCopyBecauseOfFileMatch",
                             sourceFile,
                             destinationFile,
@@ -1458,7 +1460,8 @@ namespace Microsoft.Build.UnitTests
                 UseSymboliclinksIfPossible = UseSymbolicLinks,
             };
 
-            bool success = t.Execute(delegate (FileState source, FileState dest)
+            bool success = t.Execute(
+                delegate (FileState source, FileState dest)
             {
                 lock (filesActuallyCopied)
                 {
@@ -1524,7 +1527,8 @@ namespace Microsoft.Build.UnitTests
                 UseSymboliclinksIfPossible = UseSymbolicLinks,
             };
 
-            bool success = t.Execute(delegate (FileState source, FileState dest)
+            bool success = t.Execute(
+                delegate (FileState source, FileState dest)
             {
                 lock (filesActuallyCopied)
                 {

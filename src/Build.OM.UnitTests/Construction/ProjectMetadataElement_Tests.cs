@@ -519,19 +519,21 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         }
 
         [Theory]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include=`i` m1=`v1` />
                         </ItemGroup>
                     </Project>",
-                @"
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include=`i` m1=`v2` />
                         </ItemGroup>
                     </Project>")]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <Target Name='t'>
                             <ItemGroup>
@@ -539,7 +541,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             </ItemGroup>
                         </Target>
                     </Project>",
-                @"
+            @"
                     <Project>
                         <Target Name=`t`>
                             <ItemGroup>
@@ -549,7 +551,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                     </Project>")]
         public void UpdateMetadataValueAsAttribute(string projectContents, string updatedProject)
         {
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(
                 new StringReader(ObjectModelHelpers.CleanupFileContents(projectContents))),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
@@ -591,7 +594,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             <i1 m1=`v1` />
                         </ItemDefinitionGroup>
                     </Project>";
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(
                     new StringReader(ObjectModelHelpers.CleanupFileContents(projectContents))),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
@@ -634,19 +638,21 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         //  instead of:
         //      &lt;&amp;&gt;&quot;
         [Theory]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include=`i` m1=`v1` />
                         </ItemGroup>
                     </Project>",
-                @"
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include=`i` m1=`&lt;&amp;&gt;&quot;` />
                         </ItemGroup>
                     </Project>")]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <Target Name='t'>
                             <ItemGroup>
@@ -654,7 +660,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             </ItemGroup>
                         </Target>
                     </Project>",
-                @"
+            @"
                     <Project>
                         <Target Name=`t`>
                             <ItemGroup>
@@ -664,7 +670,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                     </Project>")]
         public void UpdateMetadataValueAsAttributeWithSpecialCharacters(string projectContents, string updatedProject)
         {
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(
                 new StringReader(ObjectModelHelpers.CleanupFileContents(projectContents))),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
@@ -706,7 +713,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             <i1 m1=`v1` />
                         </ItemDefinitionGroup>
                     </Project>";
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(
                     new StringReader(ObjectModelHelpers.CleanupFileContents(projectContents))),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
@@ -745,7 +753,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         }
 
         [Theory]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include='i'>
@@ -753,25 +762,27 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             </i1>
                         </ItemGroup>
                     </Project>",
-                @"
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include=`i` m1=`v1` />
                         </ItemGroup>
                     </Project>")]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include='i'><m1>v1</m1></i1>
                         </ItemGroup>
                     </Project>",
-                @"
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include=`i` m1=`v1` />
                         </ItemGroup>
                     </Project>")]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <Target Name='t'>
                             <ItemGroup>
@@ -781,7 +792,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             </ItemGroup>
                         </Target>
                     </Project>",
-                @"
+            @"
                     <Project>
                         <Target Name=`t`>
                             <ItemGroup>
@@ -791,7 +802,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                     </Project>")]
         public void ChangeMetadataToAttribute(string projectContents, string updatedProject)
         {
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(new StringReader(projectContents)),
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(projectContents)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             ProjectItemGroupElement itemGroup = (ProjectItemGroupElement)projectElement.AllChildren.FirstOrDefault(c => c is ProjectItemGroupElement);
@@ -824,7 +836,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         }
 
         [Theory]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <ItemDefinitionGroup>
                             <i1>
@@ -832,19 +845,20 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             </i1>
                         </ItemDefinitionGroup>
                     </Project>",
-        @"
+            @"
                     <Project>
                         <ItemDefinitionGroup>
                             <i1 m1=`v1` />
                         </ItemDefinitionGroup>
                     </Project>")]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <ItemDefinitionGroup>
                             <i1><m1>v1</m1></i1>
                         </ItemDefinitionGroup>
                     </Project>",
-        @"
+            @"
                     <Project>
                         <ItemDefinitionGroup>
                             <i1 m1=`v1` />
@@ -852,7 +866,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                     </Project>")]
         public void ChangeMetadataToAttributeOnItemDefinition(string projectContents, string updatedProject)
         {
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(new StringReader(projectContents)),
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(projectContents)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             ProjectItemDefinitionGroupElement itemDefinitionGroup = (ProjectItemDefinitionGroupElement)projectElement.AllChildren.FirstOrDefault(c => c is ProjectItemDefinitionGroupElement);
@@ -885,13 +900,14 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         }
 
         [Theory]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include='i' m1='v1' />
                         </ItemGroup>
                     </Project>",
-                    @"
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include=`i`>
@@ -899,7 +915,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             </i1>
                         </ItemGroup>
                     </Project>")]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <Target Name='t'>
                             <ItemGroup>
@@ -907,7 +924,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             </ItemGroup>
                         </Target>
                     </Project>",
-                    @"
+            @"
                     <Project>
                         <Target Name=`t`>
                             <ItemGroup>
@@ -919,7 +936,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                     </Project>")]
         public void ChangeAttributeToMetadata(string projectContents, string updatedProject)
         {
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(new StringReader(projectContents)),
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(projectContents)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             ProjectItemGroupElement itemGroup = (ProjectItemGroupElement)projectElement.AllChildren.FirstOrDefault(c => c is ProjectItemGroupElement);
@@ -960,7 +978,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             <i1 m1='v1'/>
                         </ItemDefinitionGroup>
                     </Project>";
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(new StringReader(projectContents)),
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(projectContents)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             ProjectItemDefinitionGroupElement itemDefinitionGroup = (ProjectItemDefinitionGroupElement)projectElement.AllChildren.FirstOrDefault(c => c is ProjectItemDefinitionGroupElement);
@@ -1000,19 +1019,21 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         }
 
         [Theory]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include='i' />
                         </ItemGroup>
                     </Project>",
-        @"
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include=`i` m1=`v1` />
                         </ItemGroup>
                     </Project>")]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <Target Name='t'>
                             <ItemGroup>
@@ -1020,7 +1041,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             </ItemGroup>
                         </Target>
                     </Project>",
-        @"
+            @"
                     <Project>
                         <Target Name=`t`>
                             <ItemGroup>
@@ -1030,7 +1051,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                     </Project>")]
         public void AddMetadataAsAttribute(string projectContents, string updatedProject)
         {
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(new StringReader(projectContents)),
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(projectContents)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             ProjectItemGroupElement itemGroup = (ProjectItemGroupElement)projectElement.AllChildren.FirstOrDefault(c => c is ProjectItemGroupElement);
@@ -1068,7 +1090,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             <i1/>
                         </ItemDefinitionGroup>
                     </Project>";
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(new StringReader(projectContents)),
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(projectContents)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             ProjectItemDefinitionGroupElement itemDefinitionGroup = (ProjectItemDefinitionGroupElement)projectElement.AllChildren.FirstOrDefault(c => c is ProjectItemDefinitionGroupElement);
@@ -1103,13 +1126,14 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         }
 
         [Theory]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include='i' />
                         </ItemGroup>
                     </Project>",
-        @"
+            @"
                     <Project>
                         <ItemGroup>
                             <i1 Include=`i` m1=`v1`>
@@ -1117,7 +1141,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             </i1>
                         </ItemGroup>
                     </Project>")]
-        [InlineData(@"
+        [InlineData(
+            @"
                     <Project>
                         <Target Name='t'>
                             <ItemGroup>
@@ -1125,7 +1150,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             </ItemGroup>
                         </Target>
                     </Project>",
-        @"
+            @"
                     <Project>
                         <Target Name=`t`>
                             <ItemGroup>
@@ -1137,7 +1162,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                     </Project>")]
         public void AddMetadataAsAttributeAndAsElement(string projectContents, string updatedProject)
         {
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(new StringReader(projectContents)),
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(projectContents)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             ProjectItemGroupElement itemGroup = (ProjectItemGroupElement)projectElement.AllChildren.FirstOrDefault(c => c is ProjectItemGroupElement);
@@ -1182,7 +1208,8 @@ namespace Microsoft.Build.UnitTests.OM.Construction
                             <i1/>
                         </ItemDefinitionGroup>
                     </Project>";
-            ProjectRootElement projectElement = ProjectRootElement.Create(XmlReader.Create(new StringReader(projectContents)),
+            ProjectRootElement projectElement = ProjectRootElement.Create(
+                XmlReader.Create(new StringReader(projectContents)),
                 ProjectCollection.GlobalProjectCollection,
                 preserveFormatting: true);
             ProjectItemDefinitionGroupElement itemDefinitionGroup = (ProjectItemDefinitionGroupElement)projectElement.AllChildren.FirstOrDefault(c => c is ProjectItemDefinitionGroupElement);

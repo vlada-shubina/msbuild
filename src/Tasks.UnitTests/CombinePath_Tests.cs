@@ -48,7 +48,8 @@ namespace Microsoft.Build.UnitTests
             string path1 = NativeMethodsShared.IsWindows ? @"c:\ghi.txt" : "/ghi.txt";
             string path2 = NativeMethodsShared.IsWindows ? @"d:\jkl\mno.txt" : "/jkl/mno.txt";
             string path3 = @"\\myserver\myshare";
-            string pathsToMatch = string.Format(NativeMethodsShared.IsWindows ? @"
+            string pathsToMatch = string.Format(
+                NativeMethodsShared.IsWindows ? @"
                 {0}
                 {1}
                 {2}
@@ -98,7 +99,8 @@ namespace Microsoft.Build.UnitTests
             string path1 = NativeMethodsShared.IsWindows ? @"c:\ghi.txt" : "/ghi.txt";
             string path2 = NativeMethodsShared.IsWindows ? @"d:\jkl\mno.txt" : "/jkl/mno.txt";
             string path3 = @"\\myserver\myshare";
-            string pathsToMatch = string.Format(NativeMethodsShared.IsWindows ? @"
+            string pathsToMatch = string.Format(
+                NativeMethodsShared.IsWindows ? @"
                 {0}
                 {1}
                 {2}
@@ -159,7 +161,8 @@ namespace Microsoft.Build.UnitTests
             t.Paths = new ITaskItem[] { new TaskItem(@"jkl\mno.txt"), new TaskItem(@"c:\abc\def\ghi.txt") };
             Assert.True(t.Execute()); // "success"
 
-            ObjectModelHelpers.AssertItemsMatch(@"
+            ObjectModelHelpers.AssertItemsMatch(
+                @"
                 jkl\mno.txt
                 c:\abc\def\ghi.txt
                 ", t.CombinedPaths, true);
@@ -178,7 +181,8 @@ namespace Microsoft.Build.UnitTests
             t.Paths = System.Array.Empty<ITaskItem>();
             Assert.True(t.Execute()); // "success"
 
-            ObjectModelHelpers.AssertItemsMatch(@"
+            ObjectModelHelpers.AssertItemsMatch(
+                @"
                 ", t.CombinedPaths, true);
         }
 
@@ -195,7 +199,8 @@ namespace Microsoft.Build.UnitTests
             t.Paths = new ITaskItem[] { new TaskItem("") };
             Assert.True(t.Execute()); // "success"
 
-            ObjectModelHelpers.AssertItemsMatch(@"
+            ObjectModelHelpers.AssertItemsMatch(
+                @"
                 c:\abc\def
                 ", t.CombinedPaths, true);
         }
@@ -216,7 +221,8 @@ namespace Microsoft.Build.UnitTests
             Assert.False(t.Execute()); // "should have failed"
             ((MockEngine)t.BuildEngine).AssertLogContains("MSB3095");
 
-            ObjectModelHelpers.AssertItemsMatch(@"
+            ObjectModelHelpers.AssertItemsMatch(
+                @"
                 c:\abc\def\ghi.txt
                 c:\abc\def\jkl.txt
                 ", t.CombinedPaths, true);

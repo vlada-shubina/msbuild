@@ -102,7 +102,8 @@ namespace Microsoft.Build.Logging
 
             // The aggregation is delayed until the whole aggregated result is needed for generating the final content
             // There is a memory/speed trade off here, but we are prioritizing not interfeering with regular evaluation times
-            Debug.Assert(_aggregatedLocations == null,
+            Debug.Assert(
+                _aggregatedLocations == null,
                 "GetAggregatedResult was called, but a new ProjectEvaluationFinishedEventArgs arrived after that.");
             _profiledResults.Enqueue(projectFinishedEvent.ProfilerResult.Value);
         }
@@ -138,7 +139,8 @@ namespace Microsoft.Build.Logging
             {
                 ProfilerResult profiledResult;
                 var result = _profiledResults.TryDequeue(out profiledResult);
-                Debug.Assert(result,
+                Debug.Assert(
+                    result,
                     "Expected a non empty queue, this method is not supposed to be called in a multithreaded way");
 
                 // Merge all items into the global table.
@@ -160,7 +162,8 @@ namespace Microsoft.Build.Logging
             // Add one single top-level item representing the total aggregated evaluation time for globs.
             var aggregatedGlobs = _aggregatedLocations.Keys
                 .Where(key => key.Kind == EvaluationLocationKind.Glob)
-                .Aggregate(new ProfiledLocation(),
+                .Aggregate(
+                    new ProfiledLocation(),
                     (profiledLocation, evaluationLocation) =>
                         AggregateProfiledLocation(profiledLocation, _aggregatedLocations[evaluationLocation]));
 
@@ -218,7 +221,8 @@ namespace Microsoft.Build.Logging
             var result = new Dictionary<EvaluationLocation, ProfiledLocation>();
 
             // Let's build an index of profiled locations by id, to speed up subsequent queries
-            var idTable = aggregatedLocations.ToDictionary(pair => pair.Key.Id,
+            var idTable = aggregatedLocations.ToDictionary(
+                pair => pair.Key.Id,
                 pair => new Pair<EvaluationLocation, ProfiledLocation>(pair.Key, pair.Value));
 
             // We want to keep all evaluation pass entries plus the big enough regular entries
@@ -237,7 +241,8 @@ namespace Microsoft.Build.Logging
         /// <summary>
         /// Finds the first ancestor of parentId (which could be itself) that is either an evaluation pass location or a big enough profiled data.
         /// </summary>
-        private static long? FindBigEnoughParentId(IDictionary<long, Pair<EvaluationLocation, ProfiledLocation>> idTable,
+        private static long? FindBigEnoughParentId(
+            IDictionary<long, Pair<EvaluationLocation, ProfiledLocation>> idTable,
             long? parentId)
         {
             // The parent id is null, which means the item was pointing to an evaluation pass item. So we keep it as is.
@@ -251,7 +256,8 @@ namespace Microsoft.Build.Logging
             // We go up the parent relationship until we find an item that is an evaluation pass and is big enough
             while (!pair.Key.IsEvaluationPass && IsTooSmall(pair.Value))
             {
-                Debug.Assert(pair.Key.ParentId.HasValue,
+                Debug.Assert(
+                    pair.Key.ParentId.HasValue,
                     "A location that is not an evaluation pass should always have a parent");
                 pair = idTable[pair.Key.ParentId.Value];
             }
@@ -265,7 +271,8 @@ namespace Microsoft.Build.Logging
                    profiledData.ExclusiveTime.TotalMilliseconds < 1;
         }
 
-        private static ProfiledLocation AggregateProfiledLocation(ProfiledLocation location,
+        private static ProfiledLocation AggregateProfiledLocation(
+            ProfiledLocation location,
             ProfiledLocation otherLocation)
         {
             return new ProfiledLocation(

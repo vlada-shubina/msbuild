@@ -269,8 +269,9 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
             Assert.Equal(".resx", Path.GetExtension(t2b.FilesWritten[0].ItemSpec));
 
             // make sure the output resx files from each fork are the same
-            Assert.Equal(Utilities.ReadFileContent(t.OutputResources[0].ItemSpec),
-                                   Utilities.ReadFileContent(t2b.OutputResources[0].ItemSpec));
+            Assert.Equal(
+                Utilities.ReadFileContent(t.OutputResources[0].ItemSpec),
+                Utilities.ReadFileContent(t2b.OutputResources[0].ItemSpec));
             Utilities.AssertLogContainsResource(t2b, "GenerateResource.ProcessingFile", t2b.Sources[0].ItemSpec, t2b.OutputResources[0].ItemSpec);
             Utilities.AssertLogContainsResource(t2b, "GenerateResource.ReadResourceMessage", 4, t2b.Sources[0].ItemSpec);
 
@@ -1038,8 +1039,9 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
             Assert.Equal(".resx", Path.GetExtension(t2b.FilesWritten[0].ItemSpec));
 
             // make sure the output resx files from each fork are the same
-            Assert.Equal(Utilities.ReadFileContent(t.OutputResources[0].ItemSpec),
-                         Utilities.ReadFileContent(t2b.OutputResources[0].ItemSpec));
+            Assert.Equal(
+                Utilities.ReadFileContent(t.OutputResources[0].ItemSpec),
+                Utilities.ReadFileContent(t2b.OutputResources[0].ItemSpec));
 
             // Done, so clean up.
             File.Delete(resourcesFile);
@@ -2043,7 +2045,8 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
         /// Reference passed in that can't be loaded should error
         /// </summary>
         [Fact]
-        [SkipOnTargetFramework(TargetFrameworkMonikers.Netcoreapp,
+        [SkipOnTargetFramework(
+            TargetFrameworkMonikers.Netcoreapp,
             reason: ".NET Core MSBuild doesn't load refs so it pushes this failure to runtime")]
         public void InvalidReference()
         {
@@ -3503,7 +3506,8 @@ namespace Microsoft.Build.UnitTests.GenerateResource_Tests.InProc
                     possiblyQuotedResourcesFile1 = "\"" + resourcesFile1 + "\"";
                 }
 
-                Utilities.AssertLogContains(t,
+                Utilities.AssertLogContains(
+                    t,
                     "/compile " +
                     possiblyQuotedResxFile +
                     "," +

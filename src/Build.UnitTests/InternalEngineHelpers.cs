@@ -119,12 +119,13 @@ namespace Microsoft.Build.Unittest
                     }
                 }
 
-                return new SdkResult(sdkResult.SdkReference,
-                                     sdkResultPaths,
-                                     version: sdkResult.Version,
-                                     sdkResult.PropertiesToAdd == null ? null : new Dictionary<string, string>(sdkResult.PropertiesToAdd, StringComparer.OrdinalIgnoreCase),
-                                     sdkResultItems,
-                                     sdkResult.Warnings);
+                return new SdkResult(
+                    sdkResult.SdkReference,
+                    sdkResultPaths,
+                    version: sdkResult.Version,
+                    sdkResult.PropertiesToAdd == null ? null : new Dictionary<string, string>(sdkResult.PropertiesToAdd, StringComparer.OrdinalIgnoreCase),
+                    sdkResultItems,
+                    sdkResult.Warnings);
             }
         }
 

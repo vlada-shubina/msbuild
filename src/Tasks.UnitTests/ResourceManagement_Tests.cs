@@ -17,7 +17,8 @@ namespace Microsoft.Build.Tasks.UnitTests
         [Fact]
         public void SingleCoreRequest()
         {
-            var messages = AssertBuildSucceededAndGetMessages(@"
+            var messages = AssertBuildSucceededAndGetMessages(
+                @"
                 {
                     int grantedCores = BuildEngine9.RequestCores(1337);
                     Log.LogMessage(""Number of cores acquired: "" + grantedCores);
@@ -32,7 +33,8 @@ namespace Microsoft.Build.Tasks.UnitTests
         [Fact]
         public void SingleCoreRequestWithNoRelease()
         {
-            var messages = AssertBuildSucceededAndGetMessages(@"
+            var messages = AssertBuildSucceededAndGetMessages(
+                @"
                 {
                     int grantedCores = BuildEngine9.RequestCores(1337);
                     Log.LogMessage(""Number of cores acquired: "" + grantedCores);
@@ -53,7 +55,8 @@ namespace Microsoft.Build.Tasks.UnitTests
         [Fact]
         public void SingleCoreRequestWithReacquire()
         {
-            var messages = AssertBuildSucceededAndGetMessages(@"
+            var messages = AssertBuildSucceededAndGetMessages(
+                @"
                 {
                     int grantedCores1 = BuildEngine9.RequestCores(1337);
                     Log.LogMessage(""Number of cores acquired: "" + grantedCores1);
@@ -81,7 +84,8 @@ namespace Microsoft.Build.Tasks.UnitTests
         public void MultipleCoreRequests()
         {
             // Exercise concurrent RequestCores() and ReleaseCores() calls.
-            AssertBuildSucceededAndGetMessages(@"
+            AssertBuildSucceededAndGetMessages(
+                @"
                 {
                     const int coresToAcquire = 1337;
                     int acquiredCores = 0;

@@ -1219,7 +1219,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
             Dictionary<string, string> globalProperties = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             globalProperties.Add("global", "v0");
 
-            Project project = new Project(XmlReader.Create(new StringReader(ObjectModelHelpers.CleanupFileContents(@"
+            Project project = new Project(
+                XmlReader.Create(new StringReader(ObjectModelHelpers.CleanupFileContents(@"
                 <Project ToolsVersion='msbuilddefaulttoolsversion' xmlns='msbuildnamespace'>
                   <PropertyGroup>
                     <global>v1</global>
@@ -3103,9 +3104,10 @@ namespace Microsoft.Build.UnitTests.BackEnd
             "))));
             p.Build(new string[] { "MIDL" }, new ILogger[] { logger });
 
-            logger.AssertLogContains(@"[a.idl|dlldatadir\a_dlldata.c|headerdir\a.h|tlbdir\a.tlb|proxydir\a_p.c|interfacedir\a_i.c]",
-                                     @"[b.idl|mydlldata.c|headerdir\b.h|tlbdir\b.tlb|proxydir\b_p.c|interfacedir\b_i.c]",
-                                     @"[c.idl|dlldatadir\c_dlldata.c|myheader.h|tlbdir\c.tlb|proxydir\c_p.c|interfacedir\c_i.c]");
+            logger.AssertLogContains(
+                @"[a.idl|dlldatadir\a_dlldata.c|headerdir\a.h|tlbdir\a.tlb|proxydir\a_p.c|interfacedir\a_i.c]",
+                @"[b.idl|mydlldata.c|headerdir\b.h|tlbdir\b.tlb|proxydir\b_p.c|interfacedir\b_i.c]",
+                @"[c.idl|dlldatadir\c_dlldata.c|myheader.h|tlbdir\c.tlb|proxydir\c_p.c|interfacedir\c_i.c]");
         }
 
         [Fact]
@@ -3898,7 +3900,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
 
         internal static void AssertItemEvaluationFromTarget(string projectContents, string targetName, string itemType, string[] inputFiles, string[] expectedInclude, bool makeExpectedIncludeAbsolute = false, Dictionary<string, string>[] expectedMetadataPerItem = null, bool normalizeSlashes = false)
         {
-            ObjectModelHelpers.AssertItemEvaluationFromGenericItemEvaluator((p, c) =>
+            ObjectModelHelpers.AssertItemEvaluationFromGenericItemEvaluator(
+                (p, c) =>
                 {
                     var project = new Project(p, new Dictionary<string, string>(), MSBuildConstants.CurrentToolsVersion, c);
                     var projectInstance = project.CreateProjectInstance();

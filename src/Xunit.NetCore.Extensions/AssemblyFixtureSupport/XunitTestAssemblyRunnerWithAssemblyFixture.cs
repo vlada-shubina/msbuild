@@ -18,11 +18,12 @@ namespace Xunit.NetCore.Extensions
         private readonly Dictionary<Type, object> assemblyFixtureMappings = new Dictionary<Type, object>();
         private List<AssemblyFixtureAttribute> assemblyFixtureAttributes;
 
-        public XunitTestAssemblyRunnerWithAssemblyFixture(ITestAssembly testAssembly,
-                                                          IEnumerable<IXunitTestCase> testCases,
-                                                          IMessageSink diagnosticMessageSink,
-                                                          IMessageSink executionMessageSink,
-                                                          ITestFrameworkExecutionOptions executionOptions)
+        public XunitTestAssemblyRunnerWithAssemblyFixture(
+            ITestAssembly testAssembly,
+            IEnumerable<IXunitTestCase> testCases,
+            IMessageSink diagnosticMessageSink,
+            IMessageSink executionMessageSink,
+            ITestFrameworkExecutionOptions executionOptions)
             : base(testAssembly, testCases, diagnosticMessageSink, executionMessageSink, executionOptions)
         { }
 
@@ -60,10 +61,11 @@ namespace Xunit.NetCore.Extensions
             return base.BeforeTestAssemblyFinishedAsync();
         }
 
-        protected override Task<RunSummary> RunTestCollectionAsync(IMessageBus messageBus,
-                                                                   ITestCollection testCollection,
-                                                                   IEnumerable<IXunitTestCase> testCases,
-                                                                   CancellationTokenSource cancellationTokenSource)
+        protected override Task<RunSummary> RunTestCollectionAsync(
+            IMessageBus messageBus,
+            ITestCollection testCollection,
+            IEnumerable<IXunitTestCase> testCases,
+            CancellationTokenSource cancellationTokenSource)
             => new XunitTestCollectionRunnerWithAssemblyFixture(assemblyFixtureMappings, assemblyFixtureAttributes,
                 testCollection, testCases, DiagnosticMessageSink, messageBus, TestCaseOrderer, new ExceptionAggregator(Aggregator), cancellationTokenSource).RunAsync();
     }
