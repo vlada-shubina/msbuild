@@ -6,7 +6,6 @@ using Microsoft.Build.Framework;
 
 namespace Microsoft.Build.Logging.FancyLogger
 {
-
     internal class FancyLoggerMessageNode
     {
         // Use this to change the max lenngth (relative to screen size) of messages

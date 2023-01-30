@@ -1782,7 +1782,6 @@ namespace Microsoft.Build.Execution
 
                     lock (_syncLock)
                     {
-
                         if (resetMainThreadOnFailure)
                         {
                             _legacyThreadingData.MainThreadSubmissionId = -1;

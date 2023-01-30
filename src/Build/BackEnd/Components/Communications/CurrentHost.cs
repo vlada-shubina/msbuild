@@ -13,7 +13,6 @@ namespace Microsoft.Build.BackEnd
 {
     internal static class CurrentHost
     {
-
 #if RUNTIME_TYPE_NETCORE || MONO
         private static string s_currentHost;
 #endif

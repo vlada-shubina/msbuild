@@ -7,7 +7,6 @@ using System.Linq;
 
 namespace Microsoft.Build.Framework
 {
-
 #nullable enable
 
     /// <summary>

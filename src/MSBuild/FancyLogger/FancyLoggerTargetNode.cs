@@ -5,7 +5,6 @@ using Microsoft.Build.Framework;
 
 namespace Microsoft.Build.Logging.FancyLogger
 {
-
     internal class FancyLoggerTargetNode
     {
         public int Id;

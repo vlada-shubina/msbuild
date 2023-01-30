@@ -33,13 +33,11 @@ namespace Microsoft.Build.Graph.UnitTests
     /// </summary>
     public class ProjectGraphSetPlatformTests
     {
-
         [Fact]
         public void ValidateSetPlatformOverride()
         {
             using (var env = TestEnvironment.Create())
             {
-
                 TransientTestFile entryProject = CreateProjectFile(env, 1, extraContent: @"<PropertyGroup>
                                                                                                 <EnableDynamicPlatformResolution>true</EnableDynamicPlatformResolution>
                                                                                                 <Platform>x64</Platform>
@@ -79,7 +77,6 @@ namespace Microsoft.Build.Graph.UnitTests
         {
             using (var env = TestEnvironment.Create())
             {
-
                 TransientTestFile entryProject = CreateProjectFile(env, 1, extraContent: @"<PropertyGroup>
                                                                                                 <EnableDynamicPlatformResolution>true</EnableDynamicPlatformResolution>
                                                                                                 <Platform>x64</Platform>
@@ -119,7 +116,6 @@ namespace Microsoft.Build.Graph.UnitTests
         {
             using (var env = TestEnvironment.Create())
             {
-
                 TransientTestFile entryProject = CreateProjectFile(env, 1, extraContent: @"<PropertyGroup>
                                                                                                 <EnableDynamicPlatformResolution>true</EnableDynamicPlatformResolution>
                                                                                                 <Platform>win32</Platform>
@@ -146,7 +142,6 @@ namespace Microsoft.Build.Graph.UnitTests
         {
             using (var env = TestEnvironment.Create())
             {
-
                 TransientTestFile entryProject = CreateProjectFile(env, 1, extraContent: @"<PropertyGroup>
                                                                                                 <EnableDynamicPlatformResolution>true</EnableDynamicPlatformResolution>
                                                                                                 <Platform>win32</Platform>
@@ -174,7 +169,6 @@ namespace Microsoft.Build.Graph.UnitTests
         {
             using (var env = TestEnvironment.Create())
             {
-
                 TransientTestFile entryProject = CreateProjectFile(env, 1, extraContent: @"<PropertyGroup>
                                                                                                 <EnableDynamicPlatformResolution>true</EnableDynamicPlatformResolution>
                                                                                                 <Platform>x86</Platform>
@@ -201,7 +195,6 @@ namespace Microsoft.Build.Graph.UnitTests
         {
             using (var env = TestEnvironment.Create())
             {
-
                 TransientTestFile entryProject = CreateProjectFile(env, 1, extraContent: @"<PropertyGroup>
                                                                                                 <EnableDynamicPlatformResolution>true</EnableDynamicPlatformResolution>
                                                                                                 <Platform>x86</Platform>
@@ -229,7 +222,6 @@ namespace Microsoft.Build.Graph.UnitTests
         {
             using (var env = TestEnvironment.Create())
             {
-
                 TransientTestFile entryProject = CreateProjectFile(env, 1, extraContent: @"<PropertyGroup>
                                                                                                 <EnableDynamicPlatformResolution>true</EnableDynamicPlatformResolution>
                                                                                                 <Platform>x86</Platform>
@@ -259,7 +251,6 @@ namespace Microsoft.Build.Graph.UnitTests
         {
             using (var env = TestEnvironment.Create())
             {
-
                 TransientTestFile entryProject = CreateProjectFile(env, 1, extraContent: @"<PropertyGroup>
                                                                                                 <EnableDynamicPlatformResolution>true</EnableDynamicPlatformResolution>
                                                                                                 <Platform>x64</Platform>
