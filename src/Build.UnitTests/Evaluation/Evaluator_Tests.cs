@@ -112,8 +112,8 @@ namespace Microsoft.Build.UnitTests.Evaluation
                 yield return new object[] { $@"Project=""{Path.Combine("$(VSToolsPath)", "*.*proj")}""", true };
             }
         }
-        
-                [Fact]
+
+        [Fact]
         public void TestNuGetSdkResolverThroughEvaluate()
         {
             string projContents = @"
